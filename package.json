@@ -1,0 +1,27 @@
+{
+  "name": "tuyujia",
+  "private": true,
+  "version": "0.0.0",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter @tuyujia/web dev",
+    "dev:miniapp": "pnpm --filter @tuyujia/miniapp dev",
+    "dev:server": "pnpm --filter @tuyujia/server dev",
+    "build": "pnpm -r build",
+    "build:web": "pnpm --filter @tuyujia/web build",
+    "build:miniapp": "pnpm --filter @tuyujia/miniapp build",
+    "build:server": "pnpm --filter @tuyujia/server build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r exec rm -rf dist build .next .taro node_modules coverage"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

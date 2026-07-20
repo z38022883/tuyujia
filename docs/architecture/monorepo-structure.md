@@ -1,0 +1,220 @@
+# 图语家 Monorepo 项目结构
+
+Status: Accepted
+
+Last Updated: 2026-07-20
+
+---
+
+## 1. 概述
+
+图语家采用 **pnpm workspaces monorepo** 架构，目标是支持多端（Web、小程序、后端服务）共享核心逻辑，避免 Web 版和小程序版代码分叉。
+
+核心原则：**能跨端的代码放 `packages/`，平台特定的代码放 `apps/`**。
+
+---
+
+## 2. 顶层目录
+
+```
+tuyujia/
+├── apps/                  # 各端独立应用（可独立部署）
+│   ├── web/               # Next.js Web 端
+│   ├── miniapp/           # Taro 微信小程序端
+│   └── server/            # Node.js 后端服务
+├── packages/              # 跨端共享代码（npm 包形式）
+│   ├── types/             # TypeScript 类型定义
+│   ├── utils/             # 纯 TS 工具函数
+│   ├── stores/            # Zustand 状态管理
+│   ├── providers-core/    # NLG、AI adapter 等纯逻辑
+│   ├── storage-adapter/   # 存储抽象接口
+│   └── tsconfig/          # 共享 tsconfig 预设
+├── prisma/                # Prisma schema（被 apps/server 引用）
+├── docs/                  # 所有文档
+├── scripts/               # 工具脚本
+├── .changeset/            # 版本管理配置
+├── package.json           # 根 package.json
+├── pnpm-workspace.yaml    # workspace 配置
+├── tsconfig.base.json     # 共享 TS 基础配置
+└── README.md
+```
+
+---
+
+## 3. 共享包职责
+
+### 3.1 `@tuyujia/types`
+- **职责**：所有跨端 TypeScript 类型定义
+- **依赖**：无（最底层包）
+- **被依赖**：所有其他 packages 和所有 apps
+
+### 3.2 `@tuyujia/utils`
+- **职责**：纯 TS 工具函数（无 DOM、无 Node API 依赖）
+- **依赖**：`@tuyujia/types`
+- **典型内容**：文本分词、概念消歧、NLG 上下文构建、图符排序等
+
+### 3.3 `@tuyujia/stores`
+- **职责**：Zustand stores（应用状态、会话状态、设置）
+- **依赖**：`@tuyujia/types`、`@tuyujia/utils`、`@tuyujia/storage-adapter`
+- **关键约束**：所有持久化操作走 `storage-adapter` 接口，不直接调 Dexie 或 wx.storage
+
+### 3.4 `@tuyujia/providers-core`
+- **职责**：跨端的业务逻辑 Provider（NLG 模板、AI 适配层、服务端 NLG 调用）
+- **依赖**：`@tuyujia/types`、`@tuyujia/utils`
+- **不包含**：TTS、ASR 等平台特定能力（由各端独立实现）
+
+### 3.5 `@tuyujia/storage-adapter`
+- **职责**：定义存储接口（`SyncStorage` + `AsyncStorage`）+ 依赖注入工具
+- **依赖**：`@tuyujia/types`
+- **关键设计**：只定义接口，不提供实现。各端在 `apps/*/src/storage/` 下实现具体类
+
+### 3.6 `@tuyujia/tsconfig`
+- **职责**：共享 TypeScript 配置预设
+- **预设**：`base.json`、`react.json`（含 DOM/JSX）、`node.json`（含 Node 类型）
+
+---
+
+## 4. Apps 职责
+
+### 4.1 `apps/web`（Next.js）
+- **入口**：`app/`（App Router）
+- **关键模块**：
+  - `src/components/` — React 组件（保留老仓库全部）
+  - `src/hooks/` — 浏览器 hooks
+  - `src/db/` — Dexie 实现（实现 `storage-adapter` 接口）
+  - `src/providers/web-speech-tts.ts` — 浏览器 TTS
+- **部署**：Vercel / 自建 Node 服务
+
+### 4.2 `apps/miniapp`（Taro）
+- **入口**：Taro 生成的 `app.tsx`、`pages/`
+- **关键模块**：
+  - `src/storage/wx-storage.ts` — wx.setStorage 实现
+  - `src/storage/cloud-storage.ts` — 云数据库实现
+  - `src/providers/tts.ts` — 腾讯云 TTS 插件 + 服务端合成兜底
+  - `src/components/` — Taro React 组件（重写自老仓库）
+- **部署**：微信小程序平台
+
+### 4.3 `apps/server`（Fastify）
+- **入口**：`src/index.ts`
+- **职责**：承接老仓库 `app/api/*` 的所有 API 路由
+- **复用**：直接复用老仓库 `src/server/` 下的业务逻辑
+- **部署**：独立 Node 服务（PM2 / Docker）
+
+---
+
+## 5. 依赖方向
+
+```
+        apps/web       apps/miniapp       apps/server
+            │               │                  │
+            ▼               ▼                  │
+     @tuyujia/stores ────────┐                 │
+            │                 │                 │
+            ▼                 ▼                 │
+     @tuyujia/providers-core                    │
+            │                                   │
+            ▼                                   ▼
+     @tuyujia/utils ◀─────────────── @tuyujia/types
+            │
+            ▼
+     @tuyujia/storage-adapter  (接口)
+```
+
+**铁律**：
+
+1. `packages/*` 不能 import `apps/*`
+2. `packages/storage-adapter` 只定义接口，由各端实现
+3. `apps/server` 只共享 `types`，不依赖 `stores`（后端无 Zustand）
+4. 依赖只能向下（types 最底层，不被任何业务包依赖方向反过来）
+
+---
+
+## 6. 命名规范
+
+| 类型 | scope | 示例 |
+|---|---|---|
+| 共享包 | `@tuyujia/` | `@tuyujia/types`、`@tuyujia/utils` |
+| 应用 | `@tuyujia/` | `@tuyujia/web`、`@tuyujia/miniapp`、`@tuyujia/server` |
+| 配置包 | `@tuyujia/` | `@tuyujia/tsconfig` |
+
+**版本号**：所有包初始 `0.0.0`，使用 changesets 管理版本。
+
+---
+
+## 7. 开发工作流
+
+### 7.1 日常开发
+
+```bash
+# 根目录一次性安装所有依赖
+pnpm install
+
+# 启动某个 app（在根目录执行）
+pnpm dev:web
+pnpm dev:miniapp
+pnpm dev:server
+
+# 全量 typecheck / lint / test
+pnpm typecheck
+pnpm lint
+pnpm test
+```
+
+### 7.2 跨包修改
+
+修改 `packages/types` 后：
+
+```bash
+# 不需要发布，pnpm workspace 会自动 link
+# 直接在被依赖的 app 里就能看到新的类型
+pnpm typecheck
+```
+
+### 7.3 添加新依赖
+
+```bash
+# 给某个包加依赖
+pnpm --filter @tuyujia/utils add some-package
+
+# 给某个 app 加依赖
+pnpm --filter @tuyujia/web add some-package
+
+# 给所有包加某个 dev 依赖（如 eslint 插件）
+pnpm -D -w add some-eslint-plugin
+```
+
+### 7.4 添加新包
+
+1. 在 `packages/` 下创建新目录
+2. 创建 `package.json`（name 用 `@tuyujia/xxx`，加 `"private": true`）
+3. 创建 `tsconfig.json`（extends `@tuyujia/tsconfig/base.json`）
+4. 创建 `src/index.ts`
+5. 根目录执行 `pnpm install`，pnpm 会自动识别新包
+
+---
+
+## 8. 关键设计决策
+
+### 8.1 为什么不上 Turborepo？
+
+3 人团队、3 个 app，构建时间预期在分钟级。Turborepo 的增量构建和远程缓存的收益不足以抵消学习成本。等包数量超过 10 个或 CI 时间超过 5 分钟再上。
+
+### 8.2 为什么用 changesets？
+
+monorepo 多包版本管理事实标准。即使现在所有包都是 private，未来如果抽离某个包开源或发布到内部 npm，changesets 可以无缝衔接。
+
+### 8.3 为什么抽 `storage-adapter` 而不是 `storage-core`？
+
+存储层是最深的平台依赖点（Web 用 IndexedDB，小程序用 wx.storage + 云数据库）。只定义接口、由各端实现，可以让 `stores` 和 `services` 完全跨端。
+
+### 8.4 为什么不抽 `ui-components` 共享包？
+
+Taro 和 Next.js 的组件写法、样式系统差异较大（WXSS vs Tailwind），强行抽离会产生大量 `#ifdef` 分支。等积累足够共性后再抽。
+
+---
+
+## 9. 相关文档
+
+- [ADR-0001: Monorepo with pnpm workspaces](../adr/0001-monorepo-with-pnpm-workspaces.md)
+- [小程序迁移方案](../migration/mini-program-migration-plan.md)
+- [代码迁移映射表](../migration/code-migration-map.md)

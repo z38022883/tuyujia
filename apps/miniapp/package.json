@@ -1,0 +1,19 @@
+{
+  "name": "@tuyujia/miniapp",
+  "version": "0.0.0",
+  "private": true,
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "dev:weapp": "taro build --type weapp --watch",
+    "build:weapp": "taro build --type weapp",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tuyujia/types": "workspace:*",
+    "@tuyujia/utils": "workspace:*",
+    "@tuyujia/stores": "workspace:*",
+    "@tuyujia/providers-core": "workspace:*",
+    "@tuyujia/storage-adapter": "workspace:*"
+  }
+}
