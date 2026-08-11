@@ -13,6 +13,11 @@ build/
 .vscode/*
 !.vscode/extensions.json
 .idea/
+.pai/
+.swc/
+
+# WeChat Mini-Program
+project.private.config.json
 
 # Environment
 .env

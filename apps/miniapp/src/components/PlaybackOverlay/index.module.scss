@@ -1,0 +1,54 @@
+@use '@/styles/variables.scss' as *;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-xl $page-padding;
+  max-width: 80%;
+}
+
+.anim {
+  font-size: 120rpx;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.sentence {
+  margin-top: $spacing-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-white;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hint {
+  margin-top: $spacing-lg;
+  font-size: $font-size-sm;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,135 @@
+@use '@/styles/variables.scss' as *;
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $page-padding;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+.scroll {
+  flex: 1;
+  min-width: 0;
+  height: 112rpx;
+  @include scroll-x-container;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  height: 112rpx;
+}
+
+.placeholderText {
+  color: $color-text-tertiary;
+  font-size: $font-size-sm;
+}
+
+.chips {
+  display: inline-flex;
+  align-items: center;
+  height: 112rpx;
+  gap: $spacing-xs;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 116rpx;
+  height: 104rpx;
+  background: $color-bg-primary-soft;
+  border: 2rpx solid rgba(43, 182, 196, 0.3);
+  border-radius: $radius-md;
+  white-space: nowrap;
+
+  &:active {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+}
+
+.chipImg {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.chipText {
+  margin-top: 2rpx;
+  font-size: $font-size-xs;
+  color: $color-primary-dark;
+  font-weight: $font-weight-medium;
+  @include text-ellipsis;
+  max-width: 108rpx;
+}
+
+.remove {
+  position: absolute;
+  top: -10rpx;
+  right: -6rpx;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 30rpx;
+  text-align: center;
+  background: $color-text-primary;
+  color: $color-text-white;
+  border-radius: $radius-round;
+  font-size: 22rpx;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  flex-shrink: 0;
+}
+
+.btnClear {
+  @include button-reset;
+  height: $button-height-sm;
+  padding: 0 $spacing-md;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  border: 1rpx solid $color-border;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  min-width: 96rpx;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &[disabled] {
+    opacity: 0.4;
+  }
+}
+
+.btnSpeak {
+  @include button-reset;
+  height: $button-height-md;
+  padding: 0 $spacing-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  min-width: 120rpx;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+.generating {
+  background: linear-gradient(135deg, $color-accent 0%, $color-accent-light 100%);
+}

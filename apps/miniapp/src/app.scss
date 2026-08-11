@@ -1,0 +1,21 @@
+@use './styles/theme.scss' as *;
+@use './styles/compat.scss';
+
+page {
+  background-color: $color-bg-page;
+  color: $color-text-primary;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue',
+    'Microsoft YaHei', sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

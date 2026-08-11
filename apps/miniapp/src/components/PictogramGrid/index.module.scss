@@ -1,0 +1,94 @@
+@use '@/styles/variables.scss' as *;
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background: $color-bg-page;
+}
+
+// 顶部标题栏（对应原版 bg-slate-900 白字标题）
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 88rpx;
+  padding: 0 $spacing-md;
+  background: #1d2129;
+  box-shadow: $shadow-card;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+  @include text-ellipsis;
+  max-width: 60%;
+}
+
+// 主体：左侧导航栏 + 网格
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: $spacing-sm;
+}
+
+.scroll {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  border-radius: $radius-lg;
+}
+
+// 网格：4 列自适应
+.gridInner {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $spacing-xs $spacing-xs $spacing-xl;
+}
+
+.cell {
+  width: calc((100% - 48rpx) / 4);
+  margin-right: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  min-width: 0;
+
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+
+// 常用入口瓦片
+.actionTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 159, 90, 0.12);
+  border: 2rpx solid rgba(255, 159, 90, 0.35);
+  border-radius: $radius-md;
+  padding: $spacing-xs 0;
+  min-height: 176rpx;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.96);
+  }
+}
+
+.actionIcon {
+  font-size: 56rpx;
+  line-height: 1;
+}
+
+.actionLabel {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-accent-dark;
+  font-weight: $font-weight-semibold;
+  @include text-ellipsis;
+  max-width: 90%;
+}
