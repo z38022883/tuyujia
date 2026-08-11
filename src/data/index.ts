@@ -31,6 +31,11 @@ export function getPictogram(id: string): PictogramEntry | undefined {
   return pictogramById.get(id)
 }
 
+/** 全部图符（内存），供文本匹配等全量扫描使用 */
+export function getAllPictograms(): PictogramEntry[] {
+  return pictograms
+}
+
 export function getPictogramsByIds(ids: string[]): PictogramEntry[] {
   return ids
     .map((id) => pictogramById.get(id))

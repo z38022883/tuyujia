@@ -11,6 +11,22 @@ declare module '*.scss';
 declare module '*.sass';
 declare module '*.styl';
 
+declare namespace Intl {
+  interface SegmentData {
+    segment: string
+    isWordLike: boolean
+  }
+  interface SegmenterOptions {
+    granularity?: 'word' | 'grapheme' | 'sentence'
+  }
+  interface Segmenter {
+    segment(input: string): Iterable<SegmentData>
+  }
+  const Segmenter: {
+    new (locales?: string | string[], options?: SegmenterOptions): Segmenter
+  }
+}
+
 declare namespace NodeJS {
   interface ProcessEnv {
     /** NODE 内置环境变量, 会影响到最终构建生成产物 */

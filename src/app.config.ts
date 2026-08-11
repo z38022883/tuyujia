@@ -1,6 +1,7 @@
 export default defineAppConfig({
   pages: [
     'pages/express/index',
+    'pages/receive/index',
     'pages/favorites/index',
     'pages/history/index',
     'pages/mine/index',
@@ -24,6 +25,12 @@ export default defineAppConfig({
         text: '表达',
         iconPath: 'assets/tabbar/express.png',
         selectedIconPath: 'assets/tabbar/express-selected.png'
+      },
+      {
+        pagePath: 'pages/receive/index',
+        text: '接收',
+        iconPath: 'assets/tabbar/receive.png',
+        selectedIconPath: 'assets/tabbar/receive-selected.png'
       },
       {
         pagePath: 'pages/favorites/index',

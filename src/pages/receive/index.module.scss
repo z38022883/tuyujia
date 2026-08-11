@@ -1,0 +1,391 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-md $page-padding $spacing-sm;
+}
+
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 4rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  padding: 0 $page-padding $spacing-lg;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-card;
+}
+
+.input {
+  width: 100%;
+  min-height: 140rpx;
+  padding: $spacing-sm;
+  box-sizing: border-box;
+  background: $color-bg-hover;
+  border-radius: $radius-md;
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+}
+
+.btnPrimary {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-md;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.btnGhost {
+  @include button-reset;
+  height: $button-height-sm;
+  padding: 0 $spacing-lg;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.btnMini {
+  @include button-reset;
+  height: 56rpx;
+  padding: 0 $spacing-md;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  border-radius: $radius-sm;
+  font-size: $font-size-sm;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.btnDanger {
+  color: $color-error;
+}
+
+.sectionTitle {
+  margin: $spacing-lg 0 $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  font-weight: $font-weight-medium;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.chip {
+  height: 64rpx;
+  padding: 0 $spacing-lg;
+  display: flex;
+  align-items: center;
+  background: $color-bg-card;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-md;
+  background: $color-bg-page;
+}
+
+.loading {
+  width: 64rpx;
+  height: 64rpx;
+  border: 6rpx solid $color-bg-hover;
+  border-top-color: $color-primary;
+  border-radius: $radius-round;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.empty {
+  padding: $spacing-xl 0;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.itemCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  box-shadow: $shadow-card;
+}
+
+.itemMain {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.itemImg {
+  width: 96rpx;
+  height: 96rpx;
+  flex-shrink: 0;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.itemLabel {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.itemToken {
+  margin-top: 4rpx;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.itemMissing {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemMissingLabel {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-disabled;
+}
+
+.badge {
+  flex-shrink: 0;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  font-size: $font-size-xs;
+}
+
+.badge-exact {
+  background: rgba(0, 180, 42, 0.12);
+  color: $color-success;
+}
+
+.badge-synonym {
+  background: rgba(91, 141, 239, 0.12);
+  color: #3f6fd8;
+}
+
+.badge-lexicon-synonym {
+  background: rgba(255, 125, 0, 0.12);
+  color: $color-warning;
+}
+
+.badge-partial {
+  background: rgba(43, 182, 196, 0.12);
+  color: $color-info;
+}
+
+.badge-none {
+  background: rgba(134, 144, 156, 0.12);
+  color: $color-text-disabled;
+}
+
+.itemActions {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.footer {
+  padding: $spacing-sm $page-padding;
+  background: $color-bg-card;
+  box-shadow: $shadow-float;
+}
+
+.footer .btnPrimary {
+  margin-top: 0;
+}
+
+.mask {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.picker {
+  width: 100%;
+  max-height: 60vh;
+  background: $color-bg-card;
+  border-radius: $radius-xl $radius-xl 0 0;
+  padding: $spacing-lg $page-padding $spacing-xl;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.pickerTitle {
+  margin-bottom: $spacing-md;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.pickerGrid {
+  max-height: 45vh;
+}
+
+.pickerCell {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+  padding: $spacing-sm 0;
+  box-sizing: border-box;
+}
+
+.pickerImg {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0 auto;
+}
+
+.pickerLabel {
+  display: block;
+  margin-top: 4rpx;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include text-ellipsis;
+}
+
+.displayOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+.displayScroll {
+  flex: 1;
+  min-height: 0;
+  padding: $spacing-xl $page-padding;
+  box-sizing: border-box;
+}
+
+.displayText {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  text-align: center;
+  margin: $spacing-lg 0;
+}
+
+.displaySequence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+}
+
+.displayCard {
+  width: 180rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-sm;
+  background: $color-bg-hover;
+  border-radius: $radius-lg;
+}
+
+.displayImg {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.displayLabel {
+  margin-top: $spacing-xs;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.displayActions {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md $page-padding;
+  padding-bottom: calc(#{$spacing-xl} + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  box-shadow: $shadow-float;
+}
+
+.displayBtn {
+  flex: 1;
+  margin-top: 0;
+}

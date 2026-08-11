@@ -8,7 +8,7 @@ import type {
 } from '@/types'
 import { storage, STORAGE_KEYS } from '@/services/storage'
 import { generateSentences } from '@/services/nlg'
-import { speak } from '@/services/tts'
+import { speak, stopPlayback as stopTts } from '@/services/tts'
 import { callFunction } from '@/services/cloud'
 import { getPictogramsByIds } from '@/data'
 
@@ -69,6 +69,7 @@ interface AppState {
   deletePhrase: (id: string) => void
   deleteExpression: (id: string) => void
   playPhrase: (phrase: SavedPhrase) => Promise<void>
+  recordReceiveExpression: (inputText: string, pictograms: PictogramEntry[]) => void
 
   // === Actions: 设置 ===
   updateSettings: (s: Partial<TtsSettings>) => void
@@ -210,7 +211,10 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
   },
 
-  stopPlayback: () => set({ showPlayback: false, playbackSentence: '' }),
+  stopPlayback: () => {
+    stopTts()
+    set({ showPlayback: false, playbackSentence: '' })
+  },
   setShowCandidatePanel: (v) => set({ showCandidatePanel: v }),
 
   setShowSavedPhrases: (v) => set({ showSavedPhrases: v }),
@@ -251,6 +255,27 @@ export const useAppStore = create<AppState>((set, get) => ({
     const next = get().expressions.filter((e) => e.id !== id)
     set({ expressions: next })
     storage.set(STORAGE_KEYS.expressions, next)
+  },
+
+  recordReceiveExpression: (inputText, pictograms) => {
+    const expr: Expression = {
+      id: `e_${Date.now()}`,
+      sessionId: newSessionId(),
+      direction: 'receive',
+      pictogramIds: pictograms.map((p) => p.id),
+      pictogramLabels: pictograms.map((p) => p.labels.zh[0]),
+      candidateSentences: [],
+      selectedSentence: null,
+      inputText,
+      createdAt: Date.now(),
+      isFavorite: false
+    }
+    const nextExpressions = [expr, ...get().expressions].slice(0, 200)
+    set({ expressions: nextExpressions })
+    storage.set(STORAGE_KEYS.expressions, nextExpressions)
+    callFunction('saveExpression', { expression: expr }).catch((err) =>
+      console.error('[Store] sync receive expression:', err)
+    )
   },
 
   playPhrase: async (phrase) => {
