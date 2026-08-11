@@ -1,4 +1,0 @@
-{
-  "extends": "@tuyujia/tsconfig/react.json",
-  "include": ["src", "next-env.d.ts"]
-}

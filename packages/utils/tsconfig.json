@@ -1,4 +1,0 @@
-{
-  "extends": "@tuyujia/tsconfig/base.json",
-  "include": ["src"]
-}

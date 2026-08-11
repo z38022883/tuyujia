@@ -1,26 +1,8 @@
 # 图语家 (Tuyujia)
 
-基于图片的 AAC（Augmentative and Alternative Communication）应用，面向失语症患者及其照护者。
+基于图片的 AAC（Augmentative and Alternative Communication）辅助沟通小程序，面向失语症患者及其照护者。
 
-## 项目结构
-
-```
-tuyujia/
-├── apps/                  # 各端独立应用
-│   ├── web/               # Web 端 (Next.js)
-│   ├── miniapp/           # 微信小程序端 (Taro)
-│   └── server/            # 后端服务 (Node.js)
-├── packages/              # 跨端共享代码
-│   ├── types/             # 类型定义
-│   ├── utils/             # 纯 TS 工具函数
-│   ├── stores/            # Zustand stores
-│   ├── providers-core/    # NLG、AI adapter 等纯逻辑
-│   ├── storage-adapter/   # 存储抽象接口
-│   └── tsconfig/          # 共享 tsconfig 预设
-├── prisma/                # Prisma schema
-├── docs/                  # 文档
-└── scripts/               # 工具脚本
-```
+微信小程序端：Taro 4 + React，后端使用微信云开发（云函数 + 云数据库）。
 
 ## 快速开始
 
@@ -30,22 +12,39 @@ tuyujia/
 # 安装依赖
 pnpm install
 
-# 启动 Web 端开发
-pnpm dev:web
+# 微信小程序开发（watch 模式，输出到 dist/）
+pnpm dev:weapp
 
-# 启动后端开发
-pnpm dev:server
+# 构建微信小程序
+pnpm build:weapp
 
-# 启动小程序开发（需先初始化 Taro）
-pnpm dev:miniapp
+# H5 预览（无需微信开发者工具，可快速体验界面）
+pnpm dev:h5
 ```
 
-## 文档
+打开微信开发者工具，导入项目根目录（`miniprogramRoot` 指向 `dist/`），即可预览调试。云函数部署到云环境后配置 `app.tsx` 中的 `Taro.cloud.init({ env })`。
 
-- [架构总览](./docs/architecture/)
-- [架构决策记录 (ADR)](./docs/adr/)
-- [小程序迁移方案](./docs/migration/)
-- [产品需求文档](./docs/product/)
+## 目录结构
+
+```
+tuyujia/
+├── src/                  # 小程序源码
+│   ├── pages/            # 页面（表达/收藏/历史/我的/引导）
+│   ├── components/       # 组件（图符网格、选择栏、候选面板等）
+│   ├── store/            # Zustand 状态管理
+│   ├── services/         # cloud / nlg / storage / tts 服务
+│   ├── data/             # 图库 lexicon 与 seed 数据
+│   ├── styles/           # 全局样式
+│   └── types/            # 类型定义
+├── cloudfunctions/       # 微信云函数
+├── config/               # Taro 构建配置
+├── docs/                 # 文档
+└── project.config.json   # 微信开发者工具配置
+```
+
+## 云函数
+
+`login` / `saveExpression` / `getExpressions` / `savePhrase` / `getSavedPhrases` / `deletePhrase`
 
 ## License
 
