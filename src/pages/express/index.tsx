@@ -1,7 +1,6 @@
 import { View, Button } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import { useAppStore } from '@/store/useAppStore'
-import { callFunction } from '@/services/cloud'
 import PictogramGrid from '@/components/PictogramGrid'
 import SelectionTray from '@/components/SelectionTray'
 import CandidatePanel from '@/components/CandidatePanel'
@@ -17,11 +16,8 @@ function ExpressPage() {
       Taro.showToast({ title: '请先组句', icon: 'none' })
       return
     }
-    const phrase = saveCurrentAsPhrase()
-    if (phrase) {
-      callFunction('savePhrase', { phrase }).catch((err) =>
-        console.error('[Express] sync phrase failed:', err)
-      )
+    // store 内 saveCurrentAsPhrase 已负责同步云端，这里只保留本地保存与提示
+    if (saveCurrentAsPhrase()) {
       Taro.showToast({ title: '已收藏', icon: 'success' })
     }
   }

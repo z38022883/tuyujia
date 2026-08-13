@@ -90,6 +90,18 @@ function newSessionId(): string {
   return `s_${Date.now()}_${sessionIdCounter}`
 }
 
+let expressionIdCounter = 0
+function newExpressionId(): string {
+  expressionIdCounter += 1
+  return `e_${Date.now()}_${expressionIdCounter}`
+}
+
+let phraseIdCounter = 0
+function newPhraseId(): string {
+  phraseIdCounter += 1
+  return `s_${Date.now()}_${phraseIdCounter}`
+}
+
 export const useAppStore = create<AppState>((set, get) => ({
   activeMode: 'express',
   activeCategoryId: 'root',
@@ -181,7 +193,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     // 记录表达历史
     const { selectedPictograms, expressions } = get()
     const expr: Expression = {
-      id: `e_${Date.now()}`,
+      id: newExpressionId(),
       sessionId: newSessionId(),
       direction: 'express',
       pictogramIds: pictogramIds.length
@@ -226,7 +238,7 @@ export const useAppStore = create<AppState>((set, get) => ({
     if (!selectedPictograms.length) return null
     const sentence = selectedPictograms.map((p) => p.labels.zh[0]).join('')
     const phrase: SavedPhrase = {
-      id: `s_${Date.now()}`,
+      id: newPhraseId(),
       sentence,
       pictogramIds: selectedPictograms.map((p) => p.id),
       usageCount: 0,
@@ -255,11 +267,14 @@ export const useAppStore = create<AppState>((set, get) => ({
     const next = get().expressions.filter((e) => e.id !== id)
     set({ expressions: next })
     storage.set(STORAGE_KEYS.expressions, next)
+    callFunction('deleteExpression', { id }).catch((err) =>
+      console.error('[Store] sync delete expression:', err)
+    )
   },
 
   recordReceiveExpression: (inputText, pictograms) => {
     const expr: Expression = {
-      id: `e_${Date.now()}`,
+      id: newExpressionId(),
       sessionId: newSessionId(),
       direction: 'receive',
       pictogramIds: pictograms.map((p) => p.id),

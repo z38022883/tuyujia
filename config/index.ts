@@ -18,7 +18,11 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
     sourceRoot: 'src',
     outputRoot: process.env.TARO_OUTPUT_DIR || 'dist',
     plugins: [],
-    defineConstants: {},
+    // 构建期注入云开发环境 ID（构建命令：TARO_APP_CLOUD_ENV=xxx pnpm build:weapp），
+    // 未设置时为空字符串，与旧行为一致（此时需在云开发控制台确认默认环境可用）。
+    defineConstants: {
+      'process.env.TARO_APP_CLOUD_ENV': JSON.stringify(process.env.TARO_APP_CLOUD_ENV || ''),
+    },
     copy: {
       patterns: [],
       options: {},

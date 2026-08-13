@@ -22,7 +22,14 @@ pnpm build:weapp
 pnpm dev:h5
 ```
 
-打开微信开发者工具，导入项目根目录（`miniprogramRoot` 指向 `dist/`），即可预览调试。云函数部署到云环境后配置 `app.tsx` 中的 `Taro.cloud.init({ env })`。
+打开微信开发者工具，导入项目根目录（`miniprogramRoot` 指向 `dist/`），即可预览调试。云函数部署到云环境后，用构建环境变量注入云环境 ID：
+
+```bash
+# 替换为你的云环境 ID（云开发控制台 → 设置 → 环境 ID）
+TARO_APP_CLOUD_ENV=your-env-id pnpm build:weapp
+```
+
+未设置时 `Taro.cloud.init({ env })` 的 env 为空字符串（与旧行为一致，需自行确认默认环境可用）。
 
 ## 目录结构
 
@@ -44,7 +51,7 @@ tuyujia/
 
 ## 云函数
 
-`login` / `saveExpression` / `getExpressions` / `savePhrase` / `getSavedPhrases` / `deletePhrase`
+`login` / `saveExpression` / `getExpressions` / `deleteExpression` / `savePhrase` / `getSavedPhrases` / `deletePhrase`
 
 ## License
 

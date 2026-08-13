@@ -39,5 +39,11 @@ declare namespace NodeJS {
      * @see https://taro-docs.jd.com/docs/next/env-mode-config#特殊环境变量-taro_app_id
      */
     TARO_APP_ID: string
+    /**
+     * 微信云开发环境 ID（构建期经 config/index.ts 的 defineConstants 注入）
+     * @description 部署云函数后，用 `TARO_APP_CLOUD_ENV=<环境ID> pnpm build:weapp` 构建；
+     * 未设置时 app.tsx 中 Taro.cloud.init 的 env 为空字符串。
+     */
+    TARO_APP_CLOUD_ENV: string
   }
 }

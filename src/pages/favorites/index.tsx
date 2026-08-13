@@ -45,10 +45,8 @@ function FavoritesPage() {
       content: '确定删除这条收藏吗？',
       success: (res) => {
         if (res.confirm) {
+          // store 内 deletePhrase 已负责同步云端，这里只做本地删除
           deletePhrase(id);
-          callFunction('deletePhrase', { id }).catch((err) =>
-            console.error('[Favorites] delete sync:', err)
-          );
         }
       }
     });
