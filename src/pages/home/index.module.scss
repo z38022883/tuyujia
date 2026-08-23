@@ -1,0 +1,94 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.grid {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: $spacing-md;
+  padding: 0 $page-padding;
+}
+
+.card {
+  width: calc((100% - #{$spacing-md}) / 2);
+  min-height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  box-sizing: border-box;
+}
+
+.cardActive {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.icon {
+  @include flex-center;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: $radius-round;
+  margin-bottom: $spacing-md;
+}
+
+.iconImg {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.iconExpress {
+  background: $color-bg-primary-soft;
+}
+
+.iconReceive {
+  background: rgba(91, 141, 239, 0.12);
+}
+
+.iconFavorites {
+  background: rgba(255, 159, 90, 0.14);
+}
+
+.iconHistory {
+  background: rgba(155, 126, 222, 0.12);
+}
+
+.cardTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.cardDesc {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  line-height: $line-height-tight;
+  color: $color-text-tertiary;
+  @include text-ellipsis-multi(2);
+}

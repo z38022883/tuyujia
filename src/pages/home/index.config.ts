@@ -1,4 +1,4 @@
 export default definePageConfig({
-  navigationBarTitleText: '表达',
+  navigationBarTitleText: '图语家',
   enablePullDownRefresh: false
 });
