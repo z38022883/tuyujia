@@ -63,12 +63,21 @@
   height: 56rpx;
 }
 
+.cardEmoji {
+  font-size: 56rpx;
+  line-height: 1;
+}
+
 .iconExpress {
   background: $color-bg-primary-soft;
 }
 
 .iconReceive {
   background: rgba(91, 141, 239, 0.12);
+}
+
+.iconRehab {
+  background: rgba(54, 194, 139, 0.14);
 }
 
 .iconFavorites {

@@ -6,7 +6,12 @@ export default defineAppConfig({
     'pages/favorites/index',
     'pages/history/index',
     'pages/mine/index',
-    'pages/onboarding/index'
+    'pages/onboarding/index',
+    'pages/rehab/index',
+    'pages/rehab/training/index',
+    'pages/rehab/result/index',
+    'pages/rehab/history/index',
+    'pages/rehab/family/index'
   ],
   window: {
     backgroundTextStyle: 'dark',

@@ -1,4 +1,4 @@
-import { View, Image } from '@tarojs/components';
+import { View, Image, Text } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import expressIcon from '@/assets/tabbar/express-selected.png';
 import receiveIcon from '@/assets/tabbar/receive-selected.png';
@@ -10,7 +10,8 @@ interface HomeModule {
   key: string;
   title: string;
   desc: string;
-  icon: string;
+  icon?: string;
+  emoji?: string;
   url: string;
   iconClass: string;
 }
@@ -31,6 +32,14 @@ const MODULES: HomeModule[] = [
     icon: receiveIcon,
     url: '/pages/receive/index',
     iconClass: styles.iconReceive
+  },
+  {
+    key: 'rehab',
+    title: '康复训练',
+    desc: '分级语言康复，每天进步一点',
+    emoji: '🧩',
+    url: '/pages/rehab/index',
+    iconClass: styles.iconRehab
   },
   {
     key: 'favorites',
@@ -70,7 +79,11 @@ function HomePage() {
             onClick={() => handleEnter(m.url)}
           >
             <View className={`${styles.icon} ${m.iconClass}`}>
-              <Image className={styles.iconImg} src={m.icon} mode="aspectFit" />
+              {m.emoji ? (
+                <Text className={styles.cardEmoji}>{m.emoji}</Text>
+              ) : (
+                <Image className={styles.iconImg} src={m.icon as string} mode="aspectFit" />
+              )}
             </View>
             <View className={styles.cardTitle}>{m.title}</View>
             <View className={styles.cardDesc}>{m.desc}</View>

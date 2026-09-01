@@ -1,0 +1,28 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $spacing-xl $page-padding;
+  box-sizing: border-box;
+}
+
+.btn {
+  @include button-reset;
+  margin-top: $spacing-lg;
+  width: 480rpx;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+}

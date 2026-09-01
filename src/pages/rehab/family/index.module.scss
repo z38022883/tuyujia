@@ -1,0 +1,75 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-md $page-padding;
+}
+
+.tab {
+  flex: 1;
+  @include flex-center;
+  height: $button-height-sm;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+  font-size: $font-size-md;
+  box-shadow: $shadow-card;
+}
+
+.tabActive {
+  background: $color-bg-primary-soft;
+  color: $color-primary-dark;
+  font-weight: $font-weight-semibold;
+}
+
+.body {
+  flex: 1;
+  padding: 0 $page-padding $spacing-xl;
+  box-sizing: border-box;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.point {
+  display: flex;
+  margin-top: $spacing-md;
+}
+
+.pointDot {
+  color: $color-primary;
+  margin-right: $spacing-sm;
+}
+
+.pointText {
+  flex: 1;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
+
+.disclaimer {
+  display: block;
+  margin-top: $spacing-lg;
+  font-size: $font-size-xs;
+  color: $color-text-disabled;
+  line-height: $line-height-normal;
+}

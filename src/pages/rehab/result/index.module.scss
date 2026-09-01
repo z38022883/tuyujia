@@ -1,0 +1,116 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-xl $page-padding;
+  box-sizing: border-box;
+}
+
+.wrap {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $spacing-xl $page-padding;
+  box-sizing: border-box;
+}
+
+.badge {
+  font-size: 120rpx;
+  margin-top: $spacing-xl;
+}
+
+.title {
+  margin-top: $spacing-md;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.rate {
+  margin-top: $spacing-xl;
+  font-size: 96rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.rateLabel {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.dims {
+  width: 100%;
+  margin-top: $spacing-xl;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-md $spacing-lg;
+  box-sizing: border-box;
+}
+
+.dimRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80rpx;
+}
+
+.dimLabel {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.dimValue {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.actions {
+  width: 100%;
+  margin-top: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.btnPrimary {
+  @include button-reset;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+}
+
+.btnGhost {
+  @include button-reset;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-bg-card;
+  color: $color-text-secondary;
+  font-size: $font-size-lg;
+  box-shadow: $shadow-card;
+}
+
+.btn {
+  @include button-reset;
+  margin-top: $spacing-lg;
+  width: 480rpx;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+}

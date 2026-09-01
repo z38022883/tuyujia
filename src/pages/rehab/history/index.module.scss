@@ -1,0 +1,61 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding: $spacing-xl $page-padding;
+  box-sizing: border-box;
+}
+
+.body {
+  flex: 1;
+  padding: $spacing-md $page-padding;
+  box-sizing: border-box;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-md $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.levelTag {
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  background: $color-bg-primary-soft;
+  color: $color-primary-dark;
+  font-size: $font-size-xs;
+}
+
+.time {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.cardBottom {
+  display: flex;
+  gap: $spacing-lg;
+  margin-top: $spacing-sm;
+}
+
+.metric {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}

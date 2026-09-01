@@ -1,0 +1,158 @@
+@use '@/styles/variables.scss' as *;
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: $spacing-md $page-padding;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.progressBar {
+  flex: 1;
+  height: 12rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  overflow: hidden;
+}
+
+.progressInner {
+  height: 100%;
+  border-radius: $radius-round;
+  background: $color-primary;
+  transition: width $transition-base;
+}
+
+.progressText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.taskCard {
+  flex: 1;
+  padding: $spacing-lg;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  box-sizing: border-box;
+}
+
+.taskMeta {
+  display: flex;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.chipType,
+.chipDim {
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  font-size: $font-size-xs;
+}
+
+.chipType {
+  background: $color-bg-primary-soft;
+  color: $color-primary-dark;
+}
+
+.chipDim {
+  background: rgba(155, 126, 222, 0.12);
+  color: #7b62c4;
+}
+
+.taskTitle {
+  display: block;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.taskPrompt {
+  display: block;
+  margin-top: $spacing-sm;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
+
+.materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.materialText {
+  padding: 8rpx 24rpx;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+}
+
+.pictoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.pictoCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140rpx;
+  padding: $spacing-sm;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  box-sizing: border-box;
+}
+
+.pictoImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.pictoLabel {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.placeholderNote {
+  margin-top: $spacing-lg;
+  padding: $spacing-sm;
+  border-radius: $radius-sm;
+  background: rgba(255, 159, 90, 0.1);
+  font-size: $font-size-xs;
+  color: $color-accent-dark;
+  text-align: center;
+}
+
+.doneBtn {
+  @include button-reset;
+  margin-top: $spacing-lg;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
+
+.empty {
+  @include flex-center;
+  min-height: 60vh;
+}
+
+.emptyText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}

@@ -32,5 +32,8 @@ export const STORAGE_KEYS = {
   settings: 'tuyujia_settings',
   expressions: 'tuyujia_expressions',
   savedPhrases: 'tuyujia_saved_phrases',
-  user: 'tuyujia_user'
+  user: 'tuyujia_user',
+  rehabLevel: 'tuyujia_rehab_level',
+  rehabSessions: 'tuyujia_rehab_sessions',
+  rehabActiveSession: 'tuyujia_rehab_active_session'
 } as const;
