@@ -1,0 +1,212 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1;
+  padding-bottom: $spacing-xl;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.section {
+  padding: 0 $page-padding;
+  margin-top: $spacing-md;
+}
+
+.noteCard {
+  background: rgba(43, 182, 196, 0.08);
+  border-radius: $radius-md;
+  padding: $spacing-md;
+}
+
+.noteText {
+  font-size: $font-size-xs;
+  line-height: $line-height-loose;
+  color: $color-primary-dark;
+}
+
+.stepsRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.stepDot {
+  flex: 1;
+  height: 10rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+}
+
+.stepDone {
+  background: $color-primary;
+}
+
+.stepActive {
+  background: $color-primary-light;
+}
+
+.stepSkipped {
+  background: $color-text-disabled;
+}
+
+.stepCount {
+  flex-shrink: 0;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.exerciseCard {
+  @include flex-center;
+  flex-direction: column;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.exerciseIcon {
+  @include flex-center;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: $radius-round;
+  background: rgba(255, 159, 90, 0.12);
+}
+
+.exerciseEmoji {
+  font-size: 104rpx;
+  line-height: 1;
+}
+
+.exerciseName {
+  margin-top: $spacing-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.exerciseInstruction {
+  margin-top: $spacing-sm;
+  font-size: $font-size-md;
+  line-height: $line-height-loose;
+  color: $color-text-secondary;
+  text-align: center;
+}
+
+.exerciseReps {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-accent-dark;
+}
+
+.btnPrimary {
+  @include button-reset;
+  width: 100%;
+  margin-top: $spacing-lg;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
+
+.btnGhost {
+  @include button-reset;
+  width: 100%;
+  margin-top: $spacing-sm;
+  height: $button-height-sm;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-md;
+}
+
+.progressCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+}
+
+.progressLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progressLabel {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.progressValue {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.progressTrack {
+  margin-top: $spacing-sm;
+  height: 12rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: $radius-round;
+  background: $color-primary;
+  transition: width $transition-base;
+}
+
+.doneCard {
+  @include flex-center;
+  flex-direction: column;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.doneEmoji {
+  font-size: 96rpx;
+  line-height: 1;
+}
+
+.doneTitle {
+  margin-top: $spacing-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.doneMeta {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  text-align: center;
+}

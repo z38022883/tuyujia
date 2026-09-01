@@ -11,7 +11,11 @@ export default defineAppConfig({
     'pages/rehab/training/index',
     'pages/rehab/result/index',
     'pages/rehab/history/index',
-    'pages/rehab/family/index'
+    'pages/rehab/family/index',
+    'pages/tcm/index',
+    'pages/tcm/acupoint/index',
+    'pages/tcm/music/index',
+    'pages/tcm/mouth/index'
   ],
   window: {
     backgroundTextStyle: 'dark',

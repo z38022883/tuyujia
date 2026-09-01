@@ -42,6 +42,14 @@ const MODULES: HomeModule[] = [
     iconClass: styles.iconRehab
   },
   {
+    key: 'tcm',
+    title: '中医辅助训练',
+    desc: '穴位按揉·音乐调息·嘴巴练习',
+    emoji: '🌿',
+    url: '/pages/tcm/index',
+    iconClass: styles.iconTcm
+  },
+  {
     key: 'favorites',
     title: '收藏',
     desc: '查看和管理收藏的短语',

@@ -1,0 +1,172 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1;
+  padding-bottom: $spacing-xl;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.section {
+  padding: 0 $page-padding;
+  margin-top: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-sm;
+}
+
+.practiceCard {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-sm;
+}
+
+.practiceCardActive {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.practiceIcon {
+  @include flex-center;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-round;
+  background: rgba(54, 194, 139, 0.14);
+  flex-shrink: 0;
+}
+
+.practiceEmoji {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.practiceInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.practiceTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.practiceDesc {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  @include text-ellipsis-multi(2);
+}
+
+.practiceArrow {
+  font-size: $font-size-xl;
+  color: $color-text-disabled;
+}
+
+.statsRow {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.statCard {
+  flex: 1;
+  @include flex-center;
+  flex-direction: column;
+  padding: $spacing-lg 0;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+}
+
+.statValue {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.statLabel {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.badgeRow {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.badgeItem {
+  flex: 1;
+  @include flex-center;
+  flex-direction: column;
+  padding: $spacing-md 0;
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+}
+
+.badgeLocked {
+  opacity: 0.45;
+}
+
+.badgeEmoji {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.badgeName {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.tipCard {
+  position: relative;
+  margin: $spacing-lg $page-padding 0;
+  padding: $spacing-lg;
+  background: rgba(245, 166, 35, 0.08);
+  border-radius: $radius-lg;
+}
+
+.tipQuote {
+  font-size: $font-size-xl;
+  color: $color-cat-feeling;
+}
+
+.tipText {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+  color: $color-text-secondary;
+}

@@ -1,0 +1,238 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1;
+  padding-bottom: $spacing-xl;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.section {
+  padding: 0 $page-padding;
+  margin-top: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin-bottom: $spacing-sm;
+}
+
+.packGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.packCard {
+  width: calc((100% - #{$spacing-md}) / 2);
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-lg;
+  box-sizing: border-box;
+}
+
+.packCardActive {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.packHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.packEmoji {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.packTag {
+  font-size: $font-size-xs;
+  border-radius: $radius-xs;
+  padding: 4rpx 12rpx;
+}
+
+.packTagSoothe {
+  color: $color-primary-dark;
+  background: $color-bg-primary-soft;
+}
+
+.packTagCalm {
+  color: $color-accent-dark;
+  background: rgba(255, 159, 90, 0.14);
+}
+
+.packName {
+  margin-top: $spacing-sm;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.packDesc {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  line-height: $line-height-tight;
+  color: $color-text-tertiary;
+  @include text-ellipsis-multi(2);
+}
+
+.packDuration {
+  margin-top: $spacing-md;
+  font-size: $font-size-sm;
+  color: $color-primary-dark;
+}
+
+.tipCard {
+  position: relative;
+  padding: $spacing-lg;
+  background: rgba(245, 166, 35, 0.08);
+  border-radius: $radius-lg;
+}
+
+.tipQuote {
+  font-size: $font-size-xl;
+  color: $color-cat-feeling;
+}
+
+.tipText {
+  display: block;
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  line-height: $line-height-loose;
+  color: $color-text-secondary;
+}
+
+.practiceCard {
+  @include flex-center;
+  flex-direction: column;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.practicePack {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.breathWrap {
+  @include flex-center;
+  margin-top: $spacing-xl;
+}
+
+.breathCircle {
+  @include flex-center;
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: $radius-round;
+  background: rgba(43, 182, 196, 0.14);
+  transition: transform $transition-slow;
+}
+
+.breathInhale {
+  transform: scale(1.15);
+}
+
+.breathHold {
+  transform: scale(1.15);
+}
+
+.breathExhale {
+  transform: scale(0.85);
+}
+
+.breathPhase {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.breathCount {
+  margin-top: $spacing-lg;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.breathHint {
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.btnGhost {
+  @include button-reset;
+  margin-top: $spacing-lg;
+  width: 100%;
+  height: $button-height-sm;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-md;
+}
+
+.doneCard {
+  @include flex-center;
+  flex-direction: column;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-xl $spacing-lg;
+}
+
+.doneEmoji {
+  font-size: 96rpx;
+  line-height: 1;
+}
+
+.doneTitle {
+  margin-top: $spacing-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.doneMeta {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.btnPrimary {
+  @include button-reset;
+  width: 100%;
+  margin-top: $spacing-lg;
+  height: $button-height-md;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
