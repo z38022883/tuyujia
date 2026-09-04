@@ -52,3 +52,27 @@
 .trayWrap {
   padding: 0 $page-padding $spacing-sm;
 }
+
+// 头部右侧操作区（更多词 / 收藏）
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+  margin-left: $spacing-sm;
+}
+
+.btnGhost {
+  @include button-reset;
+  height: $button-height-sm;
+  padding: 0 $spacing-md;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  flex-shrink: 0;
+
+  &:active {
+    opacity: 0.85;
+  }
+}

@@ -92,3 +92,15 @@
   @include text-ellipsis;
   max-width: 90%;
 }
+
+// 重度词板：2 列超大图块（与 .cell 组合使用）
+.cellXl {
+  width: calc((100% - 16rpx) / 2);
+  margin-right: $spacing-sm;
+  margin-bottom: $spacing-sm;
+  min-width: 0;
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}

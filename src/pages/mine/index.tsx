@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { View, Text, Button, Slider, Switch, ScrollView } from '@tarojs/components';
+import Taro from '@tarojs/taro';
 import classnames from 'classnames';
 import { useAppStore } from '@/store/useAppStore';
+import { useProfileStore } from '@/store/useProfileStore';
 import { callFunction } from '@/services/cloud';
 import { storage, STORAGE_KEYS } from '@/services/storage';
 import { speak } from '@/services/tts';
+import { REHAB_LEVEL_MAP } from '@/data/rehab';
 import type { User } from '@/types';
 import styles from './index.module.scss';
 
@@ -15,6 +18,7 @@ const VOICES = [
 
 function MinePage() {
   const { settings, updateSettings } = useAppStore();
+  const severity = useProfileStore((s) => s.profile?.severity ?? null);
   const [user, setUser] = useState<User | null>(null);
   const [rate, setRate] = useState(settings.rate);
 
@@ -40,6 +44,10 @@ function MinePage() {
     );
   };
 
+  const goLevel = () => {
+    Taro.navigateTo({ url: '/pages/level/index' });
+  };
+
   return (
     <View className={styles.page}>
       <View className={styles.header}>
@@ -52,6 +60,25 @@ function MinePage() {
             <View className={styles.nickname}>{user?.nickname || '点击登录'}</View>
             <View className={styles.uid}>
               {user?.openid ? `ID: ${user.openid.slice(0, 10)}` : '未登录'}
+            </View>
+          </View>
+        </View>
+
+        <View className={styles.section}>
+          <View className={styles.sectionTitle}>患者程度</View>
+          <View className={styles.card}>
+            <View className={styles.row} onClick={goLevel}>
+              <Text className={styles.label}>沟通程度</Text>
+              <View className={styles.valueWrap}>
+                {severity ? (
+                  <View className={styles.sevTag}>
+                    <Text>{REHAB_LEVEL_MAP[severity].label}</Text>
+                  </View>
+                ) : (
+                  <Text className={styles.value}>未设置</Text>
+                )}
+                <Text className={styles.arrow}>›</Text>
+              </View>
             </View>
           </View>
         </View>

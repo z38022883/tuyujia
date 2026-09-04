@@ -18,9 +18,31 @@
   }
 }
 
+// 中度词板（4 列网格内更大图块）
+.cardLg {
+  min-height: 208rpx;
+  border-radius: $radius-lg;
+}
+
+// 重度词板（2 列超大图块）
+.cardXl {
+  min-height: 252rpx;
+  border-radius: $radius-lg;
+}
+
 .img {
   width: 96rpx;
   height: 96rpx;
+}
+
+.imgLg {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.imgXl {
+  width: 168rpx;
+  height: 168rpx;
 }
 
 .label {
@@ -30,4 +52,15 @@
   font-weight: $font-weight-medium;
   @include text-ellipsis;
   max-width: 90%;
+}
+
+.labelLg {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+}
+
+.labelXl {
+  margin-top: 10rpx;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
 }

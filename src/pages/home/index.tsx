@@ -1,9 +1,13 @@
 import { View, Image, Text } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import Taro, { useDidShow } from '@tarojs/taro';
 import expressIcon from '@/assets/tabbar/express-selected.png';
 import receiveIcon from '@/assets/tabbar/receive-selected.png';
 import favoritesIcon from '@/assets/tabbar/favorites-selected.png';
 import historyIcon from '@/assets/tabbar/history-selected.png';
+import { useProfileStore } from '@/store/useProfileStore';
+import { storage, STORAGE_KEYS } from '@/services/storage';
+import { REHAB_LEVEL_MAP } from '@/data/rehab';
+import type { PatientProfile } from '@/types/profile';
 import styles from './index.module.scss';
 
 interface HomeModule {
@@ -68,15 +72,43 @@ const MODULES: HomeModule[] = [
 ];
 
 function HomePage() {
+  const severity = useProfileStore((s) => s.profile?.severity ?? null);
+  const levelLabel = severity ? REHAB_LEVEL_MAP[severity].label : '';
+
+  // 首启门禁：无患者程度档案 → 先去程度选择页（直接读 storage，避免依赖 store 加载时序）
+  useDidShow(() => {
+    const profile = storage.get<PatientProfile | null>(
+      STORAGE_KEYS.patientProfile,
+      null
+    );
+    if (!profile) {
+      Taro.reLaunch({ url: '/pages/level/index' });
+    }
+  });
+
   const handleEnter = (url: string) => {
     Taro.navigateTo({ url });
+  };
+
+  const handleChangeLevel = () => {
+    Taro.navigateTo({ url: '/pages/level/index' });
   };
 
   return (
     <View className={styles.page}>
       <View className={styles.header}>
-        <View className={styles.title}>图语家</View>
-        <View className={styles.subtitle}>选择功能，开始沟通</View>
+        <View className={styles.headerRow}>
+          <View>
+            <View className={styles.title}>图语家</View>
+            <View className={styles.subtitle}>选择功能，开始沟通</View>
+          </View>
+          {severity && (
+            <View className={styles.levelBadge} onClick={handleChangeLevel}>
+              <Text className={styles.levelBadgeText}>程度 · {levelLabel}</Text>
+              <Text className={styles.levelBadgeArrow}>›</Text>
+            </View>
+          )}
+        </View>
       </View>
       <View className={styles.grid}>
         {MODULES.map((m) => (

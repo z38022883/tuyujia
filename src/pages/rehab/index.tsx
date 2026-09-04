@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import classnames from 'classnames';
 import { useRehabStore } from '@/store/useRehabStore';
+import { useProfileStore } from '@/store/useProfileStore';
 import { REHAB_LEVELS, buildRehabTasks, getRehabLevelMeta } from '@/data/rehab';
 import styles from './index.module.scss';
 
@@ -21,6 +22,12 @@ function RehabPage() {
   useEffect(() => {
     loadLocalData();
   }, [loadLocalData]);
+
+  // 训练等级与患者程度档案双向同步：改动同步更新全局档案（loadLocalData 内部已按档案取初始值）
+  const handlePickLevel = (key: typeof level) => {
+    setLevel(key);
+    useProfileStore.getState().setSeverity(key);
+  };
 
   const handleStart = () => {
     startSession();
@@ -53,14 +60,14 @@ function RehabPage() {
                     styles.levelChip,
                     level === m.key && styles.levelChipActive
                   )}
-                  onClick={() => setLevel(m.key)}
+                  onClick={() => handlePickLevel(m.key)}
                 >
                   {m.label}
                 </View>
               ))}
             </View>
             <Text className={styles.levelNote}>
-              当前为手动选择，分级评估上线后将自动匹配
+              与「沟通程度」档案同步：修改会同步更新全局程度，可在 我的→患者程度 随时调整
             </Text>
           </View>
         </View>

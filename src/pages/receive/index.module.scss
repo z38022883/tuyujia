@@ -389,3 +389,115 @@
   flex: 1;
   margin-top: 0;
 }
+
+// ===== 展示画面按程度裁剪（v0.2）=====
+
+// 中度：原文降为辅助小字
+.displayTextSm {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  margin: $spacing-md 0;
+}
+
+// 中度：内容词图卡更大
+.displayImgLg {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+// 重度：核心词超大图 + 可点听
+.severeWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: $spacing-lg;
+}
+
+.coreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 420rpx;
+  padding: $spacing-xl $spacing-lg;
+  background: $color-bg-hover;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-card;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.coreImg {
+  width: 280rpx;
+  height: 280rpx;
+}
+
+.coreLabel {
+  margin-top: $spacing-md;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+// 重度：其余内容词缩略横排
+.thumbRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+.thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 120rpx;
+  background: $color-bg-hover;
+  border-radius: $radius-lg;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+}
+
+.thumbImg {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+// 重度：是/不是 回答大按钮
+.answerRow {
+  display: flex;
+  gap: $spacing-lg;
+  margin-top: $spacing-xl;
+  width: 100%;
+}
+
+.btnAnswer {
+  @include button-reset;
+  flex: 1;
+  height: 140rpx;
+  border-radius: $radius-xl;
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+
+  &:active {
+    opacity: 0.85;
+    transform: scale(0.98);
+  }
+}
+
+.btnAnswerYes {
+  background: linear-gradient(135deg, #34c759 0%, #30b64f 100%);
+}
+
+.btnAnswerNo {
+  background: linear-gradient(135deg, #ff5b5b 0%, #f04848 100%);
+}

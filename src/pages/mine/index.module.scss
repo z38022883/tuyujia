@@ -87,6 +87,10 @@
   align-items: center;
   justify-content: space-between;
   padding: $spacing-md 0;
+
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 .label {
@@ -97,6 +101,24 @@
 .value {
   font-size: $font-size-sm;
   color: $color-text-tertiary;
+}
+
+.valueWrap {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.sevTag {
+  display: flex;
+  align-items: center;
+  height: 44rpx;
+  padding: 0 $spacing-md;
+  border-radius: $radius-button;
+  background: rgba(43, 182, 196, 0.12);
+  font-size: $font-size-xs;
+  color: $color-primary-dark;
+  font-weight: $font-weight-semibold;
 }
 
 .arrow {

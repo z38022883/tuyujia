@@ -2,8 +2,10 @@ import { useRef, useState } from 'react';
 import { View, Text, Textarea, Button, ScrollView, Image } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useAppStore } from '@/store/useAppStore';
+import { useProfileStore } from '@/store/useProfileStore';
 import { speak } from '@/services/tts';
 import { matchTextToImages, type MatchedToken } from '@/utils/text-to-image-matcher';
+import { pickCoreItem } from '@/utils/severity-display';
 import { getPictogramsByCategory, getAllPictograms } from '@/data';
 import type { PictogramEntry } from '@/types';
 import styles from './index.module.scss';
@@ -38,14 +40,19 @@ interface EditableItem {
   matchType: MatchedToken['matchType'];
 }
 
+type MatchedItem = EditableItem & { pictogram: PictogramEntry };
+
 function ReceivePage() {
   const { settings, recordReceiveExpression } = useAppStore();
+  const severity = useProfileStore((s) => s.profile?.severity ?? null);
   const [phase, setPhase] = useState<Phase>('input');
   const [inputText, setInputText] = useState('');
   const [items, setItems] = useState<EditableItem[]>([]);
   const [showDisplay, setShowDisplay] = useState(false);
   const [swapIndex, setSwapIndex] = useState<number | null>(null);
   const uidRef = useRef(0);
+
+  const level = severity ?? 'mild';
 
   async function doMatch(text: string) {
     const trimmed = text.trim();
@@ -94,7 +101,7 @@ function ReceivePage() {
   }
 
   function handleDone() {
-    const matched = items.filter((i): i is EditableItem & { pictogram: PictogramEntry } => i.pictogram !== null);
+    const matched = items.filter((i): i is MatchedItem => i.pictogram !== null);
     recordReceiveExpression(inputText, matched.map((i) => i.pictogram));
     Taro.showToast({ title: '已记录', icon: 'success' });
     setShowDisplay(false);
@@ -133,6 +140,17 @@ function ReceivePage() {
     );
     setSwapIndex(null);
   }
+
+  // ===== 展示给患者的画面（按程度裁剪）=====
+  const matchedItems = items.filter((i): i is MatchedItem => i.pictogram !== null);
+  const coreItem = level === 'severe' ? pickCoreItem(matchedItems) : null;
+  const otherItems = coreItem
+    ? matchedItems.filter((i) => i.uid !== coreItem.uid)
+    : matchedItems;
+
+  const speakWord = (word: string) => {
+    speak(word, settings).catch((err) => console.error('[Receive] speak word:', err));
+  };
 
   if (phase === 'input') {
     return (
@@ -264,17 +282,84 @@ function ReceivePage() {
       {showDisplay && (
         <View className={styles.displayOverlay}>
           <ScrollView scrollY className={styles.displayScroll}>
-            <View className={styles.displayText}>{inputText}</View>
-            <View className={styles.displaySequence}>
-              {items
-                .filter((i) => i.pictogram)
-                .map((item) => (
-                  <View key={item.uid} className={styles.displayCard}>
-                    <Image className={styles.displayImg} src={item.pictogram!.imageUrl} mode="aspectFit" />
-                    <Text className={styles.displayLabel}>{item.pictogram!.labels.zh[0]}</Text>
+            {/* 轻/中度：显示原文（重度不显示文字，仅图片+回答钮） */}
+            {level !== 'severe' && (
+              <View
+                className={
+                  level === 'moderate'
+                    ? `${styles.displayText} ${styles.displayTextSm}`
+                    : styles.displayText
+                }
+              >
+                {inputText}
+              </View>
+            )}
+
+            {level === 'severe' ? (
+              <View className={styles.severeWrap}>
+                {coreItem ? (
+                  <View
+                    className={styles.coreCard}
+                    onClick={() => speakWord(coreItem.pictogram.labels.zh[0])}
+                  >
+                    <Image className={styles.coreImg} src={coreItem.pictogram.imageUrl} mode="aspectFit" />
+                    <Text className={styles.coreLabel}>{coreItem.pictogram.labels.zh[0]}</Text>
+                  </View>
+                ) : (
+                  <View className={styles.empty}>没有匹配到图符，试试其它说法</View>
+                )}
+
+                {otherItems.length > 0 && (
+                  <View className={styles.thumbRow}>
+                    {otherItems.map((item) => (
+                      <View
+                        key={item.uid}
+                        className={styles.thumb}
+                        onClick={() => speakWord(item.pictogram.labels.zh[0])}
+                      >
+                        <Image className={styles.thumbImg} src={item.pictogram.imageUrl} mode="aspectFit" />
+                      </View>
+                    ))}
+                  </View>
+                )}
+
+                <View className={styles.answerRow}>
+                  <View
+                    className={`${styles.btnAnswer} ${styles.btnAnswerYes}`}
+                    onClick={() => speakWord('是')}
+                  >
+                    是
+                  </View>
+                  <View
+                    className={`${styles.btnAnswer} ${styles.btnAnswerNo}`}
+                    onClick={() => speakWord('不是')}
+                  >
+                    不是
+                  </View>
+                </View>
+              </View>
+            ) : (
+              <View className={styles.displaySequence}>
+                {matchedItems.map((item) => (
+                  <View
+                    key={item.uid}
+                    className={styles.displayCard}
+                    onClick={
+                      level === 'moderate'
+                        ? () => speakWord(item.pictogram.labels.zh[0])
+                        : undefined
+                    }
+                  >
+                    <Image
+                      className={level === 'moderate' ? styles.displayImgLg : styles.displayImg}
+                      src={item.pictogram.imageUrl}
+                      mode="aspectFit"
+                    />
+                    <Text className={styles.displayLabel}>{item.pictogram.labels.zh[0]}</Text>
                   </View>
                 ))}
-            </View>
+              </View>
+            )}
           </ScrollView>
           <View className={styles.displayActions}>
             <Button

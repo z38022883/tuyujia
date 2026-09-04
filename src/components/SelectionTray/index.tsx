@@ -3,14 +3,32 @@ import classnames from 'classnames';
 import { useAppStore } from '@/store/useAppStore';
 import styles from './index.module.scss';
 
-function SelectionTray() {
+interface Props {
+  /**
+   * 简易模式（中度默认）：点「说」按句条顺序直接连读，跳过候选句选择；
+   * false = 完整流程（轻度 / 完整图库模式）：生成候选句。
+   */
+  simple?: boolean;
+}
+
+function SelectionTray({ simple = false }: Props) {
   const selectedPictograms = useAppStore((s) => s.selectedPictograms);
   const removePictogram = useAppStore((s) => s.removePictogram);
   const clearSelection = useAppStore((s) => s.clearSelection);
   const generateAndShowCandidates = useAppStore((s) => s.generateAndShowCandidates);
+  const speakSelectionDirect = useAppStore((s) => s.speakSelectionDirect);
   const isGenerating = useAppStore((s) => s.isGenerating);
 
   const empty = selectedPictograms.length === 0;
+  const busy = !simple && isGenerating;
+
+  const handleSpeak = () => {
+    if (simple) {
+      speakSelectionDirect();
+    } else {
+      generateAndShowCandidates();
+    }
+  };
 
   return (
     <View className={styles.bar}>
@@ -49,11 +67,11 @@ function SelectionTray() {
           清空
         </Button>
         <Button
-          className={classnames(styles.btnSpeak, isGenerating && styles.generating)}
-          onClick={generateAndShowCandidates}
-          disabled={empty || isGenerating}
+          className={classnames(styles.btnSpeak, busy && styles.generating)}
+          onClick={handleSpeak}
+          disabled={empty || busy}
         >
-          {isGenerating ? '生成中' : '说'}
+          {busy ? '生成中' : '说'}
         </Button>
       </View>
     </View>

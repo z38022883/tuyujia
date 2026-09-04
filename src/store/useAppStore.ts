@@ -54,6 +54,8 @@ interface AppState {
 
   // === Actions: 候选句 / 朗读 ===
   generateAndShowCandidates: () => Promise<void>
+  /** 简易表达（中度默认）：按句条顺序直接连读，免候选句选择 */
+  speakSelectionDirect: () => Promise<void>
   pickCandidate: (sentence: string) => void
   speakSentence: (sentence: string, pictogramIds?: string[]) => Promise<void>
   stopPlayback: () => void
@@ -181,6 +183,14 @@ export const useAppStore = create<AppState>((set, get) => ({
       console.error('[Store] generate candidates failed:', err)
       set({ isGenerating: false })
     }
+  },
+
+  /** 简易表达（中度默认）：按句条顺序直接连读，免候选句选择 */
+  speakSelectionDirect: async () => {
+    const { selectedPictograms } = get()
+    if (selectedPictograms.length === 0) return
+    const sentence = selectedPictograms.map((p) => p.labels.zh[0]).join('')
+    await get().speakSentence(sentence)
   },
 
   pickCandidate: (sentence) => {

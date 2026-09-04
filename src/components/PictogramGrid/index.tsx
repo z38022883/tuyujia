@@ -1,12 +1,18 @@
 import { useMemo } from 'react'
 import { View, Text, ScrollView } from '@tarojs/components'
 import { useAppStore } from '@/store/useAppStore'
+import { useProfileStore } from '@/store/useProfileStore'
 import {
   resolveGridItems,
   getRecentPictograms,
   getCategory,
   type GridItem
 } from '@/data'
+import {
+  resolveSevereWords,
+  resolveModerateWords,
+  getSeverePhrase
+} from '@/data/boards'
 import type { PictogramEntry } from '@/types'
 import PictogramCard from '@/components/PictogramCard'
 import FolderTile from '@/components/FolderTile'
@@ -36,30 +42,55 @@ const CATEGORY_COLORS: Record<string, string> = {
 /** root 板上图符使用的强调色（对应原版 isRoot 时的 #d97706） */
 const ROOT_COLOR = '#d97706'
 
+interface Props {
+  /**
+   * true = 完整图库模式（中度/重度的「更多词」入口进入）：
+   * 不受程度裁剪，恢复全量词板与文件夹导航。
+   */
+  full?: boolean
+}
+
 /**
- * 主网格组件（对应原版 src/components/PictogramGrid/PictogramGrid.tsx）。
+ * 主网格组件。
  *
- * 负责：
- * - 顶部标题栏（当前分类名）
- * - 非根分类时左侧 HierarchyNavRail（首页/返回）
- * - 网格渲染：图符 / 分类文件夹 / 常用入口
- * - 空状态
+ * 按患者程度（轻度/中度/重度）裁剪 root 词板内容与图块尺寸：
+ * - 轻度：现状全量板（策展词 + 文件夹 + 常用）；
+ * - 中度：16 个常用词大卡（「更多词」进完整图库）；
+ * - 重度：6 个超大词，点一下直接朗读预设整句（无文件夹）。
+ * 非 root（分类内）与 full 模式下保持原逻辑。
  */
-function PictogramGrid() {
+function PictogramGrid({ full = false }: Props) {
   const activeCategoryId = useAppStore((s) => s.activeCategoryId)
   const categoryPath = useAppStore((s) => s.categoryPath)
   const openCategory = useAppStore((s) => s.openCategory)
   const goBackCategory = useAppStore((s) => s.goBackCategory)
   const goRootCategory = useAppStore((s) => s.goRootCategory)
   const addPictogram = useAppStore((s) => s.addPictogram)
+  const speakSentence = useAppStore((s) => s.speakSentence)
   const setShowSavedPhrases = useAppStore((s) => s.setShowSavedPhrases)
+  const severity = useProfileStore((s) => s.profile?.severity ?? null)
 
   const isRoot = activeCategoryId === 'root'
   const isRecent = activeCategoryId === 'recent'
+  // 程度适配仅作用于 首页板(root) 且非完整图库模式
+  const adaptive = !full && isRoot && severity !== null && severity !== 'mild'
+  const adaptiveWords = adaptive
+    ? severity === 'severe'
+      ? resolveSevereWords()
+      : resolveModerateWords()
+    : []
+
   const targetId = isRoot ? 'home' : activeCategoryId
   const activeCategory = getCategory(targetId)
 
   const items = useMemo<GridItem[]>(() => {
+    if (adaptive) {
+      return adaptiveWords.map((p, index) => ({
+        type: 'pictogram' as const,
+        key: `p:${p.id}:${index}`,
+        pictogram: p
+      }))
+    }
     if (isRecent) {
       return getRecentPictograms(24).map((p) => ({
         type: 'pictogram' as const,
@@ -68,17 +99,40 @@ function PictogramGrid() {
       }))
     }
     return resolveGridItems(activeCategoryId)
-  }, [activeCategoryId, isRecent])
+  }, [adaptive, adaptiveWords, activeCategoryId, isRecent])
 
   const color = isRoot ? ROOT_COLOR : (CATEGORY_COLORS[activeCategoryId] ?? '#4A90D9')
-  const title = isRoot
-    ? '首页'
-    : isRecent
-      ? '最近'
-      : (activeCategory?.name ?? '未找到')
+  const title = adaptive
+    ? severity === 'severe'
+      ? '最常用词'
+      : '常用词'
+    : isRoot
+      ? '首页'
+      : isRecent
+        ? '最近'
+        : (activeCategory?.name ?? '未找到')
   const canGoBack = categoryPath.length > 0
 
+  // 词板图块尺寸档：重度超大(xl) / 中度大(lg) / 其余常规
+  const tileSize = adaptive
+    ? severity === 'severe'
+      ? 'xl'
+      : 'lg'
+    : 'default'
+  const cellClass =
+    adaptive && severity === 'severe'
+      ? `${styles.cell} ${styles.cellXl}`
+      : styles.cell
+
   function handleSelect(p: PictogramEntry) {
+    // 重度简易词板：点一下 = 朗读预设整句（不进入句条）
+    if (adaptive && severity === 'severe') {
+      const phrase = getSeverePhrase(p.id)
+      if (phrase) {
+        speakSentence(phrase, [p.id])
+        return
+      }
+    }
     addPictogram(p)
   }
 
@@ -103,10 +157,11 @@ function PictogramGrid() {
             {items.map((item) => {
               if (item.type === 'pictogram') {
                 return (
-                  <View key={item.key} className={styles.cell}>
+                  <View key={item.key} className={cellClass}>
                     <PictogramCard
                       pictogram={item.pictogram}
                       color={color}
+                      size={tileSize}
                       onClick={handleSelect}
                     />
                   </View>

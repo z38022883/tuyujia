@@ -1,9 +1,10 @@
 // ===== 康复训练状态管理（框架 v0.1）=====
-// 等级手动选择（后续接入分级模块后改为读取 AssessmentResult）；
-// 训练会话本地持久化，云端同步待 Phase 2。
+// 训练等级来源：患者程度档案（轻/中/重自选，v0.2 方案）；
+// 无档案时回退本地手动值；后续接入分级评估后由 AssessmentResult 覆盖档案。
 
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
+import { useProfileStore } from '@/store/useProfileStore'
 import type { RehabLevel, RehabSession, RehabTaskRecord } from '@/types/rehab'
 import { buildRehabTasks } from '@/data/rehab'
 
@@ -35,6 +36,7 @@ export const useRehabStore = create<RehabState>((set, get) => ({
 
   setLevel: (level) => {
     set({ level })
+    // 保留旧 key 作为无档案时的回退（档案存在时以档案为准）
     storage.set(STORAGE_KEYS.rehabLevel, level)
   },
 
@@ -88,7 +90,10 @@ export const useRehabStore = create<RehabState>((set, get) => ({
   },
 
   loadLocalData: () => {
-    const level = storage.get<RehabLevel>(STORAGE_KEYS.rehabLevel, 'moderate')
+    // 程度档案（自选 轻/中/重）是等级来源；无档案时回退本地手动值
+    const profile = useProfileStore.getState().profile
+    const fallback = storage.get<RehabLevel>(STORAGE_KEYS.rehabLevel, 'moderate')
+    const level = profile ? profile.severity : fallback
     const sessions = storage.get<RehabSession[]>(STORAGE_KEYS.rehabSessions, [])
     const activeSession = storage.get<RehabSession | null>(
       STORAGE_KEYS.rehabActiveSession,

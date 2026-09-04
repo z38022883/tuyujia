@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { useAppStore } from '@/store/useAppStore';
 import { useRehabStore } from '@/store/useRehabStore';
+import { useProfileStore } from '@/store/useProfileStore';
 import './app.scss';
 
 function App(props) {
@@ -16,7 +17,8 @@ function App(props) {
         console.error('[App] cloud init failed:', err);
       }
     }
-    // 从本地存储恢复数据（设置 / 表达 / 收藏 / 康复训练）
+    // 从本地存储恢复数据（患者程度档案 / 设置 / 表达 / 收藏 / 康复训练）
+    useProfileStore.getState().load();
     useAppStore.getState().loadLocalData();
     useRehabStore.getState().loadLocalData();
   }, []);

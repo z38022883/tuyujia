@@ -37,5 +37,6 @@ export const STORAGE_KEYS = {
   rehabSessions: 'tuyujia_rehab_sessions',
   rehabActiveSession: 'tuyujia_rehab_active_session',
   tcmCheckIns: 'tuyujia_tcm_check_ins',
-  tcmBadges: 'tuyujia_tcm_badges'
+  tcmBadges: 'tuyujia_tcm_badges',
+  patientProfile: 'tuyujia_patient_profile'
 } as const;
