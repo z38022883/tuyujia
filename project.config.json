@@ -3,7 +3,7 @@
   "cloudfunctionRoot": "cloudfunctions/",
   "projectname": "tuyujia",
   "description": "图语家 AAC 辅助沟通小程序",
-  "appid": "wx6211fafdd991fdde",
+  "appid": "wx533b22937b564ee8",
   "setting": {
     "urlCheck": true,
     "es6": false,
