@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "domain": "receive",
+  "target": "出图质量：以内容词召回为主，matcher matchRate 仅作参考",
+  "notes": [
+    "golden 集用于回归接收模块分词与匹配。每一条记录真实接收场景句子 → 期望的图符序列。",
+    "expected 项按原文出现顺序排列；每项标注 role：content=内容词（计入召回分母），function=功能词（语气助词/情态词，无图合理）。",
+    "content 项的 pictogramId 为期望命中的图符 id；若为 null 表示图库无对应图（真实缺口样本，用于暴露词表覆盖不足）。",
+    "评估：内容词召回 = 命中期望图符的内容词数 / 有期望图符的内容词总数。",
+    "更新图库后需重新运行 scripts/golden/build-lexicon-index.cjs 刷新词表参考。"
+  ],
+  "cases": [
+    {
+      "id": "rec-001",
+      "sentence": "今天吃什么",
+      "expected": [
+        { "segment": "今天", "word": "今天", "pictogramId": "p_today", "role": "content" },
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "什么", "word": "什么", "pictogramId": "p_what", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-002",
+      "sentence": "需要喝水吗",
+      "expected": [
+        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
+        { "segment": "水", "word": "水", "pictogramId": "p_water", "role": "content" },
+        { "segment": "需要", "word": "需要", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-003",
+      "sentence": "需要去厕所吗",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "厕所", "word": "厕所", "pictogramId": "p_toilet", "role": "content" },
+        { "segment": "需要", "word": "需要", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-004",
+      "sentence": "需要吃药吗",
+      "expected": [
+        { "segment": "药", "word": "药", "pictogramId": "p_medicine", "role": "content" },
+        { "segment": "需要", "word": "需要", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-005",
+      "sentence": "你头晕吗",
+      "expected": [
+        { "segment": "头晕", "word": "头晕", "pictogramId": "p_dizzy", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-006",
+      "sentence": "你发烧了吗",
+      "expected": [
+        { "segment": "发烧", "word": "发烧", "pictogramId": "p_fever", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-007",
+      "sentence": "感觉恶心吗",
+      "expected": [
+        { "segment": "恶心", "word": "恶心", "pictogramId": "p_nausea", "role": "content" },
+        { "segment": "感觉", "word": "感觉", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-008",
+      "sentence": "你头疼吗",
+      "expected": [
+        { "segment": "头", "word": "头", "pictogramId": "p_head", "role": "content" },
+        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-009",
+      "sentence": "肚子疼吗",
+      "expected": [
+        { "segment": "肚子", "word": "肚子", "pictogramId": "p_belly", "role": "content" },
+        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-010",
+      "sentence": "你不舒服吗",
+      "expected": [
+        { "segment": "不舒服", "word": "不舒服", "pictogramId": "p_unwell", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-011",
+      "sentence": "你难过吗",
+      "expected": [
+        { "segment": "难过", "word": "难过", "pictogramId": "p_upset", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-012",
+      "sentence": "你害怕吗",
+      "expected": [
+        { "segment": "害怕", "word": "害怕", "pictogramId": "p_afraid", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-013",
+      "sentence": "你不开心吗",
+      "expected": [
+        { "segment": "不开心", "word": "不开心", "pictogramId": "p_sad", "role": "content", "altIds": ["p_upset"] },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-014",
+      "sentence": "你睡了吗",
+      "expected": [
+        { "segment": "睡", "word": "睡", "pictogramId": "p_sleep", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-015",
+      "sentence": "起床吧",
+      "expected": [
+        { "segment": "起床", "word": "起床", "pictogramId": "p_wake_up", "role": "content" },
+        { "segment": "吧", "word": "吧", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-016",
+      "sentence": "该吃饭了",
+      "expected": [
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "饭", "word": "饭", "pictogramId": "p_rice", "role": "content" },
+        { "segment": "该", "word": "该", "pictogramId": null, "role": "function" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-017",
+      "sentence": "把手抬起来",
+      "expected": [
+        { "segment": "手", "word": "手", "pictogramId": "p_hand", "role": "content" },
+        { "segment": "抬", "word": "抬", "pictogramId": null, "role": "content", "note": "图库无'抬手'对应图：真实词表缺口样本，用于暴露覆盖不足" },
+        { "segment": "把", "word": "把", "pictogramId": null, "role": "function" },
+        { "segment": "起来", "word": "起来", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-018",
+      "sentence": "坐下来",
+      "expected": [
+        { "segment": "坐", "word": "坐", "pictogramId": "p_sit", "role": "content" },
+        { "segment": "下来", "word": "下来", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-019",
+      "sentence": "我们要去医院",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "医院", "word": "医院", "pictogramId": "p_hospital", "role": "content" },
+        { "segment": "我们", "word": "我们", "pictogramId": null, "role": "function", "note": "图库无'我们'，日常语中常以'我'(p_i)代指" }
+      ]
+    },
+    {
+      "id": "rec-020",
+      "sentence": "医生来看你了",
+      "expected": [
+        { "segment": "医生", "word": "医生", "pictogramId": "p_doctor", "role": "content" },
+        { "segment": "来", "word": "来", "pictogramId": "p_come", "role": "content" },
+        { "segment": "看", "word": "看", "pictogramId": "p_see", "role": "content" },
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    }
+  ]
+}

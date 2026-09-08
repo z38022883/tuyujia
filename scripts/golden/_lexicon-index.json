@@ -1,0 +1,4749 @@
+{
+  "count": 676,
+  "index": {
+    "爱": {
+      "ids": [
+        "p_love"
+      ],
+      "label": "喜欢",
+      "cat": "emotions"
+    },
+    "爱人": {
+      "ids": [
+        "p_husband",
+        "p_wife"
+      ],
+      "label": "老公/丈夫",
+      "cat": "people"
+    },
+    "安静": {
+      "ids": [
+        "o_quiet"
+      ],
+      "label": "安静",
+      "cat": "objects"
+    },
+    "安心": {
+      "ids": [
+        "e_relieved"
+      ],
+      "label": "放心",
+      "cat": "emotions"
+    },
+    "巴士": {
+      "ids": [
+        "pl_bus"
+      ],
+      "label": "公交车",
+      "cat": "places"
+    },
+    "爸": {
+      "ids": [
+        "p_father"
+      ],
+      "label": "爸爸",
+      "cat": "people"
+    },
+    "爸爸": {
+      "ids": [
+        "p_father"
+      ],
+      "label": "爸爸",
+      "cat": "people"
+    },
+    "白饭": {
+      "ids": [
+        "p_rice"
+      ],
+      "label": "饭",
+      "cat": "food"
+    },
+    "帮": {
+      "ids": [
+        "p_help"
+      ],
+      "label": "帮助",
+      "cat": "actions"
+    },
+    "帮帮我": {
+      "ids": [
+        "p_help_me"
+      ],
+      "label": "帮帮我",
+      "cat": "quickchat"
+    },
+    "帮忙": {
+      "ids": [
+        "p_help"
+      ],
+      "label": "帮助",
+      "cat": "actions"
+    },
+    "帮我": {
+      "ids": [
+        "p_help_me"
+      ],
+      "label": "帮帮我",
+      "cat": "quickchat"
+    },
+    "帮我说": {
+      "ids": [
+        "r_help_find_word"
+      ],
+      "label": "帮我找词",
+      "cat": "repair"
+    },
+    "帮我找词": {
+      "ids": [
+        "r_help_find_word"
+      ],
+      "label": "帮我找词",
+      "cat": "repair"
+    },
+    "帮助": {
+      "ids": [
+        "p_help"
+      ],
+      "label": "帮助",
+      "cat": "actions"
+    },
+    "包": {
+      "ids": [
+        "p_bag"
+      ],
+      "label": "包",
+      "cat": "objects"
+    },
+    "保持安静": {
+      "ids": [
+        "o_quiet"
+      ],
+      "label": "安静",
+      "cat": "objects"
+    },
+    "杯水": {
+      "ids": [
+        "p_water"
+      ],
+      "label": "水",
+      "cat": "food"
+    },
+    "杯子": {
+      "ids": [
+        "p_cup"
+      ],
+      "label": "杯子",
+      "cat": "objects"
+    },
+    "悲伤": {
+      "ids": [
+        "p_sad"
+      ],
+      "label": "伤心",
+      "cat": "emotions"
+    },
+    "背": {
+      "ids": [
+        "p_back_body"
+      ],
+      "label": "背部",
+      "cat": "medical"
+    },
+    "背包": {
+      "ids": [
+        "p_bag"
+      ],
+      "label": "包",
+      "cat": "objects"
+    },
+    "背部": {
+      "ids": [
+        "p_back_body"
+      ],
+      "label": "背部",
+      "cat": "medical"
+    },
+    "被褥": {
+      "ids": [
+        "p_blanket"
+      ],
+      "label": "被子",
+      "cat": "objects"
+    },
+    "被子": {
+      "ids": [
+        "p_blanket"
+      ],
+      "label": "被子",
+      "cat": "objects"
+    },
+    "本人": {
+      "ids": [
+        "p_i"
+      ],
+      "label": "我",
+      "cat": "actions"
+    },
+    "笔": {
+      "ids": [
+        "p_pen"
+      ],
+      "label": "笔",
+      "cat": "objects"
+    },
+    "笔记本": {
+      "ids": [
+        "p_computer"
+      ],
+      "label": "电脑",
+      "cat": "objects"
+    },
+    "臂": {
+      "ids": [
+        "p_arm_body"
+      ],
+      "label": "手臂",
+      "cat": "medical"
+    },
+    "别担心": {
+      "ids": [
+        "e_relieved"
+      ],
+      "label": "放心",
+      "cat": "emotions"
+    },
+    "冰淇淋": {
+      "ids": [
+        "p_ice_cream"
+      ],
+      "label": "冰淇淋",
+      "cat": "food"
+    },
+    "病了": {
+      "ids": [
+        "p_sick"
+      ],
+      "label": "生病",
+      "cat": "medical"
+    },
+    "脖子": {
+      "ids": [
+        "p_neck"
+      ],
+      "label": "脖子",
+      "cat": "medical"
+    },
+    "不": {
+      "ids": [
+        "p_no"
+      ],
+      "label": "不",
+      "cat": "actions"
+    },
+    "不安": {
+      "ids": [
+        "p_nervous"
+      ],
+      "label": "紧张",
+      "cat": "emotions"
+    },
+    "不对": {
+      "ids": [
+        "p_wrong"
+      ],
+      "label": "不对",
+      "cat": "repair"
+    },
+    "不多": {
+      "ids": [
+        "d_few"
+      ],
+      "label": "少",
+      "cat": "descriptors"
+    },
+    "不干净": {
+      "ids": [
+        "hy_dirty"
+      ],
+      "label": "脏了",
+      "cat": "daily"
+    },
+    "不好": {
+      "ids": [
+        "p_bad"
+      ],
+      "label": "不好",
+      "cat": "actions"
+    },
+    "不急": {
+      "ids": [
+        "r_no_rush"
+      ],
+      "label": "先别急",
+      "cat": "repair"
+    },
+    "不开心": {
+      "ids": [
+        "p_sad",
+        "p_upset"
+      ],
+      "label": "伤心",
+      "cat": "emotions"
+    },
+    "不可以": {
+      "ids": [
+        "p_not_allowed"
+      ],
+      "label": "不可以",
+      "cat": "actions"
+    },
+    "不能": {
+      "ids": [
+        "p_not_allowed"
+      ],
+      "label": "不可以",
+      "cat": "actions"
+    },
+    "不是": {
+      "ids": [
+        "p_not"
+      ],
+      "label": "不是",
+      "cat": "quickchat"
+    },
+    "不是的": {
+      "ids": [
+        "p_not"
+      ],
+      "label": "不是",
+      "cat": "quickchat"
+    },
+    "不是这个": {
+      "ids": [
+        "p_not_this"
+      ],
+      "label": "不是这个",
+      "cat": "repair"
+    },
+    "不舒服": {
+      "ids": [
+        "p_unwell"
+      ],
+      "label": "不舒服",
+      "cat": "medical"
+    },
+    "不同": {
+      "ids": [
+        "p_different"
+      ],
+      "label": "不一样",
+      "cat": "repair"
+    },
+    "不喜欢": {
+      "ids": [
+        "p_dislike"
+      ],
+      "label": "不喜欢",
+      "cat": "emotions"
+    },
+    "不想": {
+      "ids": [
+        "p_dont_want"
+      ],
+      "label": "不要",
+      "cat": "actions"
+    },
+    "不行": {
+      "ids": [
+        "p_bad"
+      ],
+      "label": "不好",
+      "cat": "actions"
+    },
+    "不需要": {
+      "ids": [
+        "p_dont_want"
+      ],
+      "label": "不要",
+      "cat": "actions"
+    },
+    "不要": {
+      "ids": [
+        "p_dont_want"
+      ],
+      "label": "不要",
+      "cat": "actions"
+    },
+    "不一样": {
+      "ids": [
+        "p_different"
+      ],
+      "label": "不一样",
+      "cat": "repair"
+    },
+    "不用": {
+      "ids": [
+        "p_dont_want"
+      ],
+      "label": "不要",
+      "cat": "actions"
+    },
+    "不知道": {
+      "ids": [
+        "p_i_dont_get_it"
+      ],
+      "label": "我不知道",
+      "cat": "quickchat"
+    },
+    "擦脸": {
+      "ids": [
+        "p_wipe_face"
+      ],
+      "label": "擦脸",
+      "cat": "daily"
+    },
+    "菜": {
+      "ids": [
+        "p_vegetable"
+      ],
+      "label": "菜",
+      "cat": "food"
+    },
+    "餐巾纸": {
+      "ids": [
+        "p_tissue"
+      ],
+      "label": "纸巾",
+      "cat": "objects"
+    },
+    "餐桌": {
+      "ids": [
+        "p_table"
+      ],
+      "label": "桌子",
+      "cat": "objects"
+    },
+    "厕所": {
+      "ids": [
+        "p_toilet"
+      ],
+      "label": "厕所",
+      "cat": "quickchat"
+    },
+    "茶": {
+      "ids": [
+        "p_tea"
+      ],
+      "label": "茶",
+      "cat": "food"
+    },
+    "茶杯": {
+      "ids": [
+        "p_cup"
+      ],
+      "label": "杯子",
+      "cat": "objects"
+    },
+    "差不多": {
+      "ids": [
+        "r_close_enough"
+      ],
+      "label": "差不多",
+      "cat": "repair"
+    },
+    "超市": {
+      "ids": [
+        "p_supermarket"
+      ],
+      "label": "超市",
+      "cat": "places"
+    },
+    "吵": {
+      "ids": [
+        "o_noisy"
+      ],
+      "label": "吵",
+      "cat": "objects"
+    },
+    "吵闹": {
+      "ids": [
+        "o_noisy"
+      ],
+      "label": "吵",
+      "cat": "objects"
+    },
+    "车": {
+      "ids": [
+        "p_car"
+      ],
+      "label": "车",
+      "cat": "objects"
+    },
+    "吃": {
+      "ids": [
+        "p_eat"
+      ],
+      "label": "吃",
+      "cat": "actions"
+    },
+    "吃饭": {
+      "ids": [
+        "p_eat"
+      ],
+      "label": "吃",
+      "cat": "actions"
+    },
+    "吃晚饭": {
+      "ids": [
+        "p_eat_dinner"
+      ],
+      "label": "吃晚饭",
+      "cat": "food"
+    },
+    "吃药": {
+      "ids": [
+        "p_take_medicine"
+      ],
+      "label": "吃药",
+      "cat": "medical"
+    },
+    "吃早餐": {
+      "ids": [
+        "p_eat_breakfast"
+      ],
+      "label": "吃早餐",
+      "cat": "food"
+    },
+    "充电器": {
+      "ids": [
+        "o_charger"
+      ],
+      "label": "充电器",
+      "cat": "objects"
+    },
+    "充电线": {
+      "ids": [
+        "o_charger"
+      ],
+      "label": "充电器",
+      "cat": "objects"
+    },
+    "冲凉": {
+      "ids": [
+        "p_shower"
+      ],
+      "label": "洗澡",
+      "cat": "daily"
+    },
+    "出门": {
+      "ids": [
+        "a_go_out"
+      ],
+      "label": "出门",
+      "cat": "activities"
+    },
+    "出去": {
+      "ids": [
+        "p_go",
+        "a_go_out"
+      ],
+      "label": "去",
+      "cat": "actions"
+    },
+    "出血": {
+      "ids": [
+        "p_bleed"
+      ],
+      "label": "出血",
+      "cat": "medical"
+    },
+    "出租车": {
+      "ids": [
+        "pl_taxi"
+      ],
+      "label": "出租车",
+      "cat": "places"
+    },
+    "厨房": {
+      "ids": [
+        "p_kitchen"
+      ],
+      "label": "厨房",
+      "cat": "places"
+    },
+    "穿": {
+      "ids": [
+        "a_wear"
+      ],
+      "label": "穿衣",
+      "cat": "activities"
+    },
+    "穿上": {
+      "ids": [
+        "a_wear"
+      ],
+      "label": "穿衣",
+      "cat": "activities"
+    },
+    "穿衣": {
+      "ids": [
+        "a_wear"
+      ],
+      "label": "穿衣",
+      "cat": "activities"
+    },
+    "喘不过气": {
+      "ids": [
+        "p_breathe"
+      ],
+      "label": "呼吸困难",
+      "cat": "medical"
+    },
+    "喘气": {
+      "ids": [
+        "m_breathe"
+      ],
+      "label": "呼吸",
+      "cat": "medical"
+    },
+    "窗": {
+      "ids": [
+        "o_window"
+      ],
+      "label": "窗户",
+      "cat": "objects"
+    },
+    "窗户": {
+      "ids": [
+        "o_window"
+      ],
+      "label": "窗户",
+      "cat": "objects"
+    },
+    "窗口": {
+      "ids": [
+        "o_window"
+      ],
+      "label": "窗户",
+      "cat": "objects"
+    },
+    "床": {
+      "ids": [
+        "p_bed"
+      ],
+      "label": "床",
+      "cat": "objects"
+    },
+    "床铺": {
+      "ids": [
+        "p_bed"
+      ],
+      "label": "床",
+      "cat": "objects"
+    },
+    "打车": {
+      "ids": [
+        "pl_taxi"
+      ],
+      "label": "出租车",
+      "cat": "places"
+    },
+    "打电话": {
+      "ids": [
+        "p_make_call"
+      ],
+      "label": "打电话",
+      "cat": "activities"
+    },
+    "大": {
+      "ids": [
+        "d_big"
+      ],
+      "label": "大",
+      "cat": "descriptors"
+    },
+    "大巴": {
+      "ids": [
+        "pl_bus"
+      ],
+      "label": "公交车",
+      "cat": "places"
+    },
+    "大便": {
+      "ids": [
+        "p_poop"
+      ],
+      "label": "大便",
+      "cat": "daily"
+    },
+    "大的": {
+      "ids": [
+        "d_big"
+      ],
+      "label": "大",
+      "cat": "descriptors"
+    },
+    "大夫": {
+      "ids": [
+        "p_doctor"
+      ],
+      "label": "医生",
+      "cat": "medical"
+    },
+    "大概": {
+      "ids": [
+        "r_close_enough"
+      ],
+      "label": "差不多",
+      "cat": "repair"
+    },
+    "大厅": {
+      "ids": [
+        "p_living_room"
+      ],
+      "label": "客厅",
+      "cat": "places"
+    },
+    "大腿": {
+      "ids": [
+        "p_leg_body"
+      ],
+      "label": "腿",
+      "cat": "medical"
+    },
+    "大衣": {
+      "ids": [
+        "o_coat"
+      ],
+      "label": "外套",
+      "cat": "daily"
+    },
+    "袋子": {
+      "ids": [
+        "p_bag"
+      ],
+      "label": "包",
+      "cat": "objects"
+    },
+    "蛋": {
+      "ids": [
+        "p_egg"
+      ],
+      "label": "鸡蛋",
+      "cat": "food"
+    },
+    "地铁": {
+      "ids": [
+        "pl_subway"
+      ],
+      "label": "地铁",
+      "cat": "places"
+    },
+    "的士": {
+      "ids": [
+        "pl_taxi"
+      ],
+      "label": "出租车",
+      "cat": "places"
+    },
+    "灯": {
+      "ids": [
+        "p_lamp"
+      ],
+      "label": "灯",
+      "cat": "objects"
+    },
+    "灯关掉": {
+      "ids": [
+        "o_light_off"
+      ],
+      "label": "关灯",
+      "cat": "objects"
+    },
+    "灯光": {
+      "ids": [
+        "p_lamp"
+      ],
+      "label": "灯",
+      "cat": "objects"
+    },
+    "灯开着": {
+      "ids": [
+        "o_light_on"
+      ],
+      "label": "开灯",
+      "cat": "objects"
+    },
+    "等": {
+      "ids": [
+        "a_wait"
+      ],
+      "label": "等",
+      "cat": "actions"
+    },
+    "等等": {
+      "ids": [
+        "p_wait",
+        "a_wait"
+      ],
+      "label": "等一下",
+      "cat": "quickchat"
+    },
+    "等等我": {
+      "ids": [
+        "r_no_rush"
+      ],
+      "label": "先别急",
+      "cat": "repair"
+    },
+    "等候": {
+      "ids": [
+        "a_wait"
+      ],
+      "label": "等",
+      "cat": "actions"
+    },
+    "等一会": {
+      "ids": [
+        "a_wait"
+      ],
+      "label": "等",
+      "cat": "actions"
+    },
+    "等一下": {
+      "ids": [
+        "p_wait"
+      ],
+      "label": "等一下",
+      "cat": "quickchat"
+    },
+    "凳子": {
+      "ids": [
+        "p_chair"
+      ],
+      "label": "椅子",
+      "cat": "objects"
+    },
+    "滴滴": {
+      "ids": [
+        "pl_taxi"
+      ],
+      "label": "出租车",
+      "cat": "places"
+    },
+    "电灯": {
+      "ids": [
+        "p_lamp"
+      ],
+      "label": "灯",
+      "cat": "objects"
+    },
+    "电话": {
+      "ids": [
+        "p_phone"
+      ],
+      "label": "手机",
+      "cat": "objects"
+    },
+    "电话联系": {
+      "ids": [
+        "p_make_call"
+      ],
+      "label": "打电话",
+      "cat": "activities"
+    },
+    "电脑": {
+      "ids": [
+        "p_computer"
+      ],
+      "label": "电脑",
+      "cat": "objects"
+    },
+    "电视": {
+      "ids": [
+        "p_television"
+      ],
+      "label": "电视",
+      "cat": "objects"
+    },
+    "电视机": {
+      "ids": [
+        "p_television"
+      ],
+      "label": "电视",
+      "cat": "objects"
+    },
+    "电源": {
+      "ids": [
+        "o_charger"
+      ],
+      "label": "充电器",
+      "cat": "objects"
+    },
+    "店": {
+      "ids": [
+        "p_shop"
+      ],
+      "label": "商店",
+      "cat": "places"
+    },
+    "跌倒": {
+      "ids": [
+        "m_fall"
+      ],
+      "label": "跌倒",
+      "cat": "medical"
+    },
+    "读书": {
+      "ids": [
+        "p_read_book"
+      ],
+      "label": "看书",
+      "cat": "activities"
+    },
+    "读物": {
+      "ids": [
+        "p_book"
+      ],
+      "label": "书",
+      "cat": "objects"
+    },
+    "肚": {
+      "ids": [
+        "p_belly"
+      ],
+      "label": "肚子",
+      "cat": "medical"
+    },
+    "肚子": {
+      "ids": [
+        "p_belly"
+      ],
+      "label": "肚子",
+      "cat": "medical"
+    },
+    "肚子饿": {
+      "ids": [
+        "p_hungry"
+      ],
+      "label": "饿",
+      "cat": "emotions"
+    },
+    "肚子疼": {
+      "ids": [
+        "p_stomachache"
+      ],
+      "label": "肚子疼",
+      "cat": "medical"
+    },
+    "肚子痛": {
+      "ids": [
+        "p_stomachache"
+      ],
+      "label": "肚子疼",
+      "cat": "medical"
+    },
+    "锻炼": {
+      "ids": [
+        "p_exercise",
+        "a_practice"
+      ],
+      "label": "运动",
+      "cat": "daily"
+    },
+    "对": {
+      "ids": [
+        "p_good",
+        "p_yes_response",
+        "p_yes"
+      ],
+      "label": "好",
+      "cat": "actions"
+    },
+    "多": {
+      "ids": [
+        "d_many"
+      ],
+      "label": "多",
+      "cat": "descriptors"
+    },
+    "多谢": {
+      "ids": [
+        "p_thank_you"
+      ],
+      "label": "谢谢",
+      "cat": "quickchat"
+    },
+    "多一点": {
+      "ids": [
+        "p_many"
+      ],
+      "label": "更多",
+      "cat": "actions"
+    },
+    "多一些": {
+      "ids": [
+        "d_many"
+      ],
+      "label": "多",
+      "cat": "descriptors"
+    },
+    "恶心": {
+      "ids": [
+        "p_nausea"
+      ],
+      "label": "恶心",
+      "cat": "medical"
+    },
+    "饿": {
+      "ids": [
+        "p_hungry"
+      ],
+      "label": "饿",
+      "cat": "emotions"
+    },
+    "儿子": {
+      "ids": [
+        "p_son"
+      ],
+      "label": "儿子",
+      "cat": "people"
+    },
+    "耳": {
+      "ids": [
+        "p_ear_body"
+      ],
+      "label": "耳朵",
+      "cat": "medical"
+    },
+    "耳朵": {
+      "ids": [
+        "p_ear_body"
+      ],
+      "label": "耳朵",
+      "cat": "medical"
+    },
+    "发热": {
+      "ids": [
+        "p_feverish"
+      ],
+      "label": "发热",
+      "cat": "medical"
+    },
+    "发烧": {
+      "ids": [
+        "p_fever"
+      ],
+      "label": "发烧",
+      "cat": "medical"
+    },
+    "反胃": {
+      "ids": [
+        "p_nausea"
+      ],
+      "label": "恶心",
+      "cat": "medical"
+    },
+    "返回家": {
+      "ids": [
+        "a_go_home"
+      ],
+      "label": "回家",
+      "cat": "activities"
+    },
+    "饭": {
+      "ids": [
+        "p_rice"
+      ],
+      "label": "饭",
+      "cat": "food"
+    },
+    "房间": {
+      "ids": [
+        "pl_room"
+      ],
+      "label": "房间",
+      "cat": "places"
+    },
+    "房里": {
+      "ids": [
+        "pl_room"
+      ],
+      "label": "房间",
+      "cat": "places"
+    },
+    "房门": {
+      "ids": [
+        "o_door"
+      ],
+      "label": "门",
+      "cat": "objects"
+    },
+    "房子": {
+      "ids": [
+        "p_home"
+      ],
+      "label": "家",
+      "cat": "places"
+    },
+    "放松": {
+      "ids": [
+        "p_calm"
+      ],
+      "label": "平静",
+      "cat": "emotions"
+    },
+    "放心": {
+      "ids": [
+        "e_relieved"
+      ],
+      "label": "放心",
+      "cat": "emotions"
+    },
+    "肥皂": {
+      "ids": [
+        "hy_soap"
+      ],
+      "label": "肥皂",
+      "cat": "daily"
+    },
+    "否": {
+      "ids": [
+        "p_no"
+      ],
+      "label": "不",
+      "cat": "actions"
+    },
+    "服药": {
+      "ids": [
+        "p_take_medicine"
+      ],
+      "label": "吃药",
+      "cat": "medical"
+    },
+    "父亲": {
+      "ids": [
+        "p_father"
+      ],
+      "label": "爸爸",
+      "cat": "people"
+    },
+    "付钱": {
+      "ids": [
+        "p_money"
+      ],
+      "label": "钱",
+      "cat": "objects"
+    },
+    "腹部": {
+      "ids": [
+        "p_belly"
+      ],
+      "label": "肚子",
+      "cat": "medical"
+    },
+    "感谢": {
+      "ids": [
+        "p_thank_you"
+      ],
+      "label": "谢谢",
+      "cat": "quickchat"
+    },
+    "钢笔": {
+      "ids": [
+        "p_pen"
+      ],
+      "label": "笔",
+      "cat": "objects"
+    },
+    "高烧": {
+      "ids": [
+        "p_fever"
+      ],
+      "label": "发烧",
+      "cat": "medical"
+    },
+    "高兴": {
+      "ids": [
+        "p_happy"
+      ],
+      "label": "开心",
+      "cat": "emotions"
+    },
+    "告诉": {
+      "ids": [
+        "p_talk"
+      ],
+      "label": "说",
+      "cat": "actions"
+    },
+    "哥哥": {
+      "ids": [
+        "p_brother"
+      ],
+      "label": "哥哥",
+      "cat": "people"
+    },
+    "给": {
+      "ids": [
+        "p_give"
+      ],
+      "label": "给",
+      "cat": "actions"
+    },
+    "给我看图": {
+      "ids": [
+        "r_use_picture"
+      ],
+      "label": "用图片",
+      "cat": "repair"
+    },
+    "给我选项": {
+      "ids": [
+        "p_show_choices"
+      ],
+      "label": "给我选项",
+      "cat": "repair"
+    },
+    "跟": {
+      "ids": [
+        "p_and"
+      ],
+      "label": "和",
+      "cat": "actions"
+    },
+    "更多": {
+      "ids": [
+        "p_many"
+      ],
+      "label": "更多",
+      "cat": "actions"
+    },
+    "更快": {
+      "ids": [
+        "d_fast"
+      ],
+      "label": "快",
+      "cat": "descriptors"
+    },
+    "更慢": {
+      "ids": [
+        "d_slow"
+      ],
+      "label": "慢",
+      "cat": "descriptors"
+    },
+    "公交": {
+      "ids": [
+        "pl_bus"
+      ],
+      "label": "公交车",
+      "cat": "places"
+    },
+    "公交车": {
+      "ids": [
+        "pl_bus"
+      ],
+      "label": "公交车",
+      "cat": "places"
+    },
+    "公园": {
+      "ids": [
+        "p_playground"
+      ],
+      "label": "公园",
+      "cat": "places"
+    },
+    "购买": {
+      "ids": [
+        "p_buy"
+      ],
+      "label": "买",
+      "cat": "actions"
+    },
+    "购物": {
+      "ids": [
+        "p_buy",
+        "p_supermarket"
+      ],
+      "label": "买",
+      "cat": "actions"
+    },
+    "孤单": {
+      "ids": [
+        "p_lonely"
+      ],
+      "label": "孤单",
+      "cat": "emotions"
+    },
+    "孤独": {
+      "ids": [
+        "p_lonely"
+      ],
+      "label": "孤单",
+      "cat": "emotions"
+    },
+    "关灯": {
+      "ids": [
+        "o_light_off"
+      ],
+      "label": "关灯",
+      "cat": "objects"
+    },
+    "关一下灯": {
+      "ids": [
+        "o_light_off"
+      ],
+      "label": "关灯",
+      "cat": "objects"
+    },
+    "轨道交通": {
+      "ids": [
+        "pl_subway"
+      ],
+      "label": "地铁",
+      "cat": "places"
+    },
+    "过来": {
+      "ids": [
+        "p_come"
+      ],
+      "label": "来",
+      "cat": "actions"
+    },
+    "咳": {
+      "ids": [
+        "p_cough"
+      ],
+      "label": "咳嗽",
+      "cat": "medical"
+    },
+    "咳嗽": {
+      "ids": [
+        "p_cough"
+      ],
+      "label": "咳嗽",
+      "cat": "medical"
+    },
+    "孩子": {
+      "ids": [
+        "p_son",
+        "p_daughter"
+      ],
+      "label": "儿子",
+      "cat": "people"
+    },
+    "害怕": {
+      "ids": [
+        "p_afraid"
+      ],
+      "label": "害怕",
+      "cat": "emotions"
+    },
+    "寒冷": {
+      "ids": [
+        "p_cold"
+      ],
+      "label": "冷",
+      "cat": "emotions"
+    },
+    "喊": {
+      "ids": [
+        "p_call"
+      ],
+      "label": "叫",
+      "cat": "actions"
+    },
+    "好": {
+      "ids": [
+        "p_good"
+      ],
+      "label": "好",
+      "cat": "actions"
+    },
+    "好的": {
+      "ids": [
+        "p_good"
+      ],
+      "label": "好",
+      "cat": "actions"
+    },
+    "好了": {
+      "ids": [
+        "p_end"
+      ],
+      "label": "完成",
+      "cat": "actions"
+    },
+    "好冷": {
+      "ids": [
+        "p_cold"
+      ],
+      "label": "冷",
+      "cat": "emotions"
+    },
+    "好热": {
+      "ids": [
+        "p_hot"
+      ],
+      "label": "热",
+      "cat": "emotions"
+    },
+    "喝": {
+      "ids": [
+        "p_drink"
+      ],
+      "label": "喝",
+      "cat": "actions"
+    },
+    "喝茶": {
+      "ids": [
+        "p_tea"
+      ],
+      "label": "茶",
+      "cat": "food"
+    },
+    "喝水": {
+      "ids": [
+        "p_drink_water",
+        "p_water"
+      ],
+      "label": "我要喝水",
+      "cat": "quickchat"
+    },
+    "和": {
+      "ids": [
+        "p_and"
+      ],
+      "label": "和",
+      "cat": "actions"
+    },
+    "很大": {
+      "ids": [
+        "d_big"
+      ],
+      "label": "大",
+      "cat": "descriptors"
+    },
+    "很多": {
+      "ids": [
+        "p_many"
+      ],
+      "label": "更多",
+      "cat": "actions"
+    },
+    "很热": {
+      "ids": [
+        "p_hot"
+      ],
+      "label": "热",
+      "cat": "emotions"
+    },
+    "很少": {
+      "ids": [
+        "d_few"
+      ],
+      "label": "少",
+      "cat": "descriptors"
+    },
+    "很小": {
+      "ids": [
+        "d_small"
+      ],
+      "label": "小",
+      "cat": "descriptors"
+    },
+    "喉咙": {
+      "ids": [
+        "p_throat"
+      ],
+      "label": "喉咙",
+      "cat": "medical"
+    },
+    "后": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "后背": {
+      "ids": [
+        "p_back_body"
+      ],
+      "label": "背部",
+      "cat": "medical"
+    },
+    "后边": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "后方": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "后面": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "呼吸": {
+      "ids": [
+        "m_breathe"
+      ],
+      "label": "呼吸",
+      "cat": "medical"
+    },
+    "呼吸困难": {
+      "ids": [
+        "p_breathe"
+      ],
+      "label": "呼吸困难",
+      "cat": "medical"
+    },
+    "呼吸一下": {
+      "ids": [
+        "m_breathe"
+      ],
+      "label": "呼吸",
+      "cat": "medical"
+    },
+    "户外": {
+      "ids": [
+        "p_outside"
+      ],
+      "label": "外面",
+      "cat": "places"
+    },
+    "护士": {
+      "ids": [
+        "p_nurse"
+      ],
+      "label": "护士",
+      "cat": "medical"
+    },
+    "花": {
+      "ids": [
+        "p_flower"
+      ],
+      "label": "花",
+      "cat": "objects"
+    },
+    "花园": {
+      "ids": [
+        "p_playground"
+      ],
+      "label": "公园",
+      "cat": "places"
+    },
+    "换": {
+      "ids": [
+        "a_change_clothes"
+      ],
+      "label": "换",
+      "cat": "actions"
+    },
+    "换个说法": {
+      "ids": [
+        "r_rephrase"
+      ],
+      "label": "我想换一个说法",
+      "cat": "repair"
+    },
+    "换一换": {
+      "ids": [
+        "a_change_clothes"
+      ],
+      "label": "换",
+      "cat": "actions"
+    },
+    "换一种方式": {
+      "ids": [
+        "r_rephrase"
+      ],
+      "label": "我想换一个说法",
+      "cat": "repair"
+    },
+    "换衣": {
+      "ids": [
+        "p_change_clothes"
+      ],
+      "label": "换衣服",
+      "cat": "daily"
+    },
+    "换衣服": {
+      "ids": [
+        "p_change_clothes"
+      ],
+      "label": "换衣服",
+      "cat": "daily"
+    },
+    "回家": {
+      "ids": [
+        "a_go_home"
+      ],
+      "label": "回家",
+      "cat": "activities"
+    },
+    "回去": {
+      "ids": [
+        "a_go_home"
+      ],
+      "label": "回家",
+      "cat": "activities"
+    },
+    "饥饿": {
+      "ids": [
+        "p_hungry"
+      ],
+      "label": "饿",
+      "cat": "emotions"
+    },
+    "鸡蛋": {
+      "ids": [
+        "p_egg"
+      ],
+      "label": "鸡蛋",
+      "cat": "food"
+    },
+    "急": {
+      "ids": [
+        "p_anxious"
+      ],
+      "label": "着急",
+      "cat": "emotions"
+    },
+    "寂寞": {
+      "ids": [
+        "p_lonely"
+      ],
+      "label": "孤单",
+      "cat": "emotions"
+    },
+    "家": {
+      "ids": [
+        "p_home"
+      ],
+      "label": "家",
+      "cat": "places"
+    },
+    "家人": {
+      "ids": [
+        "p_family"
+      ],
+      "label": "家人",
+      "cat": "people"
+    },
+    "肩": {
+      "ids": [
+        "p_shoulder"
+      ],
+      "label": "肩膀",
+      "cat": "medical"
+    },
+    "肩膀": {
+      "ids": [
+        "p_shoulder"
+      ],
+      "label": "肩膀",
+      "cat": "medical"
+    },
+    "剪头发": {
+      "ids": [
+        "p_haircut"
+      ],
+      "label": "理发",
+      "cat": "daily"
+    },
+    "健身": {
+      "ids": [
+        "p_exercise"
+      ],
+      "label": "运动",
+      "cat": "daily"
+    },
+    "讲": {
+      "ids": [
+        "p_talk"
+      ],
+      "label": "说",
+      "cat": "actions"
+    },
+    "焦虑": {
+      "ids": [
+        "p_nervous"
+      ],
+      "label": "紧张",
+      "cat": "emotions"
+    },
+    "脚": {
+      "ids": [
+        "p_foot_body"
+      ],
+      "label": "脚",
+      "cat": "medical"
+    },
+    "脚部": {
+      "ids": [
+        "p_foot_body"
+      ],
+      "label": "脚",
+      "cat": "medical"
+    },
+    "叫": {
+      "ids": [
+        "p_call"
+      ],
+      "label": "叫",
+      "cat": "actions"
+    },
+    "叫人": {
+      "ids": [
+        "p_call"
+      ],
+      "label": "叫",
+      "cat": "actions"
+    },
+    "较大": {
+      "ids": [
+        "d_big"
+      ],
+      "label": "大",
+      "cat": "descriptors"
+    },
+    "较小": {
+      "ids": [
+        "d_small"
+      ],
+      "label": "小",
+      "cat": "descriptors"
+    },
+    "接近": {
+      "ids": [
+        "r_close_enough"
+      ],
+      "label": "差不多",
+      "cat": "repair"
+    },
+    "结束": {
+      "ids": [
+        "p_end"
+      ],
+      "label": "完成",
+      "cat": "actions"
+    },
+    "姐": {
+      "ids": [
+        "p_older_sister"
+      ],
+      "label": "姐姐",
+      "cat": "people"
+    },
+    "姐姐": {
+      "ids": [
+        "p_older_sister"
+      ],
+      "label": "姐姐",
+      "cat": "people"
+    },
+    "姐妹": {
+      "ids": [
+        "p_sister"
+      ],
+      "label": "妹妹",
+      "cat": "people"
+    },
+    "今天": {
+      "ids": [
+        "p_today"
+      ],
+      "label": "今天",
+      "cat": "time"
+    },
+    "今晚": {
+      "ids": [
+        "p_night"
+      ],
+      "label": "今晚",
+      "cat": "time"
+    },
+    "紧张": {
+      "ids": [
+        "p_nervous"
+      ],
+      "label": "紧张",
+      "cat": "emotions"
+    },
+    "进食": {
+      "ids": [
+        "p_eat"
+      ],
+      "label": "吃",
+      "cat": "actions"
+    },
+    "颈": {
+      "ids": [
+        "p_neck"
+      ],
+      "label": "脖子",
+      "cat": "medical"
+    },
+    "颈部": {
+      "ids": [
+        "p_neck"
+      ],
+      "label": "脖子",
+      "cat": "medical"
+    },
+    "就是这个": {
+      "ids": [
+        "r_i_mean_this"
+      ],
+      "label": "我是这个意思",
+      "cat": "repair"
+    },
+    "沮丧": {
+      "ids": [
+        "p_dejected"
+      ],
+      "label": "沮丧",
+      "cat": "emotions"
+    },
+    "咖啡": {
+      "ids": [
+        "p_coffee"
+      ],
+      "label": "咖啡",
+      "cat": "food"
+    },
+    "开车": {
+      "ids": [
+        "p_car"
+      ],
+      "label": "车",
+      "cat": "objects"
+    },
+    "开灯": {
+      "ids": [
+        "o_light_on"
+      ],
+      "label": "开灯",
+      "cat": "objects"
+    },
+    "开门": {
+      "ids": [
+        "p_open_door"
+      ],
+      "label": "开门",
+      "cat": "quickchat"
+    },
+    "开心": {
+      "ids": [
+        "p_happy"
+      ],
+      "label": "开心",
+      "cat": "emotions"
+    },
+    "开一下灯": {
+      "ids": [
+        "o_light_on"
+      ],
+      "label": "开灯",
+      "cat": "objects"
+    },
+    "看": {
+      "ids": [
+        "p_see"
+      ],
+      "label": "看",
+      "cat": "actions"
+    },
+    "看病": {
+      "ids": [
+        "p_hospital"
+      ],
+      "label": "医院",
+      "cat": "places"
+    },
+    "看电视": {
+      "ids": [
+        "p_watch_tv"
+      ],
+      "label": "看电视",
+      "cat": "activities"
+    },
+    "看电视机": {
+      "ids": [
+        "p_watch_tv"
+      ],
+      "label": "看电视",
+      "cat": "activities"
+    },
+    "看护人": {
+      "ids": [
+        "p_caregiver"
+      ],
+      "label": "看护人",
+      "cat": "people"
+    },
+    "看看": {
+      "ids": [
+        "p_see"
+      ],
+      "label": "看",
+      "cat": "actions"
+    },
+    "看书": {
+      "ids": [
+        "p_read_book"
+      ],
+      "label": "看书",
+      "cat": "activities"
+    },
+    "康复": {
+      "ids": [
+        "p_rehab"
+      ],
+      "label": "康复",
+      "cat": "medical"
+    },
+    "康复科": {
+      "ids": [
+        "p_rehab_dept"
+      ],
+      "label": "康复科",
+      "cat": "places"
+    },
+    "康复练习": {
+      "ids": [
+        "a_rehab_training"
+      ],
+      "label": "康复训练",
+      "cat": "activities"
+    },
+    "康复师": {
+      "ids": [
+        "p_therapist"
+      ],
+      "label": "治疗师",
+      "cat": "medical"
+    },
+    "康复训练": {
+      "ids": [
+        "a_rehab_training"
+      ],
+      "label": "康复训练",
+      "cat": "activities"
+    },
+    "康复中心": {
+      "ids": [
+        "p_rehab_dept"
+      ],
+      "label": "康复科",
+      "cat": "places"
+    },
+    "可以": {
+      "ids": [
+        "p_okay"
+      ],
+      "label": "可以",
+      "cat": "actions"
+    },
+    "渴": {
+      "ids": [
+        "p_thirsty"
+      ],
+      "label": "渴",
+      "cat": "emotions"
+    },
+    "客厅": {
+      "ids": [
+        "p_living_room"
+      ],
+      "label": "客厅",
+      "cat": "places"
+    },
+    "恐惧": {
+      "ids": [
+        "p_afraid"
+      ],
+      "label": "害怕",
+      "cat": "emotions"
+    },
+    "口渴": {
+      "ids": [
+        "p_thirsty"
+      ],
+      "label": "渴",
+      "cat": "emotions"
+    },
+    "裤": {
+      "ids": [
+        "o_trousers"
+      ],
+      "label": "裤子",
+      "cat": "daily"
+    },
+    "裤子": {
+      "ids": [
+        "o_trousers"
+      ],
+      "label": "裤子",
+      "cat": "daily"
+    },
+    "快": {
+      "ids": [
+        "d_fast"
+      ],
+      "label": "快",
+      "cat": "descriptors"
+    },
+    "快乐": {
+      "ids": [
+        "p_happy"
+      ],
+      "label": "开心",
+      "cat": "emotions"
+    },
+    "快了": {
+      "ids": [
+        "p_soon"
+      ],
+      "label": "马上",
+      "cat": "time"
+    },
+    "快一点": {
+      "ids": [
+        "d_fast"
+      ],
+      "label": "快",
+      "cat": "descriptors"
+    },
+    "筷子": {
+      "ids": [
+        "p_chopsticks"
+      ],
+      "label": "筷子",
+      "cat": "objects"
+    },
+    "困": {
+      "ids": [
+        "p_sleep"
+      ],
+      "label": "睡觉",
+      "cat": "activities"
+    },
+    "来": {
+      "ids": [
+        "p_come"
+      ],
+      "label": "来",
+      "cat": "actions"
+    },
+    "老公": {
+      "ids": [
+        "p_husband"
+      ],
+      "label": "老公/丈夫",
+      "cat": "people"
+    },
+    "老公/丈夫": {
+      "ids": [
+        "p_husband"
+      ],
+      "label": "老公/丈夫",
+      "cat": "people"
+    },
+    "老花镜": {
+      "ids": [
+        "p_glasses"
+      ],
+      "label": "眼镜",
+      "cat": "objects"
+    },
+    "老婆": {
+      "ids": [
+        "p_wife"
+      ],
+      "label": "老婆/妻子",
+      "cat": "people"
+    },
+    "老婆/妻子": {
+      "ids": [
+        "p_wife"
+      ],
+      "label": "老婆/妻子",
+      "cat": "people"
+    },
+    "老师": {
+      "ids": [
+        "p_teacher"
+      ],
+      "label": "老师",
+      "cat": "people"
+    },
+    "姥姥": {
+      "ids": [
+        "p_grandmother"
+      ],
+      "label": "奶奶",
+      "cat": "people"
+    },
+    "姥爷": {
+      "ids": [
+        "p_grandfather"
+      ],
+      "label": "爷爷",
+      "cat": "people"
+    },
+    "累": {
+      "ids": [
+        "p_tired"
+      ],
+      "label": "累",
+      "cat": "emotions"
+    },
+    "冷": {
+      "ids": [
+        "p_cold"
+      ],
+      "label": "冷",
+      "cat": "emotions"
+    },
+    "冷水": {
+      "ids": [
+        "p_cold_water"
+      ],
+      "label": "冷水",
+      "cat": "food"
+    },
+    "里": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "里边": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "里面": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "理发": {
+      "ids": [
+        "p_haircut"
+      ],
+      "label": "理发",
+      "cat": "daily"
+    },
+    "理疗室": {
+      "ids": [
+        "p_rehab_dept"
+      ],
+      "label": "康复科",
+      "cat": "places"
+    },
+    "立刻": {
+      "ids": [
+        "p_soon"
+      ],
+      "label": "马上",
+      "cat": "time"
+    },
+    "练习": {
+      "ids": [
+        "a_practice"
+      ],
+      "label": "练习",
+      "cat": "activities"
+    },
+    "零食": {
+      "ids": [
+        "p_snacks"
+      ],
+      "label": "零食",
+      "cat": "food"
+    },
+    "流血": {
+      "ids": [
+        "p_bleed"
+      ],
+      "label": "出血",
+      "cat": "medical"
+    },
+    "楼下": {
+      "ids": [
+        "pl_downstairs"
+      ],
+      "label": "楼下",
+      "cat": "places"
+    },
+    "轮椅": {
+      "ids": [
+        "p_wheelchair"
+      ],
+      "label": "轮椅",
+      "cat": "medical"
+    },
+    "妈": {
+      "ids": [
+        "p_mother"
+      ],
+      "label": "妈妈",
+      "cat": "people"
+    },
+    "妈妈": {
+      "ids": [
+        "p_mother"
+      ],
+      "label": "妈妈",
+      "cat": "people"
+    },
+    "麻": {
+      "ids": [
+        "p_numb"
+      ],
+      "label": "麻",
+      "cat": "medical"
+    },
+    "马上": {
+      "ids": [
+        "p_soon"
+      ],
+      "label": "马上",
+      "cat": "time"
+    },
+    "买": {
+      "ids": [
+        "p_buy"
+      ],
+      "label": "买",
+      "cat": "actions"
+    },
+    "慢": {
+      "ids": [
+        "d_slow"
+      ],
+      "label": "慢",
+      "cat": "descriptors"
+    },
+    "慢慢说": {
+      "ids": [
+        "r_speak_slowly"
+      ],
+      "label": "说慢一点",
+      "cat": "repair"
+    },
+    "慢一点": {
+      "ids": [
+        "r_speak_slowly"
+      ],
+      "label": "说慢一点",
+      "cat": "repair"
+    },
+    "毛巾": {
+      "ids": [
+        "p_towel"
+      ],
+      "label": "毛巾",
+      "cat": "daily"
+    },
+    "帽": {
+      "ids": [
+        "o_hat"
+      ],
+      "label": "帽子",
+      "cat": "daily"
+    },
+    "帽子": {
+      "ids": [
+        "o_hat"
+      ],
+      "label": "帽子",
+      "cat": "daily"
+    },
+    "没": {
+      "ids": [
+        "p_no"
+      ],
+      "label": "不",
+      "cat": "actions"
+    },
+    "没力气": {
+      "ids": [
+        "p_tired"
+      ],
+      "label": "累",
+      "cat": "emotions"
+    },
+    "没意思": {
+      "ids": [
+        "p_bored"
+      ],
+      "label": "无聊",
+      "cat": "emotions"
+    },
+    "每天": {
+      "ids": [
+        "p_everyday"
+      ],
+      "label": "每天",
+      "cat": "time"
+    },
+    "妹妹": {
+      "ids": [
+        "p_sister"
+      ],
+      "label": "妹妹",
+      "cat": "people"
+    },
+    "门": {
+      "ids": [
+        "o_door"
+      ],
+      "label": "门",
+      "cat": "objects"
+    },
+    "门口": {
+      "ids": [
+        "o_door"
+      ],
+      "label": "门",
+      "cat": "objects"
+    },
+    "闷": {
+      "ids": [
+        "p_bored"
+      ],
+      "label": "无聊",
+      "cat": "emotions"
+    },
+    "米饭": {
+      "ids": [
+        "p_rice"
+      ],
+      "label": "饭",
+      "cat": "food"
+    },
+    "面": {
+      "ids": [
+        "p_noodles"
+      ],
+      "label": "面",
+      "cat": "food"
+    },
+    "面包": {
+      "ids": [
+        "p_bread"
+      ],
+      "label": "面包",
+      "cat": "food"
+    },
+    "明天": {
+      "ids": [
+        "p_tomorrow"
+      ],
+      "label": "明天",
+      "cat": "time"
+    },
+    "母亲": {
+      "ids": [
+        "p_mother"
+      ],
+      "label": "妈妈",
+      "cat": "people"
+    },
+    "拿": {
+      "ids": [
+        "p_take"
+      ],
+      "label": "拿",
+      "cat": "actions"
+    },
+    "哪里": {
+      "ids": [
+        "p_where"
+      ],
+      "label": "哪里",
+      "cat": "actions"
+    },
+    "那": {
+      "ids": [
+        "p_that"
+      ],
+      "label": "那",
+      "cat": "actions"
+    },
+    "那边": {
+      "ids": [
+        "p_there"
+      ],
+      "label": "那里",
+      "cat": "places"
+    },
+    "那里": {
+      "ids": [
+        "p_there"
+      ],
+      "label": "那里",
+      "cat": "places"
+    },
+    "奶": {
+      "ids": [
+        "p_milk"
+      ],
+      "label": "牛奶",
+      "cat": "food"
+    },
+    "奶奶": {
+      "ids": [
+        "p_grandmother"
+      ],
+      "label": "奶奶",
+      "cat": "people"
+    },
+    "男孩": {
+      "ids": [
+        "p_son"
+      ],
+      "label": "儿子",
+      "cat": "people"
+    },
+    "难过": {
+      "ids": [
+        "p_upset"
+      ],
+      "label": "难过",
+      "cat": "emotions"
+    },
+    "难受": {
+      "ids": [
+        "p_uncomfortable"
+      ],
+      "label": "难受",
+      "cat": "medical"
+    },
+    "脑袋": {
+      "ids": [
+        "p_head"
+      ],
+      "label": "头",
+      "cat": "medical"
+    },
+    "内": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "内部": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "嗯": {
+      "ids": [
+        "p_good"
+      ],
+      "label": "好",
+      "cat": "actions"
+    },
+    "你": {
+      "ids": [
+        "p_you"
+      ],
+      "label": "你",
+      "cat": "actions"
+    },
+    "尿尿": {
+      "ids": [
+        "p_pee"
+      ],
+      "label": "尿尿",
+      "cat": "daily"
+    },
+    "您": {
+      "ids": [
+        "p_you"
+      ],
+      "label": "你",
+      "cat": "actions"
+    },
+    "牛奶": {
+      "ids": [
+        "p_milk"
+      ],
+      "label": "牛奶",
+      "cat": "food"
+    },
+    "弄湿了": {
+      "ids": [
+        "hy_wet"
+      ],
+      "label": "湿了",
+      "cat": "daily"
+    },
+    "弄脏了": {
+      "ids": [
+        "hy_dirty"
+      ],
+      "label": "脏了",
+      "cat": "daily"
+    },
+    "女儿": {
+      "ids": [
+        "p_daughter"
+      ],
+      "label": "女儿",
+      "cat": "people"
+    },
+    "女孩": {
+      "ids": [
+        "p_daughter"
+      ],
+      "label": "女儿",
+      "cat": "people"
+    },
+    "怕": {
+      "ids": [
+        "p_afraid"
+      ],
+      "label": "害怕",
+      "cat": "emotions"
+    },
+    "跑": {
+      "ids": [
+        "p_run"
+      ],
+      "label": "跑",
+      "cat": "activities"
+    },
+    "跑步": {
+      "ids": [
+        "p_run"
+      ],
+      "label": "跑",
+      "cat": "activities"
+    },
+    "朋友": {
+      "ids": [
+        "p_friend"
+      ],
+      "label": "朋友",
+      "cat": "people"
+    },
+    "疲倦": {
+      "ids": [
+        "p_tired"
+      ],
+      "label": "累",
+      "cat": "emotions"
+    },
+    "疲劳": {
+      "ids": [
+        "p_tired"
+      ],
+      "label": "累",
+      "cat": "emotions"
+    },
+    "平静": {
+      "ids": [
+        "p_calm"
+      ],
+      "label": "平静",
+      "cat": "emotions"
+    },
+    "平躺": {
+      "ids": [
+        "a_lie_down"
+      ],
+      "label": "躺",
+      "cat": "activities"
+    },
+    "苹果": {
+      "ids": [
+        "p_apple"
+      ],
+      "label": "苹果",
+      "cat": "food"
+    },
+    "妻子": {
+      "ids": [
+        "p_wife"
+      ],
+      "label": "老婆/妻子",
+      "cat": "people"
+    },
+    "起床": {
+      "ids": [
+        "p_wake_up"
+      ],
+      "label": "起床",
+      "cat": "activities"
+    },
+    "起居室": {
+      "ids": [
+        "p_living_room"
+      ],
+      "label": "客厅",
+      "cat": "places"
+    },
+    "起来": {
+      "ids": [
+        "p_wake_up"
+      ],
+      "label": "起床",
+      "cat": "activities"
+    },
+    "气促": {
+      "ids": [
+        "p_breathe"
+      ],
+      "label": "呼吸困难",
+      "cat": "medical"
+    },
+    "汽车": {
+      "ids": [
+        "p_car"
+      ],
+      "label": "车",
+      "cat": "objects"
+    },
+    "前": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "前边": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "前方": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "前面": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "钱": {
+      "ids": [
+        "p_money"
+      ],
+      "label": "钱",
+      "cat": "objects"
+    },
+    "瞧": {
+      "ids": [
+        "p_see"
+      ],
+      "label": "看",
+      "cat": "actions"
+    },
+    "请安静": {
+      "ids": [
+        "o_quiet"
+      ],
+      "label": "安静",
+      "cat": "objects"
+    },
+    "请帮": {
+      "ids": [
+        "p_help"
+      ],
+      "label": "帮助",
+      "cat": "actions"
+    },
+    "请给我时间": {
+      "ids": [
+        "p_give_me_time"
+      ],
+      "label": "请给我时间",
+      "cat": "quickchat"
+    },
+    "请叫护士": {
+      "ids": [
+        "p_call_nurse"
+      ],
+      "label": "请叫护士",
+      "cat": "quickchat"
+    },
+    "请叫家人": {
+      "ids": [
+        "p_call_family"
+      ],
+      "label": "请叫家人",
+      "cat": "quickchat"
+    },
+    "请叫医生": {
+      "ids": [
+        "p_call_doctor"
+      ],
+      "label": "请叫医生",
+      "cat": "quickchat"
+    },
+    "求助": {
+      "ids": [
+        "p_help"
+      ],
+      "label": "帮助",
+      "cat": "actions"
+    },
+    "去": {
+      "ids": [
+        "p_go"
+      ],
+      "label": "去",
+      "cat": "actions"
+    },
+    "热": {
+      "ids": [
+        "p_hot"
+      ],
+      "label": "热",
+      "cat": "emotions"
+    },
+    "热水": {
+      "ids": [
+        "p_hot_water"
+      ],
+      "label": "热水",
+      "cat": "food"
+    },
+    "肉": {
+      "ids": [
+        "p_meat"
+      ],
+      "label": "肉",
+      "cat": "food"
+    },
+    "肉类": {
+      "ids": [
+        "p_meat"
+      ],
+      "label": "肉",
+      "cat": "food"
+    },
+    "伞": {
+      "ids": [
+        "p_umbrella"
+      ],
+      "label": "雨伞",
+      "cat": "objects"
+    },
+    "散步": {
+      "ids": [
+        "p_walk"
+      ],
+      "label": "走路",
+      "cat": "actions"
+    },
+    "伤感": {
+      "ids": [
+        "p_upset"
+      ],
+      "label": "难过",
+      "cat": "emotions"
+    },
+    "伤心": {
+      "ids": [
+        "p_sad"
+      ],
+      "label": "伤心",
+      "cat": "emotions"
+    },
+    "商场": {
+      "ids": [
+        "p_supermarket",
+        "p_shop"
+      ],
+      "label": "超市",
+      "cat": "places"
+    },
+    "商店": {
+      "ids": [
+        "p_shop"
+      ],
+      "label": "商店",
+      "cat": "places"
+    },
+    "上": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "上边": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "上厕所": {
+      "ids": [
+        "p_toilet"
+      ],
+      "label": "厕所",
+      "cat": "quickchat"
+    },
+    "上方": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "上面": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "上午": {
+      "ids": [
+        "p_morning"
+      ],
+      "label": "早上",
+      "cat": "time"
+    },
+    "上衣": {
+      "ids": [
+        "o_coat"
+      ],
+      "label": "外套",
+      "cat": "daily"
+    },
+    "稍等": {
+      "ids": [
+        "p_wait"
+      ],
+      "label": "等一下",
+      "cat": "quickchat"
+    },
+    "勺子": {
+      "ids": [
+        "p_spoon"
+      ],
+      "label": "勺子",
+      "cat": "objects"
+    },
+    "少": {
+      "ids": [
+        "d_few"
+      ],
+      "label": "少",
+      "cat": "descriptors"
+    },
+    "少一些": {
+      "ids": [
+        "d_few"
+      ],
+      "label": "少",
+      "cat": "descriptors"
+    },
+    "谁": {
+      "ids": [
+        "p_who"
+      ],
+      "label": "谁",
+      "cat": "actions"
+    },
+    "什么": {
+      "ids": [
+        "p_what"
+      ],
+      "label": "什么",
+      "cat": "actions"
+    },
+    "什么时候": {
+      "ids": [
+        "p_when"
+      ],
+      "label": "什么时候",
+      "cat": "time"
+    },
+    "生病": {
+      "ids": [
+        "p_sick"
+      ],
+      "label": "生病",
+      "cat": "medical"
+    },
+    "生气": {
+      "ids": [
+        "p_angry"
+      ],
+      "label": "生气",
+      "cat": "emotions"
+    },
+    "失落": {
+      "ids": [
+        "p_dejected"
+      ],
+      "label": "沮丧",
+      "cat": "emotions"
+    },
+    "湿": {
+      "ids": [
+        "hy_wet"
+      ],
+      "label": "湿了",
+      "cat": "daily"
+    },
+    "湿了": {
+      "ids": [
+        "hy_wet"
+      ],
+      "label": "湿了",
+      "cat": "daily"
+    },
+    "湿透": {
+      "ids": [
+        "hy_wet"
+      ],
+      "label": "湿了",
+      "cat": "daily"
+    },
+    "室外": {
+      "ids": [
+        "p_outside"
+      ],
+      "label": "外面",
+      "cat": "places"
+    },
+    "是": {
+      "ids": [
+        "p_yes_response"
+      ],
+      "label": "是",
+      "cat": "quickchat"
+    },
+    "手": {
+      "ids": [
+        "p_hand"
+      ],
+      "label": "手",
+      "cat": "medical"
+    },
+    "手臂": {
+      "ids": [
+        "p_arm_body"
+      ],
+      "label": "手臂",
+      "cat": "medical"
+    },
+    "手机": {
+      "ids": [
+        "p_phone"
+      ],
+      "label": "手机",
+      "cat": "objects"
+    },
+    "手提包": {
+      "ids": [
+        "p_bag"
+      ],
+      "label": "包",
+      "cat": "objects"
+    },
+    "手提电脑": {
+      "ids": [
+        "p_computer"
+      ],
+      "label": "电脑",
+      "cat": "objects"
+    },
+    "手纸": {
+      "ids": [
+        "p_tissue"
+      ],
+      "label": "纸巾",
+      "cat": "objects"
+    },
+    "书": {
+      "ids": [
+        "p_book"
+      ],
+      "label": "书",
+      "cat": "objects"
+    },
+    "书本": {
+      "ids": [
+        "p_book"
+      ],
+      "label": "书",
+      "cat": "objects"
+    },
+    "刷": {
+      "ids": [
+        "p_brush_teeth"
+      ],
+      "label": "刷牙",
+      "cat": "daily"
+    },
+    "刷牙": {
+      "ids": [
+        "p_brush_teeth"
+      ],
+      "label": "刷牙",
+      "cat": "daily"
+    },
+    "摔倒": {
+      "ids": [
+        "m_fall"
+      ],
+      "label": "跌倒",
+      "cat": "medical"
+    },
+    "摔了": {
+      "ids": [
+        "m_fall"
+      ],
+      "label": "跌倒",
+      "cat": "medical"
+    },
+    "水": {
+      "ids": [
+        "p_water"
+      ],
+      "label": "水",
+      "cat": "food"
+    },
+    "水杯": {
+      "ids": [
+        "p_cup"
+      ],
+      "label": "杯子",
+      "cat": "objects"
+    },
+    "水果": {
+      "ids": [
+        "p_fruit"
+      ],
+      "label": "水果",
+      "cat": "food"
+    },
+    "睡": {
+      "ids": [
+        "p_sleep"
+      ],
+      "label": "睡觉",
+      "cat": "activities"
+    },
+    "睡房": {
+      "ids": [
+        "p_bedroom"
+      ],
+      "label": "卧室",
+      "cat": "places"
+    },
+    "睡觉": {
+      "ids": [
+        "p_sleep"
+      ],
+      "label": "睡觉",
+      "cat": "activities"
+    },
+    "说": {
+      "ids": [
+        "p_talk"
+      ],
+      "label": "说",
+      "cat": "actions"
+    },
+    "说不出来": {
+      "ids": [
+        "r_know_cant_say"
+      ],
+      "label": "我知道但说不出来",
+      "cat": "repair"
+    },
+    "说慢一点": {
+      "ids": [
+        "r_speak_slowly"
+      ],
+      "label": "说慢一点",
+      "cat": "repair"
+    },
+    "速度快": {
+      "ids": [
+        "d_fast"
+      ],
+      "label": "快",
+      "cat": "descriptors"
+    },
+    "速度慢": {
+      "ids": [
+        "d_slow"
+      ],
+      "label": "慢",
+      "cat": "descriptors"
+    },
+    "他": {
+      "ids": [
+        "p_he_she"
+      ],
+      "label": "他/她",
+      "cat": "actions"
+    },
+    "他/她": {
+      "ids": [
+        "p_he_she"
+      ],
+      "label": "他/她",
+      "cat": "actions"
+    },
+    "她": {
+      "ids": [
+        "p_he_she"
+      ],
+      "label": "他/她",
+      "cat": "actions"
+    },
+    "太吵": {
+      "ids": [
+        "o_noisy"
+      ],
+      "label": "吵",
+      "cat": "objects"
+    },
+    "毯子": {
+      "ids": [
+        "p_blanket"
+      ],
+      "label": "被子",
+      "cat": "objects"
+    },
+    "汤": {
+      "ids": [
+        "p_soup"
+      ],
+      "label": "汤",
+      "cat": "food"
+    },
+    "糖": {
+      "ids": [
+        "p_candy"
+      ],
+      "label": "糖",
+      "cat": "food"
+    },
+    "糖果": {
+      "ids": [
+        "p_candy"
+      ],
+      "label": "糖",
+      "cat": "food"
+    },
+    "躺": {
+      "ids": [
+        "a_lie_down"
+      ],
+      "label": "躺",
+      "cat": "activities"
+    },
+    "躺下": {
+      "ids": [
+        "a_lie_down"
+      ],
+      "label": "躺",
+      "cat": "activities"
+    },
+    "疼": {
+      "ids": [
+        "p_pain"
+      ],
+      "label": "痛",
+      "cat": "medical"
+    },
+    "疼痛": {
+      "ids": [
+        "p_pain"
+      ],
+      "label": "痛",
+      "cat": "medical"
+    },
+    "替换": {
+      "ids": [
+        "a_change_clothes"
+      ],
+      "label": "换",
+      "cat": "actions"
+    },
+    "天天": {
+      "ids": [
+        "p_everyday"
+      ],
+      "label": "每天",
+      "cat": "time"
+    },
+    "听": {
+      "ids": [
+        "p_listen"
+      ],
+      "label": "听",
+      "cat": "actions"
+    },
+    "听听": {
+      "ids": [
+        "p_listen"
+      ],
+      "label": "听",
+      "cat": "actions"
+    },
+    "停": {
+      "ids": [
+        "p_stop"
+      ],
+      "label": "停止",
+      "cat": "quickchat"
+    },
+    "停下": {
+      "ids": [
+        "p_stop"
+      ],
+      "label": "停止",
+      "cat": "quickchat"
+    },
+    "停止": {
+      "ids": [
+        "p_stop"
+      ],
+      "label": "停止",
+      "cat": "quickchat"
+    },
+    "通电话": {
+      "ids": [
+        "p_make_call"
+      ],
+      "label": "打电话",
+      "cat": "activities"
+    },
+    "痛": {
+      "ids": [
+        "p_pain"
+      ],
+      "label": "痛",
+      "cat": "medical"
+    },
+    "头": {
+      "ids": [
+        "p_head"
+      ],
+      "label": "头",
+      "cat": "medical"
+    },
+    "头部": {
+      "ids": [
+        "p_head"
+      ],
+      "label": "头",
+      "cat": "medical"
+    },
+    "头盔": {
+      "ids": [
+        "o_hat"
+      ],
+      "label": "帽子",
+      "cat": "daily"
+    },
+    "头疼": {
+      "ids": [
+        "p_headache"
+      ],
+      "label": "头痛",
+      "cat": "medical"
+    },
+    "头痛": {
+      "ids": [
+        "p_headache"
+      ],
+      "label": "头痛",
+      "cat": "medical"
+    },
+    "头晕": {
+      "ids": [
+        "p_dizzy"
+      ],
+      "label": "头晕",
+      "cat": "medical"
+    },
+    "图片": {
+      "ids": [
+        "r_use_picture"
+      ],
+      "label": "用图片",
+      "cat": "repair"
+    },
+    "腿": {
+      "ids": [
+        "p_leg_body"
+      ],
+      "label": "腿",
+      "cat": "medical"
+    },
+    "脱": {
+      "ids": [
+        "a_take_off_clothes"
+      ],
+      "label": "脱衣",
+      "cat": "activities"
+    },
+    "脱掉": {
+      "ids": [
+        "a_take_off_clothes"
+      ],
+      "label": "脱衣",
+      "cat": "activities"
+    },
+    "脱衣": {
+      "ids": [
+        "a_take_off_clothes"
+      ],
+      "label": "脱衣",
+      "cat": "activities"
+    },
+    "袜": {
+      "ids": [
+        "o_socks"
+      ],
+      "label": "袜子",
+      "cat": "daily"
+    },
+    "袜子": {
+      "ids": [
+        "o_socks"
+      ],
+      "label": "袜子",
+      "cat": "daily"
+    },
+    "外": {
+      "ids": [
+        "d_outside"
+      ],
+      "label": "外",
+      "cat": "descriptors"
+    },
+    "外边": {
+      "ids": [
+        "d_outside"
+      ],
+      "label": "外",
+      "cat": "descriptors"
+    },
+    "外部": {
+      "ids": [
+        "d_outside"
+      ],
+      "label": "外",
+      "cat": "descriptors"
+    },
+    "外出": {
+      "ids": [
+        "a_go_out"
+      ],
+      "label": "出门",
+      "cat": "activities"
+    },
+    "外公": {
+      "ids": [
+        "p_grandfather"
+      ],
+      "label": "爷爷",
+      "cat": "people"
+    },
+    "外面": {
+      "ids": [
+        "p_outside"
+      ],
+      "label": "外面",
+      "cat": "places"
+    },
+    "外婆": {
+      "ids": [
+        "p_grandmother"
+      ],
+      "label": "奶奶",
+      "cat": "people"
+    },
+    "外套": {
+      "ids": [
+        "o_coat"
+      ],
+      "label": "外套",
+      "cat": "daily"
+    },
+    "外衣": {
+      "ids": [
+        "o_coat"
+      ],
+      "label": "外套",
+      "cat": "daily"
+    },
+    "完成": {
+      "ids": [
+        "p_end"
+      ],
+      "label": "完成",
+      "cat": "actions"
+    },
+    "完了": {
+      "ids": [
+        "p_end"
+      ],
+      "label": "完成",
+      "cat": "actions"
+    },
+    "玩": {
+      "ids": [
+        "p_play"
+      ],
+      "label": "玩",
+      "cat": "actions"
+    },
+    "晚餐": {
+      "ids": [
+        "p_dinner"
+      ],
+      "label": "晚饭",
+      "cat": "food"
+    },
+    "晚饭": {
+      "ids": [
+        "p_dinner"
+      ],
+      "label": "晚饭",
+      "cat": "food"
+    },
+    "晚上": {
+      "ids": [
+        "p_night"
+      ],
+      "label": "今晚",
+      "cat": "time"
+    },
+    "碗": {
+      "ids": [
+        "p_bowl"
+      ],
+      "label": "碗",
+      "cat": "objects"
+    },
+    "往后": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "往前": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "往上": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "往下": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "往右": {
+      "ids": [
+        "d_right"
+      ],
+      "label": "右",
+      "cat": "descriptors"
+    },
+    "往左": {
+      "ids": [
+        "d_left"
+      ],
+      "label": "左",
+      "cat": "descriptors"
+    },
+    "忘词了": {
+      "ids": [
+        "r_forgot_word"
+      ],
+      "label": "我忘了这个词",
+      "cat": "repair"
+    },
+    "危险": {
+      "ids": [
+        "m_danger"
+      ],
+      "label": "危险",
+      "cat": "medical"
+    },
+    "危险！": {
+      "ids": [
+        "m_danger"
+      ],
+      "label": "危险",
+      "cat": "medical"
+    },
+    "卫生间": {
+      "ids": [
+        "p_toilet"
+      ],
+      "label": "厕所",
+      "cat": "quickchat"
+    },
+    "卫生纸": {
+      "ids": [
+        "p_toilet_paper"
+      ],
+      "label": "卫生纸",
+      "cat": "daily"
+    },
+    "为什么": {
+      "ids": [
+        "p_why"
+      ],
+      "label": "为什么",
+      "cat": "actions"
+    },
+    "我": {
+      "ids": [
+        "p_i"
+      ],
+      "label": "我",
+      "cat": "actions"
+    },
+    "我不明白": {
+      "ids": [
+        "p_i_dont_understand"
+      ],
+      "label": "我不明白",
+      "cat": "quickchat"
+    },
+    "我不知道": {
+      "ids": [
+        "p_i_dont_get_it"
+      ],
+      "label": "我不知道",
+      "cat": "quickchat"
+    },
+    "我的意思是": {
+      "ids": [
+        "r_i_mean_this"
+      ],
+      "label": "我是这个意思",
+      "cat": "repair"
+    },
+    "我懂但表达不了": {
+      "ids": [
+        "r_know_cant_say"
+      ],
+      "label": "我知道但说不出来",
+      "cat": "repair"
+    },
+    "我好了": {
+      "ids": [
+        "p_i_am_done"
+      ],
+      "label": "我好了",
+      "cat": "quickchat"
+    },
+    "我很难受": {
+      "ids": [
+        "p_i_am_uncomfortable"
+      ],
+      "label": "我很难受",
+      "cat": "quickchat"
+    },
+    "我是这个意思": {
+      "ids": [
+        "r_i_mean_this"
+      ],
+      "label": "我是这个意思",
+      "cat": "repair"
+    },
+    "我痛": {
+      "ids": [
+        "p_i_have_pain"
+      ],
+      "label": "我痛",
+      "cat": "quickchat"
+    },
+    "我完成了": {
+      "ids": [
+        "p_i_am_done"
+      ],
+      "label": "我好了",
+      "cat": "quickchat"
+    },
+    "我忘了这个词": {
+      "ids": [
+        "r_forgot_word"
+      ],
+      "label": "我忘了这个词",
+      "cat": "repair"
+    },
+    "我想换一个说法": {
+      "ids": [
+        "r_rephrase"
+      ],
+      "label": "我想换一个说法",
+      "cat": "repair"
+    },
+    "我想去厕所": {
+      "ids": [
+        "p_i_want_toilet"
+      ],
+      "label": "我想去厕所",
+      "cat": "quickchat"
+    },
+    "我想说": {
+      "ids": [
+        "p_i_want_to_say"
+      ],
+      "label": "我想说",
+      "cat": "quickchat"
+    },
+    "我想休息": {
+      "ids": [
+        "p_i_want_rest"
+      ],
+      "label": "我想休息",
+      "cat": "quickchat"
+    },
+    "我需要时间": {
+      "ids": [
+        "p_need_time"
+      ],
+      "label": "我需要时间",
+      "cat": "quickchat"
+    },
+    "我要喝水": {
+      "ids": [
+        "p_drink_water"
+      ],
+      "label": "我要喝水",
+      "cat": "quickchat"
+    },
+    "我知道但说不出来": {
+      "ids": [
+        "r_know_cant_say"
+      ],
+      "label": "我知道但说不出来",
+      "cat": "repair"
+    },
+    "卧室": {
+      "ids": [
+        "p_bedroom"
+      ],
+      "label": "卧室",
+      "cat": "places"
+    },
+    "无聊": {
+      "ids": [
+        "p_bored"
+      ],
+      "label": "无聊",
+      "cat": "emotions"
+    },
+    "午餐": {
+      "ids": [
+        "p_lunch"
+      ],
+      "label": "午饭",
+      "cat": "food"
+    },
+    "午饭": {
+      "ids": [
+        "p_lunch"
+      ],
+      "label": "午饭",
+      "cat": "food"
+    },
+    "希望": {
+      "ids": [
+        "p_want"
+      ],
+      "label": "想",
+      "cat": "actions"
+    },
+    "洗": {
+      "ids": [
+        "p_wash_hands"
+      ],
+      "label": "洗手",
+      "cat": "daily"
+    },
+    "洗发水": {
+      "ids": [
+        "hy_shampoo"
+      ],
+      "label": "洗发水",
+      "cat": "daily"
+    },
+    "洗发液": {
+      "ids": [
+        "hy_shampoo"
+      ],
+      "label": "洗发水",
+      "cat": "daily"
+    },
+    "洗手": {
+      "ids": [
+        "p_wash_hands"
+      ],
+      "label": "洗手",
+      "cat": "daily"
+    },
+    "洗手间": {
+      "ids": [
+        "p_toilet"
+      ],
+      "label": "厕所",
+      "cat": "quickchat"
+    },
+    "洗手液": {
+      "ids": [
+        "hy_soap"
+      ],
+      "label": "肥皂",
+      "cat": "daily"
+    },
+    "洗澡": {
+      "ids": [
+        "p_shower"
+      ],
+      "label": "洗澡",
+      "cat": "daily"
+    },
+    "喜爱": {
+      "ids": [
+        "p_love"
+      ],
+      "label": "喜欢",
+      "cat": "emotions"
+    },
+    "喜欢": {
+      "ids": [
+        "p_love"
+      ],
+      "label": "喜欢",
+      "cat": "emotions"
+    },
+    "下": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "下边": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "下方": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "下面": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "下面一层": {
+      "ids": [
+        "pl_downstairs"
+      ],
+      "label": "楼下",
+      "cat": "places"
+    },
+    "下午": {
+      "ids": [
+        "p_afternoon"
+      ],
+      "label": "下午",
+      "cat": "time"
+    },
+    "吓": {
+      "ids": [
+        "p_afraid"
+      ],
+      "label": "害怕",
+      "cat": "emotions"
+    },
+    "先别急": {
+      "ids": [
+        "r_no_rush"
+      ],
+      "label": "先别急",
+      "cat": "repair"
+    },
+    "现在": {
+      "ids": [
+        "p_now"
+      ],
+      "label": "现在",
+      "cat": "time"
+    },
+    "香蕉": {
+      "ids": [
+        "p_banana"
+      ],
+      "label": "香蕉",
+      "cat": "food"
+    },
+    "想": {
+      "ids": [
+        "p_want"
+      ],
+      "label": "想",
+      "cat": "actions"
+    },
+    "想不起来": {
+      "ids": [
+        "r_forgot_word"
+      ],
+      "label": "我忘了这个词",
+      "cat": "repair"
+    },
+    "想吐": {
+      "ids": [
+        "p_nausea"
+      ],
+      "label": "恶心",
+      "cat": "medical"
+    },
+    "想要": {
+      "ids": [
+        "p_need_want"
+      ],
+      "label": "要",
+      "cat": "actions"
+    },
+    "向右": {
+      "ids": [
+        "d_right"
+      ],
+      "label": "右",
+      "cat": "descriptors"
+    },
+    "向左": {
+      "ids": [
+        "d_left"
+      ],
+      "label": "左",
+      "cat": "descriptors"
+    },
+    "小": {
+      "ids": [
+        "d_small"
+      ],
+      "label": "小",
+      "cat": "descriptors"
+    },
+    "小的": {
+      "ids": [
+        "d_small"
+      ],
+      "label": "小",
+      "cat": "descriptors"
+    },
+    "小腿": {
+      "ids": [
+        "p_leg_body"
+      ],
+      "label": "腿",
+      "cat": "medical"
+    },
+    "歇": {
+      "ids": [
+        "p_rest"
+      ],
+      "label": "休息",
+      "cat": "activities"
+    },
+    "歇歇": {
+      "ids": [
+        "p_rest"
+      ],
+      "label": "休息",
+      "cat": "activities"
+    },
+    "鞋": {
+      "ids": [
+        "o_shoes"
+      ],
+      "label": "鞋",
+      "cat": "daily"
+    },
+    "鞋子": {
+      "ids": [
+        "o_shoes"
+      ],
+      "label": "鞋",
+      "cat": "daily"
+    },
+    "写下来": {
+      "ids": [
+        "p_write_it"
+      ],
+      "label": "写下来",
+      "cat": "repair"
+    },
+    "谢谢": {
+      "ids": [
+        "p_thank_you"
+      ],
+      "label": "谢谢",
+      "cat": "quickchat"
+    },
+    "心急": {
+      "ids": [
+        "p_anxious"
+      ],
+      "label": "着急",
+      "cat": "emotions"
+    },
+    "星期六": {
+      "ids": [
+        "p_weekend"
+      ],
+      "label": "周末",
+      "cat": "time"
+    },
+    "星期天": {
+      "ids": [
+        "p_weekend"
+      ],
+      "label": "周末",
+      "cat": "time"
+    },
+    "行": {
+      "ids": [
+        "p_good"
+      ],
+      "label": "好",
+      "cat": "actions"
+    },
+    "兄弟": {
+      "ids": [
+        "p_brother"
+      ],
+      "label": "哥哥",
+      "cat": "people"
+    },
+    "胸": {
+      "ids": [
+        "p_chest"
+      ],
+      "label": "胸口",
+      "cat": "medical"
+    },
+    "胸部": {
+      "ids": [
+        "p_chest"
+      ],
+      "label": "胸口",
+      "cat": "medical"
+    },
+    "胸口": {
+      "ids": [
+        "p_chest"
+      ],
+      "label": "胸口",
+      "cat": "medical"
+    },
+    "胸口疼": {
+      "ids": [
+        "p_chest_pain"
+      ],
+      "label": "胸口疼",
+      "cat": "medical"
+    },
+    "胸口痛": {
+      "ids": [
+        "p_chest_pain"
+      ],
+      "label": "胸口疼",
+      "cat": "medical"
+    },
+    "休息": {
+      "ids": [
+        "p_rest"
+      ],
+      "label": "休息",
+      "cat": "activities"
+    },
+    "需要": {
+      "ids": [
+        "p_need_want"
+      ],
+      "label": "要",
+      "cat": "actions"
+    },
+    "许多": {
+      "ids": [
+        "d_many"
+      ],
+      "label": "多",
+      "cat": "descriptors"
+    },
+    "眩晕": {
+      "ids": [
+        "p_dizzy"
+      ],
+      "label": "头晕",
+      "cat": "medical"
+    },
+    "学校": {
+      "ids": [
+        "p_school"
+      ],
+      "label": "学校",
+      "cat": "places"
+    },
+    "雪糕": {
+      "ids": [
+        "p_ice_cream"
+      ],
+      "label": "冰淇淋",
+      "cat": "food"
+    },
+    "血压": {
+      "ids": [
+        "p_blood_pressure"
+      ],
+      "label": "血压",
+      "cat": "medical"
+    },
+    "训练": {
+      "ids": [
+        "a_rehab_training",
+        "a_practice"
+      ],
+      "label": "康复训练",
+      "cat": "activities"
+    },
+    "牙刷": {
+      "ids": [
+        "p_toothbrush"
+      ],
+      "label": "牙刷",
+      "cat": "daily"
+    },
+    "眼": {
+      "ids": [
+        "p_eye_body"
+      ],
+      "label": "眼睛",
+      "cat": "medical"
+    },
+    "眼睛": {
+      "ids": [
+        "p_eye_body"
+      ],
+      "label": "眼睛",
+      "cat": "medical"
+    },
+    "眼镜": {
+      "ids": [
+        "p_glasses"
+      ],
+      "label": "眼镜",
+      "cat": "objects"
+    },
+    "遥控": {
+      "ids": [
+        "p_remote"
+      ],
+      "label": "遥控器",
+      "cat": "objects"
+    },
+    "遥控器": {
+      "ids": [
+        "p_remote"
+      ],
+      "label": "遥控器",
+      "cat": "objects"
+    },
+    "药": {
+      "ids": [
+        "p_medicine"
+      ],
+      "label": "药",
+      "cat": "medical"
+    },
+    "药物": {
+      "ids": [
+        "p_medicine"
+      ],
+      "label": "药",
+      "cat": "medical"
+    },
+    "要": {
+      "ids": [
+        "p_need_want"
+      ],
+      "label": "要",
+      "cat": "actions"
+    },
+    "钥匙": {
+      "ids": [
+        "p_key"
+      ],
+      "label": "钥匙",
+      "cat": "objects"
+    },
+    "爷爷": {
+      "ids": [
+        "p_grandfather"
+      ],
+      "label": "爷爷",
+      "cat": "people"
+    },
+    "一楼": {
+      "ids": [
+        "pl_downstairs"
+      ],
+      "label": "楼下",
+      "cat": "places"
+    },
+    "一样": {
+      "ids": [
+        "p_same"
+      ],
+      "label": "一样",
+      "cat": "repair"
+    },
+    "一直": {
+      "ids": [
+        "p_always"
+      ],
+      "label": "一直",
+      "cat": "time"
+    },
+    "衣服": {
+      "ids": [
+        "p_clothes"
+      ],
+      "label": "衣服",
+      "cat": "daily"
+    },
+    "衣物": {
+      "ids": [
+        "p_clothes"
+      ],
+      "label": "衣服",
+      "cat": "daily"
+    },
+    "医生": {
+      "ids": [
+        "p_doctor"
+      ],
+      "label": "医生",
+      "cat": "medical"
+    },
+    "医院": {
+      "ids": [
+        "p_hospital"
+      ],
+      "label": "医院",
+      "cat": "places"
+    },
+    "以后": {
+      "ids": [
+        "p_later"
+      ],
+      "label": "以后",
+      "cat": "time"
+    },
+    "椅子": {
+      "ids": [
+        "p_chair"
+      ],
+      "label": "椅子",
+      "cat": "objects"
+    },
+    "饮": {
+      "ids": [
+        "p_drink"
+      ],
+      "label": "喝",
+      "cat": "actions"
+    },
+    "饮水": {
+      "ids": [
+        "p_water"
+      ],
+      "label": "水",
+      "cat": "food"
+    },
+    "永远": {
+      "ids": [
+        "p_always"
+      ],
+      "label": "一直",
+      "cat": "time"
+    },
+    "用餐": {
+      "ids": [
+        "p_eat"
+      ],
+      "label": "吃",
+      "cat": "actions"
+    },
+    "用图片": {
+      "ids": [
+        "r_use_picture"
+      ],
+      "label": "用图片",
+      "cat": "repair"
+    },
+    "游戏": {
+      "ids": [
+        "p_play"
+      ],
+      "label": "玩",
+      "cat": "actions"
+    },
+    "有": {
+      "ids": [
+        "p_yes"
+      ],
+      "label": "有",
+      "cat": "actions"
+    },
+    "有的": {
+      "ids": [
+        "p_yes"
+      ],
+      "label": "有",
+      "cat": "actions"
+    },
+    "有危险": {
+      "ids": [
+        "m_danger"
+      ],
+      "label": "危险",
+      "cat": "medical"
+    },
+    "右": {
+      "ids": [
+        "d_right"
+      ],
+      "label": "右",
+      "cat": "descriptors"
+    },
+    "右边": {
+      "ids": [
+        "p_right"
+      ],
+      "label": "右边",
+      "cat": "medical"
+    },
+    "愉快": {
+      "ids": [
+        "p_happy"
+      ],
+      "label": "开心",
+      "cat": "emotions"
+    },
+    "与": {
+      "ids": [
+        "p_and"
+      ],
+      "label": "和",
+      "cat": "actions"
+    },
+    "雨伞": {
+      "ids": [
+        "p_umbrella"
+      ],
+      "label": "雨伞",
+      "cat": "objects"
+    },
+    "郁闷": {
+      "ids": [
+        "p_dejected"
+      ],
+      "label": "沮丧",
+      "cat": "emotions"
+    },
+    "圆珠笔": {
+      "ids": [
+        "p_pen"
+      ],
+      "label": "笔",
+      "cat": "objects"
+    },
+    "阅读": {
+      "ids": [
+        "p_read_book"
+      ],
+      "label": "看书",
+      "cat": "activities"
+    },
+    "晕": {
+      "ids": [
+        "p_dizzy_short"
+      ],
+      "label": "晕",
+      "cat": "medical"
+    },
+    "运动": {
+      "ids": [
+        "p_exercise"
+      ],
+      "label": "运动",
+      "cat": "daily"
+    },
+    "再来": {
+      "ids": [
+        "p_again"
+      ],
+      "label": "再来",
+      "cat": "actions"
+    },
+    "再来一次": {
+      "ids": [
+        "r_try_again"
+      ],
+      "label": "再来一次",
+      "cat": "repair"
+    },
+    "再试一次": {
+      "ids": [
+        "r_try_again"
+      ],
+      "label": "再来一次",
+      "cat": "repair"
+    },
+    "再说一次": {
+      "ids": [
+        "p_repeat"
+      ],
+      "label": "再说一次",
+      "cat": "quickchat"
+    },
+    "再一次": {
+      "ids": [
+        "p_again"
+      ],
+      "label": "再来",
+      "cat": "actions"
+    },
+    "在后面": {
+      "ids": [
+        "d_behind"
+      ],
+      "label": "后",
+      "cat": "descriptors"
+    },
+    "在里面": {
+      "ids": [
+        "d_inside"
+      ],
+      "label": "里",
+      "cat": "descriptors"
+    },
+    "在前面": {
+      "ids": [
+        "d_front"
+      ],
+      "label": "前",
+      "cat": "descriptors"
+    },
+    "在上面": {
+      "ids": [
+        "d_above"
+      ],
+      "label": "上",
+      "cat": "descriptors"
+    },
+    "在外面": {
+      "ids": [
+        "d_outside"
+      ],
+      "label": "外",
+      "cat": "descriptors"
+    },
+    "在下面": {
+      "ids": [
+        "d_below"
+      ],
+      "label": "下",
+      "cat": "descriptors"
+    },
+    "脏": {
+      "ids": [
+        "hy_dirty"
+      ],
+      "label": "脏了",
+      "cat": "daily"
+    },
+    "脏了": {
+      "ids": [
+        "hy_dirty"
+      ],
+      "label": "脏了",
+      "cat": "daily"
+    },
+    "早餐": {
+      "ids": [
+        "p_breakfast"
+      ],
+      "label": "早饭",
+      "cat": "food"
+    },
+    "早饭": {
+      "ids": [
+        "p_breakfast"
+      ],
+      "label": "早饭",
+      "cat": "food"
+    },
+    "早上": {
+      "ids": [
+        "p_morning"
+      ],
+      "label": "早上",
+      "cat": "time"
+    },
+    "皂": {
+      "ids": [
+        "hy_soap"
+      ],
+      "label": "肥皂",
+      "cat": "daily"
+    },
+    "噪音": {
+      "ids": [
+        "o_noisy"
+      ],
+      "label": "吵",
+      "cat": "objects"
+    },
+    "站": {
+      "ids": [
+        "p_stand"
+      ],
+      "label": "站",
+      "cat": "actions"
+    },
+    "站起来": {
+      "ids": [
+        "p_stand"
+      ],
+      "label": "站",
+      "cat": "actions"
+    },
+    "长裤": {
+      "ids": [
+        "o_trousers"
+      ],
+      "label": "裤子",
+      "cat": "daily"
+    },
+    "长袜": {
+      "ids": [
+        "o_socks"
+      ],
+      "label": "袜子",
+      "cat": "daily"
+    },
+    "丈夫": {
+      "ids": [
+        "p_husband"
+      ],
+      "label": "老公/丈夫",
+      "cat": "people"
+    },
+    "找": {
+      "ids": [
+        "p_call"
+      ],
+      "label": "叫",
+      "cat": "actions"
+    },
+    "找词": {
+      "ids": [
+        "r_help_find_word"
+      ],
+      "label": "帮我找词",
+      "cat": "repair"
+    },
+    "照护者": {
+      "ids": [
+        "p_caregiver"
+      ],
+      "label": "看护人",
+      "cat": "people"
+    },
+    "这": {
+      "ids": [
+        "p_this"
+      ],
+      "label": "这",
+      "cat": "actions"
+    },
+    "这边": {
+      "ids": [
+        "p_here"
+      ],
+      "label": "这里",
+      "cat": "places"
+    },
+    "这里": {
+      "ids": [
+        "p_here"
+      ],
+      "label": "这里",
+      "cat": "places"
+    },
+    "着急": {
+      "ids": [
+        "p_anxious"
+      ],
+      "label": "着急",
+      "cat": "emotions"
+    },
+    "枕头": {
+      "ids": [
+        "p_pillow"
+      ],
+      "label": "枕头",
+      "cat": "objects"
+    },
+    "之后": {
+      "ids": [
+        "p_later"
+      ],
+      "label": "以后",
+      "cat": "time"
+    },
+    "纸巾": {
+      "ids": [
+        "p_tissue"
+      ],
+      "label": "纸巾",
+      "cat": "objects"
+    },
+    "指给我看": {
+      "ids": [
+        "p_point_to_me"
+      ],
+      "label": "指给我看",
+      "cat": "repair"
+    },
+    "治疗师": {
+      "ids": [
+        "p_therapist"
+      ],
+      "label": "治疗师",
+      "cat": "medical"
+    },
+    "中饭": {
+      "ids": [
+        "p_lunch"
+      ],
+      "label": "午饭",
+      "cat": "food"
+    },
+    "重复一遍": {
+      "ids": [
+        "p_repeat"
+      ],
+      "label": "再说一次",
+      "cat": "quickchat"
+    },
+    "重试": {
+      "ids": [
+        "r_try_again"
+      ],
+      "label": "再来一次",
+      "cat": "repair"
+    },
+    "周末": {
+      "ids": [
+        "p_weekend"
+      ],
+      "label": "周末",
+      "cat": "time"
+    },
+    "粥": {
+      "ids": [
+        "p_congee"
+      ],
+      "label": "粥",
+      "cat": "food"
+    },
+    "猪肉": {
+      "ids": [
+        "p_meat"
+      ],
+      "label": "肉",
+      "cat": "food"
+    },
+    "桌": {
+      "ids": [
+        "p_table"
+      ],
+      "label": "桌子",
+      "cat": "objects"
+    },
+    "桌子": {
+      "ids": [
+        "p_table"
+      ],
+      "label": "桌子",
+      "cat": "objects"
+    },
+    "自己": {
+      "ids": [
+        "p_i"
+      ],
+      "label": "我",
+      "cat": "actions"
+    },
+    "总是": {
+      "ids": [
+        "p_always"
+      ],
+      "label": "一直",
+      "cat": "time"
+    },
+    "走": {
+      "ids": [
+        "p_go"
+      ],
+      "label": "去",
+      "cat": "actions"
+    },
+    "走路": {
+      "ids": [
+        "p_walk"
+      ],
+      "label": "走路",
+      "cat": "actions"
+    },
+    "足": {
+      "ids": [
+        "p_foot_body"
+      ],
+      "label": "脚",
+      "cat": "medical"
+    },
+    "嘴": {
+      "ids": [
+        "p_mouth"
+      ],
+      "label": "嘴",
+      "cat": "medical"
+    },
+    "昨天": {
+      "ids": [
+        "p_yesterday"
+      ],
+      "label": "昨天",
+      "cat": "time"
+    },
+    "左": {
+      "ids": [
+        "d_left"
+      ],
+      "label": "左",
+      "cat": "descriptors"
+    },
+    "左边": {
+      "ids": [
+        "p_left"
+      ],
+      "label": "左边",
+      "cat": "medical"
+    },
+    "坐": {
+      "ids": [
+        "p_sit"
+      ],
+      "label": "坐",
+      "cat": "actions"
+    },
+    "坐下": {
+      "ids": [
+        "p_sit"
+      ],
+      "label": "坐",
+      "cat": "actions"
+    },
+    "做": {
+      "ids": [
+        "p_do"
+      ],
+      "label": "做",
+      "cat": "actions"
+    },
+    "metro": {
+      "ids": [
+        "pl_subway"
+      ],
+      "label": "地铁",
+      "cat": "places"
+    },
+    "TV": {
+      "ids": [
+        "p_television"
+      ],
+      "label": "电视",
+      "cat": "objects"
+    }
+  }
+}

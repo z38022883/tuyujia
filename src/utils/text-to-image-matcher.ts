@@ -16,6 +16,71 @@ import type { PictogramEntry } from '@/types'
  */
 const NEGATION_PREFIXES = ['不', '没', '别', '勿', '莫', '未'] as const
 
+/**
+ * 面向出图的功能词（情态/虚词/趋向补语），接收场景中剔除可安全降低误出图。
+ * 注意：不带"来/去"这类既可作动词又可作补语的词，避免误伤内容义（如"医生来看你"）。
+ */
+const FUNCTION_WORDS = new Set(['需要', '要', '该', '应该', '感觉', '好像', '起来', '下来', '上来', '上去', '下去'])
+
+/**
+ * 否定复合词合并：Intl.Segmenter 常把"不+开心"切成"不""开心"两个 token，
+ * 导致正面词单独命中错误图（"不开心"→p_happy）。这里把单字否定词与后随 token
+ * 合成一个复合词，交由后续精确匹配整体图（或安全 miss）。
+ */
+function mergeNegation(tokens: string[]): string[] {
+  const out: string[] = []
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i]
+    if ((NEGATION_PREFIXES as readonly string[]).includes(token) && i + 1 < tokens.length) {
+      out.push(token + tokens[i + 1])
+      i++
+    } else {
+      out.push(token)
+    }
+  }
+  return out
+}
+
+/** 图库词表（label.zh + synonyms），用于未命中 token 的贪心拆解 */
+function buildVocab(): Set<string> {
+  const set = new Set<string>()
+  for (const p of getAllPictograms()) {
+    for (const label of p.labels.zh) set.add(label)
+    for (const synonym of p.synonyms) set.add(synonym)
+  }
+  return set
+}
+const VOCAB = buildVocab()
+
+/** 贪心拆解产出的单字虚词碎片，直接丢弃（不做匹配、不进结果序列） */
+const MINOR_WORDS = new Set(['了', '的', '吧', '呢', '啊', '哦', '呀', '吗', '把', '着', '过', '这', '那', '之', '么'])
+
+/**
+ * 正向最大匹配拆解：Intl 常把口语合成非图库词（"睡了/来看/把手"）。
+ * 对未命中 token，按图库词表做最长前缀切分，拆出可命中的图库词；其余单字保留。
+ */
+function splitByLexicon(raw: string, maxLen: number): string[] {
+  const out: string[] = []
+  let i = 0
+  while (i < raw.length) {
+    let consumed = 0
+    for (let len = Math.min(maxLen, raw.length - i); len >= 1; len--) {
+      if (VOCAB.has(raw.slice(i, i + len))) {
+        consumed = len
+        break
+      }
+    }
+    if (consumed === 0) {
+      out.push(raw[i])
+      i++
+    } else {
+      out.push(raw.slice(i, i + consumed))
+      i += consumed
+    }
+  }
+  return out
+}
+
 type LexiconLikeEntry = {
   zh: string
   category?: string
@@ -152,6 +217,92 @@ export interface MatchTextOptions {
   preSegmented?: string[]
 }
 
+interface TokenMatch {
+  pictogram: PictogramEntry | null
+  matchType: MatchedToken['matchType']
+}
+
+/** 对单个 token 执行 5 级匹配，返回命中的图符与匹配方式（未命中则 pictogram=null）。 */
+function matchToken(token: string, allPictograms: PictogramEntry[]): TokenMatch {
+  let matched: PictogramEntry | null = null
+  let matchType: MatchedToken['matchType'] = 'none'
+  const lexiconEntry = normalizeLexiconEntry(findEntry(token))
+
+  // Strategy 1: 精确匹配 labels.zh，同阶段允许用 category / exclusion 做重排
+  const exactCandidate = pickBestCandidate(
+    token,
+    allPictograms
+      .filter((p) => p.labels.zh.some((label) => label === token))
+      .map((p) => ({ pictogram: p, matchType: 'exact' as const, matchedKey: token })),
+    lexiconEntry,
+  )
+  if (exactCandidate) {
+    matched = exactCandidate.pictogram
+    matchType = exactCandidate.matchType
+  }
+
+  // Strategy 2: 匹配 synonyms，同阶段允许 exclusion 拦截错误候选
+  if (!matched) {
+    const synonymCandidate = pickBestCandidate(
+      token,
+      allPictograms
+        .filter((p) => p.synonyms.includes(token))
+        .map((p) => ({ pictogram: p, matchType: 'synonym' as const, matchedKey: token })),
+      lexiconEntry,
+    )
+    if (synonymCandidate) {
+      matched = synonymCandidate.pictogram
+      matchType = synonymCandidate.matchType
+    }
+  }
+
+  // Strategy 3: 通过 lexicon 查找同义词的主词，再匹配
+  if (!matched) {
+    if (lexiconEntry) {
+      const lexiconCandidate = pickBestCandidate(
+        token,
+        allPictograms
+          .filter((p) => p.labels.zh.some((label) => label === lexiconEntry.zh))
+          .map((p) => ({ pictogram: p, matchType: 'lexicon-synonym' as const, matchedKey: lexiconEntry.zh })),
+        lexiconEntry,
+      )
+      if (lexiconCandidate) {
+        matched = lexiconCandidate.pictogram
+        matchType = lexiconCandidate.matchType
+      }
+    }
+  }
+
+  // Strategy 4: 包含匹配 — token 内含有某个 label（label ≥ 2 字），取最长命中
+  // 安全限制：跳过否定前缀词（"不开心" 不应匹配 "开心"）
+  if (!matched && token.length >= 3 && !NEGATION_PREFIXES.some((p) => token.startsWith(p))) {
+    const partialCandidates: Candidate[] = []
+    for (const p of allPictograms) {
+      let bestLabelLength = 0
+      for (const label of p.labels.zh) {
+        if (label.length >= 2 && token.includes(label) && label.length > bestLabelLength) {
+          bestLabelLength = label.length
+        }
+      }
+      if (bestLabelLength > 0) {
+        partialCandidates.push({
+          pictogram: p,
+          matchType: 'partial',
+          matchedKey: p.labels.zh.find((label) => label.length === bestLabelLength && token.includes(label)) ?? token,
+          matchedLabelLength: bestLabelLength,
+        })
+      }
+    }
+    const partialCandidate = pickBestCandidate(token, partialCandidates, lexiconEntry)
+    if (partialCandidate) {
+      matched = partialCandidate.pictogram
+      matchType = partialCandidate.matchType
+    }
+  }
+
+  return { pictogram: matched, matchType }
+}
+
 /**
  * 将文本转换为图片序列。
  *
@@ -174,90 +325,28 @@ export async function matchTextToImages(
     ? { segments: options.preSegmented, engine: 'intl-segmenter' }
     : segmentText(text)
 
+  // P1 预处理：先合成否定复合词（防"不+X"拆出正面词导致语义反转），再剔除功能词。
+  segmentation.segments = mergeNegation(segmentation.segments).filter((t) => !FUNCTION_WORDS.has(t))
+
   const matches: MatchedToken[] = []
 
   // 预加载所有图片条目（MVP 数据量小，全加载可行）
   const allPictograms = getAllPictograms()
 
   for (const token of segmentation.segments) {
-    let matched: PictogramEntry | null = null
-    let matchType: MatchedToken['matchType'] = 'none'
-    const lexiconEntry = normalizeLexiconEntry(findEntry(token))
+    // P1 贪心拆解：token 未命中且图库能从中拆出多个词时，拆成各图库词再匹配。
+    // 仅作用于 none token，已命中的（含合规整体图）一律不拆，避免引入粒度回归。
+    const pieces = (() => {
+      if (matchToken(token, allPictograms).pictogram) return [token]
+      const subs = splitByLexicon(token, 4)
+      return subs.length > 1 ? subs : [token]
+    })()
 
-    // Strategy 1: 精确匹配 labels.zh，同阶段允许用 category / exclusion 做重排
-    const exactCandidate = pickBestCandidate(
-      token,
-      allPictograms
-        .filter((p) => p.labels.zh.some((label) => label === token))
-        .map((p) => ({ pictogram: p, matchType: 'exact' as const, matchedKey: token })),
-      lexiconEntry,
-    )
-    if (exactCandidate) {
-      matched = exactCandidate.pictogram
-      matchType = exactCandidate.matchType
+    for (const piece of pieces) {
+      if (MINOR_WORDS.has(piece) || FUNCTION_WORDS.has(piece)) continue
+      const { pictogram, matchType } = matchToken(piece, allPictograms)
+      matches.push({ token: piece, pictogram, matchType })
     }
-
-    // Strategy 2: 匹配 synonyms，同阶段允许 exclusion 拦截错误候选
-    if (!matched) {
-      const synonymCandidate = pickBestCandidate(
-        token,
-        allPictograms
-          .filter((p) => p.synonyms.includes(token))
-          .map((p) => ({ pictogram: p, matchType: 'synonym' as const, matchedKey: token })),
-        lexiconEntry,
-      )
-      if (synonymCandidate) {
-        matched = synonymCandidate.pictogram
-        matchType = synonymCandidate.matchType
-      }
-    }
-
-    // Strategy 3: 通过 lexicon 查找同义词的主词，再匹配
-    if (!matched) {
-      if (lexiconEntry) {
-        const lexiconCandidate = pickBestCandidate(
-          token,
-          allPictograms
-            .filter((p) => p.labels.zh.some((label) => label === lexiconEntry.zh))
-            .map((p) => ({ pictogram: p, matchType: 'lexicon-synonym' as const, matchedKey: lexiconEntry.zh })),
-          lexiconEntry,
-        )
-        if (lexiconCandidate) {
-          matched = lexiconCandidate.pictogram
-          matchType = lexiconCandidate.matchType
-        }
-      }
-    }
-
-    // Strategy 4: 包含匹配 — token 内含有某个 label（label ≥ 2 字），取最长命中
-    // 适用场景：分词引擎将 "肚子疼" 作为整体 token，但图库里只有 "肚子"
-    // 安全限制：跳过否定前缀词（"不开心" 不应匹配 "开心"）
-    if (!matched && token.length >= 3 && !NEGATION_PREFIXES.some((p) => token.startsWith(p))) {
-      const partialCandidates: Candidate[] = []
-      for (const p of allPictograms) {
-        let bestLabelLength = 0
-        for (const label of p.labels.zh) {
-          if (label.length >= 2 && token.includes(label) && label.length > bestLabelLength) {
-            bestLabelLength = label.length
-          }
-        }
-        if (bestLabelLength > 0) {
-          partialCandidates.push({
-            pictogram: p,
-            matchType: 'partial',
-            matchedKey: p.labels.zh.find((label) => label.length === bestLabelLength && token.includes(label)) ?? token,
-            matchedLabelLength: bestLabelLength,
-          })
-        }
-      }
-      const partialCandidate = pickBestCandidate(token, partialCandidates, lexiconEntry)
-      if (partialCandidate) {
-        matched = partialCandidate.pictogram
-        matchType = partialCandidate.matchType
-      }
-    }
-
-    matches.push({ token, pictogram: matched, matchType })
   }
 
   const matchedCount = matches.filter((m) => m.pictogram !== null).length
