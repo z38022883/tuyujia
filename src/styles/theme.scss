@@ -12,6 +12,20 @@ $color-accent: #ff9f5a;
 $color-accent-light: #ffbc88;
 $color-accent-dark: #e0853f;
 
+// ============================================
+// 品牌渐变（高级感签名：贯穿全应用的品牌语感）
+// ============================================
+// 主渐变：主按钮 / 品牌头部 / 强调卡片
+$gradient-brand: linear-gradient(135deg, #29b6c4 0%, #55cbd6 100%);
+// 深渐变：更深的沉浸式头部 / 选中态强化
+$gradient-brand-deep: linear-gradient(135deg, #1e8a95 0%, #29b6c4 100%);
+// 柔和渐变：顶部淡彩衬底，用于页面头部背景、空状态背景
+$gradient-brand-soft: linear-gradient(180deg, rgba(41, 182, 196, 0.08) 0%, rgba(41, 182, 196, 0) 100%);
+// 强调渐变：收藏 / 高亮操作
+$gradient-accent: linear-gradient(135deg, #ff9f5a 0%, #ffbc88 100%);
+// 页面纸张渐变：顶部微光到页面底色，营造轻盈层次
+$gradient-page: linear-gradient(180deg, #eef4f5 0%, #f5f7f8 28%, #f5f7f8 100%);
+
 // 功能色
 $color-success: #00b42a;
 $color-warning: #ff7d00;
@@ -32,8 +46,8 @@ $color-text-disabled: #c9cdd4;
 $color-text-white: #ffffff;
 
 // 边框色
-$color-border: #e5e6eb;
-$color-divider: #f2f3f5;
+$color-border: rgba(31, 41, 55, 0.1); // 毛发级细边，高级感
+$color-divider: rgba(31, 41, 55, 0.06);
 
 // 分类色（图符卡片按分类着色）
 $color-cat-people: #5b8def;

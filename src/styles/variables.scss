@@ -22,9 +22,9 @@ $spacing-xl: 48rpx;
 // 圆角（语义化）
 $radius-xs: 4rpx; // 小元素：标签、徽章
 $radius-sm: 8rpx; // 卡片内小元素
-$radius-md: 12rpx; // 常规卡片
-$radius-lg: 16rpx; // 大卡片
-$radius-xl: 20rpx; // 特大卡片
+$radius-md: 14rpx; // 常规卡片
+$radius-lg: 20rpx; // 大卡片
+$radius-xl: 24rpx; // 特大卡片
 $radius-button: 48rpx; // 按钮专用（全圆角，符合主流小程序）
 $radius-round: 999rpx; // 完全圆形
 
@@ -33,11 +33,15 @@ $button-height-sm: 64rpx; // 小按钮（次要操作）
 $button-height-md: 80rpx; // 常规按钮（主流标准）
 $button-height-lg: 96rpx; // 大按钮（主要操作、底部固定）
 
-// 阴影（语义化）
-$shadow-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.08); // 卡片阴影
-$shadow-card-hover: 0 4rpx 20rpx rgba(0, 0, 0, 0.12); // 卡片悬浮
-$shadow-float: 0 4rpx 16rpx rgba(0, 0, 0, 0.1); // 浮层阴影（如筛选栏、底部操作栏）
-$shadow-popup: 0 8rpx 32rpx rgba(0, 0, 0, 0.15); // 弹窗阴影
+// 阴影（语义化，双/三层柔和投影，营造轻盈立体层次）
+$shadow-card:
+  0 2rpx 6rpx rgba(31, 41, 55, 0.05),
+  0 12rpx 32rpx -8rpx rgba(31, 41, 55, 0.1); // 卡片阴影
+$shadow-card-hover:
+  0 4rpx 10rpx rgba(31, 41, 55, 0.06),
+  0 20rpx 48rpx -12rpx rgba(31, 41, 55, 0.18); // 卡片悬浮
+$shadow-float: 0 8rpx 24rpx -6rpx rgba(31, 41, 55, 0.14); // 浮层阴影（如筛选栏、底部操作栏）
+$shadow-popup: 0 16rpx 56rpx -8rpx rgba(31, 41, 55, 0.22); // 弹窗阴影
 
 // 字体大小
 $font-size-xs: 22rpx;
@@ -46,6 +50,11 @@ $font-size-md: 28rpx;
 $font-size-lg: 32rpx;
 $font-size-xl: 36rpx;
 $font-size-xxl: 40rpx;
+
+// 字距（高级感：微调标题与正文的字距节奏）
+$letter-spacing-default: 0.4rpx; // 正文默认
+$letter-spacing-title: 1.5rpx; // 标题
+$letter-spacing-wide: 3rpx; // 大写标签 / 徽章
 
 // 行高
 $line-height-tight: 1.3;

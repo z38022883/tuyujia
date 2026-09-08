@@ -1,21 +1,38 @@
-@use './styles/theme.scss' as *;
+@use './styles/variables.scss' as *;
 @use './styles/compat.scss';
 
+// ============================================
+// 全局页面基础样式（清爽医疗科技风）
+// ============================================
 page {
-  background-color: $color-bg-page;
+  background: $gradient-page;
   color: $color-text-primary;
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Helvetica Neue',
     'Microsoft YaHei', sans-serif;
   font-size: 28rpx;
-  line-height: 1.5;
+  line-height: 1.55;
+  letter-spacing: $letter-spacing-default;
   -webkit-font-smoothing: antialiased;
 }
 
 view,
-text {
+text,
+button,
+scroll-view {
   box-sizing: border-box;
 }
 
+// 统一文本抗锯齿渲染，提升汉字清晰度与高级质感
+text {
+  -webkit-font-smoothing: antialiased;
+}
+
+// 标题微调字距（对带语义类的标题做统一柔和处理）
+view {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// 隐藏滚动条（保持轻盈）
 ::-webkit-scrollbar {
   display: none;
 }
