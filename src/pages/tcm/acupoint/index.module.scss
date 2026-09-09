@@ -172,7 +172,7 @@
   width: 240rpx;
   height: 240rpx;
   border-radius: $radius-round;
-  background: rgba(43, 182, 196, 0.12);
+  background: rgba(74, 156, 110, 0.12);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -185,11 +185,11 @@
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(43, 182, 196, 0.3);
+    box-shadow: 0 0 0 0 rgba(74, 156, 110, 0.3);
   }
   50% {
     transform: scale(1.12);
-    box-shadow: 0 0 0 24rpx rgba(43, 182, 196, 0);
+    box-shadow: 0 0 0 24rpx rgba(74, 156, 110, 0);
   }
 }
 

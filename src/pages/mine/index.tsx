@@ -98,7 +98,7 @@ function MinePage() {
               value={rate}
               onChanging={(e) => setRate(e.detail.value)}
               onChange={(e) => updateSettings({ rate: e.detail.value })}
-              activeColor="#2bb6c4"
+              activeColor="#4a9c6e"
               blockSize={20}
             />
             <View className={styles.row}>
@@ -123,7 +123,7 @@ function MinePage() {
               <Text className={styles.label}>选词后自动朗读</Text>
               <Switch
                 checked={settings.autoSpeak}
-                color="#2bb6c4"
+                color="#4a9c6e"
                 onChange={(e) => updateSettings({ autoSpeak: e.detail.value })}
               />
             </View>

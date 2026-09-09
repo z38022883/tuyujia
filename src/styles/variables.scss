@@ -33,15 +33,15 @@ $button-height-sm: 64rpx; // 小按钮（次要操作）
 $button-height-md: 80rpx; // 常规按钮（主流标准）
 $button-height-lg: 96rpx; // 大按钮（主要操作、底部固定）
 
-// 阴影（语义化，双/三层柔和投影，营造轻盈立体层次）
+// 阴影（语义化，双/三层柔和投影，绿调营造轻盈立体层次）
 $shadow-card:
-  0 2rpx 6rpx rgba(31, 41, 55, 0.05),
-  0 12rpx 32rpx -8rpx rgba(31, 41, 55, 0.1); // 卡片阴影
+  0 2rpx 6rpx rgba(45, 106, 79, 0.05),
+  0 12rpx 32rpx -8rpx rgba(45, 106, 79, 0.1); // 卡片阴影
 $shadow-card-hover:
-  0 4rpx 10rpx rgba(31, 41, 55, 0.06),
-  0 20rpx 48rpx -12rpx rgba(31, 41, 55, 0.18); // 卡片悬浮
-$shadow-float: 0 8rpx 24rpx -6rpx rgba(31, 41, 55, 0.14); // 浮层阴影（如筛选栏、底部操作栏）
-$shadow-popup: 0 16rpx 56rpx -8rpx rgba(31, 41, 55, 0.22); // 弹窗阴影
+  0 4rpx 10rpx rgba(45, 106, 79, 0.06),
+  0 20rpx 48rpx -12rpx rgba(45, 106, 79, 0.18); // 卡片悬浮
+$shadow-float: 0 8rpx 24rpx -6rpx rgba(45, 106, 79, 0.14); // 浮层阴影（如筛选栏、底部操作栏）
+$shadow-popup: 0 16rpx 56rpx -8rpx rgba(45, 106, 79, 0.22); // 弹窗阴影
 
 // 字体大小
 $font-size-xs: 22rpx;

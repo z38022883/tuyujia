@@ -20,14 +20,14 @@ export default defineAppConfig({
   ],
   window: {
     backgroundTextStyle: 'dark',
-    navigationBarBackgroundColor: '#f5f7f8',
+    navigationBarBackgroundColor: '#f2f7f4',
     navigationBarTitleText: '图语家',
     navigationBarTextStyle: 'black',
-    backgroundColor: '#f5f7f8'
+    backgroundColor: '#f2f7f4'
   },
   tabBar: {
-    color: '#86909c',
-    selectedColor: '#1e8a95',
+    color: '#9aa8a3',
+    selectedColor: '#2d6a4f',
     backgroundColor: '#ffffff',
     borderStyle: 'white',
     list: [

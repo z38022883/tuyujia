@@ -2,10 +2,10 @@
 // 图语家主题配色变量
 // ============================================
 
-// 品牌主题色：青绿，象征语音/沟通
-$color-primary: #2bb6c4;
-$color-primary-light: #5ecdd8;
-$color-primary-dark: #1e8a95;
+// 品牌主题色：冷绿，专业医疗康复感
+$color-primary: #4a9c6e;
+$color-primary-light: #6fb98c;
+$color-primary-dark: #2d6a4f;
 
 // 辅助色：暖橙，用于强调/收藏
 $color-accent: #ff9f5a;
@@ -16,38 +16,38 @@ $color-accent-dark: #e0853f;
 // 品牌渐变（高级感签名：贯穿全应用的品牌语感）
 // ============================================
 // 主渐变：主按钮 / 品牌头部 / 强调卡片
-$gradient-brand: linear-gradient(135deg, #29b6c4 0%, #55cbd6 100%);
+$gradient-brand: linear-gradient(135deg, #4a9c6e 0%, #3d8b5e 100%);
 // 深渐变：更深的沉浸式头部 / 选中态强化
-$gradient-brand-deep: linear-gradient(135deg, #1e8a95 0%, #29b6c4 100%);
+$gradient-brand-deep: linear-gradient(135deg, #2d6a4f 0%, #4a9c6e 100%);
 // 柔和渐变：顶部淡彩衬底，用于页面头部背景、空状态背景
-$gradient-brand-soft: linear-gradient(180deg, rgba(41, 182, 196, 0.08) 0%, rgba(41, 182, 196, 0) 100%);
+$gradient-brand-soft: linear-gradient(180deg, rgba(74, 156, 110, 0.08) 0%, rgba(74, 156, 110, 0) 100%);
 // 强调渐变：收藏 / 高亮操作
 $gradient-accent: linear-gradient(135deg, #ff9f5a 0%, #ffbc88 100%);
 // 页面纸张渐变：顶部微光到页面底色，营造轻盈层次
-$gradient-page: linear-gradient(180deg, #eef4f5 0%, #f5f7f8 28%, #f5f7f8 100%);
+$gradient-page: linear-gradient(180deg, #eaf2ed 0%, #f2f7f4 28%, #f2f7f4 100%);
 
 // 功能色
 $color-success: #00b42a;
 $color-warning: #ff7d00;
 $color-error: #f53f3f;
-$color-info: #2bb6c4;
+$color-info: #4a9c6e;
 
 // 背景色
-$color-bg-page: #f5f7f8;
+$color-bg-page: #f2f7f4;
 $color-bg-card: #ffffff;
-$color-bg-hover: #f2f3f5;
-$color-bg-primary-soft: rgba(43, 182, 196, 0.08);
+$color-bg-hover: #edf3ef;
+$color-bg-primary-soft: rgba(74, 156, 110, 0.08);
 
-// 文本色
-$color-text-primary: #1d2129;
-$color-text-secondary: #4e5969;
-$color-text-tertiary: #86909c;
-$color-text-disabled: #c9cdd4;
+// 文本色（带绿调的灰阶，呼应医疗冷绿主题）
+$color-text-primary: #2c3e35;
+$color-text-secondary: #6b7c74;
+$color-text-tertiary: #9aa8a3;
+$color-text-disabled: #b9c6c0;
 $color-text-white: #ffffff;
 
 // 边框色
-$color-border: rgba(31, 41, 55, 0.1); // 毛发级细边，高级感
-$color-divider: rgba(31, 41, 55, 0.06);
+$color-border: rgba(45, 106, 79, 0.12); // 毛发级细边，高级感
+$color-divider: rgba(45, 106, 79, 0.08);
 
 // 分类色（图符卡片按分类着色）
 $color-cat-people: #5b8def;
@@ -56,5 +56,5 @@ $color-cat-object: #9b7ede;
 $color-cat-food: #ff7575;
 $color-cat-feeling: #f5a623;
 $color-cat-place: #36c28b;
-$color-cat-desc: #4ecdc4;
-$color-cat-common: #86909c;
+$color-cat-desc: #54a0b8;
+$color-cat-common: #9aa8a3;

@@ -90,5 +90,5 @@ function render(color) {
 
 const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'assets', 'tabbar')
 writeFileSync(join(outDir, 'home.png'), render([0x99, 0x99, 0x99])) // 未选中：灰
-writeFileSync(join(outDir, 'home-selected.png'), render([0x2b, 0xb6, 0xc4])) // 选中：主题青绿
+writeFileSync(join(outDir, 'home-selected.png'), render([0x4a, 0x9c, 0x6e])) // 选中：主题冷绿
 console.log('written home.png / home-selected.png')
