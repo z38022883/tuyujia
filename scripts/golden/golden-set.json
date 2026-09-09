@@ -1,17 +1,21 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "domain": "receive",
-  "target": "出图质量：以内容词召回为主，matcher matchRate 仅作参考",
+  "target": "出图质量：以内容词召回为主，兼顾精度（预期外图）与否定反转断言；按场景分层统计覆盖",
   "notes": [
-    "golden 集用于回归接收模块分词与匹配。每一条记录真实接收场景句子 → 期望的图符序列。",
-    "expected 项按原文出现顺序排列；每项标注 role：content=内容词（计入召回分母），function=功能词（语气助词/情态词，无图合理）。",
-    "content 项的 pictogramId 为期望命中的图符 id；若为 null 表示图库无对应图（真实缺口样本，用于暴露词表覆盖不足）。",
-    "评估：内容词召回 = 命中期望图符的内容词数 / 有期望图符的内容词总数。",
-    "更新图库后需重新运行 scripts/golden/build-lexicon-index.cjs 刷新词表参考。"
+    "golden v2：从 20 条扩至 85 条，覆盖 14 个日常高频场景；每条标注 scenario（场景）与 sentenceType（句式）。",
+    "expected 项按原文出现顺序排列；role：content=内容词（计入召回分母），function=功能词（语气/情态/趋向补语，无图合理）。",
+    "content 项 pictogramId=null 为图库缺口样本（补全清单来源）；从隔壁项目补齐图符后回填 id 并重跑本集。",
+    "forbiddenIds：该句输出中禁止出现的图符（语义反转/正反问假阳性断言），评估时单独计数。",
+    "出图目标：以整体图为优先——存在整体图（如 头疼 p_headache、肚子疼 p_stomachache）时不以拆分词为期望。",
+    "评估口径：内容词召回 = 命中期望图符的内容词数 / 有期望图符的内容词总数；精度 = 命中数 / 实际输出图符数；按 scenario 聚合。",
+    "更新图库后需重新运行 scripts/golden/build-lexicon-index.cjs 刷新词表参考，再跑 run-golden.ts 出报告。"
   ],
   "cases": [
     {
       "id": "rec-001",
+      "scenario": "饮食",
+      "sentenceType": "疑问",
       "sentence": "今天吃什么",
       "expected": [
         { "segment": "今天", "word": "今天", "pictogramId": "p_today", "role": "content" },
@@ -21,6 +25,8 @@
     },
     {
       "id": "rec-002",
+      "scenario": "饮食",
+      "sentenceType": "疑问",
       "sentence": "需要喝水吗",
       "expected": [
         { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
@@ -31,6 +37,8 @@
     },
     {
       "id": "rec-003",
+      "scenario": "排泄卫生",
+      "sentenceType": "疑问",
       "sentence": "需要去厕所吗",
       "expected": [
         { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
@@ -41,15 +49,20 @@
     },
     {
       "id": "rec-004",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "需要吃药吗",
+      "note": "v2：图库存在整体图 吃药(p_take_medicine)，以整体图为期望单元",
       "expected": [
-        { "segment": "药", "word": "药", "pictogramId": "p_medicine", "role": "content" },
+        { "segment": "吃药", "word": "吃药", "pictogramId": "p_take_medicine", "role": "content" },
         { "segment": "需要", "word": "需要", "pictogramId": null, "role": "function" },
         { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
       ]
     },
     {
       "id": "rec-005",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "你头晕吗",
       "expected": [
         { "segment": "头晕", "word": "头晕", "pictogramId": "p_dizzy", "role": "content" },
@@ -59,6 +72,8 @@
     },
     {
       "id": "rec-006",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "你发烧了吗",
       "expected": [
         { "segment": "发烧", "word": "发烧", "pictogramId": "p_fever", "role": "content" },
@@ -69,6 +84,8 @@
     },
     {
       "id": "rec-007",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "感觉恶心吗",
       "expected": [
         { "segment": "恶心", "word": "恶心", "pictogramId": "p_nausea", "role": "content" },
@@ -78,25 +95,31 @@
     },
     {
       "id": "rec-008",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "你头疼吗",
+      "note": "v2：期望改为整体图 头疼(p_headache)，不再拆分 头+疼",
       "expected": [
-        { "segment": "头", "word": "头", "pictogramId": "p_head", "role": "content" },
-        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" },
+        { "segment": "头疼", "word": "头疼", "pictogramId": "p_headache", "role": "content" },
         { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
         { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
       ]
     },
     {
       "id": "rec-009",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "肚子疼吗",
+      "note": "v2：期望改为整体图 肚子疼(p_stomachache)，不再拆分 肚子+疼",
       "expected": [
-        { "segment": "肚子", "word": "肚子", "pictogramId": "p_belly", "role": "content" },
-        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" },
+        { "segment": "肚子疼", "word": "肚子疼", "pictogramId": "p_stomachache", "role": "content" },
         { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
       ]
     },
     {
       "id": "rec-010",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
       "sentence": "你不舒服吗",
       "expected": [
         { "segment": "不舒服", "word": "不舒服", "pictogramId": "p_unwell", "role": "content" },
@@ -106,6 +129,8 @@
     },
     {
       "id": "rec-011",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
       "sentence": "你难过吗",
       "expected": [
         { "segment": "难过", "word": "难过", "pictogramId": "p_upset", "role": "content" },
@@ -115,6 +140,8 @@
     },
     {
       "id": "rec-012",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
       "sentence": "你害怕吗",
       "expected": [
         { "segment": "害怕", "word": "害怕", "pictogramId": "p_afraid", "role": "content" },
@@ -124,7 +151,11 @@
     },
     {
       "id": "rec-013",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
       "sentence": "你不开心吗",
+      "note": "否定反转断言：输出中禁止出现 开心(p_happy)",
+      "forbiddenIds": ["p_happy"],
       "expected": [
         { "segment": "不开心", "word": "不开心", "pictogramId": "p_sad", "role": "content", "altIds": ["p_upset"] },
         { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
@@ -133,6 +164,8 @@
     },
     {
       "id": "rec-014",
+      "scenario": "动作活动",
+      "sentenceType": "疑问",
       "sentence": "你睡了吗",
       "expected": [
         { "segment": "睡", "word": "睡", "pictogramId": "p_sleep", "role": "content" },
@@ -143,6 +176,8 @@
     },
     {
       "id": "rec-015",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
       "sentence": "起床吧",
       "expected": [
         { "segment": "起床", "word": "起床", "pictogramId": "p_wake_up", "role": "content" },
@@ -151,26 +186,32 @@
     },
     {
       "id": "rec-016",
+      "scenario": "饮食",
+      "sentenceType": "陈述",
       "sentence": "该吃饭了",
+      "note": "v2：吃饭无独立整体图，由 吃(p_eat) 的同义词'吃饭'自然覆盖，饭不单独计分",
       "expected": [
-        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
-        { "segment": "饭", "word": "饭", "pictogramId": "p_rice", "role": "content" },
+        { "segment": "吃饭", "word": "吃", "pictogramId": "p_eat", "role": "content" },
         { "segment": "该", "word": "该", "pictogramId": null, "role": "function" },
         { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
       ]
     },
     {
       "id": "rec-017",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
       "sentence": "把手抬起来",
       "expected": [
         { "segment": "手", "word": "手", "pictogramId": "p_hand", "role": "content" },
-        { "segment": "抬", "word": "抬", "pictogramId": null, "role": "content", "note": "图库无'抬手'对应图：真实词表缺口样本，用于暴露覆盖不足" },
+        { "segment": "抬", "word": "抬", "pictogramId": "p_raise_hand", "role": "content" },
         { "segment": "把", "word": "把", "pictogramId": null, "role": "function" },
         { "segment": "起来", "word": "起来", "pictogramId": null, "role": "function" }
       ]
     },
     {
       "id": "rec-018",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
       "sentence": "坐下来",
       "expected": [
         { "segment": "坐", "word": "坐", "pictogramId": "p_sit", "role": "content" },
@@ -179,6 +220,8 @@
     },
     {
       "id": "rec-019",
+      "scenario": "地点出行",
+      "sentenceType": "陈述",
       "sentence": "我们要去医院",
       "expected": [
         { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
@@ -188,6 +231,8 @@
     },
     {
       "id": "rec-020",
+      "scenario": "人物",
+      "sentenceType": "陈述",
       "sentence": "医生来看你了",
       "expected": [
         { "segment": "医生", "word": "医生", "pictogramId": "p_doctor", "role": "content" },
@@ -195,6 +240,691 @@
         { "segment": "看", "word": "看", "pictogramId": "p_see", "role": "content" },
         { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
         { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-021",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "早上好",
+      "expected": [
+        { "segment": "早上", "word": "早上", "pictogramId": "p_morning", "role": "content" },
+        { "segment": "好", "word": "好", "pictogramId": "p_good", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-022",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "你好",
+      "note": "v2 补图：你好(p_hello) 已补入，以整体图为期望",
+      "expected": [
+        { "segment": "你好", "word": "你好", "pictogramId": "p_hello", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-023",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "再见",
+      "expected": [
+        { "segment": "再见", "word": "再见", "pictogramId": "p_goodbye", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-024",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "对不起",
+      "expected": [
+        { "segment": "对不起", "word": "对不起", "pictogramId": "p_sorry", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-025",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "辛苦了",
+      "expected": [
+        { "segment": "辛苦", "word": "辛苦", "pictogramId": "p_hard_work", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-026",
+      "scenario": "饮食",
+      "sentenceType": "正反问",
+      "sentence": "你饿不饿",
+      "note": "正反问句式：'不饿'不得拆出 不(p_no) 造成假阳性",
+      "forbiddenIds": ["p_no"],
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "饿", "word": "饿", "pictogramId": "p_hungry", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-027",
+      "scenario": "饮食",
+      "sentenceType": "疑问",
+      "sentence": "喝牛奶吗",
+      "expected": [
+        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
+        { "segment": "牛奶", "word": "牛奶", "pictogramId": "p_milk", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-028",
+      "scenario": "饮食",
+      "sentenceType": "祈使",
+      "sentence": "吃香蕉吧",
+      "expected": [
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "香蕉", "word": "香蕉", "pictogramId": "p_banana", "role": "content" },
+        { "segment": "吧", "word": "吧", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-029",
+      "scenario": "饮食",
+      "sentenceType": "陈述",
+      "sentence": "饭好了",
+      "note": "好了 为 完成(p_end) 同义词（饭好了=饭做好了）；p_good 为可接受替代",
+      "expected": [
+        { "segment": "饭", "word": "饭", "pictogramId": "p_rice", "role": "content" },
+        { "segment": "好了", "word": "好了", "pictogramId": "p_end", "role": "content", "altIds": ["p_good"] },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-030",
+      "scenario": "饮食",
+      "sentenceType": "祈使",
+      "sentence": "喝点热水",
+      "expected": [
+        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
+        { "segment": "热水", "word": "热水", "pictogramId": "p_hot_water", "role": "content" },
+        { "segment": "点", "word": "点", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-031",
+      "scenario": "饮食",
+      "sentenceType": "正反问",
+      "sentence": "要不要吃水果",
+      "note": "正反问句式：'要不要'不得出 不要(p_dont_want) 假阳性",
+      "forbiddenIds": ["p_dont_want"],
+      "expected": [
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "水果", "word": "水果", "pictogramId": "p_fruit", "role": "content" },
+        { "segment": "要不要", "word": "要不要", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-032",
+      "scenario": "排泄卫生",
+      "sentenceType": "祈使",
+      "sentence": "去洗手",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "洗手", "word": "洗手", "pictogramId": "p_wash_hands", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-033",
+      "scenario": "排泄卫生",
+      "sentenceType": "陈述",
+      "sentence": "该洗澡了",
+      "expected": [
+        { "segment": "洗澡", "word": "洗澡", "pictogramId": "p_shower", "role": "content" },
+        { "segment": "该", "word": "该", "pictogramId": null, "role": "function" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-034",
+      "scenario": "排泄卫生",
+      "sentenceType": "祈使",
+      "sentence": "记得刷牙",
+      "expected": [
+        { "segment": "刷牙", "word": "刷牙", "pictogramId": "p_brush_teeth", "role": "content" },
+        { "segment": "记得", "word": "记得", "pictogramId": null, "role": "function", "note": "图库无'记得'，功能词无图合理" }
+      ]
+    },
+    {
+      "id": "rec-035",
+      "scenario": "排泄卫生",
+      "sentenceType": "疑问",
+      "sentence": "要大便吗",
+      "expected": [
+        { "segment": "大便", "word": "大便", "pictogramId": "p_poop", "role": "content" },
+        { "segment": "要", "word": "要", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-036",
+      "scenario": "排泄卫生",
+      "sentenceType": "陈述",
+      "sentence": "换衣服了",
+      "expected": [
+        { "segment": "换衣服", "word": "换衣服", "pictogramId": "p_change_clothes", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-037",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
+      "sentence": "咳嗽吗",
+      "expected": [
+        { "segment": "咳嗽", "word": "咳嗽", "pictogramId": "p_cough", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-038",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
+      "sentence": "哪里疼",
+      "expected": [
+        { "segment": "哪里", "word": "哪里", "pictogramId": "p_where", "role": "content" },
+        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-039",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
+      "sentence": "呼吸困难吗",
+      "expected": [
+        { "segment": "呼吸困难", "word": "呼吸困难", "pictogramId": "p_breathe", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-040",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
+      "sentence": "出血了吗",
+      "expected": [
+        { "segment": "出血", "word": "出血", "pictogramId": "p_bleed", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-041",
+      "scenario": "症状医疗",
+      "sentenceType": "祈使",
+      "sentence": "量一下血压",
+      "expected": [
+        { "segment": "血压", "word": "血压", "pictogramId": "p_blood_pressure", "role": "content" },
+        { "segment": "量", "word": "量", "pictogramId": "m_measure", "role": "content" },
+        { "segment": "一下", "word": "一下", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-042",
+      "scenario": "症状医疗",
+      "sentenceType": "正反问",
+      "sentence": "腿麻不麻",
+      "note": "正反问句式：'不麻'不得拆出 不(p_no) 假阳性",
+      "forbiddenIds": ["p_no"],
+      "expected": [
+        { "segment": "腿", "word": "腿", "pictogramId": "p_leg_body", "role": "content" },
+        { "segment": "麻", "word": "麻", "pictogramId": "p_numb", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-043",
+      "scenario": "症状医疗",
+      "sentenceType": "陈述",
+      "sentence": "去做个检查",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "做", "word": "做", "pictogramId": "p_do", "role": "content" },
+        { "segment": "检查", "word": "检查", "pictogramId": "m_check", "role": "content" },
+        { "segment": "个", "word": "个", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-044",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
+      "sentence": "你累了吗",
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "累", "word": "累", "pictogramId": "p_tired", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-045",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
+      "sentence": "你紧张吗",
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "紧张", "word": "紧张", "pictogramId": "p_nervous", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-046",
+      "scenario": "情绪",
+      "sentenceType": "正反问",
+      "sentence": "是不是很孤单",
+      "note": "正反问句式：'是不是'不得出 不是(p_not) 假阳性",
+      "forbiddenIds": ["p_not"],
+      "expected": [
+        { "segment": "孤单", "word": "孤单", "pictogramId": "p_lonely", "role": "content" },
+        { "segment": "是不是", "word": "是不是", "pictogramId": null, "role": "function" },
+        { "segment": "很", "word": "很", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-047",
+      "scenario": "情绪",
+      "sentenceType": "疑问",
+      "sentence": "心情好吗",
+      "expected": [
+        { "segment": "好", "word": "好", "pictogramId": "p_good", "role": "content" },
+        { "segment": "心情", "word": "心情", "pictogramId": "e_mood", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-048",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
+      "sentence": "去散步",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "散步", "word": "散步", "pictogramId": "p_walk", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-049",
+      "scenario": "动作活动",
+      "sentenceType": "疑问",
+      "sentence": "看电视吗",
+      "expected": [
+        { "segment": "看电视", "word": "看电视", "pictogramId": "p_watch_tv", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-050",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
+      "sentence": "看书吧",
+      "expected": [
+        { "segment": "看书", "word": "看书", "pictogramId": "p_read_book", "role": "content" },
+        { "segment": "吧", "word": "吧", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-051",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
+      "sentence": "休息一下",
+      "expected": [
+        { "segment": "休息", "word": "休息", "pictogramId": "p_rest", "role": "content" },
+        { "segment": "一下", "word": "一下", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-052",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
+      "sentence": "去做康复训练",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "做", "word": "做", "pictogramId": "p_do", "role": "content" },
+        { "segment": "康复训练", "word": "康复训练", "pictogramId": "a_rehab_training", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-053",
+      "scenario": "时间",
+      "sentenceType": "疑问",
+      "sentence": "现在几点",
+      "expected": [
+        { "segment": "现在", "word": "现在", "pictogramId": "p_now", "role": "content" },
+        { "segment": "几点", "word": "几点", "pictogramId": "p_clock", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-054",
+      "scenario": "时间",
+      "sentenceType": "陈述",
+      "sentence": "明天去公园",
+      "expected": [
+        { "segment": "明天", "word": "明天", "pictogramId": "p_tomorrow", "role": "content" },
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "公园", "word": "公园", "pictogramId": "p_playground", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-055",
+      "scenario": "时间",
+      "sentenceType": "陈述",
+      "sentence": "早上吃药",
+      "expected": [
+        { "segment": "早上", "word": "早上", "pictogramId": "p_morning", "role": "content" },
+        { "segment": "吃药", "word": "吃药", "pictogramId": "p_take_medicine", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-056",
+      "scenario": "时间",
+      "sentenceType": "陈述",
+      "sentence": "每天都要运动",
+      "expected": [
+        { "segment": "每天", "word": "每天", "pictogramId": "p_everyday", "role": "content" },
+        { "segment": "运动", "word": "运动", "pictogramId": "p_exercise", "role": "content" },
+        { "segment": "都要", "word": "都要", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-057",
+      "scenario": "地点出行",
+      "sentenceType": "陈述",
+      "sentence": "去超市买牛奶",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "超市", "word": "超市", "pictogramId": "p_supermarket", "role": "content" },
+        { "segment": "买", "word": "买", "pictogramId": "p_buy", "role": "content" },
+        { "segment": "牛奶", "word": "牛奶", "pictogramId": "p_milk", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-058",
+      "scenario": "地点出行",
+      "sentenceType": "陈述",
+      "sentence": "坐公交车去",
+      "note": "坐（车）与坐（p_sit）共用图，语义可接受",
+      "expected": [
+        { "segment": "坐", "word": "坐", "pictogramId": "p_sit", "role": "content" },
+        { "segment": "公交车", "word": "公交车", "pictogramId": "pl_bus", "role": "content" },
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-059",
+      "scenario": "地点出行",
+      "sentenceType": "祈使",
+      "sentence": "回家吧",
+      "expected": [
+        { "segment": "回家", "word": "回家", "pictogramId": "a_go_home", "role": "content" },
+        { "segment": "吧", "word": "吧", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-060",
+      "scenario": "地点出行",
+      "sentenceType": "祈使",
+      "sentence": "去楼下散步",
+      "expected": [
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "楼下", "word": "楼下", "pictogramId": "pl_downstairs", "role": "content" },
+        { "segment": "散步", "word": "散步", "pictogramId": "p_walk", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-061",
+      "scenario": "人物",
+      "sentenceType": "陈述",
+      "sentence": "妈妈来了",
+      "expected": [
+        { "segment": "妈妈", "word": "妈妈", "pictogramId": "p_mother", "role": "content" },
+        { "segment": "来", "word": "来", "pictogramId": "p_come", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-062",
+      "scenario": "人物",
+      "sentenceType": "陈述",
+      "sentence": "爷爷在家",
+      "expected": [
+        { "segment": "爷爷", "word": "爷爷", "pictogramId": "p_grandfather", "role": "content" },
+        { "segment": "家", "word": "家", "pictogramId": "p_home", "role": "content" },
+        { "segment": "在", "word": "在", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-063",
+      "scenario": "人物",
+      "sentenceType": "陈述",
+      "sentence": "护士来打针",
+      "expected": [
+        { "segment": "护士", "word": "护士", "pictogramId": "p_nurse", "role": "content" },
+        { "segment": "来", "word": "来", "pictogramId": "p_come", "role": "content" },
+        { "segment": "打针", "word": "打针", "pictogramId": "m_injection", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-064",
+      "scenario": "人物",
+      "sentenceType": "陈述",
+      "sentence": "儿子打电话来",
+      "expected": [
+        { "segment": "儿子", "word": "儿子", "pictogramId": "p_son", "role": "content" },
+        { "segment": "打电话", "word": "打电话", "pictogramId": "p_make_call", "role": "content" },
+        { "segment": "来", "word": "来", "pictogramId": "p_come", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-065",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "慢慢走",
+      "note": "走 存在语义歧义：走路(p_walk) 或 去(p_go 同义词'走')，两者对患者均可接受",
+      "expected": [
+        { "segment": "慢", "word": "慢", "pictogramId": "d_slow", "role": "content" },
+        { "segment": "走", "word": "走", "pictogramId": "p_walk", "role": "content", "altIds": ["p_go"] }
+      ]
+    },
+    {
+      "id": "rec-066",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "躺下休息",
+      "expected": [
+        { "segment": "躺下", "word": "躺下", "pictogramId": "a_lie_down", "role": "content" },
+        { "segment": "休息", "word": "休息", "pictogramId": "p_rest", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-067",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "张嘴",
+      "note": "v2 补图：张嘴(p_open_mouth) 整体图为期望",
+      "expected": [
+        { "segment": "张嘴", "word": "张嘴", "pictogramId": "p_open_mouth", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-068",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "深呼吸",
+      "note": "v2 补图：深呼吸(m_deep_breath) 整体图为期望",
+      "expected": [
+        { "segment": "深呼吸", "word": "深呼吸", "pictogramId": "m_deep_breath", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-069",
+      "scenario": "指令照护",
+      "sentenceType": "否定",
+      "sentence": "别着急",
+      "note": "理想出图为'先别急'(r_no_rush) 整体图；单独出 着急(p_anxious) 属语义反转",
+      "forbiddenIds": ["p_anxious"],
+      "expected": [
+        { "segment": "别着急", "word": "别着急", "pictogramId": "r_no_rush", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-070",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "把药吃了",
+      "expected": [
+        { "segment": "药", "word": "药", "pictogramId": "p_medicine", "role": "content" },
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "把", "word": "把", "pictogramId": null, "role": "function" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-071",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "扶我一下",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "扶", "word": "扶", "pictogramId": "a_support", "role": "content" },
+        { "segment": "一下", "word": "一下", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-072",
+      "scenario": "沟通修复",
+      "sentenceType": "祈使",
+      "sentence": "再说一次",
+      "expected": [
+        { "segment": "再说一次", "word": "再说一次", "pictogramId": "p_repeat", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-073",
+      "scenario": "沟通修复",
+      "sentenceType": "祈使",
+      "sentence": "慢慢说",
+      "expected": [
+        { "segment": "慢慢说", "word": "慢慢说", "pictogramId": "r_speak_slowly", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-074",
+      "scenario": "沟通修复",
+      "sentenceType": "祈使",
+      "sentence": "写下来",
+      "expected": [
+        { "segment": "写下来", "word": "写下来", "pictogramId": "p_write_it", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-075",
+      "scenario": "沟通修复",
+      "sentenceType": "祈使",
+      "sentence": "用图片说",
+      "expected": [
+        { "segment": "用图片", "word": "用图片", "pictogramId": "r_use_picture", "role": "content" },
+        { "segment": "说", "word": "说", "pictogramId": "p_talk", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-076",
+      "scenario": "沟通修复",
+      "sentenceType": "陈述",
+      "sentence": "我不明白",
+      "expected": [
+        { "segment": "我不明白", "word": "我不明白", "pictogramId": "p_i_dont_understand", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-077",
+      "scenario": "应急安全",
+      "sentenceType": "陈述",
+      "sentence": "危险",
+      "expected": [
+        { "segment": "危险", "word": "危险", "pictogramId": "m_danger", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-078",
+      "scenario": "应急安全",
+      "sentenceType": "否定",
+      "sentence": "别摔倒",
+      "note": "否定词'别'无图，可考虑补'别/不要'否定图或复用 不(p_no)",
+      "expected": [
+        { "segment": "摔倒", "word": "摔倒", "pictogramId": "m_fall", "role": "content" },
+        { "segment": "别", "word": "别", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-079",
+      "scenario": "应急安全",
+      "sentenceType": "祈使",
+      "sentence": "叫救护车",
+      "expected": [
+        { "segment": "叫", "word": "叫", "pictogramId": "p_call", "role": "content" },
+        { "segment": "救护车", "word": "救护车", "pictogramId": "pl_ambulance", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-080",
+      "scenario": "否定应答",
+      "sentenceType": "陈述",
+      "sentence": "不疼了",
+      "expected": [
+        { "segment": "不", "word": "不", "pictogramId": "p_no", "role": "content" },
+        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-081",
+      "scenario": "否定应答",
+      "sentenceType": "应答",
+      "sentence": "不是的",
+      "expected": [
+        { "segment": "不是", "word": "不是", "pictogramId": "p_not", "role": "content" },
+        { "segment": "的", "word": "的", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "rec-082",
+      "scenario": "否定应答",
+      "sentenceType": "应答",
+      "sentence": "等一下",
+      "expected": [
+        { "segment": "等一下", "word": "等一下", "pictogramId": "p_wait", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-083",
+      "scenario": "否定应答",
+      "sentenceType": "应答",
+      "sentence": "没事",
+      "note": "ARASAAC 无独立'没事'图，以 放心(e_relieved) 同义词 没事/没关系 闭环",
+      "expected": [
+        { "segment": "没事", "word": "没事", "pictogramId": "e_relieved", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-084",
+      "scenario": "天气环境",
+      "sentenceType": "陈述",
+      "sentence": "今天下雨",
+      "expected": [
+        { "segment": "今天", "word": "今天", "pictogramId": "p_today", "role": "content" },
+        { "segment": "下雨", "word": "下雨", "pictogramId": "w_rain", "role": "content" }
+      ]
+    },
+    {
+      "id": "rec-085",
+      "scenario": "天气环境",
+      "sentenceType": "陈述",
+      "sentence": "外面冷",
+      "expected": [
+        { "segment": "外面", "word": "外面", "pictogramId": "p_outside", "role": "content" },
+        { "segment": "冷", "word": "冷", "pictogramId": "p_cold", "role": "content" }
       ]
     }
   ]
