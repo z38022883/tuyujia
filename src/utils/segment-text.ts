@@ -35,7 +35,7 @@ export interface SegmentResult {
   /** 分词结果 */
   segments: string[]
   /** 使用的引擎 */
-  engine: 'intl-segmenter' | 'char-split'
+  engine: 'intl-segmenter' | 'char-split' | 'vocab-fmm'
 }
 
 export function segmentText(text: string): SegmentResult {

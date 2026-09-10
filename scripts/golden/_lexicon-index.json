@@ -1,5 +1,5 @@
 {
-  "count": 734,
+  "count": 737,
   "index": {
     "爱": {
       "ids": [
@@ -225,6 +225,20 @@
       ],
       "label": "放心",
       "cat": "emotions"
+    },
+    "别急": {
+      "ids": [
+        "r_no_rush"
+      ],
+      "label": "先别急",
+      "cat": "repair"
+    },
+    "别着急": {
+      "ids": [
+        "r_no_rush"
+      ],
+      "label": "先别急",
+      "cat": "repair"
     },
     "冰淇淋": {
       "ids": [
@@ -5125,6 +5139,13 @@
       "cat": "actions"
     },
     "坐下": {
+      "ids": [
+        "p_sit"
+      ],
+      "label": "坐",
+      "cat": "actions"
+    },
+    "坐下来": {
       "ids": [
         "p_sit"
       ],

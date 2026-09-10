@@ -1223,7 +1223,8 @@
     },
     "categoryId": "actions",
     "synonyms": [
-      "坐下"
+      "坐下",
+      "坐下来"
     ],
     "disambiguationHints": {},
     "usageCount": 0
@@ -4214,7 +4215,9 @@
     "categoryId": "repair",
     "synonyms": [
       "不急",
-      "等等我"
+      "等等我",
+      "别着急",
+      "别急"
     ],
     "disambiguationHints": {
       "semanticDomain": "repair"

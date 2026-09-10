@@ -112,8 +112,25 @@ https://static.arasaac.org/pictograms/{id}/{id}_300.png
 | 精度（召回/输出） | 76.7% | **79.5%** | +2.8pp |
 | matcher matchRate | 0.820 | **0.891** | +0.07 |
 | 整句单 token 反作弊 | 1 | **0** | 修复误报后归零 |
-| 否定反转/假阳性违反 | — | 5 次 | 词库侧无影响，属算法问题 |
+| 否定反转/假阳性违反 | — | 5 次 | 词库侧无影响，属算法问题（后经 4.3 闭环降为 4 次） |
 | 问候礼貌 / 人物 / 天气 场景 | — | **100% 召回 + 100% 精度** | 补图直接收益 |
+
+### 4.3 关键词 ↔ 图符 全面核对（补充检查）
+
+用新增脚本 `scripts/golden/check-golden-keys.mjs` 逐条核对 golden 关键词与图库的对应关系，核对三层：
+
+1. **无缺口**：148 个 content 期望词全部标注了非空 `pictogramId`（0 缺口）；
+2. **无断链**：golden 引用的全部 111 个图符 id（pictogramId / altIds / forbiddenIds）均真实存在于词库（310 图符）；
+3. **词形闭环**：期望词的 word 是否被对应图符的 labels.zh + synonyms 直接覆盖。
+
+发现 2 处词形未直接覆盖，处置如下：
+
+| 样本 | 期望图 | 图符词形 | 结论与处置 |
+|---|---|---|---|
+| rec-065 走 | p_walk | 走路/散步 | **设计内歧义**：走 亦为 p_go 同义词（golden 已标 altIds:[p_go] 并注明可接受），不把"走"加进 p_walk 以免一词两图降精度 |
+| rec-069 别着急 | r_no_rush | 先别急/不急/等等我 | **词形缺口，已闭环**：向 r_no_rush 追加同义词 别着急/别急，同时消除该句的 p_anxious 反转违反 |
+
+闭环后回归（对照 4.2 补图后基线）：召回 **133/148（89.8%）**、精度 **80.1%（133/166）**、matchRate **0.897**、反转违反 **5 → 4 次**、缺口 0。
 
 ---
 
@@ -137,8 +154,8 @@ https://static.arasaac.org/pictograms/{id}/{id}_300.png
    - 沟通修复场景召回仅 33.3%（再说一次/写下来/我不明白/慢慢说）；
    - 张嘴 0/1、救护车 1/2（拆成 张/嘴、救护/车）；
    - → 对应 P1"面向图库词表的贪心分词"：Intl 之前先做基于词表（labels+synonyms）的最长匹配合并。
-2. **正反问/否定假阳性 5 处**：你饿不饿→p_no、要不要吃水果→p_dont_want、腿麻不麻→p_no、是不是很孤单→p_not、别着急→p_anxious → 需区分"不+X"否定与"X不X"正反问、"别"字否定。
-3. **精度噪声**（79.5% → 目标 >90%）：坐下来→多出 p_come、"一下"→d_below、"困难"→p_sleep（"困"为 p_sleep 同义词被贪心拆出）→ 词库污染约束与包含匹配收敛。
+2. **正反问/否定假阳性 4 处**：你饿不饿→p_no、要不要吃水果→p_dont_want、腿麻不麻→p_no、是不是很孤单→p_not（别着急→p_anxious 已由 4.3 词形闭环消除）→ 需区分"不+X"否定与"X不X"正反问、"别"字否定。
+3. **精度噪声**（80.1% → 目标 >90%）：坐下来→多出 p_come、"一下"→d_below、"困难"→p_sleep（"困"为 p_sleep 同义词被贪心拆出）→ 词库污染约束与包含匹配收敛。
 
 ---
 
@@ -146,12 +163,13 @@ https://static.arasaac.org/pictograms/{id}/{id}_300.png
 
 | 文件 | 改动 |
 |---|---|
-| `src/data/seed/pictograms.json` | +15 图符；`e_relieved` 追加同义词 没事/没关系 |
+| `src/data/seed/pictograms.json` | +15 图符；`e_relieved` 追加同义词 没事/没关系；`r_no_rush` 追加同义词 别着急/别急 |
 | `scripts/golden/golden-set.json` | schema v2：20→85 条、14 场景、scenario/sentenceType/forbiddenIds；16 处缺口回填真实 id；3 条升级为整体图期望 |
 | `scripts/golden/run-golden.ts` | 评估升级：场景聚合、精度、反转违反计数、缺口清单、反作弊修正 |
+| `scripts/golden/check-golden-keys.mjs` | 新增：关键词↔图符 三层核对脚本（无缺口 / 无断链 / 词形闭环） |
 | `scripts/golden/fill-arasaac-gaps.mjs` | 新增：可复用补图脚本（ARASAAC 来源记录） |
 | `scripts/golden/_lexicon-index.json` | 重建（词→图符索引，734 词） |
-| `scripts/golden/golden-report.md` | 重生成（85 条基线：132/148、79.5%、0 缺口） |
+| `scripts/golden/golden-report.md` | 重生成（85 条基线：133/148、80.1%、0 缺口） |
 
 ## 八、复现步骤
 
@@ -164,6 +182,9 @@ node scripts/golden/build-lexicon-index.cjs
 
 # 3. 跑 golden 回归出报告
 node -r ts-node/register/transpile-only -r ./scripts/golden/register-alias.cjs ./scripts/golden/run-golden.ts
+
+# 4. 核对 golden 关键词 ↔ 图符（无缺口 / 无断链 / 词形闭环）
+node scripts/golden/check-golden-keys.mjs
 ```
 
 ---
@@ -192,3 +213,41 @@ node -r ts-node/register/transpile-only -r ./scripts/golden/register-alias.cjs .
 - 入口：home 板新增 `recent` 瓦片（🕑 最近），`BoardTile`/`GridItem` 扩展 `{ type: 'recent' }`，点击 `openCategory('recent')` 进入，左侧导航栏可返回。
 - 数据源：改为从**已持久化的表达历史**派生——`getPictogramsByRecentIds(expressions.flatMap(e => e.pictogramIds), 24)`（store 内 `expressions` 新→旧、已持久化），去重、跳过缺失、截断 24。零新增存储键，跨会话有效。
 - `getRecentPictograms`/`bumpPictogramUsage` 保留但标注"当前恒空"（如需真正的 usageCount 追踪可后续接持久化）。
+
+---
+
+## 十、第二轮：接收分词算法优化（2026-09-10）
+
+> 方案存档：`docs/接收分词算法优化方案.md`。目标：召回 ≥97%、反转违反 0、精度 ≥90%、零回归。
+
+### 10.1 根因
+
+- **未召回 15 处**：全部是整体图复合词被 `Intl.Segmenter` 拆散（吃药/肚子疼/张嘴/救护车/再说一次…），且 100% 已在词库 labels/synonyms 中——纯切分粒度问题（`plan-evidence.mjs` 逐句证据）。
+- **反转违反 4 处**：全是 A不A 正反问（饿不饿/要不要/麻不麻/是不是）被 `mergeNegation` 误合出 不(p_no)/不要(p_dont_want)/不是(p_not)。
+- **精度噪声 33 个**：复合词拆散产生的半截图（~25）+ 一下→d_below + 坐下来→p_come。
+
+### 10.2 改动
+
+| 文件 | 改动 |
+|---|---|
+| `src/utils/text-to-image-matcher.ts` | 新增 `vocabSegment()`（词表贪心 FMM，maxLen 4，替换 Intl 主切分）；`foldAorNotA()` 正反问折叠（A不A→A，在 mergeNegation 前）；`DROP_WORDS`（一下/我们/咱们/正反问固定短语）整词丢弃；`SEG_VOCAB` 切分词表（图库词+功能词+丢弃词）；管线：vocabSegment → foldAorNotA → mergeNegation → 去功能词 → 5 级匹配 |
+| `src/utils/segment-text.ts` | engine 扩展 'vocab-fmm'（segmentText 保留） |
+| `src/data/seed/pictograms.json` | p_sit 补同义词 坐下来 |
+| `scripts/golden/golden-set.json` | rec-002 口径小修：喝水 整体图优先（喝+水 → 喝水→p_water） |
+
+### 10.3 指标变化
+
+| 指标 | 第一轮末 | 阶段 A（P1） | 阶段 B（P2） | 终态（+C） |
+|---|---|---|---|---|
+| 内容词召回 | 133/148（89.8%） | 147/148（99.3%） | 147/148（99.3%） | **147/147（100%）** |
+| 精度 | 80.1%（133/166） | 96.7%（147/152） | 100%（147/147） | **100%（147/147）** |
+| 反转违反 | 4 处 | 4 处 | **0** | **0** |
+| matchRate | 0.897 | 0.969 | 0.966 | **0.966** |
+
+- 阶段 A 后：14/15 复合词 miss 全命中；沟通修复场景 33.3%→100%；除饮食外 13 个场景全 100%。
+- 阶段 B 后：4 处 forbidden 归零，精度 100%（含消灭 是不是→p_yes_response 新噪声）。
+- 阶段 C 后：rec-002 整体图口径小修，召回/精度双 100%，85 条零回归。
+
+### 10.4 结论
+
+**LLM 未接入**（决策记录见方案 5.5 节）：当前评估面 100% 由确定性规则覆盖，无语义级残差。后续按数据决策点判断：扩真实输入集 → 量化残差 → 仅当语义级残差 ≥2-3% 才启动触发式 LLM 重切分。

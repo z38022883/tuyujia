@@ -5,7 +5,7 @@
  * 差异：图库改为内存 seed 数据（src/data/seed），替代原版 Dexie。
  */
 
-import { segmentText, type SegmentResult } from './segment-text'
+import { type SegmentResult } from './segment-text'
 import { findEntry, type LexiconEntry } from '@/data/lexicon'
 import { getAllPictograms } from '@/data'
 import type { PictogramEntry } from '@/types'
@@ -21,6 +21,51 @@ const NEGATION_PREFIXES = ['不', '没', '别', '勿', '莫', '未'] as const
  * 注意：不带"来/去"这类既可作动词又可作补语的词，避免误伤内容义（如"医生来看你"）。
  */
 const FUNCTION_WORDS = new Set(['需要', '要', '该', '应该', '感觉', '好像', '起来', '下来', '上来', '上去', '下去'])
+
+/**
+ * 切后整体丢弃的词：
+ * - 一下：量词性后缀（休息一下/扶我一下），无独立出图价值；量一下/等一下/扶一下 等已被更长词优先合并，不会误伤。
+ * - 我们/咱们：golden 口径为功能词无图（以"我"代指即可）；须加入切分词表保证整词切出后再丢弃，
+ *   避免被拆成 我/们 后"我"(p_i) 漏出成为噪声。
+ * - 是不是/要不要/会不会/能不能/可不可以：正反问固定短语，由 foldAorNotA 折叠为整词后丢弃
+ *   （"是/要/会/能"等单字残留会误出 p_yes_response/p_dont_want 等图）。
+ */
+const DROP_WORDS = new Set(['一下', '我们', '咱们', '是不是', '要不要', '会不会', '能不能', '可不可以'])
+
+/**
+ * 正反问固定短语（A不A 且 A 为 是/要/会/能/可以 等，折叠后应整体丢弃）。
+ */
+const A_NOT_A_FIXED = new Set(['是不是', '要不要', '会不会', '能不能', '可不可以'])
+
+/**
+ * 正反问折叠：A不A → A（饿不饿→饿、麻不麻→麻；是不是/要不要 → 整词功能化待丢弃）。
+ * 必须在 mergeNegation 之前执行：防止"不"被误合并/误拆出 不(p_no)/不要(p_dont_want)/不是(p_not) 假阳性。
+ * 真否定不受影响：不疼了([不,疼])、不是的([不是]) 不构成 A不A 模式。
+ */
+function foldAorNotA(tokens: string[]): string[] {
+  const out: string[] = []
+  for (let i = 0; i < tokens.length; i++) {
+    const t = tokens[i]
+    const next = tokens[i + 1]
+    const next2 = tokens[i + 2]
+    if (next === '不' && next2 !== undefined) {
+      const joined = t + next + next2
+      if (A_NOT_A_FIXED.has(joined)) {
+        out.push(joined)
+        i += 2
+        continue
+      }
+      // 通用单字 A不A：折叠为 A（饿不饿→饿、麻不麻→麻、疼不疼→疼）
+      if (t.length === 1 && next2 === t) {
+        out.push(t)
+        i += 2
+        continue
+      }
+    }
+    out.push(t)
+  }
+  return out
+}
 
 /**
  * 否定复合词合并：Intl.Segmenter 常把"不+开心"切成"不""开心"两个 token，
@@ -51,6 +96,46 @@ function buildVocab(): Set<string> {
   return set
 }
 const VOCAB = buildVocab()
+
+/**
+ * 切分用词表：图库词 + 功能词 + 丢弃词。
+ * 功能词/丢弃词加入后，贪心会先把它们切成整词，再由后续过滤步骤整体剔除，
+ * 避免被拆成单字碎片（如 需要→需/要、我们→我/们）造成残余噪声。
+ */
+const SEG_VOCAB = new Set<string>()
+for (const w of VOCAB) SEG_VOCAB.add(w)
+for (const w of FUNCTION_WORDS) SEG_VOCAB.add(w)
+for (const w of DROP_WORDS) SEG_VOCAB.add(w)
+
+/** 贪心最长匹配的最大词长（与 splitByLexicon 一致） */
+const MAX_TOKEN_LEN = 4
+
+/**
+ * 词表贪心最长匹配（FMM）：作为主切分替代 Intl.Segmenter。
+ * 把句子切成「图库词 + 残余单字」——整体图复合词（吃药/肚子疼/张嘴/救护车…）
+ * 直接从原文整词切出，解决 Intl 把复合词拆散导致整体图无法命中的问题。
+ */
+function vocabSegment(sentence: string): string[] {
+  const out: string[] = []
+  let i = 0
+  while (i < sentence.length) {
+    let consumed = 0
+    for (let len = Math.min(MAX_TOKEN_LEN, sentence.length - i); len >= 1; len--) {
+      if (SEG_VOCAB.has(sentence.slice(i, i + len))) {
+        consumed = len
+        break
+      }
+    }
+    if (consumed === 0) {
+      out.push(sentence[i])
+      i++
+    } else {
+      out.push(sentence.slice(i, i + consumed))
+      i += consumed
+    }
+  }
+  return out
+}
 
 /** 贪心拆解产出的单字虚词碎片，直接丢弃（不做匹配、不进结果序列） */
 const MINOR_WORDS = new Set(['了', '的', '吧', '呢', '啊', '哦', '呀', '吗', '把', '着', '过', '这', '那', '之', '么'])
@@ -323,10 +408,12 @@ export async function matchTextToImages(
 
   const segmentation: SegmentResult = options?.preSegmented
     ? { segments: options.preSegmented, engine: 'intl-segmenter' }
-    : segmentText(text)
+    : { segments: vocabSegment(text), engine: 'vocab-fmm' }
 
-  // P1 预处理：先合成否定复合词（防"不+X"拆出正面词导致语义反转），再剔除功能词。
-  segmentation.segments = mergeNegation(segmentation.segments).filter((t) => !FUNCTION_WORDS.has(t))
+  // 预处理：正反问折叠（A不A）→ 合成否定复合词（防"不+X"拆出正面词）→ 剔除功能词与切后丢弃词。
+  segmentation.segments = mergeNegation(foldAorNotA(segmentation.segments)).filter(
+    (t) => !FUNCTION_WORDS.has(t) && !DROP_WORDS.has(t),
+  )
 
   const matches: MatchedToken[] = []
 
@@ -343,7 +430,7 @@ export async function matchTextToImages(
     })()
 
     for (const piece of pieces) {
-      if (MINOR_WORDS.has(piece) || FUNCTION_WORDS.has(piece)) continue
+      if (MINOR_WORDS.has(piece) || FUNCTION_WORDS.has(piece) || DROP_WORDS.has(piece)) continue
       const { pictogram, matchType } = matchToken(piece, allPictograms)
       matches.push({ token: piece, pictogram, matchType })
     }

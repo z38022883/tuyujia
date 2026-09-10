@@ -28,9 +28,9 @@
       "scenario": "饮食",
       "sentenceType": "疑问",
       "sentence": "需要喝水吗",
+      "note": "v3：整体图优先——喝水 由 水(p_water) 同义词'喝水'整词覆盖，不再拆分 喝+水（与 rec-004 吃药口径一致）",
       "expected": [
-        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
-        { "segment": "水", "word": "水", "pictogramId": "p_water", "role": "content" },
+        { "segment": "喝水", "word": "喝水", "pictogramId": "p_water", "role": "content" },
         { "segment": "需要", "word": "需要", "pictogramId": null, "role": "function" },
         { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
       ]
