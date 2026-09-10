@@ -8,6 +8,10 @@
     "tiles": [
       { "type": "pictogram", "id": "p_yes_response", "labelOverride": "是" },
       { "type": "pictogram", "id": "p_not" },
+      { "type": "pictogram", "id": "p_hello" },
+      { "type": "pictogram", "id": "p_goodbye" },
+      { "type": "pictogram", "id": "p_sorry" },
+      { "type": "pictogram", "id": "p_hard_work" },
       { "type": "pictogram", "id": "p_help_me" },
       { "type": "pictogram", "id": "p_stop" },
       { "type": "pictogram", "id": "p_wait" },
@@ -37,7 +41,8 @@
       { "type": "category", "id": "food" },
       { "type": "category", "id": "daily" },
       { "type": "category", "id": "people" },
-      { "type": "savedPhrases", "id": "saved-phrases", "labelOverride": "常用" }
+      { "type": "savedPhrases", "id": "saved-phrases", "labelOverride": "常用" },
+      { "type": "recent", "id": "recent", "labelOverride": "最近" }
     ],
     "linkedCategoryIds": ["quickchat", "actions", "repair", "medical", "food", "daily", "people"]
   },
@@ -49,6 +54,10 @@
     "tiles": [
       { "type": "pictogram", "id": "p_yes_response", "labelOverride": "是" },
       { "type": "pictogram", "id": "p_not" },
+      { "type": "pictogram", "id": "p_hello" },
+      { "type": "pictogram", "id": "p_goodbye" },
+      { "type": "pictogram", "id": "p_sorry" },
+      { "type": "pictogram", "id": "p_hard_work" },
       { "type": "pictogram", "id": "p_help_me" },
       { "type": "pictogram", "id": "p_stop" },
       { "type": "pictogram", "id": "p_wait" },
@@ -113,6 +122,8 @@
       { "type": "pictogram", "id": "p_take" },
       { "type": "pictogram", "id": "p_do" },
       { "type": "pictogram", "id": "p_help" },
+      { "type": "pictogram", "id": "a_support" },
+      { "type": "pictogram", "id": "p_raise_hand" },
       { "type": "pictogram", "id": "p_see" },
       { "type": "pictogram", "id": "p_talk" },
       { "type": "pictogram", "id": "p_listen" },

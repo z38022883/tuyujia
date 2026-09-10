@@ -4,7 +4,7 @@ import { useAppStore } from '@/store/useAppStore'
 import { useProfileStore } from '@/store/useProfileStore'
 import {
   resolveGridItems,
-  getRecentPictograms,
+  getPictogramsByRecentIds,
   getCategory,
   type GridItem
 } from '@/data'
@@ -68,6 +68,7 @@ function PictogramGrid({ full = false }: Props) {
   const addPictogram = useAppStore((s) => s.addPictogram)
   const speakSentence = useAppStore((s) => s.speakSentence)
   const setShowSavedPhrases = useAppStore((s) => s.setShowSavedPhrases)
+  const expressions = useAppStore((s) => s.expressions)
   const severity = useProfileStore((s) => s.profile?.severity ?? null)
 
   const isRoot = activeCategoryId === 'root'
@@ -92,14 +93,18 @@ function PictogramGrid({ full = false }: Props) {
       }))
     }
     if (isRecent) {
-      return getRecentPictograms(24).map((p) => ({
+      // 最近使用：从表达历史（store.expressions 已按 新→旧 持久化）派生，去重取前 24
+      return getPictogramsByRecentIds(
+        expressions.flatMap((e) => e.pictogramIds),
+        24
+      ).map((p) => ({
         type: 'pictogram' as const,
         key: `p:${p.id}`,
         pictogram: p
       }))
     }
     return resolveGridItems(activeCategoryId)
-  }, [adaptive, adaptiveWords, activeCategoryId, isRecent])
+  }, [adaptive, adaptiveWords, activeCategoryId, isRecent, expressions])
 
   const color = isRoot ? ROOT_COLOR : (CATEGORY_COLORS[activeCategoryId] ?? '#4A90D9')
   const title = adaptive
@@ -175,6 +180,21 @@ function PictogramGrid({ full = false }: Props) {
                       category={item.category}
                       onClick={(c) => openCategory(c.id)}
                     />
+                  </View>
+                )
+              }
+
+              // 最近使用入口
+              if (item.type === 'recent') {
+                return (
+                  <View key={item.key} className={styles.cell}>
+                    <View
+                      className={styles.actionTile}
+                      onClick={() => openCategory('recent')}
+                    >
+                      <Text className={styles.actionIcon}>🕑</Text>
+                      <Text className={styles.actionLabel}>{item.label}</Text>
+                    </View>
                   </View>
                 )
               }

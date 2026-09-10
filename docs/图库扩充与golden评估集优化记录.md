@@ -165,3 +165,30 @@ node scripts/golden/build-lexicon-index.cjs
 # 3. 跑 golden 回归出报告
 node -r ts-node/register/transpile-only -r ./scripts/golden/register-alias.cjs ./scripts/golden/run-golden.ts
 ```
+
+---
+
+## 九、表达侧词板同步（P0/P1，2026-09）
+
+本次扩充主要面向**接收（文本→图符匹配）**；配套把 15 个新图符同步进**表达（选词）**模块：
+
+### P0 — 让新图符在表达模块可见
+
+- `src/data/seed/categories.json`：quickchat 补入 你好/再见/对不起/辛苦，actions 补入 扶/抬手（此前这两块是显式 tiles 策展，新图符完全不可见）；home 板顶部置入 你好/再见/对不起/辛苦（是/不 之后）。
+- `src/data/boards.ts`：中度词板 16→20（+你好/再见/对不起/辛苦）；重度表达板用派生 `SEVERE_EXPRESS_WORDS`（刚需 6 + 你好/对不起），`SEVERE_WORDS` 本体保持 6 词——它是接收侧核心词优先级来源（`severity-display.ts`），并入社交词会让"你好，医生来看你了"优先出 你好 而非 医生。
+- 规格同步：`docs/患者程度自选与功能适配方案.md` v0.3。
+
+### P1 — 激活 manualOrder 板内排序
+
+- 背景：`PictogramEntry.manualOrder` 字段在旧库有 75 个图符带值，但迁移到小程序后 `resolveGridItems` 从未读取（死字段），兜底板只能按 `pictograms.json` 数组追加序平铺，新图符全部沉底。
+- 实现：`src/data/index.ts` 新增 `byManualOrder`——**兜底板（无 tiles）自有图符按 manualOrder 升序置前，无值项保持数组序**（`Array.sort` 稳定）。策展板（tiles 分支）与接收侧（`getPictogramsByCategory` 不走此排序）不受影响。
+- 重策展 8 块兜底板（medical/daily/emotions/places/objects/people/activities/time）：高频词回置板首（厕所/家/开心/床/妈妈/睡觉/几点…），9 个新词各自靠前（量/检查/打针/张嘴/深呼吸、心情、几点、救护车、下雨）。现共 159 个图符带 manualOrder。
+- 边界：`这里/那里`（places+medical）、`现在`（time+daily）跨兜底板，manualOrder 是单值，不标值，靠"无值项保持数组序"自然落位。
+- 可复跑脚本：`scripts/curate-board-order.mjs`（ORDER_MAP 即各板顺序唯一事实来源，幂等）。
+
+### P2 — 激活「最近使用」板入口
+
+- 背景：`PictogramGrid` 的 `activeCategoryId === 'recent'` 分支早已存在（含空态"暂无最近使用"），但**无任何 UI 入口**可达；且 `bumpPictogramUsage` 全仓库无调用、种子数组不带 `lastUsedAt`，原 `getRecentPictograms` 恒为空。
+- 入口：home 板新增 `recent` 瓦片（🕑 最近），`BoardTile`/`GridItem` 扩展 `{ type: 'recent' }`，点击 `openCategory('recent')` 进入，左侧导航栏可返回。
+- 数据源：改为从**已持久化的表达历史**派生——`getPictogramsByRecentIds(expressions.flatMap(e => e.pictogramIds), 24)`（store 内 `expressions` 新→旧、已持久化），去重、跳过缺失、截断 24。零新增存储键，跨会话有效。
+- `getRecentPictograms`/`bumpPictogramUsage` 保留但标注"当前恒空"（如需真正的 usageCount 追踪可后续接持久化）。

@@ -6,6 +6,7 @@ export type BoardTile =
   | { type: 'pictogram'; id: string; labelOverride?: string }
   | { type: 'category'; id: string; labelOverride?: string }
   | { type: 'savedPhrases'; id: 'saved-phrases'; labelOverride?: string }
+  | { type: 'recent'; id: 'recent'; labelOverride?: string }
 
 /** 图片分类（即"板/board"，patient 端的展示单元） */
 export interface Category {

@@ -14,6 +14,7 @@ export type GridItem =
   | { type: 'pictogram'; key: string; pictogram: PictogramEntry }
   | { type: 'category'; key: string; category: Category }
   | { type: 'savedPhrases'; key: string; label: string }
+  | { type: 'recent'; key: string; label: string }
 
 /** 所有可见分类（按 sortOrder），用于 CategoryTabs */
 export function getAllCategories(): Category[] {
@@ -46,6 +47,17 @@ export function getPictogramsByCategory(categoryId: string): PictogramEntry[] {
   return pictograms.filter((p) =>
     (p.categoryIds ?? [p.categoryId]).includes(categoryId)
   )
+}
+
+/**
+ * 板内排序：manualOrder 有值者按值升序置前，无值者保持数组序。
+ * （Array.prototype.sort 稳定，配合手动给图符标 manualOrder 即可控制非策展板的词序，
+ * 如让图库扩充新增的词排到分类板顶部。）
+ */
+function byManualOrder(a: PictogramEntry, b: PictogramEntry): number {
+  const ma = a.manualOrder ?? Number.MAX_SAFE_INTEGER
+  const mb = b.manualOrder ?? Number.MAX_SAFE_INTEGER
+  return ma - mb
 }
 
 function withLabelOverride(
@@ -97,6 +109,15 @@ export function resolveGridItems(categoryId: string): GridItem[] {
           }
         ]
       }
+      if (tile.type === 'recent') {
+        return [
+          {
+            type: 'recent',
+            key: `r:${tile.id}:${index}`,
+            label: tile.labelOverride ?? '最近'
+          }
+        ]
+      }
       return [
         {
           type: 'savedPhrases',
@@ -121,11 +142,14 @@ export function resolveGridItems(categoryId: string): GridItem[] {
       ? [{ type: 'category' as const, key: `c:${id}`, category: c }]
       : []
   })
-  const own = getPictogramsByCategory(targetId).map((p) => ({
-    type: 'pictogram' as const,
-    key: `p:${p.id}`,
-    pictogram: p
-  }))
+  const own = getPictogramsByCategory(targetId)
+    .map((p) => ({
+      type: 'pictogram' as const,
+      key: `p:${p.id}`,
+      pictogram: p
+    }))
+    // manualOrder 置顶（无值项保持数组序）
+    .sort((a, b) => byManualOrder(a.pictogram, b.pictogram))
   return [...linked, ...own]
 }
 
@@ -138,10 +162,34 @@ export function bumpPictogramUsage(p: PictogramEntry): PictogramEntry {
   }
 }
 
-/** 取最近使用的图符（按 lastUsedAt 倒序） */
+/**
+ * 取最近使用的图符（按 lastUsedAt 倒序）。
+ * 注：种子数组不带 lastUsedAt 且 bumpPictogramUsage 不改数组本身，此函数当前恒为空；
+ * 「最近」板实际改用 getPictogramsByRecentIds 从表达历史派生，见 PictogramGrid。
+ */
 export function getRecentPictograms(limit = 24): PictogramEntry[] {
   return pictograms
     .filter((p) => (p.lastUsedAt ?? 0) > 0)
     .sort((a, b) => (b.lastUsedAt ?? 0) - (a.lastUsedAt ?? 0))
     .slice(0, limit)
+}
+
+/**
+ * 按「最近使用顺序的 id 列表」解析图符（去重、跳过缺失、截断）。
+ * 列表须为 新→旧 序（如 store.expressions 的 pictogramIds 扁平展开）；
+ * 已持久化表达历史派生，跨会话有效。
+ */
+export function getPictogramsByRecentIds(ids: string[], limit = 24): PictogramEntry[] {
+  const result: PictogramEntry[] = []
+  const seen = new Set<string>()
+  for (const id of ids) {
+    if (seen.has(id)) continue
+    const p = pictogramById.get(id)
+    if (p) {
+      result.push(p)
+      seen.add(id)
+      if (result.length >= limit) break
+    }
+  }
+  return result
 }

@@ -368,7 +368,8 @@
     "categoryIds": [
       "quickchat",
       "daily"
-    ]
+    ],
+    "manualOrder": 1
   },
   {
     "id": "p_okay",
@@ -494,7 +495,8 @@
     "categoryIds": [
       "quickchat",
       "medical"
-    ]
+    ],
+    "manualOrder": 1
   },
   {
     "id": "p_open_door",
@@ -815,7 +817,8 @@
     "categoryIds": [
       "quickchat",
       "medical"
-    ]
+    ],
+    "manualOrder": 2
   },
   {
     "id": "p_call_family",
@@ -835,7 +838,8 @@
     "categoryIds": [
       "quickchat",
       "people"
-    ]
+    ],
+    "manualOrder": 4
   },
   {
     "id": "p_call_nurse",
@@ -855,7 +859,8 @@
     "categoryIds": [
       "quickchat",
       "medical"
-    ]
+    ],
+    "manualOrder": 3
   },
   {
     "id": "p_give_me_time",
@@ -984,7 +989,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_do",
@@ -1021,7 +1027,8 @@
       "冲凉"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 2
   },
   {
     "id": "p_brush_teeth",
@@ -1041,7 +1048,8 @@
     "disambiguationHints": {
       "semanticDomain": "daily"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_go",
@@ -1103,7 +1111,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 10
   },
   {
     "id": "p_eat",
@@ -1318,7 +1327,8 @@
     "disambiguationHints": {
       "semanticDomain": "daily"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 4
   },
   {
     "id": "p_play",
@@ -1380,7 +1390,8 @@
     "categoryIds": [
       "activities",
       "actions"
-    ]
+    ],
+    "manualOrder": 1
   },
   {
     "id": "p_stand",
@@ -1494,7 +1505,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 2
   },
   {
     "id": "p_run",
@@ -1514,7 +1526,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 13
   },
   {
     "id": "p_dislike",
@@ -1532,7 +1545,8 @@
     "disambiguationHints": {
       "semanticDomain": "emotions"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 15
   },
   {
     "id": "p_sad",
@@ -1556,7 +1570,8 @@
     "usageCount": 0,
     "relatedTerms": [
       "难过"
-    ]
+    ],
+    "manualOrder": 2
   },
   {
     "id": "p_cold",
@@ -1575,7 +1590,8 @@
       "好冷"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 17
   },
   {
     "id": "p_love",
@@ -1596,7 +1612,8 @@
     "disambiguationHints": {
       "semanticDomain": "emotions"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 14
   },
   {
     "id": "p_afraid",
@@ -1616,7 +1633,8 @@
       "吓"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 4
   },
   {
     "id": "p_happy",
@@ -1638,7 +1656,8 @@
     "disambiguationHints": {
       "semanticDomain": "emotions"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 1
   },
   {
     "id": "p_thirsty",
@@ -1656,7 +1675,8 @@
       "口渴"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 19
   },
   {
     "id": "p_hot",
@@ -1675,7 +1695,8 @@
       "很热"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 18
   },
   {
     "id": "p_angry",
@@ -1693,7 +1714,8 @@
     "disambiguationHints": {
       "semanticDomain": "emotions"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_sick",
@@ -1732,7 +1754,8 @@
       "饥饿"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 20
   },
   {
     "id": "p_ice_cream",
@@ -2121,7 +2144,8 @@
       "兄弟"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 9
   },
   {
     "id": "p_grandmother",
@@ -2140,7 +2164,8 @@
       "姥姥"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 13
   },
   {
     "id": "p_mother",
@@ -2159,7 +2184,8 @@
       "母亲"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 1
   },
   {
     "id": "p_sister",
@@ -2177,7 +2203,8 @@
       "姐妹"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 11
   },
   {
     "id": "p_older_sister",
@@ -2195,7 +2222,8 @@
       "姐"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 10
   },
   {
     "id": "p_family",
@@ -2211,7 +2239,8 @@
     "categoryId": "people",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_friend",
@@ -2227,7 +2256,8 @@
     "categoryId": "people",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 14
   },
   {
     "id": "p_grandfather",
@@ -2246,7 +2276,8 @@
       "姥爷"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 12
   },
   {
     "id": "p_father",
@@ -2265,7 +2296,8 @@
       "父亲"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 2
   },
   {
     "id": "p_teacher",
@@ -2281,7 +2313,8 @@
     "categoryId": "people",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 15
   },
   {
     "id": "p_caregiver",
@@ -2301,7 +2334,8 @@
     "disambiguationHints": {
       "semanticDomain": "people"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 16
   },
   {
     "id": "p_playground",
@@ -2319,7 +2353,8 @@
       "花园"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 4
   },
   {
     "id": "p_hospital",
@@ -2337,7 +2372,8 @@
       "看病"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 2
   },
   {
     "id": "p_school",
@@ -2353,7 +2389,8 @@
     "categoryId": "places",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 5
   },
   {
     "id": "p_home",
@@ -2371,7 +2408,8 @@
       "房子"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 1
   },
   {
     "id": "p_supermarket",
@@ -2390,7 +2428,8 @@
       "购物"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 6
   },
   {
     "id": "p_here",
@@ -3203,7 +3242,8 @@
       "永远"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 12
   },
   {
     "id": "p_afternoon",
@@ -3219,7 +3259,8 @@
     "categoryId": "time",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 6
   },
   {
     "id": "p_when",
@@ -3235,7 +3276,8 @@
     "categoryId": "time",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 9
   },
   {
     "id": "p_today",
@@ -3251,7 +3293,8 @@
     "categoryId": "time",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 2
   },
   {
     "id": "p_night",
@@ -3269,7 +3312,8 @@
       "晚上"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 7
   },
   {
     "id": "p_later",
@@ -3287,7 +3331,8 @@
       "之后"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 13
   },
   {
     "id": "p_weekend",
@@ -3306,7 +3351,8 @@
       "星期天"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 8
   },
   {
     "id": "p_morning",
@@ -3324,7 +3370,8 @@
       "上午"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 5
   },
   {
     "id": "p_tomorrow",
@@ -3340,7 +3387,8 @@
     "categoryId": "time",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_yesterday",
@@ -3356,7 +3404,8 @@
     "categoryId": "time",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 4
   },
   {
     "id": "p_everyday",
@@ -3374,7 +3423,8 @@
       "天天"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 10
   },
   {
     "id": "p_now",
@@ -3438,7 +3488,8 @@
       "快了"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 11
   },
   {
     "id": "p_toilet_paper",
@@ -3591,7 +3642,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 12
   },
   {
     "id": "p_watch_tv",
@@ -3611,7 +3663,8 @@
     "disambiguationHints": {
       "semanticDomain": "activities"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 11
   },
   {
     "id": "p_flower",
@@ -3629,7 +3682,8 @@
     "disambiguationHints": {
       "semanticDomain": "objects"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 13
   },
   {
     "id": "p_car",
@@ -3650,7 +3704,8 @@
     "disambiguationHints": {
       "semanticDomain": "objects"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 14
   },
   {
     "id": "p_exercise",
@@ -3689,7 +3744,8 @@
     "disambiguationHints": {
       "semanticDomain": "objects"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 15
   },
   {
     "id": "p_book",
@@ -3708,7 +3764,8 @@
       "读物"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 16
   },
   {
     "id": "p_spoon",
@@ -3724,7 +3781,8 @@
     "categoryId": "objects",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 25
   },
   {
     "id": "p_bag",
@@ -3744,7 +3802,8 @@
       "手提包"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 17
   },
   {
     "id": "p_bed",
@@ -3762,7 +3821,8 @@
       "床铺"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 1
   },
   {
     "id": "p_phone",
@@ -3782,7 +3842,8 @@
     "disambiguationHints": {
       "semanticDomain": "objects"
     },
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 6
   },
   {
     "id": "p_cup",
@@ -3801,7 +3862,8 @@
       "茶杯"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 9
   },
   {
     "id": "p_pillow",
@@ -3817,7 +3879,8 @@
     "categoryId": "objects",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 10
   },
   {
     "id": "p_chair",
@@ -3835,7 +3898,8 @@
       "凳子"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 3
   },
   {
     "id": "p_computer",
@@ -3854,7 +3918,8 @@
       "手提电脑"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 8
   },
   {
     "id": "p_television",
@@ -3873,7 +3938,8 @@
       "TV"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 7
   },
   {
     "id": "p_glasses",
@@ -3891,7 +3957,8 @@
       "老花镜"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 20
   },
   {
     "id": "p_bowl",
@@ -3907,7 +3974,8 @@
     "categoryId": "objects",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 21
   },
   {
     "id": "p_pen",
@@ -3926,7 +3994,8 @@
       "圆珠笔"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 22
   },
   {
     "id": "p_chopsticks",
@@ -3942,7 +4011,8 @@
     "categoryId": "objects",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 23
   },
   {
     "id": "p_tissue",
@@ -3961,7 +4031,8 @@
       "手纸"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 24
   },
   {
     "id": "p_clothes",
@@ -3999,7 +4070,8 @@
       "遥控"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 26
   },
   {
     "id": "p_key",
@@ -4015,7 +4087,8 @@
     "categoryId": "objects",
     "synonyms": [],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 18
   },
   {
     "id": "p_umbrella",
@@ -4033,7 +4106,8 @@
       "伞"
     ],
     "disambiguationHints": {},
-    "usageCount": 0
+    "usageCount": 0,
+    "manualOrder": 19
   },
   {
     "id": "r_speak_slowly",
@@ -4258,7 +4332,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 0
+    "manualOrder": 14
   },
   {
     "id": "a_go_out",
@@ -4281,7 +4355,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 1
+    "manualOrder": 4
   },
   {
     "id": "a_go_home",
@@ -4304,7 +4378,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 2
+    "manualOrder": 5
   },
   {
     "id": "a_rehab_training",
@@ -4327,7 +4401,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 3,
+    "manualOrder": 6,
     "relatedTerms": [
       "康复"
     ]
@@ -4353,7 +4427,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 4
+    "manualOrder": 7
   },
   {
     "id": "a_wear",
@@ -4376,7 +4450,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 5
+    "manualOrder": 8
   },
   {
     "id": "a_take_off_clothes",
@@ -4399,7 +4473,7 @@
       "semanticDomain": "activities"
     },
     "usageCount": 0,
-    "manualOrder": 6
+    "manualOrder": 9
   },
   {
     "id": "p_tired",
@@ -4423,7 +4497,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 1
+    "manualOrder": 5
   },
   {
     "id": "p_nervous",
@@ -4446,7 +4520,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 2
+    "manualOrder": 7
   },
   {
     "id": "p_bored",
@@ -4468,7 +4542,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 3
+    "manualOrder": 8
   },
   {
     "id": "p_anxious",
@@ -4491,7 +4565,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 4
+    "manualOrder": 9
   },
   {
     "id": "p_lonely",
@@ -4514,7 +4588,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 5
+    "manualOrder": 10
   },
   {
     "id": "p_dejected",
@@ -4537,7 +4611,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 6
+    "manualOrder": 11
   },
   {
     "id": "p_calm",
@@ -4559,7 +4633,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 7,
+    "manualOrder": 12,
     "relatedTerms": [
       "安静"
     ]
@@ -4585,7 +4659,7 @@
       "semanticDomain": "emotions"
     },
     "usageCount": 0,
-    "manualOrder": 8
+    "manualOrder": 13
   },
   {
     "id": "p_bedroom",
@@ -4606,7 +4680,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 1,
+    "manualOrder": 10,
     "relatedTerms": [
       "房间"
     ]
@@ -4628,7 +4702,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 2
+    "manualOrder": 11
   },
   {
     "id": "p_living_room",
@@ -4650,7 +4724,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 3
+    "manualOrder": 12
   },
   {
     "id": "p_outside",
@@ -4673,7 +4747,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 4
+    "manualOrder": 8
   },
   {
     "id": "p_shop",
@@ -4696,7 +4770,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 5
+    "manualOrder": 7
   },
   {
     "id": "p_rehab_dept",
@@ -4718,7 +4792,7 @@
       "semanticDomain": "places"
     },
     "usageCount": 0,
-    "manualOrder": 6
+    "manualOrder": 17
   },
   {
     "id": "p_husband",
@@ -4741,7 +4815,7 @@
       "semanticDomain": "people"
     },
     "usageCount": 0,
-    "manualOrder": 1
+    "manualOrder": 5
   },
   {
     "id": "p_wife",
@@ -4764,7 +4838,7 @@
       "semanticDomain": "people"
     },
     "usageCount": 0,
-    "manualOrder": 2
+    "manualOrder": 6
   },
   {
     "id": "p_son",
@@ -4786,7 +4860,7 @@
       "semanticDomain": "people"
     },
     "usageCount": 0,
-    "manualOrder": 3
+    "manualOrder": 7
   },
   {
     "id": "p_daughter",
@@ -4808,7 +4882,7 @@
       "semanticDomain": "people"
     },
     "usageCount": 0,
-    "manualOrder": 4
+    "manualOrder": 8
   },
   {
     "id": "p_table",
@@ -4828,7 +4902,7 @@
     ],
     "disambiguationHints": {},
     "usageCount": 0,
-    "manualOrder": 1
+    "manualOrder": 2
   },
   {
     "id": "p_blanket",
@@ -4849,7 +4923,7 @@
     ],
     "disambiguationHints": {},
     "usageCount": 0,
-    "manualOrder": 2
+    "manualOrder": 4
   },
   {
     "id": "p_lamp",
@@ -4870,7 +4944,7 @@
     ],
     "disambiguationHints": {},
     "usageCount": 0,
-    "manualOrder": 3
+    "manualOrder": 5
   },
   {
     "id": "p_rice",
@@ -5270,7 +5344,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2565/2565_300.png",
     "categoryId": "daily",
-    "manualOrder": 4,
+    "manualOrder": 5,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5291,7 +5365,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2622/2622_300.png",
     "categoryId": "daily",
-    "manualOrder": 5,
+    "manualOrder": 6,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5313,7 +5387,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2298/2298_300.png",
     "categoryId": "daily",
-    "manualOrder": 6,
+    "manualOrder": 7,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5337,7 +5411,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2242/2242_300.png",
     "categoryId": "daily",
-    "manualOrder": 7,
+    "manualOrder": 8,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5359,7 +5433,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2572/2572_300.png",
     "categoryId": "daily",
-    "manualOrder": 8,
+    "manualOrder": 9,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5381,7 +5455,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/3244/3244_300.png",
     "categoryId": "objects",
-    "manualOrder": 9,
+    "manualOrder": 11,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5403,7 +5477,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2611/2611_300.png",
     "categoryId": "objects",
-    "manualOrder": 10,
+    "manualOrder": 12,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5428,7 +5502,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/27651/27651_300.png",
     "categoryId": "objects",
-    "manualOrder": 11,
+    "manualOrder": 27,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5451,7 +5525,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/7157/7157_300.png",
     "categoryId": "objects",
-    "manualOrder": 12,
+    "manualOrder": 28,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5473,7 +5547,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/38050/38050_300.png",
     "categoryId": "objects",
-    "manualOrder": 13,
+    "manualOrder": 29,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5495,7 +5569,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/38247/38247_300.png",
     "categoryId": "objects",
-    "manualOrder": 14,
+    "manualOrder": 30,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5517,7 +5591,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/38212/38212_300.png",
     "categoryId": "objects",
-    "manualOrder": 15,
+    "manualOrder": 31,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "objects"
@@ -5538,7 +5612,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/32234/32234_300.png",
     "categoryId": "places",
-    "manualOrder": 7,
+    "manualOrder": 13,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "places"
@@ -5561,7 +5635,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2262/2262_300.png",
     "categoryId": "places",
-    "manualOrder": 8,
+    "manualOrder": 14,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "places"
@@ -5584,7 +5658,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2580/2580_300.png",
     "categoryId": "places",
-    "manualOrder": 9,
+    "manualOrder": 15,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "places"
@@ -5607,7 +5681,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/26925/26925_300.png",
     "categoryId": "places",
-    "manualOrder": 10,
+    "manualOrder": 16,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "places"
@@ -5629,7 +5703,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2964/2964_300.png",
     "categoryId": "daily",
-    "manualOrder": 15,
+    "manualOrder": 10,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5653,7 +5727,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/2699/2699_300.png",
     "categoryId": "daily",
-    "manualOrder": 16,
+    "manualOrder": 11,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5676,7 +5750,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/37364/37364_300.png",
     "categoryId": "daily",
-    "manualOrder": 17,
+    "manualOrder": 12,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5699,7 +5773,7 @@
     ],
     "imageUrl": "https://static.arasaac.org/pictograms/4750/4750_300.png",
     "categoryId": "daily",
-    "manualOrder": 18,
+    "manualOrder": 13,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "daily"
@@ -5744,7 +5818,7 @@
     ],
     "imageUrl": "https://d18vdu4p71yql0.cloudfront.net/libraries/noun-project/Downstairs-9226eabb8f.svg",
     "categoryId": "places",
-    "manualOrder": 11,
+    "manualOrder": 9,
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "places"
@@ -5866,7 +5940,8 @@
     "usageCount": 0,
     "disambiguationHints": {
       "semanticDomain": "emotions"
-    }
+    },
+    "manualOrder": 16
   },
   {
     "id": "a_change_clothes",
@@ -5995,6 +6070,7 @@
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
+    "manualOrder": 4,
     "usageCount": 0
   },
   {
@@ -6017,6 +6093,7 @@
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
+    "manualOrder": 5,
     "usageCount": 0
   },
   {
@@ -6038,6 +6115,7 @@
     "disambiguationHints": {
       "semanticDomain": "emotions"
     },
+    "manualOrder": 6,
     "usageCount": 0
   },
   {
@@ -6061,6 +6139,7 @@
     "disambiguationHints": {
       "semanticDomain": "time"
     },
+    "manualOrder": 1,
     "usageCount": 0
   },
   {
@@ -6082,6 +6161,7 @@
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
+    "manualOrder": 6,
     "usageCount": 0
   },
   {
@@ -6104,6 +6184,7 @@
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
+    "manualOrder": 7,
     "usageCount": 0,
     "categoryIds": [
       "medical",
@@ -6130,6 +6211,7 @@
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
+    "manualOrder": 8,
     "usageCount": 0
   },
   {
@@ -6196,6 +6278,7 @@
     "disambiguationHints": {
       "semanticDomain": "places"
     },
+    "manualOrder": 3,
     "usageCount": 0
   },
   {
@@ -6218,6 +6301,7 @@
     "disambiguationHints": {
       "semanticDomain": "daily"
     },
+    "manualOrder": 14,
     "usageCount": 0
   }
 ]

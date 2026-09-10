@@ -14,7 +14,7 @@ export interface LevelWord {
   phrase?: string
 }
 
-/** 重度 6 个最刚需词（吃/喝/去/厕所/帮/疼） */
+/** 重度 6 个最刚需词（吃/喝/去/厕所/帮/疼）——同时是接收「展示给患者」的核心词优先级来源，本体勿轻易增删 */
 export const SEVERE_WORDS: LevelWord[] = [
   { id: 'p_eat', label: '吃', phrase: '我要吃饭' },
   { id: 'p_drink', label: '喝', phrase: '我要喝水' },
@@ -24,7 +24,18 @@ export const SEVERE_WORDS: LevelWord[] = [
   { id: 'p_pain', label: '疼', phrase: '我疼' }
 ]
 
-/** 中度 16 个常用词（核心词 8 + 扩展词 8，初版名单可调） */
+/**
+ * 重度表达词板 = 刚需 6 词 + 问候礼貌 2 词（8 个超大图块）。
+ * 与 SEVERE_WORDS 分开维护：接收侧核心词规则（severity-display.ts）只认刚需 6 词，
+ * 避免「你好/对不起」这类社交词在接收展示时压过内容名词。
+ */
+export const SEVERE_EXPRESS_WORDS: LevelWord[] = [
+  ...SEVERE_WORDS,
+  { id: 'p_hello', label: '你好', phrase: '你好' },
+  { id: 'p_sorry', label: '对不起', phrase: '对不起' }
+]
+
+/** 中度 20 个常用词（核心词 8 + 扩展词 12；2026-09 图库扩充后新增 你好/再见/对不起/辛苦） */
 export const MODERATE_WORDS: LevelWord[] = [
   // 核心词
   { id: 'p_i', label: '我' },
@@ -43,11 +54,16 @@ export const MODERATE_WORDS: LevelWord[] = [
   { id: 'p_good', label: '好' },
   { id: 'p_water', label: '水' },
   { id: 'p_yes_response', label: '是' },
-  { id: 'p_wait', label: '等' }
+  { id: 'p_wait', label: '等' },
+  // 扩展词：2026-09 图库扩充（问候礼貌高频词）
+  { id: 'p_hello', label: '你好' },
+  { id: 'p_goodbye', label: '再见' },
+  { id: 'p_sorry', label: '对不起' },
+  { id: 'p_hard_work', label: '辛苦' }
 ]
 
 const SEVERE_PHRASE_MAP: Record<string, string> = {}
-for (const w of SEVERE_WORDS) {
+for (const w of SEVERE_EXPRESS_WORDS) {
   if (w.phrase) SEVERE_PHRASE_MAP[w.id] = w.phrase
 }
 
@@ -77,7 +93,7 @@ export function resolveLevelWords(words: LevelWord[]): PictogramEntry[] {
 }
 
 export function resolveSevereWords(): PictogramEntry[] {
-  return resolveLevelWords(SEVERE_WORDS)
+  return resolveLevelWords(SEVERE_EXPRESS_WORDS)
 }
 
 export function resolveModerateWords(): PictogramEntry[] {
