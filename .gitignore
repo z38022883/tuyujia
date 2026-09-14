@@ -39,3 +39,6 @@ coverage/
 # Misc
 .turbo/
 *.tsbuildinfo
+
+# Temporary / pending files
+pending/
