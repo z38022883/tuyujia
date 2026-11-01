@@ -33,8 +33,9 @@
 
 .subtitle {
   margin-top: $spacing-xs;
-  font-size: $font-size-sm;
-  color: $color-text-tertiary;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
 }
 
 .rate {
@@ -45,8 +46,20 @@
 }
 
 .rateLabel {
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
   color: $color-text-tertiary;
+}
+
+.starSummary {
+  margin-top: $spacing-sm;
+  padding: 10rpx 28rpx;
+  border-radius: $radius-round;
+  background: rgba(245, 166, 35, 0.12);
+}
+
+.starSummaryText {
+  font-size: $font-size-md;
+  color: #b07400;
 }
 
 .dims {
@@ -67,12 +80,12 @@
 }
 
 .dimLabel {
-  font-size: $font-size-md;
+  font-size: $font-size-lg;
   color: $color-text-secondary;
 }
 
 .dimValue {
-  font-size: $font-size-md;
+  font-size: $font-size-lg;
   color: $color-text-primary;
   font-weight: $font-weight-medium;
 }
@@ -87,30 +100,30 @@
 
 .btnPrimary {
   @include button-reset;
-  height: $button-height-md;
+  height: 104rpx;
   border-radius: $radius-button;
   background: $color-primary;
   color: $color-text-white;
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
 }
 
 .btnGhost {
   @include button-reset;
-  height: $button-height-md;
+  height: 104rpx;
   border-radius: $radius-button;
   background: $color-bg-card;
   color: $color-text-secondary;
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
   box-shadow: $shadow-card;
 }
 
 .btn {
   @include button-reset;
   margin-top: $spacing-lg;
-  width: 480rpx;
-  height: $button-height-md;
+  width: 560rpx;
+  height: 104rpx;
   border-radius: $radius-button;
   background: $color-primary;
   color: $color-text-white;
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
 }

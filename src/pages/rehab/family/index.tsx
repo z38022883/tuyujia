@@ -2,11 +2,15 @@ import { useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import classnames from 'classnames';
 import { REHAB_FAMILY_GUIDES, REHAB_LEVELS } from '@/data/rehab';
+import { useProfileStore } from '@/store/useProfileStore';
 import type { RehabLevel } from '@/types/rehab';
 import styles from './index.module.scss';
 
 function FamilyPage() {
-  const [level, setLevel] = useState<RehabLevel>('severe');
+  // 初始档联动患者程度档案（档案在 app 启动时已加载）
+  const [level, setLevel] = useState<RehabLevel>(
+    () => useProfileStore.getState().profile?.severity ?? 'severe'
+  );
   const guide = REHAB_FAMILY_GUIDES[level];
 
   return (

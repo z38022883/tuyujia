@@ -126,6 +126,22 @@
   color: $color-text-disabled;
 }
 
+.sourceTag {
+  display: flex;
+  align-items: center;
+  height: 44rpx;
+  padding: 0 $spacing-md;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.sourceTagAssess {
+  background: rgba(74, 156, 110, 0.12);
+  color: $color-primary-dark;
+}
+
 .divider {
   height: 1rpx;
   background: $color-divider;

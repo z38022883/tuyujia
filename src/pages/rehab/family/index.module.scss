@@ -16,18 +16,19 @@
 .tab {
   flex: 1;
   @include flex-center;
-  height: $button-height-sm;
+  height: 96rpx;
   border-radius: $radius-button;
   background: $color-bg-card;
   color: $color-text-secondary;
-  font-size: $font-size-md;
+  font-size: $font-size-lg;
   box-shadow: $shadow-card;
 }
 
 .tabActive {
   background: $color-bg-primary-soft;
   color: $color-primary-dark;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
+  box-shadow: inset 0 0 0 3rpx $color-primary;
 }
 
 .body {
@@ -44,7 +45,7 @@
 }
 
 .title {
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
 }
@@ -56,20 +57,21 @@
 
 .pointDot {
   color: $color-primary;
+  font-size: $font-size-lg;
   margin-right: $spacing-sm;
 }
 
 .pointText {
   flex: 1;
-  font-size: $font-size-md;
-  line-height: $line-height-normal;
+  font-size: $font-size-lg;
+  line-height: $line-height-loose;
   color: $color-text-secondary;
 }
 
 .disclaimer {
   display: block;
   margin-top: $spacing-lg;
-  font-size: $font-size-xs;
-  color: $color-text-disabled;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
   line-height: $line-height-normal;
 }

@@ -38,5 +38,10 @@ export const STORAGE_KEYS = {
   rehabActiveSession: 'tuyujia_rehab_active_session',
   tcmCheckIns: 'tuyujia_tcm_check_ins',
   tcmBadges: 'tuyujia_tcm_badges',
-  patientProfile: 'tuyujia_patient_profile'
+  patientProfile: 'tuyujia_patient_profile',
+  assessments: 'tuyujia_assessments',
+  /** 康复页最近一次已提示「评估调级」的档案 updatedAt（去重横幅） */
+  rehabAppliedProfileAt: 'tuyujia_rehab_applied_profile_at',
+  /** 康复页「按短板加权出题」开关（缺省开） */
+  rehabDimWeight: 'tuyujia_rehab_dim_weight'
 } as const;

@@ -1,0 +1,5179 @@
+[
+  {
+    "id": "g-sv-pick-water-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：水",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:水",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "水",
+      "answerId": "p_water",
+      "optionIds": [
+        "p_water",
+        "p_vegetable",
+        "p_drink",
+        "p_eat_breakfast"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-water-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：水",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:水",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "水",
+      "answerId": "p_water",
+      "optionIds": [
+        "p_water",
+        "p_many",
+        "p_candy",
+        "p_milk"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-water-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：水",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:水",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "水",
+      "answerId": "p_water",
+      "optionIds": [
+        "p_water",
+        "p_coffee",
+        "p_candy",
+        "p_dinner"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-cup-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：杯子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:杯子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "杯子",
+      "answerId": "p_cup",
+      "optionIds": [
+        "p_cup",
+        "p_flower",
+        "p_pen",
+        "o_window"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-cup-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：杯子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:杯子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "杯子",
+      "answerId": "p_cup",
+      "optionIds": [
+        "p_cup",
+        "p_spoon",
+        "p_table",
+        "p_umbrella"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-cup-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：杯子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:杯子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "杯子",
+      "answerId": "p_cup",
+      "optionIds": [
+        "p_cup",
+        "o_noisy",
+        "p_chopsticks",
+        "p_car"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bowl-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：碗",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:碗",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "碗",
+      "answerId": "p_bowl",
+      "optionIds": [
+        "p_bowl",
+        "p_key",
+        "p_bed",
+        "p_pillow"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bowl-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：碗",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:碗",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "碗",
+      "answerId": "p_bowl",
+      "optionIds": [
+        "p_bowl",
+        "p_chopsticks",
+        "p_remote",
+        "p_tissue"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bowl-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：碗",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:碗",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "碗",
+      "answerId": "p_bowl",
+      "optionIds": [
+        "p_bowl",
+        "p_car",
+        "p_book",
+        "p_pillow"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-spoon-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：勺子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:勺子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "勺子",
+      "answerId": "p_spoon",
+      "optionIds": [
+        "p_spoon",
+        "p_computer",
+        "o_charger",
+        "p_pillow"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-spoon-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：勺子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:勺子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "勺子",
+      "answerId": "p_spoon",
+      "optionIds": [
+        "p_spoon",
+        "o_window",
+        "p_umbrella",
+        "o_light_off"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-spoon-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：勺子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:勺子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "勺子",
+      "answerId": "p_spoon",
+      "optionIds": [
+        "p_spoon",
+        "p_table",
+        "p_car",
+        "p_book"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-toothbrush-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牙刷",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牙刷",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牙刷",
+      "answerId": "p_toothbrush",
+      "optionIds": [
+        "p_toothbrush",
+        "p_shower",
+        "o_hat",
+        "p_now"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-toothbrush-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牙刷",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牙刷",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牙刷",
+      "answerId": "p_toothbrush",
+      "optionIds": [
+        "p_toothbrush",
+        "p_wipe_face",
+        "o_shoes",
+        "p_clothes"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-toothbrush-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牙刷",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牙刷",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牙刷",
+      "answerId": "p_toothbrush",
+      "optionIds": [
+        "p_toothbrush",
+        "p_exercise",
+        "p_change_clothes",
+        "o_coat"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-towel-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：毛巾",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:毛巾",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "毛巾",
+      "answerId": "p_towel",
+      "optionIds": [
+        "p_towel",
+        "p_shower",
+        "hy_dirty",
+        "o_socks"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-towel-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：毛巾",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:毛巾",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "毛巾",
+      "answerId": "p_towel",
+      "optionIds": [
+        "p_towel",
+        "p_wait",
+        "p_toothbrush",
+        "p_clothes"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-towel-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：毛巾",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:毛巾",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "毛巾",
+      "answerId": "p_towel",
+      "optionIds": [
+        "p_towel",
+        "o_shoes",
+        "p_brush_teeth",
+        "p_shower"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bed-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：床",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:床",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "床",
+      "answerId": "p_bed",
+      "optionIds": [
+        "p_bed",
+        "o_window",
+        "p_book",
+        "p_cup"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bed-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：床",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:床",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "床",
+      "answerId": "p_bed",
+      "optionIds": [
+        "p_bed",
+        "p_computer",
+        "p_tissue",
+        "p_remote"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-bed-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：床",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:床",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "床",
+      "answerId": "p_bed",
+      "optionIds": [
+        "p_bed",
+        "p_glasses",
+        "p_computer",
+        "p_key"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-chair-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：椅子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:椅子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "椅子",
+      "answerId": "p_chair",
+      "optionIds": [
+        "p_chair",
+        "o_noisy",
+        "p_book",
+        "p_umbrella"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-chair-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：椅子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:椅子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "椅子",
+      "answerId": "p_chair",
+      "optionIds": [
+        "p_chair",
+        "p_remote",
+        "o_light_on",
+        "p_phone"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-chair-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：椅子",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:椅子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "椅子",
+      "answerId": "p_chair",
+      "optionIds": [
+        "p_chair",
+        "p_computer",
+        "p_car",
+        "p_bed"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-apple-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：苹果",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:苹果",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "苹果",
+      "answerId": "p_apple",
+      "optionIds": [
+        "p_apple",
+        "p_vegetable",
+        "p_eat_breakfast",
+        "p_water"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-apple-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：苹果",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:苹果",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "苹果",
+      "answerId": "p_apple",
+      "optionIds": [
+        "p_apple",
+        "p_tea",
+        "p_water",
+        "p_candy"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-apple-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：苹果",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:苹果",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "苹果",
+      "answerId": "p_apple",
+      "optionIds": [
+        "p_apple",
+        "p_snacks",
+        "p_ice_cream",
+        "p_egg"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-milk-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牛奶",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牛奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牛奶",
+      "answerId": "p_milk",
+      "optionIds": [
+        "p_milk",
+        "p_coffee",
+        "p_eat",
+        "p_many"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-milk-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牛奶",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牛奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牛奶",
+      "answerId": "p_milk",
+      "optionIds": [
+        "p_milk",
+        "p_meat",
+        "p_hot_water",
+        "p_noodles"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-milk-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：牛奶",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:牛奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "牛奶",
+      "answerId": "p_milk",
+      "optionIds": [
+        "p_milk",
+        "p_bread",
+        "p_breakfast",
+        "p_coffee"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-medicine-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：药",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:药",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "药",
+      "answerId": "p_medicine",
+      "optionIds": [
+        "p_medicine",
+        "p_call_doctor",
+        "m_injection",
+        "p_head"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-medicine-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：药",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:药",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "药",
+      "answerId": "p_medicine",
+      "optionIds": [
+        "p_medicine",
+        "p_throat",
+        "m_deep_breath",
+        "p_doctor"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-medicine-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：药",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:药",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "药",
+      "answerId": "p_medicine",
+      "optionIds": [
+        "p_medicine",
+        "p_therapist",
+        "p_right",
+        "p_arm_body"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-phone-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：手机",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:手机",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "手机",
+      "answerId": "p_phone",
+      "optionIds": [
+        "p_phone",
+        "o_door",
+        "p_key",
+        "p_bag"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-phone-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：手机",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:手机",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "手机",
+      "answerId": "p_phone",
+      "optionIds": [
+        "p_phone",
+        "p_glasses",
+        "p_flower",
+        "p_chair"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pick-phone-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：手机",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:手机",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "手机",
+      "answerId": "p_phone",
+      "optionIds": [
+        "p_phone",
+        "p_key",
+        "p_chair",
+        "o_charger"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-eat-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：吃",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:吃",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "吃",
+      "answerId": "p_eat",
+      "optionIds": [
+        "p_eat",
+        "p_call",
+        "p_and",
+        "p_many"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-eat-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：吃",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:吃",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "吃",
+      "answerId": "p_eat",
+      "optionIds": [
+        "p_eat",
+        "p_i",
+        "p_sit",
+        "p_medicine"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-drink-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：喝",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:喝",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "喝",
+      "answerId": "p_drink",
+      "optionIds": [
+        "p_drink",
+        "p_want",
+        "p_many",
+        "p_again"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-drink-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：喝",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:喝",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "喝",
+      "answerId": "p_drink",
+      "optionIds": [
+        "p_drink",
+        "p_end",
+        "p_bad",
+        "p_who"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-sleep-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：睡觉",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:睡觉",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "睡觉",
+      "answerId": "p_sleep",
+      "optionIds": [
+        "p_sleep",
+        "a_practice",
+        "a_lie_down",
+        "p_rest"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-sleep-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：睡觉",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:睡觉",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "睡觉",
+      "answerId": "p_sleep",
+      "optionIds": [
+        "p_sleep",
+        "a_rehab_training",
+        "a_lie_down",
+        "p_read_book"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-clothes-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：衣服",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:衣服",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "衣服",
+      "answerId": "p_clothes",
+      "optionIds": [
+        "p_clothes",
+        "hy_dirty",
+        "p_now",
+        "p_pee"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-clothes-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：衣服",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:衣服",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "衣服",
+      "answerId": "p_clothes",
+      "optionIds": [
+        "p_clothes",
+        "p_exercise",
+        "o_trousers",
+        "p_haircut"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-toilet-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：厕所",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:厕所",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "厕所",
+      "answerId": "p_toilet",
+      "optionIds": [
+        "p_toilet",
+        "p_give_me_time",
+        "p_hello",
+        "p_goodbye"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-toilet-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：厕所",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:厕所",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "厕所",
+      "answerId": "p_toilet",
+      "optionIds": [
+        "p_toilet",
+        "p_need_time",
+        "p_i_am_done",
+        "p_i_am_uncomfortable"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-shower-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：洗澡",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:洗澡",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "洗澡",
+      "answerId": "p_shower",
+      "optionIds": [
+        "p_shower",
+        "o_socks",
+        "o_trousers",
+        "p_towel"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-pickread-shower-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：洗澡",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:洗澡",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "洗澡",
+      "answerId": "p_shower",
+      "optionIds": [
+        "p_shower",
+        "p_wait",
+        "hy_wet",
+        "o_socks"
+      ]
+    }
+  },
+  {
+    "id": "g-sv-match-wash",
+    "taskType": "match-pair",
+    "title": "图文配对：日常洗漱",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "毛巾",
+          "pictogramId": "p_towel"
+        },
+        {
+          "text": "牙刷",
+          "pictogramId": "p_toothbrush"
+        },
+        {
+          "text": "肥皂",
+          "pictogramId": "hy_soap"
+        },
+        {
+          "text": "卫生纸",
+          "pictogramId": "p_toilet_paper"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-match-fruit",
+    "taskType": "match-pair",
+    "title": "图文配对：水果食物",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "苹果",
+          "pictogramId": "p_apple"
+        },
+        {
+          "text": "香蕉",
+          "pictogramId": "p_banana"
+        },
+        {
+          "text": "鸡蛋",
+          "pictogramId": "p_egg"
+        },
+        {
+          "text": "面包",
+          "pictogramId": "p_bread"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-match-family",
+    "taskType": "match-pair",
+    "title": "图文配对：家人",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "妈妈",
+          "pictogramId": "p_mother"
+        },
+        {
+          "text": "爸爸",
+          "pictogramId": "p_father"
+        },
+        {
+          "text": "爷爷",
+          "pictogramId": "p_grandfather"
+        },
+        {
+          "text": "奶奶",
+          "pictogramId": "p_grandmother"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-match-body",
+    "taskType": "match-pair",
+    "title": "图文配对：身体部位",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "头",
+          "pictogramId": "p_head"
+        },
+        {
+          "text": "手",
+          "pictogramId": "p_hand"
+        },
+        {
+          "text": "脚",
+          "pictogramId": "p_foot_body"
+        },
+        {
+          "text": "眼睛",
+          "pictogramId": "p_eye_body"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-cat-food-daily",
+    "taskType": "categorize",
+    "title": "词汇分类：食物和日常用品",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "daily",
+          "label": "日常用品"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_bread",
+          "category": "food"
+        },
+        {
+          "id": "p_banana",
+          "category": "food"
+        },
+        {
+          "id": "p_egg",
+          "category": "food"
+        },
+        {
+          "id": "p_towel",
+          "category": "daily"
+        },
+        {
+          "id": "p_toothbrush",
+          "category": "daily"
+        },
+        {
+          "id": "hy_soap",
+          "category": "daily"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-cat-food-tableware",
+    "taskType": "categorize",
+    "title": "词汇分类：食物和餐具",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "objects",
+          "label": "餐具物品"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_milk",
+          "category": "food"
+        },
+        {
+          "id": "p_tea",
+          "category": "food"
+        },
+        {
+          "id": "p_candy",
+          "category": "food"
+        },
+        {
+          "id": "p_cup",
+          "category": "objects"
+        },
+        {
+          "id": "p_bowl",
+          "category": "objects"
+        },
+        {
+          "id": "p_spoon",
+          "category": "objects"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-sv-cat-people-body",
+    "taskType": "categorize",
+    "title": "词汇分类：家人和身体",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "people",
+          "label": "家人朋友"
+        },
+        {
+          "key": "medical",
+          "label": "身体医疗"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_mother",
+          "category": "people"
+        },
+        {
+          "id": "p_friend",
+          "category": "people"
+        },
+        {
+          "id": "p_son",
+          "category": "people"
+        },
+        {
+          "id": "p_head",
+          "category": "medical"
+        },
+        {
+          "id": "p_hand",
+          "category": "medical"
+        },
+        {
+          "id": "p_nurse",
+          "category": "medical"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-doctor-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医生",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": [
+        "p_doctor",
+        "p_unwell",
+        "p_sick",
+        "p_call_nurse"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-doctor-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医生",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": [
+        "p_doctor",
+        "p_leg_body",
+        "p_there",
+        "p_chest_pain"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-doctor-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医生",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": [
+        "p_doctor",
+        "p_uncomfortable",
+        "p_foot_body",
+        "p_rehab"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-nurse-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：护士",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:护士",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "护士",
+      "answerId": "p_nurse",
+      "optionIds": [
+        "p_nurse",
+        "p_unwell",
+        "p_hand",
+        "p_rehab"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-nurse-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：护士",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:护士",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "护士",
+      "answerId": "p_nurse",
+      "optionIds": [
+        "p_nurse",
+        "p_blood_pressure",
+        "p_nausea",
+        "p_eye_body"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-nurse-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：护士",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:护士",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "护士",
+      "answerId": "p_nurse",
+      "optionIds": [
+        "p_nurse",
+        "p_nausea",
+        "p_feverish",
+        "p_dizzy"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-hospital-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医院",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医院",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医院",
+      "answerId": "p_hospital",
+      "optionIds": [
+        "p_hospital",
+        "p_supermarket",
+        "pl_taxi",
+        "p_shop"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-hospital-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医院",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医院",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医院",
+      "answerId": "p_hospital",
+      "optionIds": [
+        "p_hospital",
+        "p_kitchen",
+        "p_rehab_dept",
+        "p_living_room"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-hospital-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：医院",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医院",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医院",
+      "answerId": "p_hospital",
+      "optionIds": [
+        "p_hospital",
+        "p_living_room",
+        "p_shop",
+        "pl_taxi"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-headache-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：头痛",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:头痛",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "头痛",
+      "answerId": "p_headache",
+      "optionIds": [
+        "p_headache",
+        "p_cough",
+        "p_sick",
+        "p_ear_body"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-headache-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：头痛",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:头痛",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "头痛",
+      "answerId": "p_headache",
+      "optionIds": [
+        "p_headache",
+        "p_ear_body",
+        "p_fever",
+        "p_therapist"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-headache-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：头痛",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:头痛",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "头痛",
+      "answerId": "p_headache",
+      "optionIds": [
+        "p_headache",
+        "p_dizzy",
+        "p_nausea",
+        "m_check"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-fever-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：发烧",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:发烧",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "发烧",
+      "answerId": "p_fever",
+      "optionIds": [
+        "p_fever",
+        "p_unwell",
+        "p_blood_pressure",
+        "p_arm_body"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-fever-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：发烧",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:发烧",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "发烧",
+      "answerId": "p_fever",
+      "optionIds": [
+        "p_fever",
+        "p_throat",
+        "m_breathe",
+        "p_foot_body"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-fever-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：发烧",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:发烧",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "发烧",
+      "answerId": "p_fever",
+      "optionIds": [
+        "p_fever",
+        "p_nurse",
+        "p_rehab",
+        "p_numb"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-cough-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咳嗽",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咳嗽",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咳嗽",
+      "answerId": "p_cough",
+      "optionIds": [
+        "p_cough",
+        "p_bleed",
+        "m_deep_breath",
+        "m_injection"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-cough-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咳嗽",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咳嗽",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咳嗽",
+      "answerId": "p_cough",
+      "optionIds": [
+        "p_cough",
+        "p_arm_body",
+        "p_wheelchair",
+        "p_help_me"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-cough-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咳嗽",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咳嗽",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咳嗽",
+      "answerId": "p_cough",
+      "optionIds": [
+        "p_cough",
+        "p_nurse",
+        "m_injection",
+        "m_breathe"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-grandmother-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：奶奶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:奶奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "奶奶",
+      "answerId": "p_grandmother",
+      "optionIds": [
+        "p_grandmother",
+        "p_teacher",
+        "p_grandfather",
+        "p_brother"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-grandmother-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：奶奶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:奶奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "奶奶",
+      "answerId": "p_grandmother",
+      "optionIds": [
+        "p_grandmother",
+        "p_daughter",
+        "p_sister",
+        "p_friend"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-grandmother-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：奶奶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:奶奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "奶奶",
+      "answerId": "p_grandmother",
+      "optionIds": [
+        "p_grandmother",
+        "p_daughter",
+        "p_grandfather",
+        "p_sister"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-friend-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：朋友",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:朋友",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "朋友",
+      "answerId": "p_friend",
+      "optionIds": [
+        "p_friend",
+        "p_father",
+        "p_teacher",
+        "p_sister"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-friend-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：朋友",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:朋友",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "朋友",
+      "answerId": "p_friend",
+      "optionIds": [
+        "p_friend",
+        "p_sister",
+        "p_brother",
+        "p_grandmother"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-friend-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：朋友",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:朋友",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "朋友",
+      "answerId": "p_friend",
+      "optionIds": [
+        "p_friend",
+        "p_call_family",
+        "p_older_sister",
+        "p_brother"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-school-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：学校",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:学校",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "学校",
+      "answerId": "p_school",
+      "optionIds": [
+        "p_school",
+        "p_shop",
+        "p_kitchen",
+        "p_outside"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-school-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：学校",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:学校",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "学校",
+      "answerId": "p_school",
+      "optionIds": [
+        "p_school",
+        "pl_room",
+        "p_shop",
+        "pl_downstairs"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-school-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：学校",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:学校",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "学校",
+      "answerId": "p_school",
+      "optionIds": [
+        "p_school",
+        "p_playground",
+        "p_shop",
+        "pl_subway"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-kitchen-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：厨房",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:厨房",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "厨房",
+      "answerId": "p_kitchen",
+      "optionIds": [
+        "p_kitchen",
+        "p_school",
+        "p_outside",
+        "p_playground"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-kitchen-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：厨房",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:厨房",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "厨房",
+      "answerId": "p_kitchen",
+      "optionIds": [
+        "p_kitchen",
+        "pl_bus",
+        "p_hospital",
+        "p_here"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-kitchen-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：厨房",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:厨房",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "厨房",
+      "answerId": "p_kitchen",
+      "optionIds": [
+        "p_kitchen",
+        "p_home",
+        "pl_subway",
+        "p_outside"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-bedroom-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：卧室",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:卧室",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "卧室",
+      "answerId": "p_bedroom",
+      "optionIds": [
+        "p_bedroom",
+        "p_here",
+        "pl_taxi",
+        "p_shop"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-bedroom-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：卧室",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:卧室",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "卧室",
+      "answerId": "p_bedroom",
+      "optionIds": [
+        "p_bedroom",
+        "p_playground",
+        "p_school",
+        "p_supermarket"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-bedroom-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：卧室",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:卧室",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "卧室",
+      "answerId": "p_bedroom",
+      "optionIds": [
+        "p_bedroom",
+        "p_rehab_dept",
+        "p_playground",
+        "pl_bus"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-rice-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：饭",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:饭",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "饭",
+      "answerId": "p_rice",
+      "optionIds": [
+        "p_rice",
+        "p_soup",
+        "p_bread",
+        "p_eat_breakfast"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-rice-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：饭",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:饭",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "饭",
+      "answerId": "p_rice",
+      "optionIds": [
+        "p_rice",
+        "p_cold_water",
+        "p_soup",
+        "p_many"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-rice-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：饭",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:饭",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "饭",
+      "answerId": "p_rice",
+      "optionIds": [
+        "p_rice",
+        "p_hot_water",
+        "p_apple",
+        "p_tea"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-noodles-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：面",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:面",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "面",
+      "answerId": "p_noodles",
+      "optionIds": [
+        "p_noodles",
+        "p_drink",
+        "p_snacks",
+        "p_milk"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-noodles-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：面",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:面",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "面",
+      "answerId": "p_noodles",
+      "optionIds": [
+        "p_noodles",
+        "p_egg",
+        "p_bread",
+        "p_cold_water"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-noodles-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：面",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:面",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "面",
+      "answerId": "p_noodles",
+      "optionIds": [
+        "p_noodles",
+        "p_breakfast",
+        "p_lunch",
+        "p_many"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-vegetable-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：菜",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:菜",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "菜",
+      "answerId": "p_vegetable",
+      "optionIds": [
+        "p_vegetable",
+        "p_eat_dinner",
+        "p_noodles",
+        "p_water"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-vegetable-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：菜",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:菜",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "菜",
+      "answerId": "p_vegetable",
+      "optionIds": [
+        "p_vegetable",
+        "p_hot_water",
+        "p_water",
+        "p_apple"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-vegetable-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：菜",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:菜",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "菜",
+      "answerId": "p_vegetable",
+      "optionIds": [
+        "p_vegetable",
+        "p_eat_breakfast",
+        "p_candy",
+        "p_banana"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-tea-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：茶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:茶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "茶",
+      "answerId": "p_tea",
+      "optionIds": [
+        "p_tea",
+        "p_coffee",
+        "p_congee",
+        "p_ice_cream"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-tea-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：茶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:茶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "茶",
+      "answerId": "p_tea",
+      "optionIds": [
+        "p_tea",
+        "p_eat",
+        "p_many",
+        "p_vegetable"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-tea-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：茶",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:茶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "茶",
+      "answerId": "p_tea",
+      "optionIds": [
+        "p_tea",
+        "p_dont_want",
+        "p_eat_breakfast",
+        "p_milk"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-coffee-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咖啡",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咖啡",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咖啡",
+      "answerId": "p_coffee",
+      "optionIds": [
+        "p_coffee",
+        "p_drink",
+        "p_meat",
+        "p_soup"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-coffee-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咖啡",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咖啡",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咖啡",
+      "answerId": "p_coffee",
+      "optionIds": [
+        "p_coffee",
+        "p_tea",
+        "p_drink",
+        "p_candy"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-coffee-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：咖啡",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:咖啡",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "咖啡",
+      "answerId": "p_coffee",
+      "optionIds": [
+        "p_coffee",
+        "p_dont_want",
+        "p_fruit",
+        "p_noodles"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-exercise-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：运动",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:运动",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "运动",
+      "answerId": "p_exercise",
+      "optionIds": [
+        "p_exercise",
+        "p_toothbrush",
+        "p_wait",
+        "o_shoes"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-exercise-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：运动",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:运动",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "运动",
+      "answerId": "p_exercise",
+      "optionIds": [
+        "p_exercise",
+        "p_now",
+        "hy_dirty",
+        "hy_shampoo"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-exercise-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：运动",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:运动",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "运动",
+      "answerId": "p_exercise",
+      "optionIds": [
+        "p_exercise",
+        "p_wash_hands",
+        "hy_shampoo",
+        "p_wait"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-haircut-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：理发",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:理发",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "理发",
+      "answerId": "p_haircut",
+      "optionIds": [
+        "p_haircut",
+        "p_toilet_paper",
+        "p_toilet",
+        "p_wipe_face"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-haircut-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：理发",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:理发",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "理发",
+      "answerId": "p_haircut",
+      "optionIds": [
+        "p_haircut",
+        "p_toilet",
+        "p_wait",
+        "p_poop"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pick-haircut-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：理发",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:理发",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "理发",
+      "answerId": "p_haircut",
+      "optionIds": [
+        "p_haircut",
+        "p_toothbrush",
+        "p_shower",
+        "p_clothes"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-hospital-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：医院",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:医院",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "医院",
+      "answerId": "p_hospital",
+      "optionIds": [
+        "p_hospital",
+        "p_living_room",
+        "p_playground",
+        "pl_bus"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-hospital-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：医院",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:医院",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "医院",
+      "answerId": "p_hospital",
+      "optionIds": [
+        "p_hospital",
+        "p_supermarket",
+        "pl_downstairs",
+        "p_living_room"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-doctor-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：医生",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": [
+        "p_doctor",
+        "m_measure",
+        "p_numb",
+        "p_neck"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-doctor-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：医生",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": [
+        "p_doctor",
+        "p_cough",
+        "p_stomachache",
+        "p_call_doctor"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-apple-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：苹果",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:苹果",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "苹果",
+      "answerId": "p_apple",
+      "optionIds": [
+        "p_apple",
+        "p_dinner",
+        "p_water",
+        "p_dont_want"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-apple-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：苹果",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:苹果",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "苹果",
+      "answerId": "p_apple",
+      "optionIds": [
+        "p_apple",
+        "p_cold_water",
+        "p_coffee",
+        "p_ice_cream"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-milk-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：牛奶",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:牛奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "牛奶",
+      "answerId": "p_milk",
+      "optionIds": [
+        "p_milk",
+        "p_noodles",
+        "p_rice",
+        "p_drink"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-milk-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：牛奶",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:牛奶",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "牛奶",
+      "answerId": "p_milk",
+      "optionIds": [
+        "p_milk",
+        "p_lunch",
+        "p_meat",
+        "p_egg"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-phone-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：手机",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:手机",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "手机",
+      "answerId": "p_phone",
+      "optionIds": [
+        "p_phone",
+        "p_spoon",
+        "o_noisy",
+        "p_pillow"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-phone-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：手机",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:手机",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "手机",
+      "answerId": "p_phone",
+      "optionIds": [
+        "p_phone",
+        "p_tissue",
+        "p_spoon",
+        "o_charger"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-key-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：钥匙",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:钥匙",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "钥匙",
+      "answerId": "p_key",
+      "optionIds": [
+        "p_key",
+        "p_pillow",
+        "o_light_on",
+        "o_window"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-key-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：钥匙",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:钥匙",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "钥匙",
+      "answerId": "p_key",
+      "optionIds": [
+        "p_key",
+        "p_television",
+        "p_spoon",
+        "o_light_on"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-glasses-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：眼镜",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:眼镜",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "眼镜",
+      "answerId": "p_glasses",
+      "optionIds": [
+        "p_glasses",
+        "p_chair",
+        "p_pen",
+        "p_flower"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-glasses-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：眼镜",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:眼镜",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "眼镜",
+      "answerId": "p_glasses",
+      "optionIds": [
+        "p_glasses",
+        "p_chair",
+        "o_light_off",
+        "p_table"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-umbrella-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：雨伞",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:雨伞",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "雨伞",
+      "answerId": "p_umbrella",
+      "optionIds": [
+        "p_umbrella",
+        "o_door",
+        "p_key",
+        "p_television"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-umbrella-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：雨伞",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:雨伞",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "雨伞",
+      "answerId": "p_umbrella",
+      "optionIds": [
+        "p_umbrella",
+        "p_cup",
+        "p_pen",
+        "p_table"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-chair-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：椅子",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:椅子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "椅子",
+      "answerId": "p_chair",
+      "optionIds": [
+        "p_chair",
+        "p_key",
+        "p_umbrella",
+        "p_bag"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-chair-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：椅子",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:椅子",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "椅子",
+      "answerId": "p_chair",
+      "optionIds": [
+        "p_chair",
+        "p_car",
+        "p_money",
+        "p_television"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-clothes-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：衣服",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:衣服",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "衣服",
+      "answerId": "p_clothes",
+      "optionIds": [
+        "p_clothes",
+        "hy_dirty",
+        "o_trousers",
+        "hy_shampoo"
+      ]
+    }
+  },
+  {
+    "id": "g-md-pickread-clothes-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：衣服",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:衣服",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "衣服",
+      "answerId": "p_clothes",
+      "optionIds": [
+        "p_clothes",
+        "o_coat",
+        "p_change_clothes",
+        "p_brush_teeth"
+      ]
+    }
+  },
+  {
+    "id": "g-md-match-body2",
+    "taskType": "match-pair",
+    "title": "图文配对：身体部位",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "肩膀",
+          "pictogramId": "p_shoulder"
+        },
+        {
+          "text": "背部",
+          "pictogramId": "p_back_body"
+        },
+        {
+          "text": "脖子",
+          "pictogramId": "p_neck"
+        },
+        {
+          "text": "腿",
+          "pictogramId": "p_leg_body"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-match-places",
+    "taskType": "match-pair",
+    "title": "图文配对：地点",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "医院",
+          "pictogramId": "p_hospital"
+        },
+        {
+          "text": "学校",
+          "pictogramId": "p_school"
+        },
+        {
+          "text": "厨房",
+          "pictogramId": "p_kitchen"
+        },
+        {
+          "text": "卧室",
+          "pictogramId": "p_bedroom"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-match-emotion",
+    "taskType": "match-pair",
+    "title": "图文配对：情绪",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "开心",
+          "pictogramId": "p_happy"
+        },
+        {
+          "text": "伤心",
+          "pictogramId": "p_sad"
+        },
+        {
+          "text": "生气",
+          "pictogramId": "p_angry"
+        },
+        {
+          "text": "害怕",
+          "pictogramId": "p_afraid"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-match-drink",
+    "taskType": "match-pair",
+    "title": "图文配对：饮品食物",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "茶",
+          "pictogramId": "p_tea"
+        },
+        {
+          "text": "咖啡",
+          "pictogramId": "p_coffee"
+        },
+        {
+          "text": "牛奶",
+          "pictogramId": "p_milk"
+        },
+        {
+          "text": "粥",
+          "pictogramId": "p_congee"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-match-family2",
+    "taskType": "match-pair",
+    "title": "图文配对：家人",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "哥哥",
+          "pictogramId": "p_brother"
+        },
+        {
+          "text": "姐姐",
+          "pictogramId": "p_older_sister"
+        },
+        {
+          "text": "妹妹",
+          "pictogramId": "p_sister"
+        },
+        {
+          "text": "儿子",
+          "pictogramId": "p_son"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-cat-food-places",
+    "taskType": "categorize",
+    "title": "词汇分类：食物和地点",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "places",
+          "label": "地点"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_noodles",
+          "category": "food"
+        },
+        {
+          "id": "p_vegetable",
+          "category": "food"
+        },
+        {
+          "id": "p_soup",
+          "category": "food"
+        },
+        {
+          "id": "p_hospital",
+          "category": "places"
+        },
+        {
+          "id": "p_school",
+          "category": "places"
+        },
+        {
+          "id": "p_kitchen",
+          "category": "places"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-cat-people-medical",
+    "taskType": "categorize",
+    "title": "词汇分类：家人和医疗",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "people",
+          "label": "家人朋友"
+        },
+        {
+          "key": "medical",
+          "label": "身体医疗"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_brother",
+          "category": "people"
+        },
+        {
+          "id": "p_teacher",
+          "category": "people"
+        },
+        {
+          "id": "p_wife",
+          "category": "people"
+        },
+        {
+          "id": "p_eye_body",
+          "category": "medical"
+        },
+        {
+          "id": "p_foot_body",
+          "category": "medical"
+        },
+        {
+          "id": "p_medicine",
+          "category": "medical"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-cat-objects-food",
+    "taskType": "categorize",
+    "title": "词汇分类：物品和食物",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "objects",
+          "label": "常用物品"
+        },
+        {
+          "key": "food",
+          "label": "食物"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_phone",
+          "category": "objects"
+        },
+        {
+          "id": "p_key",
+          "category": "objects"
+        },
+        {
+          "id": "p_umbrella",
+          "category": "objects"
+        },
+        {
+          "id": "p_rice",
+          "category": "food"
+        },
+        {
+          "id": "p_meat",
+          "category": "food"
+        },
+        {
+          "id": "p_bread",
+          "category": "food"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-cat-emotion-daily",
+    "taskType": "categorize",
+    "title": "词汇分类：情绪和穿戴",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "emotions",
+          "label": "情绪"
+        },
+        {
+          "key": "daily",
+          "label": "穿戴用品"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_happy",
+          "category": "emotions"
+        },
+        {
+          "id": "p_afraid",
+          "category": "emotions"
+        },
+        {
+          "id": "p_angry",
+          "category": "emotions"
+        },
+        {
+          "id": "p_clothes",
+          "category": "daily"
+        },
+        {
+          "id": "o_shoes",
+          "category": "daily"
+        },
+        {
+          "id": "o_hat",
+          "category": "daily"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-md-cat-food-medical-places",
+    "taskType": "categorize",
+    "title": "词汇分类：食物、医疗和地点",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "medical",
+          "label": "医疗"
+        },
+        {
+          "key": "places",
+          "label": "地点"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_apple",
+          "category": "food"
+        },
+        {
+          "id": "p_coffee",
+          "category": "food"
+        },
+        {
+          "id": "p_fruit",
+          "category": "food"
+        },
+        {
+          "id": "p_doctor",
+          "category": "medical"
+        },
+        {
+          "id": "p_nurse",
+          "category": "medical"
+        },
+        {
+          "id": "p_wheelchair",
+          "category": "medical"
+        },
+        {
+          "id": "p_playground",
+          "category": "places"
+        },
+        {
+          "id": "p_shop",
+          "category": "places"
+        },
+        {
+          "id": "p_home",
+          "category": "places"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-today-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：今天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:今天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "今天",
+      "answerId": "p_today",
+      "optionIds": [
+        "p_today",
+        "p_later",
+        "p_soon",
+        "p_afternoon",
+        "p_clock",
+        "p_tomorrow"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-today-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：今天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:今天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "今天",
+      "answerId": "p_today",
+      "optionIds": [
+        "p_today",
+        "p_everyday",
+        "p_always",
+        "p_night",
+        "p_weekend",
+        "p_now"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-today-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：今天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:今天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "今天",
+      "answerId": "p_today",
+      "optionIds": [
+        "p_today",
+        "p_night",
+        "p_morning",
+        "p_always",
+        "p_later",
+        "p_weekend"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-tomorrow-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：明天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:明天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "明天",
+      "answerId": "p_tomorrow",
+      "optionIds": [
+        "p_tomorrow",
+        "p_morning",
+        "p_later",
+        "p_afternoon",
+        "p_today",
+        "p_yesterday"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-tomorrow-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：明天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:明天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "明天",
+      "answerId": "p_tomorrow",
+      "optionIds": [
+        "p_tomorrow",
+        "p_afternoon",
+        "p_now",
+        "p_night",
+        "p_when",
+        "p_clock"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-tomorrow-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：明天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:明天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "明天",
+      "answerId": "p_tomorrow",
+      "optionIds": [
+        "p_tomorrow",
+        "p_clock",
+        "p_always",
+        "p_yesterday",
+        "p_now",
+        "p_weekend"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-yesterday-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：昨天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:昨天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "昨天",
+      "answerId": "p_yesterday",
+      "optionIds": [
+        "p_yesterday",
+        "p_night",
+        "p_always",
+        "p_everyday",
+        "p_weekend",
+        "p_when"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-yesterday-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：昨天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:昨天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "昨天",
+      "answerId": "p_yesterday",
+      "optionIds": [
+        "p_yesterday",
+        "p_later",
+        "p_afternoon",
+        "p_today",
+        "p_everyday",
+        "p_soon"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-yesterday-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：昨天",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:昨天",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "昨天",
+      "answerId": "p_yesterday",
+      "optionIds": [
+        "p_yesterday",
+        "p_when",
+        "p_everyday",
+        "p_afternoon",
+        "p_now",
+        "p_later"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-morning-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：早上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:早上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "早上",
+      "answerId": "p_morning",
+      "optionIds": [
+        "p_morning",
+        "p_tomorrow",
+        "p_always",
+        "p_everyday",
+        "p_now",
+        "p_afternoon"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-morning-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：早上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:早上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "早上",
+      "answerId": "p_morning",
+      "optionIds": [
+        "p_morning",
+        "p_later",
+        "p_weekend",
+        "p_afternoon",
+        "p_night",
+        "p_everyday"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-morning-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：早上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:早上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "早上",
+      "answerId": "p_morning",
+      "optionIds": [
+        "p_morning",
+        "p_tomorrow",
+        "p_always",
+        "p_today",
+        "p_soon",
+        "p_afternoon"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-afternoon-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：下午",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:下午",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "下午",
+      "answerId": "p_afternoon",
+      "optionIds": [
+        "p_afternoon",
+        "p_yesterday",
+        "p_tomorrow",
+        "p_night",
+        "p_today",
+        "p_weekend"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-afternoon-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：下午",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:下午",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "下午",
+      "answerId": "p_afternoon",
+      "optionIds": [
+        "p_afternoon",
+        "p_tomorrow",
+        "p_clock",
+        "p_soon",
+        "p_when",
+        "p_today"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-afternoon-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：下午",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:下午",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "下午",
+      "answerId": "p_afternoon",
+      "optionIds": [
+        "p_afternoon",
+        "p_tomorrow",
+        "p_night",
+        "p_everyday",
+        "p_soon",
+        "p_later"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-weekend-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：周末",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:周末",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "周末",
+      "answerId": "p_weekend",
+      "optionIds": [
+        "p_weekend",
+        "p_night",
+        "p_afternoon",
+        "p_today",
+        "p_soon",
+        "p_yesterday"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-weekend-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：周末",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:周末",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "周末",
+      "answerId": "p_weekend",
+      "optionIds": [
+        "p_weekend",
+        "p_when",
+        "p_clock",
+        "p_today",
+        "p_always",
+        "p_afternoon"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-weekend-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：周末",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:周末",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "周末",
+      "answerId": "p_weekend",
+      "optionIds": [
+        "p_weekend",
+        "p_when",
+        "p_later",
+        "p_tomorrow",
+        "p_always",
+        "p_afternoon"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-now-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：现在",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:现在",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "现在",
+      "answerId": "p_now",
+      "optionIds": [
+        "p_now",
+        "p_today",
+        "p_always",
+        "p_everyday",
+        "p_weekend",
+        "p_morning"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-now-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：现在",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:现在",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "现在",
+      "answerId": "p_now",
+      "optionIds": [
+        "p_now",
+        "p_morning",
+        "p_weekend",
+        "p_afternoon",
+        "p_always",
+        "p_yesterday"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-now-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：现在",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:现在",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "现在",
+      "answerId": "p_now",
+      "optionIds": [
+        "p_now",
+        "p_always",
+        "p_today",
+        "p_morning",
+        "p_soon",
+        "p_weekend"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-soon-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：马上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:马上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "马上",
+      "answerId": "p_soon",
+      "optionIds": [
+        "p_soon",
+        "p_when",
+        "p_always",
+        "p_now",
+        "p_afternoon",
+        "p_yesterday"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-soon-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：马上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:马上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "马上",
+      "answerId": "p_soon",
+      "optionIds": [
+        "p_soon",
+        "p_today",
+        "p_afternoon",
+        "p_always",
+        "p_tomorrow",
+        "p_clock"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-soon-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：马上",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:马上",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "马上",
+      "answerId": "p_soon",
+      "optionIds": [
+        "p_soon",
+        "p_afternoon",
+        "p_later",
+        "p_morning",
+        "p_everyday",
+        "p_weekend"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-nervous-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：紧张",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:紧张",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "紧张",
+      "answerId": "p_nervous",
+      "optionIds": [
+        "p_nervous",
+        "p_sad",
+        "p_dislike",
+        "p_hungry",
+        "p_love",
+        "p_happy"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-nervous-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：紧张",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:紧张",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "紧张",
+      "answerId": "p_nervous",
+      "optionIds": [
+        "p_nervous",
+        "e_mood",
+        "p_thirsty",
+        "p_bored",
+        "p_anxious",
+        "p_love"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-nervous-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：紧张",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:紧张",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "紧张",
+      "answerId": "p_nervous",
+      "optionIds": [
+        "p_nervous",
+        "p_angry",
+        "p_afraid",
+        "p_dislike",
+        "p_tired",
+        "p_hungry"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-anxious-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：着急",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:着急",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "着急",
+      "answerId": "p_anxious",
+      "optionIds": [
+        "p_anxious",
+        "e_relieved",
+        "p_thirsty",
+        "p_dejected",
+        "p_hungry",
+        "p_afraid"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-anxious-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：着急",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:着急",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "着急",
+      "answerId": "p_anxious",
+      "optionIds": [
+        "p_anxious",
+        "p_love",
+        "p_calm",
+        "p_nervous",
+        "p_dislike",
+        "p_lonely"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-anxious-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：着急",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:着急",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "着急",
+      "answerId": "p_anxious",
+      "optionIds": [
+        "p_anxious",
+        "e_relieved",
+        "p_sad",
+        "p_hot",
+        "p_bored",
+        "p_afraid"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-lonely-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：孤单",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:孤单",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "孤单",
+      "answerId": "p_lonely",
+      "optionIds": [
+        "p_lonely",
+        "p_anxious",
+        "p_cold",
+        "p_love",
+        "p_tired",
+        "p_calm"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-lonely-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：孤单",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:孤单",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "孤单",
+      "answerId": "p_lonely",
+      "optionIds": [
+        "p_lonely",
+        "p_sad",
+        "p_love",
+        "p_dejected",
+        "p_dislike",
+        "p_cold"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-lonely-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：孤单",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:孤单",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "孤单",
+      "answerId": "p_lonely",
+      "optionIds": [
+        "p_lonely",
+        "p_anxious",
+        "p_bored",
+        "p_dejected",
+        "p_thirsty",
+        "p_nervous"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-calm-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：平静",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:平静",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "平静",
+      "answerId": "p_calm",
+      "optionIds": [
+        "p_calm",
+        "p_afraid",
+        "p_cold",
+        "p_sad",
+        "p_tired",
+        "p_upset"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-calm-2",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：平静",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:平静",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "平静",
+      "answerId": "p_calm",
+      "optionIds": [
+        "p_calm",
+        "p_love",
+        "p_thirsty",
+        "p_bored",
+        "p_lonely",
+        "p_afraid"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pick-calm-3",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认：平静",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:平静",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "平静",
+      "answerId": "p_calm",
+      "optionIds": [
+        "p_calm",
+        "p_love",
+        "p_dislike",
+        "p_hot",
+        "p_upset",
+        "p_anxious"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-rehab-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：康复",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:康复",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "康复",
+      "answerId": "p_rehab",
+      "optionIds": [
+        "p_rehab",
+        "p_headache",
+        "m_danger",
+        "p_medicine",
+        "p_call_nurse",
+        "p_dizzy_short"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-rehab-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：康复",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:康复",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "康复",
+      "answerId": "p_rehab",
+      "optionIds": [
+        "p_rehab",
+        "p_shoulder",
+        "m_measure",
+        "p_blood_pressure",
+        "p_back_body",
+        "p_unwell"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-check-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：检查",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:检查",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "检查",
+      "answerId": "m_check",
+      "optionIds": [
+        "m_check",
+        "p_head",
+        "p_fever",
+        "p_back_body",
+        "p_mouth",
+        "p_foot_body"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-check-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：检查",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:检查",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "检查",
+      "answerId": "m_check",
+      "optionIds": [
+        "m_check",
+        "p_cough",
+        "p_headache",
+        "p_back_body",
+        "m_danger",
+        "p_rehab"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-blood_pressure-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：血压",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:血压",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "血压",
+      "answerId": "p_blood_pressure",
+      "optionIds": [
+        "p_blood_pressure",
+        "p_headache",
+        "m_fall",
+        "p_breathe",
+        "p_sick",
+        "p_nausea"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-blood_pressure-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：血压",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:血压",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "血压",
+      "answerId": "p_blood_pressure",
+      "optionIds": [
+        "p_blood_pressure",
+        "p_shoulder",
+        "p_numb",
+        "m_injection",
+        "p_bleed",
+        "p_mouth"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-deep_breath-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：深呼吸",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:深呼吸",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "深呼吸",
+      "answerId": "m_deep_breath",
+      "optionIds": [
+        "m_deep_breath",
+        "p_chest",
+        "p_unwell",
+        "p_nausea",
+        "p_open_mouth",
+        "p_breathe"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-deep_breath-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：深呼吸",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:深呼吸",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "深呼吸",
+      "answerId": "m_deep_breath",
+      "optionIds": [
+        "m_deep_breath",
+        "p_arm_body",
+        "p_headache",
+        "p_there",
+        "p_numb",
+        "p_feverish"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-rehab_dept-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：康复科",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:康复科",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "康复科",
+      "answerId": "p_rehab_dept",
+      "optionIds": [
+        "p_rehab_dept",
+        "pl_subway",
+        "p_living_room",
+        "p_hospital",
+        "p_shop",
+        "pl_room"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-rehab_dept-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：康复科",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:康复科",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "康复科",
+      "answerId": "p_rehab_dept",
+      "optionIds": [
+        "p_rehab_dept",
+        "p_school",
+        "pl_downstairs",
+        "p_shop",
+        "p_home",
+        "pl_taxi"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-subway-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：地铁",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:地铁",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "地铁",
+      "answerId": "pl_subway",
+      "optionIds": [
+        "pl_subway",
+        "p_playground",
+        "p_home",
+        "pl_ambulance",
+        "p_shop",
+        "pl_bus"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-subway-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：地铁",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:地铁",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "地铁",
+      "answerId": "pl_subway",
+      "optionIds": [
+        "pl_subway",
+        "p_supermarket",
+        "p_living_room",
+        "p_outside",
+        "p_playground",
+        "p_school"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-taxi-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：出租车",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:出租车",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "出租车",
+      "answerId": "pl_taxi",
+      "optionIds": [
+        "pl_taxi",
+        "p_home",
+        "p_hospital",
+        "p_supermarket",
+        "p_kitchen",
+        "pl_ambulance"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-taxi-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：出租车",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:出租车",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "出租车",
+      "answerId": "pl_taxi",
+      "optionIds": [
+        "pl_taxi",
+        "pl_downstairs",
+        "pl_subway",
+        "pl_room",
+        "p_there",
+        "p_school"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-bus-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：公交车",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:公交车",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "公交车",
+      "answerId": "pl_bus",
+      "optionIds": [
+        "pl_bus",
+        "p_kitchen",
+        "p_rehab_dept",
+        "pl_downstairs",
+        "p_supermarket",
+        "p_hospital"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-pickread-bus-2",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图：公交车",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:公交车",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "公交车",
+      "answerId": "pl_bus",
+      "optionIds": [
+        "pl_bus",
+        "p_hospital",
+        "pl_subway",
+        "pl_downstairs",
+        "p_supermarket",
+        "p_kitchen"
+      ]
+    }
+  },
+  {
+    "id": "g-mi-match-time",
+    "taskType": "match-pair",
+    "title": "图文配对：时间",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "今天",
+          "pictogramId": "p_today"
+        },
+        {
+          "text": "明天",
+          "pictogramId": "p_tomorrow"
+        },
+        {
+          "text": "昨天",
+          "pictogramId": "p_yesterday"
+        },
+        {
+          "text": "周末",
+          "pictogramId": "p_weekend"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-match-desc",
+    "taskType": "match-pair",
+    "title": "图文配对：大小快慢",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "大",
+          "pictogramId": "d_big"
+        },
+        {
+          "text": "小",
+          "pictogramId": "d_small"
+        },
+        {
+          "text": "快",
+          "pictogramId": "d_fast"
+        },
+        {
+          "text": "慢",
+          "pictogramId": "d_slow"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-match-traffic",
+    "taskType": "match-pair",
+    "title": "图文配对：交通工具",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "公交车",
+          "pictogramId": "pl_bus"
+        },
+        {
+          "text": "出租车",
+          "pictogramId": "pl_taxi"
+        },
+        {
+          "text": "地铁",
+          "pictogramId": "pl_subway"
+        },
+        {
+          "text": "救护车",
+          "pictogramId": "pl_ambulance"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-match-medsupply",
+    "taskType": "match-pair",
+    "title": "图文配对：医疗用品",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        {
+          "text": "药",
+          "pictogramId": "p_medicine"
+        },
+        {
+          "text": "轮椅",
+          "pictogramId": "p_wheelchair"
+        },
+        {
+          "text": "血压",
+          "pictogramId": "p_blood_pressure"
+        },
+        {
+          "text": "打针",
+          "pictogramId": "m_injection"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-cat-food-places-people",
+    "taskType": "categorize",
+    "title": "词汇分类：食物、地点和家人",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "places",
+          "label": "地点"
+        },
+        {
+          "key": "people",
+          "label": "家人"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_egg",
+          "category": "food"
+        },
+        {
+          "id": "p_meat",
+          "category": "food"
+        },
+        {
+          "id": "p_ice_cream",
+          "category": "food"
+        },
+        {
+          "id": "p_supermarket",
+          "category": "places"
+        },
+        {
+          "id": "p_playground",
+          "category": "places"
+        },
+        {
+          "id": "p_school",
+          "category": "places"
+        },
+        {
+          "id": "p_father",
+          "category": "people"
+        },
+        {
+          "id": "p_daughter",
+          "category": "people"
+        },
+        {
+          "id": "p_caregiver",
+          "category": "people"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-cat-time-emotion-activity",
+    "taskType": "categorize",
+    "title": "词汇分类：时间、情绪和活动",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "time",
+          "label": "时间"
+        },
+        {
+          "key": "emotions",
+          "label": "情绪"
+        },
+        {
+          "key": "activities",
+          "label": "活动"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_today",
+          "category": "time"
+        },
+        {
+          "id": "p_yesterday",
+          "category": "time"
+        },
+        {
+          "id": "p_morning",
+          "category": "time"
+        },
+        {
+          "id": "p_nervous",
+          "category": "emotions"
+        },
+        {
+          "id": "p_lonely",
+          "category": "emotions"
+        },
+        {
+          "id": "p_calm",
+          "category": "emotions"
+        },
+        {
+          "id": "p_run",
+          "category": "activities"
+        },
+        {
+          "id": "p_read_book",
+          "category": "activities"
+        },
+        {
+          "id": "p_watch_tv",
+          "category": "activities"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-cat-med-traffic-objects",
+    "taskType": "categorize",
+    "title": "词汇分类：医疗、交通和物品",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "medical",
+          "label": "医疗"
+        },
+        {
+          "key": "places",
+          "label": "交通工具"
+        },
+        {
+          "key": "objects",
+          "label": "常用物品"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_medicine",
+          "category": "medical"
+        },
+        {
+          "id": "m_injection",
+          "category": "medical"
+        },
+        {
+          "id": "p_blood_pressure",
+          "category": "medical"
+        },
+        {
+          "id": "pl_bus",
+          "category": "places"
+        },
+        {
+          "id": "pl_taxi",
+          "category": "places"
+        },
+        {
+          "id": "pl_subway",
+          "category": "places"
+        },
+        {
+          "id": "p_bed",
+          "category": "objects"
+        },
+        {
+          "id": "p_table",
+          "category": "objects"
+        },
+        {
+          "id": "p_television",
+          "category": "objects"
+        }
+      ]
+    }
+  },
+  {
+    "id": "g-mi-cat-body-food-time",
+    "taskType": "categorize",
+    "title": "词汇分类：身体、食物和时间",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        {
+          "key": "medical",
+          "label": "身体部位"
+        },
+        {
+          "key": "food",
+          "label": "食物"
+        },
+        {
+          "key": "time",
+          "label": "时间"
+        }
+      ],
+      "items": [
+        {
+          "id": "p_shoulder",
+          "category": "medical"
+        },
+        {
+          "id": "p_chest",
+          "category": "medical"
+        },
+        {
+          "id": "p_neck",
+          "category": "medical"
+        },
+        {
+          "id": "p_congee",
+          "category": "food"
+        },
+        {
+          "id": "p_noodles",
+          "category": "food"
+        },
+        {
+          "id": "p_ice_cream",
+          "category": "food"
+        },
+        {
+          "id": "p_tomorrow",
+          "category": "time"
+        },
+        {
+          "id": "p_weekend",
+          "category": "time"
+        },
+        {
+          "id": "p_night",
+          "category": "time"
+        }
+      ]
+    }
+  }
+]

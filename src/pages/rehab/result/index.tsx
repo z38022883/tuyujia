@@ -47,10 +47,14 @@ function ResultPage() {
   }
 
   const meta = getRehabLevelMeta(session.level);
+  // 答对率口径：分母为实际作答题数（中途退出时不虚降）；星级题 correct=rating>=3 仅供统计
+  const attempted = session.taskRecords.length;
   const correctCount = session.taskRecords.filter((r) => r.correct).length;
-  const rate = session.totalTasks
-    ? Math.round((correctCount / session.totalTasks) * 100)
-    : 0;
+  const rate = attempted ? Math.round((correctCount / attempted) * 100) : 0;
+  const ratedRecords = session.taskRecords.filter((r) => r.rating != null);
+  const avgStars = ratedRecords.length
+    ? ratedRecords.reduce((n, r) => n + (r.rating ?? 0), 0) / ratedRecords.length
+    : null;
   const minutes = Math.max(1, Math.round(session.durationSec / 60));
 
   const again = () => {
@@ -63,11 +67,18 @@ function ResultPage() {
       <View className={styles.badge}>🎉</View>
       <View className={styles.title}>本次训练完成</View>
       <View className={styles.subtitle}>
-        {meta.label}训练 · {session.totalTasks} 题 · 用时 {minutes} 分钟
+        {meta.label}训练 · 完成 {session.completedTasks}/{session.totalTasks} 题 · 用时 {minutes} 分钟
       </View>
 
       <View className={styles.rate}>{rate}%</View>
-      <View className={styles.rateLabel}>完成率</View>
+      <View className={styles.rateLabel}>答对率</View>
+      {ratedRecords.length > 0 && avgStars != null && (
+        <View className={styles.starSummary}>
+          <Text className={styles.starSummaryText}>
+            星级题平均 {avgStars.toFixed(1)} 星（满分 5 星）
+          </Text>
+        </View>
+      )}
 
       {dims.length > 0 && (
         <View className={styles.dims}>

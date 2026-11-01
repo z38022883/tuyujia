@@ -19,6 +19,8 @@ const VOICES = [
 function MinePage() {
   const { settings, updateSettings } = useAppStore();
   const severity = useProfileStore((s) => s.profile?.severity ?? null);
+  const profileSource = useProfileStore((s) => s.profile?.source ?? null);
+  const aqScore = useProfileStore((s) => s.profile?.aqScore ?? null);
   const [user, setUser] = useState<User | null>(null);
   const [rate, setRate] = useState(settings.rate);
 
@@ -71,12 +73,39 @@ function MinePage() {
               <Text className={styles.label}>沟通程度</Text>
               <View className={styles.valueWrap}>
                 {severity ? (
-                  <View className={styles.sevTag}>
-                    <Text>{REHAB_LEVEL_MAP[severity].label}</Text>
+                  <View className={styles.valueWrap}>
+                    <View className={styles.sevTag}>
+                      <Text>{REHAB_LEVEL_MAP[severity].label}</Text>
+                    </View>
+                    <View
+                      className={classnames(
+                        styles.sourceTag,
+                        profileSource === 'assess' && styles.sourceTagAssess
+                      )}
+                    >
+                      <Text>
+                        {profileSource === 'assess'
+                          ? aqScore !== undefined && aqScore !== null
+                            ? `评估 AQ ${aqScore}`
+                            : '评估确定'
+                          : '手动设置'}
+                      </Text>
+                    </View>
                   </View>
                 ) : (
                   <Text className={styles.value}>未设置</Text>
                 )}
+                <Text className={styles.arrow}>›</Text>
+              </View>
+            </View>
+            <View className={styles.divider} />
+            <View
+              className={styles.row}
+              onClick={() => Taro.navigateTo({ url: '/pages/assessment/entry/index' })}
+            >
+              <Text className={styles.label}>评估录入</Text>
+              <View className={styles.valueWrap}>
+                <Text className={styles.value}>录入 AQ / 四维得分</Text>
                 <Text className={styles.arrow}>›</Text>
               </View>
             </View>

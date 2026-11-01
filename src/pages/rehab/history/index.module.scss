@@ -37,15 +37,15 @@
 }
 
 .levelTag {
-  padding: 4rpx 16rpx;
+  padding: 6rpx 20rpx;
   border-radius: $radius-round;
   background: $color-bg-primary-soft;
   color: $color-primary-dark;
-  font-size: $font-size-xs;
+  font-size: $font-size-sm;
 }
 
 .time {
-  font-size: $font-size-xs;
+  font-size: $font-size-sm;
   color: $color-text-tertiary;
 }
 
@@ -56,6 +56,70 @@
 }
 
 .metric {
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
   color: $color-text-secondary;
+}
+
+// ===== 正确率趋势条形图（最近 10 次，纯 View/CSS）=====
+
+.trendCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-md $spacing-lg $spacing-sm;
+  margin-bottom: $spacing-md;
+}
+
+.trendTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+}
+
+.trendChart {
+  display: flex;
+  align-items: flex-end;
+  gap: $spacing-xs;
+  margin-top: $spacing-sm;
+  height: 300rpx;
+}
+
+.trendCol {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 6rpx;
+  height: 100%;
+}
+
+.trendRate {
+  flex-shrink: 0;
+  font-size: 22rpx;
+  line-height: 1.2;
+  color: $color-text-secondary;
+}
+
+.trendBarTrack {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: stretch;
+  border-radius: $radius-sm;
+  background: $color-bg-hover;
+  overflow: hidden;
+}
+
+.trendBar {
+  width: 100%;
+  min-height: 8rpx;
+  border-radius: $radius-sm $radius-sm 0 0;
+  background: $color-primary;
+}
+
+.trendDate {
+  flex-shrink: 0;
+  font-size: 22rpx;
+  color: $color-text-tertiary;
 }

@@ -16,7 +16,9 @@
     "dev:h5": "taro build --type h5 --watch",
     "build:h5": "taro build --type h5",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "rehab:gen": "node scripts/gen-rehab-tasks.mjs",
+    "rehab:check": "node scripts/check-rehab-tasks.mjs"
   },
   "browserslist": [
     "last 3 versions",

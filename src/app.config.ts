@@ -13,6 +13,7 @@ export default defineAppConfig({
     'pages/rehab/result/index',
     'pages/rehab/history/index',
     'pages/rehab/family/index',
+    'pages/assessment/entry/index',
     'pages/tcm/index',
     'pages/tcm/acupoint/index',
     'pages/tcm/music/index',

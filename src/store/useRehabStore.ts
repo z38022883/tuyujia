@@ -5,13 +5,23 @@
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
 import { useProfileStore } from '@/store/useProfileStore'
-import type { RehabLevel, RehabSession, RehabTaskRecord } from '@/types/rehab'
+import type {
+  RehabDimension,
+  RehabLevel,
+  RehabSession,
+  RehabTaskRecord
+} from '@/types/rehab'
 import { buildRehabTasks } from '@/data/rehab'
 
 let rehabIdCounter = 0
 function newRehabId(prefix: string): string {
   rehabIdCounter += 1
   return `${prefix}_${Date.now()}_${rehabIdCounter}`
+}
+
+export interface StartSessionOptions {
+  /** 维度权重（短板维度更高）；缺省均匀出题 */
+  dimensionWeights?: Partial<Record<RehabDimension, number>>
 }
 
 interface RehabState {
@@ -22,7 +32,7 @@ interface RehabState {
   activeSession: RehabSession | null
 
   setLevel: (level: RehabLevel) => void
-  startSession: () => RehabSession
+  startSession: (opts?: StartSessionOptions) => RehabSession
   recordTaskResult: (record: RehabTaskRecord) => void
   finishSession: () => void
   abandonSession: () => void
@@ -40,9 +50,11 @@ export const useRehabStore = create<RehabState>((set, get) => ({
     storage.set(STORAGE_KEYS.rehabLevel, level)
   },
 
-  startSession: () => {
+  startSession: (opts) => {
     const level = get().level
-    const tasks = buildRehabTasks(level)
+    const tasks = buildRehabTasks(level, {
+      dimensionWeights: opts?.dimensionWeights
+    })
     const session: RehabSession = {
       id: newRehabId('rehab'),
       level,

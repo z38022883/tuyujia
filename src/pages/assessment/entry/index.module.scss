@@ -1,0 +1,239 @@
+@use '@/styles/variables.scss' as *;
+
+// 评估录入页：适老化排版（字号整体上调一档、次要文字保证对比度）
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  flex: 1;
+  padding-bottom: $spacing-xl;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: $spacing-lg $page-padding $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 8rpx;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
+
+.section {
+  padding: 0 $page-padding;
+  margin-top: $spacing-lg;
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $spacing-sm $spacing-lg;
+  box-sizing: border-box;
+}
+
+// ---------- 通用表单行 ----------
+
+.formRow {
+  display: flex;
+  align-items: center;
+  min-height: 104rpx;
+}
+
+.formLabel {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.formValue {
+  flex: 1;
+  margin-left: auto;
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  text-align: right;
+}
+
+.formArrow {
+  margin-left: $spacing-sm;
+  font-size: $font-size-xl;
+  color: $color-text-disabled;
+}
+
+// ---------- AQ 大输入块 ----------
+
+.aqBlock {
+  padding: $spacing-md 0;
+}
+
+.aqHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.aqOptional {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.aqInputWrap {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-md;
+  padding: 0 $spacing-lg;
+  height: 104rpx;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+}
+
+.aqInput {
+  flex: 1;
+  height: 100%;
+  font-size: 44rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.aqPlaceholder {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-normal;
+  color: $color-text-disabled;
+}
+
+.aqUnit {
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+}
+
+.formHint {
+  display: block;
+  margin-top: $spacing-md;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
+
+// ---------- 档位选择（关键操作，大按钮） ----------
+
+.levelChips {
+  display: flex;
+  gap: $spacing-md;
+  margin: $spacing-lg 0 $spacing-md;
+}
+
+.levelChip {
+  flex: 1;
+  @include flex-center;
+  height: 96rpx;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-lg;
+}
+
+.levelChipActive {
+  background: $color-bg-primary-soft;
+  color: $color-primary-dark;
+  font-weight: $font-weight-bold;
+  box-shadow: inset 0 0 0 3rpx $color-primary;
+}
+
+.levelChipLocked {
+  opacity: 0.45;
+}
+
+// ---------- 四维得分 ----------
+
+.dimRow {
+  padding: $spacing-md 0;
+}
+
+.dimHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dimScore {
+  font-size: 44rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.dimHint {
+  display: block;
+  margin-top: 4rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.dimSlider {
+  margin: $spacing-md 0 0;
+}
+
+// ---------- 备注 ----------
+
+.noteArea {
+  width: 100%;
+  min-height: 160rpx;
+  padding: $spacing-md;
+  box-sizing: border-box;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+  font-size: $font-size-lg;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+}
+
+// ---------- 提交 ----------
+
+.btnPrimary {
+  @include button-reset;
+  height: 104rpx;
+  border-radius: $radius-button;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  text-align: center;
+}
+
+.btnDisabled {
+  opacity: 0.5;
+}
+
+.saveNote {
+  display: block;
+  margin-top: $spacing-md;
+  padding-bottom: $spacing-lg;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $color-text-tertiary;
+}
+
+.divider {
+  height: 2rpx;
+  background: $color-divider;
+}

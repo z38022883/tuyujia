@@ -1,0 +1,654 @@
+@use '@/styles/variables.scss' as *;
+
+// ===== 康复题型组件共享样式（src/components/rehab/ 全体复用）=====
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-top: $spacing-lg;
+}
+
+// ---------- 通用按钮 ----------
+
+.btnRow {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-sm;
+}
+
+.btnBlock {
+  width: 100%;
+  margin-top: $spacing-sm;
+}
+
+.btnPrimary {
+  flex: 1;
+  @include flex-center;
+  height: 96rpx;
+  border-radius: $radius-button;
+  background: $color-primary;
+}
+
+.btnPrimaryText {
+  color: $color-text-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+}
+
+.btnGhost {
+  flex: 1;
+  @include flex-center;
+  height: 96rpx;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+}
+
+.btnGhostText {
+  color: $color-text-secondary;
+  font-size: $font-size-xl;
+}
+
+.btnDisabled {
+  opacity: 0.5;
+}
+
+// ---------- 朗读按钮 / 大字 ----------
+
+.playBtn {
+  @include flex-center;
+  align-self: center;
+  gap: $spacing-xs;
+  padding: 12rpx 32rpx;
+  border-radius: $radius-round;
+  background: $color-bg-primary-soft;
+}
+
+.playBtnLg {
+  padding: 20rpx 48rpx;
+}
+
+.playBtnSm {
+  align-self: flex-start;
+  padding: 8rpx 24rpx;
+}
+
+.playIcon {
+  font-size: $font-size-lg;
+}
+
+.playText {
+  font-size: $font-size-md;
+  color: $color-primary-dark;
+}
+
+.tipText {
+  align-self: center;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+// ---------- 图符选项 ----------
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+}
+
+.tileRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: $spacing-sm;
+  border: 3rpx solid $color-border;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+  box-sizing: border-box;
+}
+
+.tileLg {
+  padding: $spacing-md;
+}
+
+.tileImg {
+  width: 100%;
+  height: 140rpx;
+}
+
+.tileLg .tileImg {
+  height: 200rpx;
+}
+
+.tileLabel {
+  margin-top: $spacing-xs;
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}
+
+.tileSelected {
+  border-color: $color-primary;
+  background: $color-bg-primary-soft;
+}
+
+.tileOk {
+  border-color: $color-primary;
+  background: rgba(45, 106, 79, 0.08);
+}
+
+.tileBad {
+  border-color: #d64545;
+  background: rgba(214, 69, 69, 0.08);
+}
+
+// ---------- 大字展示 ----------
+
+.bigWord {
+  align-self: center;
+  padding: $spacing-md $spacing-xl;
+  font-size: 96rpx;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+}
+
+.bigWordLg {
+  font-size: 120rpx;
+}
+
+.centerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.bigSentence {
+  max-width: 100%;
+  font-size: 48rpx;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-loose;
+  color: $color-text-primary;
+  text-align: center;
+}
+
+.bigSentenceLg {
+  font-size: 64rpx;
+}
+
+.meaningText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+.songTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.lyricsLine {
+  font-size: $font-size-lg;
+  line-height: $line-height-loose;
+  color: $color-text-secondary;
+  text-align: center;
+}
+
+.pinyinText {
+  font-size: $font-size-md;
+  color: $color-text-tertiary;
+}
+
+// ---------- 配对题 ----------
+
+.matchRow {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.matchCol {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.wordCard {
+  @include flex-center;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+}
+
+.wordCardText {
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+}
+
+.wordCardSelected {
+  background: $color-bg-primary-soft;
+  box-shadow: inset 0 0 0 3rpx $color-primary;
+}
+
+.wordCardMatched {
+  background: rgba(45, 106, 79, 0.08);
+}
+
+.wordCardMatched .wordCardText {
+  color: $color-primary-dark;
+}
+
+// ---------- 指令题 ----------
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.stepRow {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.stepNo {
+  @include flex-center;
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: $radius-round;
+  background: $color-bg-primary-soft;
+  color: $color-primary-dark;
+  font-size: $font-size-sm;
+}
+
+.stepText {
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+}
+
+.hintToggle {
+  align-self: center;
+  padding: 8rpx 24rpx;
+  border-radius: $radius-round;
+  font-size: $font-size-sm;
+  color: $color-primary;
+  background: rgba(45, 106, 79, 0.06);
+}
+
+.hintToggleText {
+  font-size: $font-size-sm;
+  color: $color-primary-dark;
+}
+
+// ---------- 阅读理解 ----------
+
+.passageBox {
+  padding: $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+}
+
+.passageText {
+  font-size: $font-size-md;
+  line-height: $line-height-loose;
+  color: $color-text-primary;
+}
+
+.questionBox {
+  margin-top: $spacing-xs;
+}
+
+.questionText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.optionCol {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.optionBtn {
+  @include flex-center;
+  padding: $spacing-md;
+  border: 3rpx solid $color-border;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+}
+
+.optionText {
+  font-size: $font-size-lg;
+  color: $color-text-primary;
+}
+
+.optionOk {
+  border-color: $color-primary;
+  background: rgba(45, 106, 79, 0.08);
+}
+
+.optionBad {
+  border-color: #d64545;
+  background: rgba(214, 69, 69, 0.08);
+}
+
+// ---------- 分类题 ----------
+
+.bucketRow {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.bucket {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xs;
+  min-height: 160rpx;
+  padding: $spacing-sm;
+  border: 3rpx solid $color-border;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+}
+
+.bucketActive {
+  border-color: $color-primary;
+  background: $color-bg-primary-soft;
+}
+
+.bucketLabel {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.bucketThumbs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-xs;
+}
+
+.bucketThumbWrap {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.bucketThumb {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.bucketCount {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+// ---------- 临摹题 ----------
+
+.traceWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.traceCells {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+}
+
+.traceCell {
+  position: relative;
+  width: 220rpx;
+  height: 220rpx;
+  border: 3rpx solid $color-border;
+  border-radius: $radius-sm;
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - 1rpx),
+      rgba(45, 106, 79, 0.15) calc(50% - 1rpx),
+      rgba(45, 106, 79, 0.15) calc(50% + 1rpx),
+      transparent calc(50% + 1rpx)
+    ),
+    linear-gradient(
+      to bottom,
+      transparent calc(50% - 1rpx),
+      rgba(45, 106, 79, 0.15) calc(50% - 1rpx),
+      rgba(45, 106, 79, 0.15) calc(50% + 1rpx),
+      transparent calc(50% + 1rpx)
+    );
+}
+
+.traceCellLg {
+  width: 280rpx;
+  height: 280rpx;
+}
+
+// 字数多的词语整体缩小，保证一行/田字格不超屏宽（3 字 / 4 字词）
+.traceCellMd {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.traceCellSm {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.traceChar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 140rpx;
+  font-weight: $font-weight-semibold;
+  color: rgba(45, 106, 79, 0.25);
+}
+
+.traceCellLg .traceChar {
+  font-size: 180rpx;
+}
+
+.traceCellMd .traceChar {
+  font-size: 110rpx;
+}
+
+.traceCellSm .traceChar {
+  font-size: 90rpx;
+}
+
+.traceCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.traceFallback {
+  @include flex-center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3rpx dashed $color-border;
+  border-radius: $radius-sm;
+}
+
+.traceFallbackText {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+// ---------- 脚本对话 ----------
+
+.scenarioBadge {
+  align-self: flex-start;
+  padding: 4rpx 20rpx;
+  border-radius: $radius-round;
+  background: $color-bg-primary-soft;
+}
+
+.scenarioText {
+  font-size: $font-size-sm;
+  color: $color-primary-dark;
+}
+
+.turnCard {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding: $spacing-lg;
+  border-left: 10rpx solid $color-primary;
+  border-radius: $radius-md;
+  background: $color-bg-card;
+  box-shadow: $shadow-card;
+}
+
+.turnCaregiver {
+  border-left-color: $color-primary;
+}
+
+.turnPatient {
+  border-left-color: #ff9f5a;
+  background: rgba(255, 159, 90, 0.06);
+}
+
+.roleTag {
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.turnLine {
+  font-size: 40rpx;
+  line-height: $line-height-loose;
+  color: $color-text-primary;
+}
+
+.turnProgress {
+  align-self: center;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+// ---------- 星级 / 反馈 / 照护者条 ----------
+
+.starRow {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-sm;
+}
+
+.starRowLg {
+  gap: $spacing-md;
+}
+
+.star {
+  padding: 8rpx;
+  font-size: 64rpx;
+  line-height: 1;
+  color: #d9d9d9;
+}
+
+.starRowLg .star {
+  font-size: 88rpx;
+}
+
+.starActive {
+  color: #f5a623;
+}
+
+.starReadonly {
+  pointer-events: none;
+}
+
+.flash {
+  @include flex-center;
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+}
+
+.flashOk {
+  background: rgba(45, 106, 79, 0.1);
+}
+
+.flashBad {
+  background: rgba(214, 69, 69, 0.1);
+}
+
+.flashText {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+}
+
+.flashOk .flashText {
+  color: $color-primary-dark;
+}
+
+.flashBad .flashText {
+  color: #d64545;
+}
+
+.caregiver {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-sm;
+  background: rgba(255, 159, 90, 0.08);
+}
+
+.caregiverTag {
+  flex-shrink: 0;
+  padding: 2rpx 12rpx;
+  border-radius: $radius-round;
+  background: #ff9f5a;
+  color: $color-text-white;
+  font-size: $font-size-xs;
+}
+
+.caregiverText {
+  flex: 1;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
+}
+
+// ---------- 要点对照（描述/复述题） ----------
+
+.keyPoints {
+  display: flex;
+  align-self: stretch;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-md;
+  border-radius: $radius-md;
+  background: $color-bg-hover;
+}
+
+.keyPointsTitle {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.keyPointItem {
+  font-size: $font-size-md;
+  color: $color-text-secondary;
+}

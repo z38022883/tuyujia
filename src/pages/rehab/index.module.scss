@@ -24,9 +24,10 @@
 }
 
 .subtitle {
-  margin-top: 6rpx;
-  font-size: $font-size-sm;
-  color: $color-text-tertiary;
+  margin-top: 8rpx;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
 }
 
 .section {
@@ -35,8 +36,9 @@
 }
 
 .sectionTitle {
-  font-size: $font-size-sm;
-  color: $color-text-tertiary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
   margin-bottom: $spacing-sm;
 }
 
@@ -61,44 +63,47 @@
 }
 
 .levelAq {
-  font-size: $font-size-xs;
+  font-size: $font-size-sm;
   color: $color-text-tertiary;
 }
 
 .levelHint {
   display: block;
   margin-top: $spacing-xs;
-  font-size: $font-size-sm;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
   color: $color-text-secondary;
 }
 
 .levelChips {
   display: flex;
-  gap: $spacing-sm;
+  gap: $spacing-md;
   margin-top: $spacing-md;
 }
 
 .levelChip {
   flex: 1;
   @include flex-center;
-  height: $button-height-sm;
+  height: 96rpx;
   border-radius: $radius-button;
   background: $color-bg-hover;
   color: $color-text-secondary;
-  font-size: $font-size-md;
+  font-size: $font-size-lg;
 }
 
 .levelChipActive {
   background: $color-bg-primary-soft;
   color: $color-primary-dark;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
+  box-shadow: inset 0 0 0 3rpx $color-primary;
 }
 
 .levelNote {
   display: block;
   margin-top: $spacing-md;
-  font-size: $font-size-xs;
-  color: $color-text-disabled;
+  font-size: $font-size-sm;
+  line-height: $line-height-normal;
+  color: $color-text-tertiary;
 }
 
 .todayTitle {
@@ -110,18 +115,19 @@
 .todayMeta {
   display: block;
   margin-top: $spacing-xs;
-  font-size: $font-size-sm;
-  color: $color-text-tertiary;
+  font-size: $font-size-md;
+  line-height: $line-height-normal;
+  color: $color-text-secondary;
 }
 
 .btnPrimary {
   @include button-reset;
   margin-top: $spacing-lg;
-  height: $button-height-md;
+  height: 104rpx;
   border-radius: $radius-button;
   background: $color-primary;
   color: $color-text-white;
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
   font-weight: $font-weight-medium;
 }
 
@@ -141,14 +147,14 @@
 }
 
 .statValue {
-  font-size: $font-size-xl;
+  font-size: 44rpx;
   font-weight: $font-weight-bold;
   color: $color-primary-dark;
 }
 
 .statLabel {
   margin-top: $spacing-xs;
-  font-size: $font-size-xs;
+  font-size: $font-size-sm;
   color: $color-text-tertiary;
 }
 
@@ -167,16 +173,97 @@
 }
 
 .entryLabel {
-  font-size: $font-size-md;
+  font-size: $font-size-lg;
   color: $color-text-primary;
 }
 
 .entryArrow {
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
   color: $color-text-disabled;
 }
 
 .divider {
   height: 2rpx;
   background: $color-divider;
+}
+
+// ===== 评估调级横幅 =====
+
+.assessBanner {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin: $spacing-sm $page-padding 0;
+  padding: $spacing-md $spacing-lg;
+  border-radius: $radius-md;
+  background: $color-bg-primary-soft;
+  border: 2rpx solid rgba(45, 106, 79, 0.25);
+}
+
+.assessBannerMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.assessBannerTitle {
+  display: block;
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-dark;
+}
+
+.assessBannerMeta {
+  display: block;
+  margin-top: 4rpx;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.assessBannerBtn {
+  flex-shrink: 0;
+  @include flex-center;
+  padding: 12rpx 28rpx;
+  border-radius: $radius-round;
+  background: $color-primary;
+  color: $color-text-white;
+  font-size: $font-size-md;
+}
+
+// ===== 程度来源标签 =====
+
+.sourceTag {
+  flex-shrink: 0;
+  @include flex-center;
+  padding: 4rpx 16rpx;
+  border-radius: $radius-round;
+  background: $color-bg-hover;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+}
+
+.sourceTagAssess {
+  background: rgba(74, 156, 110, 0.12);
+  color: $color-primary-dark;
+}
+
+// ===== 短板加权 chip =====
+
+.weightChip {
+  align-self: flex-start;
+  @include flex-center;
+  margin-top: $spacing-md;
+  padding: 12rpx 28rpx;
+  border-radius: $radius-round;
+  border: 2rpx solid $color-border;
+  background: $color-bg-card;
+}
+
+.weightChipOn {
+  border-color: rgba(45, 106, 79, 0.35);
+  background: $color-bg-primary-soft;
+}
+
+.weightChipText {
+  font-size: $font-size-md;
+  color: $color-primary-dark;
 }

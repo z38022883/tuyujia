@@ -1,0 +1,2306 @@
+[
+  {
+    "id": "sv-pick-water-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:水",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "水",
+      "answerId": "p_water",
+      "optionIds": ["p_water", "p_cup", "p_bowl", "p_spoon"]
+    }
+  },
+  {
+    "id": "sv-pick-read-eat-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图",
+    "level": "severe",
+    "dimension": "reading",
+    "difficulty": 1,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:吃",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "吃",
+      "answerId": "p_eat",
+      "optionIds": ["p_eat", "p_drink", "p_sleep", "p_clothes"]
+    }
+  },
+  {
+    "id": "sv-match-daily-1",
+    "taskType": "match-pair",
+    "title": "图文配对：日常用品",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        { "text": "杯子", "pictogramId": "p_cup" },
+        { "text": "勺子", "pictogramId": "p_spoon" },
+        { "text": "牙刷", "pictogramId": "p_toothbrush" },
+        { "text": "毛巾", "pictogramId": "p_towel" }
+      ]
+    }
+  },
+  {
+    "id": "sv-match-body-1",
+    "taskType": "match-pair",
+    "title": "图文配对：身体部位",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        { "text": "头", "pictogramId": "p_head" },
+        { "text": "手", "pictogramId": "p_hand" },
+        { "text": "脚", "pictogramId": "p_foot_body" },
+        { "text": "眼睛", "pictogramId": "p_eye_body" }
+      ]
+    }
+  },
+  {
+    "id": "sv-match-family-1",
+    "taskType": "match-pair",
+    "title": "图文配对：家人",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        { "text": "妈妈", "pictogramId": "p_mother" },
+        { "text": "爸爸", "pictogramId": "p_father" },
+        { "text": "爷爷", "pictogramId": "p_grandfather" },
+        { "text": "奶奶", "pictogramId": "p_grandmother" }
+      ]
+    }
+  },
+  {
+    "id": "sv-match-fruit-1",
+    "taskType": "match-pair",
+    "title": "图文配对：水果食物",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        { "text": "苹果", "pictogramId": "p_apple" },
+        { "text": "香蕉", "pictogramId": "p_banana" },
+        { "text": "鸡蛋", "pictogramId": "p_egg" },
+        { "text": "牛奶", "pictogramId": "p_milk" }
+      ]
+    }
+  },
+  {
+    "id": "sv-instr-spoon-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["拿起勺子"],
+      "hintIds": ["p_spoon"]
+    }
+  },
+  {
+    "id": "sv-instr-cup-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["拿起杯子"],
+      "hintIds": ["p_cup"]
+    }
+  },
+  {
+    "id": "sv-instr-toothbrush-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["拿起牙刷"],
+      "hintIds": ["p_toothbrush"]
+    }
+  },
+  {
+    "id": "sv-instr-stand-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 1,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["站起来"],
+      "hintIds": ["p_stand"]
+    }
+  },
+  {
+    "id": "sv-instr-hand-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["把手举起来"],
+      "hintIds": ["p_raise_hand"]
+    }
+  },
+  {
+    "id": "sv-instr-face-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["拿毛巾擦脸"],
+      "hintIds": ["p_towel", "p_wipe_face"]
+    }
+  },
+  {
+    "id": "sv-instr-medicine-1",
+    "taskType": "instruction-check",
+    "title": "听指令：一步动作",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["把药吃了"],
+      "hintIds": ["p_medicine", "p_take_medicine"]
+    }
+  },
+  {
+    "id": "sv-cat-eat-daily-1",
+    "taskType": "categorize",
+    "title": "词汇分类：能吃的和能用的",
+    "level": "severe",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        { "key": "food", "label": "能吃的" },
+        { "key": "daily", "label": "能用的" }
+      ],
+      "items": [
+        { "id": "p_bread", "category": "food" },
+        { "id": "p_banana", "category": "food" },
+        { "id": "p_egg", "category": "food" },
+        { "id": "p_towel", "category": "daily" },
+        { "id": "p_toothbrush", "category": "daily" },
+        { "id": "hy_soap", "category": "daily" }
+      ]
+    }
+  },
+  {
+    "id": "sv-follow-water-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我要喝水",
+      "pictogramIds": ["p_drink", "p_water"]
+    }
+  },
+  {
+    "id": "sv-follow-eat-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我要吃饭",
+      "pictogramIds": ["p_eat"]
+    }
+  },
+  {
+    "id": "sv-follow-sleep-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我要睡觉",
+      "pictogramIds": ["p_sleep"]
+    }
+  },
+  {
+    "id": "sv-follow-toilet-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我要上厕所",
+      "pictogramIds": ["p_toilet"]
+    }
+  },
+  {
+    "id": "sv-follow-help-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "帮帮我",
+      "pictogramIds": ["p_help_me"]
+    }
+  },
+  {
+    "id": "sv-follow-hungry-1",
+    "taskType": "follow-read",
+    "title": "跟读：固定短句",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我饿了",
+      "pictogramIds": ["p_hungry"]
+    }
+  },
+  {
+    "id": "sv-follow-hello-1",
+    "taskType": "follow-read",
+    "title": "跟读：招呼用语",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "你好",
+      "pictogramIds": ["p_hello"]
+    }
+  },
+  {
+    "id": "sv-follow-thanks-1",
+    "taskType": "follow-read",
+    "title": "跟读：招呼用语",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "谢谢",
+      "pictogramIds": ["p_thank_you"]
+    }
+  },
+  {
+    "id": "sv-follow-sorry-1",
+    "taskType": "follow-read",
+    "title": "跟读：招呼用语",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "对不起",
+      "pictogramIds": ["p_sorry"]
+    }
+  },
+  {
+    "id": "sv-trace-water-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：水",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "水",
+      "pinyin": "shuǐ"
+    }
+  },
+  {
+    "id": "sv-trace-eat-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：吃",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "吃",
+      "pinyin": "chī"
+    }
+  },
+  {
+    "id": "sv-trace-rice-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：饭",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "饭",
+      "pinyin": "fàn"
+    }
+  },
+  {
+    "id": "sv-trace-person-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：人",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "人",
+      "pinyin": "rén"
+    }
+  },
+  {
+    "id": "sv-trace-big-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：大",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "大",
+      "pinyin": "dà"
+    }
+  },
+  {
+    "id": "sv-trace-small-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：小",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 1,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "小",
+      "pinyin": "xiǎo"
+    }
+  },
+  {
+    "id": "sv-trace-hand-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：手",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "手",
+      "pinyin": "shǒu"
+    }
+  },
+  {
+    "id": "sv-trace-mouth-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：口",
+    "level": "severe",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写汉字",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "口",
+      "pinyin": "kǒu"
+    }
+  },
+  {
+    "id": "sv-melody-tiger-1",
+    "taskType": "melody-hum",
+    "title": "旋律哼唱：两只老虎",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "想着旋律，跟着哼一哼",
+    "enabled": true,
+    "payload": {
+      "taskType": "melody-hum",
+      "song": "两只老虎",
+      "lyrics": "两只老虎，两只老虎，\n跑得快，跑得快，\n一只没有耳朵，一只没有尾巴，\n真奇怪，真奇怪。"
+    }
+  },
+  {
+    "id": "sv-melody-birthday-1",
+    "taskType": "melody-hum",
+    "title": "旋律哼唱：生日快乐",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 1,
+    "prompt": "想着旋律，跟着哼一哼",
+    "enabled": true,
+    "payload": {
+      "taskType": "melody-hum",
+      "song": "生日快乐",
+      "lyrics": "祝你生日快乐，\n祝你生日快乐，\n祝你生日快乐，\n祝你生日快乐。"
+    }
+  },
+  {
+    "id": "sv-melody-star-1",
+    "taskType": "melody-hum",
+    "title": "旋律哼唱：小星星",
+    "level": "severe",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "想着旋律，跟着哼一哼",
+    "enabled": true,
+    "payload": {
+      "taskType": "melody-hum",
+      "song": "小星星",
+      "lyrics": "一闪一闪亮晶晶，\n满天都是小星星，\n挂在天上放光明，\n好像许多小眼睛。"
+    }
+  },
+  {
+    "id": "md-pick-doctor-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:医生",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "医生",
+      "answerId": "p_doctor",
+      "optionIds": ["p_doctor", "p_nurse", "p_hospital", "p_sick"]
+    }
+  },
+  {
+    "id": "md-pick-read-toilet-1",
+    "taskType": "pick-from-pictograms",
+    "title": "看字选图",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 2,
+    "prompt": "看文字，选出对应的图片",
+    "parallelGroup": "pickread:厕所",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "read",
+      "word": "厕所",
+      "answerId": "p_toilet",
+      "optionIds": ["p_toilet", "p_shower", "p_bed", "p_chair"]
+    }
+  },
+  {
+    "id": "md-match-food-1",
+    "taskType": "match-pair",
+    "title": "图文配对：食物",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 2,
+    "prompt": "把词语和对应的图片配对",
+    "enabled": true,
+    "payload": {
+      "taskType": "match-pair",
+      "pairs": [
+        { "text": "苹果", "pictogramId": "p_apple" },
+        { "text": "牛奶", "pictogramId": "p_milk" },
+        { "text": "粥", "pictogramId": "p_congee" },
+        { "text": "糖", "pictogramId": "p_candy" }
+      ]
+    }
+  },
+  {
+    "id": "md-instr-twostep-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先拿水杯", "再喝一口水"],
+      "hintIds": ["p_cup", "p_water"]
+    }
+  },
+  {
+    "id": "md-instr-teeth-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先拿牙刷", "再刷牙"],
+      "hintIds": ["p_toothbrush", "p_brush_teeth"]
+    }
+  },
+  {
+    "id": "md-instr-meds-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先拿药", "再喝口水"],
+      "hintIds": ["p_medicine", "p_water"]
+    }
+  },
+  {
+    "id": "md-instr-wash-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先洗手", "再吃苹果"],
+      "hintIds": ["p_wash_hands", "p_apple"]
+    }
+  },
+  {
+    "id": "md-instr-coat-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先穿外套", "再出门"],
+      "hintIds": ["o_coat", "a_go_out"]
+    }
+  },
+  {
+    "id": "md-instr-lamp-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先关灯", "再睡觉"],
+      "hintIds": ["o_light_off", "p_sleep"]
+    }
+  },
+  {
+    "id": "md-instr-face-1",
+    "taskType": "instruction-check",
+    "title": "听指令：两步动作",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先拿毛巾", "再擦脸"],
+      "hintIds": ["p_towel", "p_wipe_face"]
+    }
+  },
+  {
+    "id": "md-follow-feel-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我今天感觉好多了"
+    }
+  },
+  {
+    "id": "md-follow-park-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我想去公园走一走",
+      "pictogramIds": ["p_playground", "p_walk"]
+    }
+  },
+  {
+    "id": "md-follow-hotwater-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "请给我一杯热水",
+      "pictogramIds": ["p_hot_water"]
+    }
+  },
+  {
+    "id": "md-follow-rest-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我有点累，想休息一下",
+      "pictogramIds": ["p_tired", "p_rest"]
+    }
+  },
+  {
+    "id": "md-follow-thanks-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "谢谢你照顾我",
+      "pictogramIds": ["p_thank_you"]
+    }
+  },
+  {
+    "id": "md-follow-yummy-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "今天的饭菜很好吃",
+      "pictogramIds": ["p_rice"]
+    }
+  },
+  {
+    "id": "md-follow-call-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我想给儿子打电话",
+      "pictogramIds": ["p_make_call", "p_son"]
+    }
+  },
+  {
+    "id": "md-follow-rehab-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "今天下午我要做康复训练",
+      "pictogramIds": ["a_rehab_training"]
+    }
+  },
+  {
+    "id": "md-follow-slow-1",
+    "taskType": "follow-read",
+    "title": "跟读：短句",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "请你说慢一点",
+      "pictogramIds": ["r_speak_slowly"]
+    }
+  },
+  {
+    "id": "md-desc-hospital-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：看病",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_hospital", "p_doctor", "p_sick"],
+      "keyPoints": ["去医院", "看医生", "身体不舒服"]
+    }
+  },
+  {
+    "id": "md-desc-cook-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：做饭",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_kitchen", "p_mother", "p_vegetable"],
+      "keyPoints": ["在厨房", "妈妈做菜", "准备吃饭"]
+    }
+  },
+  {
+    "id": "md-desc-market-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：超市买东西",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_supermarket", "p_buy", "p_bag"],
+      "keyPoints": ["在超市", "买东西", "买了满满一袋"]
+    }
+  },
+  {
+    "id": "md-desc-walk-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：公园散步",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_playground", "p_walk", "p_tired"],
+      "keyPoints": ["在公园", "散步锻炼", "走累了歇一歇"]
+    }
+  },
+  {
+    "id": "md-desc-call-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：打电话",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_phone", "p_make_call", "p_son"],
+      "keyPoints": ["打电话", "打给儿子", "说说话"]
+    }
+  },
+  {
+    "id": "md-desc-wear-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：穿衣服",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["a_wear", "p_clothes", "o_shoes"],
+      "keyPoints": ["自己穿衣服", "穿好鞋子", "准备出门"]
+    }
+  },
+  {
+    "id": "md-desc-shower-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：洗澡",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_shower", "p_towel", "hy_soap"],
+      "keyPoints": ["洗澡", "用肥皂洗干净", "擦干身体"]
+    }
+  },
+  {
+    "id": "md-cat-food-daily-1",
+    "taskType": "categorize",
+    "title": "词汇分类",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        { "key": "food", "label": "食物" },
+        { "key": "daily", "label": "日常用品" }
+      ],
+      "items": [
+        { "id": "p_apple", "category": "food" },
+        { "id": "p_milk", "category": "food" },
+        { "id": "p_candy", "category": "food" },
+        { "id": "p_cup", "category": "daily" },
+        { "id": "p_towel", "category": "daily" },
+        { "id": "p_spoon", "category": "daily" }
+      ]
+    }
+  },
+  {
+    "id": "md-cat-food-body-place-1",
+    "taskType": "categorize",
+    "title": "词汇分类：三分类",
+    "level": "moderate",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "先点分类，再点词语，把词语放进正确的分类",
+    "enabled": true,
+    "payload": {
+      "taskType": "categorize",
+      "categories": [
+        { "key": "food", "label": "食物" },
+        { "key": "body", "label": "身体部位" },
+        { "key": "place", "label": "地点" }
+      ],
+      "items": [
+        { "id": "p_banana", "category": "food" },
+        { "id": "p_bread", "category": "food" },
+        { "id": "p_tea", "category": "food" },
+        { "id": "p_eye_body", "category": "body" },
+        { "id": "p_foot_body", "category": "body" },
+        { "id": "p_shoulder", "category": "body" },
+        { "id": "p_hospital", "category": "place" },
+        { "id": "p_school", "category": "place" },
+        { "id": "p_kitchen", "category": "place" }
+      ]
+    }
+  },
+  {
+    "id": "md-trace-eat-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：吃饭",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "吃饭",
+      "pinyin": "chī fàn"
+    }
+  },
+  {
+    "id": "md-trace-drink-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：喝水",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "喝水",
+      "pinyin": "hē shuǐ"
+    }
+  },
+  {
+    "id": "md-trace-sleep-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：睡觉",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "睡觉",
+      "pinyin": "shuì jiào"
+    }
+  },
+  {
+    "id": "md-trace-family-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：家人",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "家人",
+      "pinyin": "jiā rén"
+    }
+  },
+  {
+    "id": "md-trace-doctor-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：医生",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "医生",
+      "pinyin": "yī shēng"
+    }
+  },
+  {
+    "id": "md-trace-milk-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：牛奶",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 2,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "牛奶",
+      "pinyin": "niú nǎi"
+    }
+  },
+  {
+    "id": "md-trace-apple-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：苹果",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 3,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "苹果",
+      "pinyin": "píng guǒ"
+    }
+  },
+  {
+    "id": "md-trace-read-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：看书",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 3,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "看书",
+      "pinyin": "kàn shū"
+    }
+  },
+  {
+    "id": "md-trace-inject-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：打针",
+    "level": "moderate",
+    "dimension": "writing",
+    "difficulty": 3,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "打针",
+      "pinyin": "dǎ zhēn"
+    }
+  },
+  {
+    "id": "md-idiom-health-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：身体健康",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "身体健康",
+      "meaning": "祝愿身体康健，万事顺利"
+    }
+  },
+  {
+    "id": "md-idiom-meals-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：一日三餐",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "一日三餐",
+      "meaning": "每天按时吃早饭、午饭、晚饭"
+    }
+  },
+  {
+    "id": "md-idiom-smile-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：笑口常开",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "笑口常开",
+      "meaning": "经常笑，保持愉快的心情"
+    }
+  },
+  {
+    "id": "md-idiom-safe-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：平平安安",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 2,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "平平安安",
+      "meaning": "平安顺利，没有意外"
+    }
+  },
+  {
+    "id": "md-idiom-care-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：多多保重",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "多多保重",
+      "meaning": "注意身体，好好照顾自己"
+    }
+  },
+  {
+    "id": "md-idiom-upward-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：天天向上",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "天天向上",
+      "meaning": "每天都有进步"
+    }
+  },
+  {
+    "id": "md-idiom-rest-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：好好休息",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "好好休息",
+      "meaning": "安心休养，不要太劳累"
+    }
+  },
+  {
+    "id": "md-script-meds-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：吃药时间",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "吃药时间",
+      "turns": [
+        { "role": "caregiver", "line": "到吃药时间了，你现在方便吗？" },
+        { "role": "patient", "line": "好的，我自己吃", "hintIds": ["p_take_medicine"] },
+        { "role": "caregiver", "line": "真棒，吃完药用温水送服。" },
+        { "role": "patient", "line": "知道了，谢谢", "hintIds": ["p_thank_you"] }
+      ]
+    }
+  },
+  {
+    "id": "md-script-walk-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：出门散步",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "出门散步",
+      "turns": [
+        { "role": "caregiver", "line": "今天天气不错，我们出去走走好吗？" },
+        { "role": "patient", "line": "好的，我想去公园", "hintIds": ["p_playground"] },
+        { "role": "caregiver", "line": "行，走慢一点，累了就休息。" },
+        { "role": "patient", "line": "我有点累，想坐一会儿", "hintIds": ["p_tired"] }
+      ]
+    }
+  },
+  {
+    "id": "md-script-tv-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：看电视",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "看电视",
+      "turns": [
+        { "role": "caregiver", "line": "晚上想看电视吗？" },
+        { "role": "patient", "line": "想看", "hintIds": ["p_television"] },
+        { "role": "caregiver", "line": "想看什么节目？" },
+        { "role": "patient", "line": "我想看电视剧", "hintIds": ["p_watch_tv"] }
+      ]
+    }
+  },
+  {
+    "id": "md-script-morning-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：早安问候",
+    "level": "moderate",
+    "dimension": "speaking",
+    "difficulty": 3,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "早安问候",
+      "turns": [
+        { "role": "caregiver", "line": "早上好，昨晚睡得好吗？" },
+        { "role": "patient", "line": "睡得很好", "hintIds": ["p_sleep"] },
+        { "role": "caregiver", "line": "那就好，先喝杯水吧。" },
+        { "role": "patient", "line": "好的，谢谢", "hintIds": ["p_thank_you"] }
+      ]
+    }
+  },
+  {
+    "id": "md-read-weather-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：下雨天",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "今天下雨了，地面很滑。奶奶出门的时候扶着栏杆，慢慢走。她平安地走到了超市。",
+      "question": "出门时为什么要扶栏杆？",
+      "options": ["因为下雨路滑", "因为天太热", "因为想锻炼手臂"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "md-read-medicine-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：按时吃药",
+    "level": "moderate",
+    "dimension": "reading",
+    "difficulty": 3,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "王阿姨每天早上吃一次药。今天早上她忘了吃，护士提醒她：药要按时吃，不能用茶水送药。",
+      "question": "护士说了什么？",
+      "options": ["按时吃药，不用茶水送药", "药可以随便吃", "不想吃就不吃"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-pick-market-1",
+    "taskType": "pick-from-pictograms",
+    "title": "听词指认",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 3,
+    "prompt": "听语音，选出对应的图片",
+    "parallelGroup": "pick:超市",
+    "enabled": true,
+    "payload": {
+      "taskType": "pick-from-pictograms",
+      "variant": "listen",
+      "word": "超市",
+      "answerId": "p_supermarket",
+      "optionIds": ["p_supermarket", "p_hospital", "p_playground", "p_car"]
+    }
+  },
+  {
+    "id": "mi-follow-long-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "今天天气很好，我们一起去公园散步吧。"
+    }
+  },
+  {
+    "id": "mi-follow-park-2",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "今天早上我去公园散步，遇到了老朋友，我们聊了很久。",
+      "pictogramIds": ["p_playground", "p_walk"]
+    }
+  },
+  {
+    "id": "mi-follow-med-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "医生说我恢复得很好，下周可以减少药量了。",
+      "pictogramIds": ["p_doctor", "p_medicine"]
+    }
+  },
+  {
+    "id": "mi-follow-remote-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "麻烦你帮我把遥控器拿过来，我想看新闻。",
+      "pictogramIds": ["p_remote"]
+    }
+  },
+  {
+    "id": "mi-follow-picnic-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "这个周末天气不错，我们全家打算去公园野餐。",
+      "pictogramIds": ["p_family", "p_playground"]
+    }
+  },
+  {
+    "id": "mi-follow-noon-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "我上午做了康复训练，中午睡了个午觉，现在精神好多了。",
+      "pictogramIds": ["a_rehab_training", "p_rest"]
+    }
+  },
+  {
+    "id": "mi-follow-bus-2",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "请帮我查一下，明天去医院的公交车是几点开？",
+      "pictogramIds": ["pl_bus", "p_hospital"]
+    }
+  },
+  {
+    "id": "mi-follow-progress-1",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "虽然说话还有点困难，但我每天都在进步。",
+      "pictogramIds": ["a_practice"]
+    }
+  },
+  {
+    "id": "mi-follow-thanks-2",
+    "taskType": "follow-read",
+    "title": "跟读：长句",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，跟着读一遍",
+    "enabled": true,
+    "payload": {
+      "taskType": "follow-read",
+      "sentence": "谢谢你们一直陪着我，我会好好练习说话。",
+      "pictogramIds": ["p_thank_you", "p_family"]
+    }
+  },
+  {
+    "id": "mi-listen-story-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "老王今年六十岁了。上个月他生病住院，医生说他恢复得不错。出院以后，他每天上午去公园走一走，下午在家看电视，晚上九点睡觉。",
+      "keyPoints": ["生病住过院", "恢复得不错", "每天去公园散步"]
+    }
+  },
+  {
+    "id": "mi-listen-market-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：买菜",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "李奶奶今天早上去菜市场。她买了两条鱼、一把青菜，还给孙子买了他爱吃的草莓。回家的路上，她遇见了邻居王阿姨，两个人站着聊了十分钟。",
+      "keyPoints": ["去菜市场买菜", "买了鱼和青菜", "给孙子买了草莓", "遇见邻居聊天"]
+    }
+  },
+  {
+    "id": "mi-listen-grandson-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：孙子读书",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "张爷爷的孙子今年上小学三年级。每天放学以后，孙子都来爷爷家写作业，写完了就给爷爷读一段课文。张爷爷听着孙子读书，心里很高兴。",
+      "keyPoints": ["孙子上三年级", "放学来爷爷家写作业", "给爷爷读课文"]
+    }
+  },
+  {
+    "id": "mi-listen-weather-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：天气变化",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "这几天气温下降，早晚特别凉。医生提醒老年朋友：出门要多穿一件外套，回来要是出汗了，先擦干再脱衣服，小心别着凉感冒。",
+      "keyPoints": ["气温下降早晚凉", "出门多穿外套", "出汗先擦干再脱衣服"]
+    }
+  },
+  {
+    "id": "mi-listen-friend-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：老友重逢",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "老陈住院三个月，老朋友刘叔叔一直不知道。今天刘叔叔来家里看望他，两个人聊起年轻时候一起工作的事，越聊越开心，约定下个月一起去钓鱼。",
+      "keyPoints": ["老陈住过院", "老朋友来看望", "聊年轻时候的事", "约好去钓鱼"]
+    }
+  },
+  {
+    "id": "mi-listen-rehab-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：康复日记",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "王阿姨的康复日记写着：周一练了发音，周三跟着软件读短句，周五自己说出了一整句话。治疗师夸她进步大，她决定每天坚持练半小时。",
+      "keyPoints": ["每周练三次", "能自己说整句了", "治疗师夸进步大", "每天坚持半小时"]
+    }
+  },
+  {
+    "id": "mi-listen-bus-1",
+    "taskType": "listen-recall",
+    "title": "听短文复述：去医院复查",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听短文，试着复述主要内容",
+    "enabled": true,
+    "payload": {
+      "taskType": "listen-recall",
+      "passage": "赵大爷每个月要去医院复查两次。公交十五路这个月临时改线，他改坐地铁了：先坐三号线，出站再走五分钟就到医院。",
+      "keyPoints": ["每月复查两次", "公交改坐地铁", "三号线走五分钟到"]
+    }
+  },
+  {
+    "id": "mi-read-cold-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "小张感冒了，头疼、咳嗽。他去医院看医生，医生让他多喝水、多休息，还给他开了一瓶药。小张回家按时吃药，三天以后就好多了。",
+      "question": "小张得了什么病？",
+      "options": ["感冒", "胃疼", "牙疼"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-register-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：医院复诊",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "陈奶奶明天要去医院复诊。她把医保卡、病历本和上次的检查报告都放进包里。女儿提醒她：先在机器上取号，再去二楼康复科等叫号。",
+      "question": "复诊前要准备什么？",
+      "options": ["医保卡、病历本和检查报告", "只带钱包就够了", "什么都不用带"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-bp-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：量血压",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "医生告诉老李：量血压前先安静坐五分钟，不要刚走完路就量；量的时候手臂放平，不要说话。早晚各量一次，记在小本子上。",
+      "question": "量血压时应该怎么做？",
+      "options": ["安静坐五分钟、手臂放平不说话", "边走路边量更准", "量的时候大声说话"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-bus-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：公交改线",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "小区门口的公交十五路这个月临时改线，不停医院站了。要去医院可以坐三号线地铁，从北门出去走五分钟就到。",
+      "question": "现在去医院怎么走方便？",
+      "options": ["坐三号线地铁", "还是坐十五路公交", "只能走路去"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-market-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：超市优惠",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "超市通知：早上八点到九点是老年优惠时段，蔬菜和鸡蛋都有折扣，还可以免费领一张鸡蛋券。李奶奶打算明天早点去。",
+      "question": "老年优惠时段是什么时候？",
+      "options": ["早上八点到九点", "中午十二点", "晚上八点"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-weather-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：天气预报",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "天气预报说，明天白天晴，最高气温二十六度；晚上有小雨，气温降到十六度。出门记得带伞，早晚加件外套。",
+      "question": "明天天气怎么样？",
+      "options": ["白天晴，晚上有小雨", "全天都下大雨", "全天都是大晴天"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-family-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：家人留言",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "冰箱上贴着女儿的留言：妈，我周六上午带小宝回来看你，中午我们在家包饺子。你去超市买点韭菜和鸡蛋就行，别的都不缺。",
+      "question": "女儿让妈妈买什么？",
+      "options": ["韭菜和鸡蛋", "肉和鱼", "什么都不用买"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-plan-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：康复计划",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "李老师的康复计划表：周一、周三、周五上午练发音和跟读，每次二十分钟；周二、周四练手指灵活度；周六日休息，陪家人散步。",
+      "question": "周一上午练什么？",
+      "options": ["发音和跟读", "手指灵活度", "休息"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-read-exercise-1",
+    "taskType": "reading-comprehension",
+    "title": "阅读理解：居家锻炼",
+    "level": "mild",
+    "dimension": "reading",
+    "difficulty": 4,
+    "prompt": "读短文，回答问题",
+    "enabled": true,
+    "payload": {
+      "taskType": "reading-comprehension",
+      "passage": "居家锻炼要注意：饭后一小时内不要运动；运动前先热身五分钟；如果觉得头晕或者胸口不舒服，马上停下来休息，必要时按铃叫家人。",
+      "question": "锻炼时头晕怎么办？",
+      "options": ["马上停下休息，必要时叫家人", "继续坚持完成", "加快速度练完"],
+      "answerIndex": 0
+    }
+  },
+  {
+    "id": "mi-desc-park-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：公园",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_playground", "p_run", "p_happy"],
+      "keyPoints": ["在公园", "跑步锻炼", "心情开心"]
+    }
+  },
+  {
+    "id": "mi-desc-dinner-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：家庭聚餐",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_family", "p_eat_dinner", "p_happy"],
+      "keyPoints": ["一家人吃饭", "吃晚饭", "大家很开心"]
+    }
+  },
+  {
+    "id": "mi-desc-morning-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：公园晨练",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_morning", "p_run", "p_exercise"],
+      "keyPoints": ["早上锻炼", "跑步", "坚持运动"]
+    }
+  },
+  {
+    "id": "mi-desc-shopping-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：超市购物",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_supermarket", "p_buy", "p_money"],
+      "keyPoints": ["在超市", "买东西", "付钱"]
+    }
+  },
+  {
+    "id": "mi-desc-checkup-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：医院复查",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_hospital", "p_blood_pressure", "m_check"],
+      "keyPoints": ["去医院复查", "量血压", "做检查"]
+    }
+  },
+  {
+    "id": "mi-desc-rain-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：雨天出门",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["w_rain", "p_umbrella", "o_shoes"],
+      "keyPoints": ["下雨了", "带上雨伞", "穿好鞋子慢慢走"]
+    }
+  },
+  {
+    "id": "mi-desc-callfamily-1",
+    "taskType": "describe-picture",
+    "title": "看图描述：电话报平安",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "看图说一说，照护者按要点评星",
+    "enabled": true,
+    "payload": {
+      "taskType": "describe-picture",
+      "scenePictogramIds": ["p_phone", "p_make_call", "p_family"],
+      "keyPoints": ["给家人打电话", "报个平安", "聊聊近况"]
+    }
+  },
+  {
+    "id": "mi-instr-morning-1",
+    "taskType": "instruction-check",
+    "title": "听指令：三步动作",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先起床", "再刷牙洗脸", "最后吃早饭"],
+      "hintIds": ["p_wake_up", "p_toothbrush", "p_eat_breakfast"]
+    }
+  },
+  {
+    "id": "mi-instr-bp-1",
+    "taskType": "instruction-check",
+    "title": "听指令：三步动作",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先穿好衣服", "再吃降压药", "然后量血压"],
+      "hintIds": ["p_clothes", "p_medicine", "p_blood_pressure"]
+    }
+  },
+  {
+    "id": "mi-instr-out-1",
+    "taskType": "instruction-check",
+    "title": "听指令：三步动作",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先拿钥匙和手机", "再检查门窗", "最后下楼"],
+      "hintIds": ["p_key", "p_phone", "pl_downstairs"]
+    }
+  },
+  {
+    "id": "mi-instr-market-1",
+    "taskType": "instruction-check",
+    "title": "听指令：三步动作",
+    "level": "mild",
+    "dimension": "listening",
+    "difficulty": 4,
+    "prompt": "听指令做动作，照护者确认完成情况",
+    "enabled": true,
+    "payload": {
+      "taskType": "instruction-check",
+      "steps": ["先列购物清单", "再去超市买菜", "回家把东西放好"],
+      "hintIds": ["p_supermarket", "p_buy", "a_go_home"]
+    }
+  },
+  {
+    "id": "mi-script-breakfast-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：早餐时间",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "早餐时间",
+      "turns": [
+        { "role": "caregiver", "line": "早上好，你现在饿吗？" },
+        { "role": "patient", "line": "我饿了", "hintIds": ["p_hungry"] },
+        { "role": "caregiver", "line": "想吃点什么？粥还是牛奶？" },
+        { "role": "patient", "line": "我想喝粥", "hintIds": ["p_congee"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-clinic-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：医院复诊",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "医院复诊",
+      "turns": [
+        { "role": "caregiver", "line": "您好，请问是来复诊的吗？把病历本给我看一下。" },
+        { "role": "patient", "line": "好的，这是我的病历本", "hintIds": ["p_book"] },
+        { "role": "caregiver", "line": "康复科在二楼，先去量血压，再等叫号。" },
+        { "role": "patient", "line": "谢谢，我先去量血压", "hintIds": ["p_blood_pressure"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-pharmacy-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：药店买药",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "药店买药",
+      "turns": [
+        { "role": "caregiver", "line": "您好，想买什么药？" },
+        { "role": "patient", "line": "我想买降压药", "hintIds": ["p_medicine"] },
+        { "role": "caregiver", "line": "这个药一天吃一次，要按说明吃，不能多吃。" },
+        { "role": "patient", "line": "好的，我记住了" }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-askway-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：问路坐车",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "问路坐车",
+      "turns": [
+        { "role": "caregiver", "line": "叔叔您要去哪儿？我帮您看一下路线。" },
+        { "role": "patient", "line": "我想去医院复查", "hintIds": ["p_hospital"] },
+        { "role": "caregiver", "line": "坐三号线地铁，两站就到，我扶您过去。" },
+        { "role": "patient", "line": "谢谢你啊", "hintIds": ["p_thank_you"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-dinner-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：聚餐点菜",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "聚餐点菜",
+      "turns": [
+        { "role": "caregiver", "line": "妈，今晚想吃什么？我们包饺子还是炒菜？" },
+        { "role": "patient", "line": "我想吃青菜，再喝点汤", "hintIds": ["p_vegetable", "p_soup"] },
+        { "role": "caregiver", "line": "好，那我再蒸一条鱼，您先坐着歇会儿。" },
+        { "role": "patient", "line": "好，全家一起吃饭真开心", "hintIds": ["p_happy"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-appointment-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：电话预约康复",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "电话预约康复",
+      "turns": [
+        { "role": "caregiver", "line": "您好，康复科，请问有什么事？" },
+        { "role": "patient", "line": "我想约周四上午做训练", "hintIds": ["a_rehab_training"] },
+        { "role": "caregiver", "line": "可以，周四上午九点，请带上康复记录本。" },
+        { "role": "patient", "line": "好的，周四九点，我记住了", "hintIds": ["p_clock"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-script-neighbor-1",
+    "taskType": "script-dialogue",
+    "title": "生活脚本：邻居聊天",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "照护者按脚本对话，患者回应",
+    "enabled": true,
+    "payload": {
+      "taskType": "script-dialogue",
+      "scenario": "邻居聊天",
+      "turns": [
+        { "role": "caregiver", "line": "王叔，这几天凉了，您身体还好吧？" },
+        { "role": "patient", "line": "还好，就是说话还是慢", "hintIds": ["p_talk"] },
+        { "role": "caregiver", "line": "您恢复得已经很好了，外面要下雨了，我扶您回屋吧。" },
+        { "role": "patient", "line": "谢谢你，我先回家了", "hintIds": ["w_rain"] }
+      ]
+    }
+  },
+  {
+    "id": "mi-idiom-practice-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：熟能生巧",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "熟能生巧",
+      "meaning": "多加练习，就能做得又快又好"
+    }
+  },
+  {
+    "id": "mi-idiom-step-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：循序渐进",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "循序渐进",
+      "meaning": "一步一步来，慢慢提高"
+    }
+  },
+  {
+    "id": "mi-idiom-persist-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：持之以恒",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "持之以恒",
+      "meaning": "长期坚持，不半途而废"
+    }
+  },
+  {
+    "id": "mi-idiom-recover-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：早日康复",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "早日康复",
+      "meaning": "希望病早点好起来"
+    }
+  },
+  {
+    "id": "mi-idiom-calm-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：心平气和",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "心平气和",
+      "meaning": "心情平静，态度温和"
+    }
+  },
+  {
+    "id": "mi-idiom-wishes-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：万事如意",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "万事如意",
+      "meaning": "一切顺利，心想事成"
+    }
+  },
+  {
+    "id": "mi-idiom-content-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：知足常乐",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "知足常乐",
+      "meaning": "懂得满足，就会常快乐"
+    }
+  },
+  {
+    "id": "mi-idiom-water-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：水到渠成",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "水到渠成",
+      "meaning": "条件够了，事情自然成功"
+    }
+  },
+  {
+    "id": "mi-idiom-bitter-1",
+    "taskType": "idiom-read",
+    "title": "成语朗读：苦尽甘来",
+    "level": "mild",
+    "dimension": "speaking",
+    "difficulty": 4,
+    "prompt": "听范读，朗读成语",
+    "enabled": true,
+    "payload": {
+      "taskType": "idiom-read",
+      "idiom": "苦尽甘来",
+      "meaning": "苦日子过完，好日子就来了"
+    }
+  },
+  {
+    "id": "mi-trace-happy-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：天天开心",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 3,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "天天开心",
+      "pinyin": "tiān tiān kāi xīn"
+    }
+  },
+  {
+    "id": "mi-trace-health-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：身体健康",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "身体健康",
+      "pinyin": "shēn tǐ jiàn kāng"
+    }
+  },
+  {
+    "id": "mi-trace-recover-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：早日康复",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "早日康复",
+      "pinyin": "zǎo rì kāng fù"
+    }
+  },
+  {
+    "id": "mi-trace-smile-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：笑口常开",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "笑口常开",
+      "pinyin": "xiào kǒu cháng kāi"
+    }
+  },
+  {
+    "id": "mi-trace-safe-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：平平安安",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "平平安安",
+      "pinyin": "píng píng ān ān"
+    }
+  },
+  {
+    "id": "mi-trace-upward-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：天天向上",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "天天向上",
+      "pinyin": "tiān tiān shàng shàng"
+    }
+  },
+  {
+    "id": "mi-trace-rest-1",
+    "taskType": "trace-char",
+    "title": "汉字临摹：好好休息",
+    "level": "mild",
+    "dimension": "writing",
+    "difficulty": 4,
+    "prompt": "在田字格里描写词语",
+    "enabled": true,
+    "payload": {
+      "taskType": "trace-char",
+      "text": "好好休息",
+      "pinyin": "hǎo hǎo xiū xi"
+    }
+  }
+]

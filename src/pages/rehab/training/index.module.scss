@@ -19,10 +19,10 @@
 .btn {
   @include button-reset;
   margin-top: $spacing-lg;
-  width: 480rpx;
-  height: $button-height-md;
+  width: 560rpx;
+  height: 104rpx;
   border-radius: $radius-button;
   background: $color-primary;
   color: $color-text-white;
-  font-size: $font-size-lg;
+  font-size: $font-size-xl;
 }

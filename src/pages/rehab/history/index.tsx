@@ -25,9 +25,43 @@ function HistoryPage() {
     );
   }
 
+  // 最近 10 次正确率趋势（旧→新，纯 View 条形图）
+  const trend = sessions
+    .filter((s) => s.taskRecords.length > 0)
+    .slice(0, 10)
+    .reverse()
+    .map((s) => {
+      const correct = s.taskRecords.filter((r) => r.correct).length;
+      return {
+        id: s.id,
+        rate: Math.round((correct / s.taskRecords.length) * 100),
+        date: dayjs(s.startedAt).format('MM-DD')
+      };
+    });
+
   return (
     <View className={styles.page}>
       <ScrollView scrollY className={styles.body}>
+        {trend.length >= 2 && (
+          <View className={styles.trendCard}>
+            <View className={styles.trendTitle}>正确率趋势（最近 {trend.length} 次）</View>
+            <View className={styles.trendChart}>
+              {trend.map((t) => (
+                <View key={t.id} className={styles.trendCol}>
+                  <Text className={styles.trendRate}>{t.rate}%</Text>
+                  <View className={styles.trendBarTrack}>
+                    <View
+                      className={styles.trendBar}
+                      style={{ height: `${Math.max(4, t.rate)}%` }}
+                    />
+                  </View>
+                  <Text className={styles.trendDate}>{t.date}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
+
         {sessions.map((s) => {
           const meta = getRehabLevelMeta(s.level);
           const correct = s.taskRecords.filter((r) => r.correct).length;
