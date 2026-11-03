@@ -1,5 +1,5 @@
 // ===== 康复训练模块类型（v0.2：题型载荷 + 判分口径）=====
-// 对应 docs/康复训练模块方案.md；题库数据见 src/data/rehab/（manual + generated）
+// 对应 docs/产品方案/康复训练模块方案.md；题库数据见 src/data/rehab/（manual + generated）
 //
 // 判分口径（题型组件与结果页按此实现）：
 // - 客观题（pick-from-pictograms / match-pair / reading-comprehension）：自动判分
@@ -11,7 +11,7 @@
 /** 训练等级（手动选择；后续接入分级模块后由 AssessmentResult.severity 驱动） */
 export type RehabLevel = 'severe' | 'moderate' | 'mild'
 
-/** 训练维度（源自 docs/2.txt 的四大训练内容） */
+/** 训练维度（源自 docs/产品方案/康复分级文献笔记.md 的四大训练内容） */
 export type RehabDimension = 'listening' | 'speaking' | 'reading' | 'writing'
 
 /** 题型枚举（12 种，与申报表口径一致） */

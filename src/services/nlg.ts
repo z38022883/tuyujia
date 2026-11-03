@@ -1,3 +1,4 @@
+// ===== 自然语言生成服务：由图符标签生成候选句（云端 LLM 优先，离线模板兜底）=====
 import type { NLGProvider, NLGRequest, NLGResponse } from '@/types'
 import { callFunction } from './cloud'
 
@@ -63,6 +64,12 @@ const template = new TemplateNLG()
 /**
  * 生成候选句。微信端优先调用云端 LLM（aiSentences 云函数），失败降级模板；
  * H5 预览直接用模板（无需后端即可体验选句流程）。
+ * 输入 req: NLGRequest { pictogramLabels: string[]  // 图符中文标签（按想表达的顺序）
+ *                        context?: { recentSentences?: string[] }  // 近期句子（语义衔接）
+ *                        candidateCount: number }  // 候选句数量
+ * 输出: Promise<NLGResponse> { candidates: string[]  // 候选句列表
+ *                              provider: string  // 来源（'cloud-ai' | 'template'）
+ *                              isOfflineFallback: boolean }  // 是否离线兜底结果
  */
 export async function generateSentences(req: NLGRequest): Promise<NLGResponse> {
   if (process.env.TARO_ENV === 'weapp') {

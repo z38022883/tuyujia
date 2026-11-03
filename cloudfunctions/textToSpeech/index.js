@@ -149,6 +149,18 @@ async function synthesize(secretId, secretKey, text, voiceType, speed) {
   return resp.Audio
 }
 
+/**
+ * 输入 event：{
+ *   text: string            // 待合成文本（必填，超 150 字自动截断并置 truncated=true）
+ *   voiceName?: string      // 音色 'female' | 'male'，默认 'female'
+ *   rate?: number           // 语速 0.5~2（UI 档位，内部换算为接口语速 [-10,10]），默认 1
+ * }
+ * 输出 data：{
+ *   audioBase64: string     // mp3 音频 base64
+ *   codec: 'mp3'            // 音频编码
+ *   truncated: boolean      // 入参文本是否被截断
+ * }
+ */
 exports.main = async (event) => {
   try {
     const secretId = (process.env.TENCENT_SECRET_ID || '').trim()

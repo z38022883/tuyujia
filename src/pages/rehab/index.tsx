@@ -1,3 +1,4 @@
+// ===== 康复训练主页：按程度档案等级开始训练；评估调级横幅、短板加权出题开关、训练/记录/家庭支持入口 =====
 import { useEffect, useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro, { useDidShow } from '@tarojs/taro';

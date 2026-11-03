@@ -3,7 +3,7 @@
  * 康复题库校验器（批次 2）
  *
  * 对 tasks.manual.json + tasks.generated.json 全量校验，并生成覆盖矩阵报告：
- *  docs/康复题库覆盖矩阵.md
+ *  docs/产品方案/康复题库覆盖矩阵.md
  *
  * 校验项：
  *  S1  结构合法：必填字段齐全、level/dimension 枚举合法、payload.taskType 一致
@@ -331,9 +331,9 @@ for (const t of all) {
 }
 
 md += `\n## 维度依据\n\n`
-md += `分级与维度划分源自 \`docs/2.txt\`（WAB 失语商 AQ 分级 × 听理解/口语表达/读写/家庭支持四线），题型与分级映射见 \`docs/康复训练模块方案.md\`。\n`
+md += `分级与维度划分源自 \`docs/产品方案/康复分级文献笔记.md\`（WAB 失语商 AQ 分级 × 听理解/口语表达/读写/家庭支持四线），题型与分级映射见 \`docs/产品方案/康复训练模块方案.md\`。\n`
 
-const reportPath = path.join(root, 'docs/康复题库覆盖矩阵.md')
+const reportPath = path.join(root, 'docs/产品方案/康复题库覆盖矩阵.md')
 writeFileSync(reportPath, md, 'utf8')
 
 console.log(`题库合计 ${all.length} 题（手写 ${manual.length} + 生成 ${generated.length}）`)
@@ -345,5 +345,5 @@ if (errors.length) {
   for (const e of errors) console.error(`  - ${e}`)
   process.exit(1)
 }
-console.log(`\n全部校验通过 ✅${warns.length ? `（${warns.length} 提醒）` : ''}，报告已写入 docs/康复题库覆盖矩阵.md`)
+console.log(`\n全部校验通过 ✅${warns.length ? `（${warns.length} 提醒）` : ''}，报告已写入 docs/产品方案/康复题库覆盖矩阵.md`)
 for (const w of warns) console.warn(`  ⚠️ ${w}`)

@@ -1,3 +1,4 @@
+// ===== 嘴巴小练习页：基础口腔动作逐项完成，全部完成后打卡（可获勋章）=====
 import { useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';

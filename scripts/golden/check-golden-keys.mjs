@@ -3,7 +3,7 @@
 //   1. 每条 role=content 的期望词是否标注了非空 pictogramId（无缺口）
 //   2. golden 引用的所有图符 id（pictogramId / altIds / forbiddenIds）是否真实存在于词库
 //   3. 深度覆盖：期望词的 word 是否被对应图符的 labels.zh + synonyms 覆盖（标注与词库是否闭环）
-// 用法：node scripts/golden/check-golden-keys.mjs
+// 用法：node scripts/golden/check-golden-keys.mjs [数据集文件名]（默认 golden-set.json；留出集传 test-set.json）
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,7 +11,8 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '../..');
 
-const golden = JSON.parse(fs.readFileSync(path.join(root, 'scripts/golden/golden-set.json'), 'utf8'));
+const setFile = process.argv[2] || 'golden-set.json';
+const golden = JSON.parse(fs.readFileSync(path.join(root, 'scripts/golden', setFile), 'utf8'));
 const pictograms = JSON.parse(fs.readFileSync(path.join(root, 'src/data/seed/pictograms.json'), 'utf8'));
 
 // 图符索引
@@ -34,6 +35,7 @@ const problems = []; // 问题清单
 const gaps = [];     // content 词无图符
 const missingRefs = []; // 引用的 id 不存在于词库
 const uncovered = [];   // word 未被图符 labels/synonyms 覆盖
+const altCoveredList = []; // 词形由 altIds 覆盖（设计内歧义，仅提示）
 
 const contentTotal = { n: 0, hasId: 0 };
 const refIds = new Map(); // id -> 被引用的位置列表
@@ -55,13 +57,24 @@ for (const c of golden.cases) {
         if (!p) {
           missingRefs.push(`${where}：引用图符 ${exp.pictogramId} 不在词库`);
         } else {
-          // 深度覆盖：word 或 segment 必须被该图符覆盖
+          // 深度覆盖：word 或 segment 必须被该图符（或其 altIds 图符）覆盖
           const words = coverWords(p);
           const ok = [norm(exp.word), norm(exp.segment)].some((w) => w && words.has(w));
           if (!ok) {
-            uncovered.push(
-              `${where}：期望图 ${exp.pictogramId} 的词形 [${[...words].join(' / ')}] 未覆盖 word=${exp.word}`,
-            );
+            // altIds 兜底：v1 设计内歧义（如 rec-065 走→p_walk, 词形由 altIds p_go 覆盖）算闭环
+            const altCovered = (exp.altIds ?? []).some((altId) => {
+              const ap = byId.get(altId);
+              if (!ap) return false;
+              const aw = coverWords(ap);
+              return [norm(exp.word), norm(exp.segment)].some((w) => w && aw.has(w));
+            });
+            if (!altCovered) {
+              uncovered.push(
+                `${where}：期望图 ${exp.pictogramId} 的词形 [${[...words].join(' / ')}] 未覆盖 word=${exp.word}`,
+              );
+            } else {
+              altCoveredList.push(`${where}：词形由 altIds 覆盖（设计内歧义）`);
+            }
           }
         }
       } else {
@@ -97,6 +110,9 @@ console.log('');
 
 console.log(`【3】word 未被期望图符 labels/synonyms 覆盖（标注↔词库未闭环）: ${uncovered.length}`);
 for (const u of uncovered) console.log('   - ' + u);
+console.log('');
+console.log(`【3+】词形由 altIds 覆盖（设计内歧义，仅提示）: ${altCoveredList.length}`);
+for (const a of altCoveredList) console.log('   - ' + a);
 console.log('');
 
 // 汇总：哪些词被多个图符同时覆盖（潜在歧义，仅供观察）

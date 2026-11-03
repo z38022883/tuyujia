@@ -1,3 +1,4 @@
+// ===== 使用引导页：首次使用的功能说明（静态展示页，无数据读写）=====
 import { View, Text } from '@tarojs/components';
 import styles from './index.module.scss';
 

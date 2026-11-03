@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 2,
+  "domain": "receive",
+  "target": "留出集泛化能力：同一算法在未参与第一版调优的新句上的内容词召回 / 精度 / 否定反转违反；与开发集 golden-set.json（85 句 rec-*）分开评测、分开报告",
+  "notes": [
+    "第二版留出测试集，冻结于 2026-11-03。开发集（golden-set.json）自本日起不再驱动任何算法/词库改动。",
+    "构成：中医调理 18 句（tst-001~019，tst-015 编号保留不复用——泡脚转手绘清单）+ 日常 12 句（tst-020~031）。",
+    "留白：沟通修复 / 人物 / 时间场景待未参与算法调优的队友补 5~8 句，补齐后冻结为完整版（目标约 50 句）。",
+    "留出集纪律：某句失败并触发针对性修复后即视为『污染』，报告中注明，下次冻结时轮换补新句。",
+    "中医场景词库支撑：新增 17 个 ARASAAC 图符 + 5 处同义词闭环（fill-tcm-gaps.mjs，2026-11-03），补图后图库缺口仍为 0。",
+    "手绘待办（ARASAAC 无图）：泡脚 / 拔罐 / 艾灸 / 把脉 / 热敷，落地后补入本集。",
+    "标注惯例同开发集：expected 按原文顺序；role=content 计入召回分母；forbiddenIds 为反转/假阳性断言；整体图优先。"
+  ],
+  "cases": [
+    {
+      "id": "tst-001",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我头晕，要躺一会儿",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "头晕", "word": "头晕", "pictogramId": "p_dizzy", "role": "content" },
+        { "segment": "要", "word": "要", "pictogramId": null, "role": "function" },
+        { "segment": "躺", "word": "躺", "pictogramId": "a_lie_down", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-002",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我晚上失眠，睡不着",
+      "note": "睡不着 由 失眠(m_insomnia) 同义词整词覆盖；若另出 睡觉(p_sleep) 属可接受（altIds）",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "晚上", "word": "晚上", "pictogramId": "p_night", "role": "content" },
+        { "segment": "失眠", "word": "失眠", "pictogramId": "m_insomnia", "role": "content", "altIds": ["p_sleep"] },
+        { "segment": "睡不着", "word": "睡不着", "pictogramId": "m_insomnia", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-003",
+      "scenario": "中医调理",
+      "sentenceType": "疑问",
+      "sentence": "你便秘吗",
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "便秘", "word": "便秘", "pictogramId": "m_constipation", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-004",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我拉肚子了",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "拉肚子", "word": "拉肚子", "pictogramId": "m_diarrhea", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-005",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我出汗多，还怕冷",
+      "note": "怕冷 为 p_cold 同义词闭环（中医十问要素），不单开图",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "出汗", "word": "出汗", "pictogramId": "m_sweat", "role": "content" },
+        { "segment": "多", "word": "多", "pictogramId": "d_many", "role": "content" },
+        { "segment": "还", "word": "还", "pictogramId": null, "role": "function" },
+        { "segment": "怕冷", "word": "怕冷", "pictogramId": "p_cold", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-006",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "口干，想喝热水",
+      "note": "口干 为 p_thirsty(渴) 同义词闭环；想 按词库映射期望 p_want（不在功能词丢弃表内）",
+      "expected": [
+        { "segment": "口干", "word": "口干", "pictogramId": "p_thirsty", "role": "content" },
+        { "segment": "想", "word": "想", "pictogramId": "p_want", "role": "content" },
+        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
+        { "segment": "热水", "word": "热水", "pictogramId": "p_hot_water", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-007",
+      "scenario": "中医调理",
+      "sentenceType": "正反问",
+      "sentence": "你怕不怕冷",
+      "note": "短式正反问（怕不怕→怕）：折叠产物 怕(p_afraid) 若输出计为假阳性，检验折叠语义收敛；禁出 不(p_no)",
+      "forbiddenIds": ["p_no"],
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "怕冷", "word": "怕冷", "pictogramId": "p_cold", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-008",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "明天去针灸",
+      "expected": [
+        { "segment": "明天", "word": "明天", "pictogramId": "p_tomorrow", "role": "content" },
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "针灸", "word": "针灸", "pictogramId": "tcm_acupuncture", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-009",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "医生给您肩膀做推拿",
+      "note": "做推拿 由 推拿(tcm_tuina) 同义词整词覆盖",
+      "expected": [
+        { "segment": "医生", "word": "医生", "pictogramId": "p_doctor", "role": "content" },
+        { "segment": "您", "word": "您", "pictogramId": "p_you", "role": "content" },
+        { "segment": "肩膀", "word": "肩膀", "pictogramId": "p_shoulder", "role": "content" },
+        { "segment": "做推拿", "word": "做推拿", "pictogramId": "tcm_tuina", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-010",
+      "scenario": "中医调理",
+      "sentenceType": "祈使",
+      "sentence": "张嘴，我看一下",
+      "expected": [
+        { "segment": "张嘴", "word": "张嘴", "pictogramId": "p_open_mouth", "role": "content" },
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "看", "word": "看", "pictogramId": "p_see", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-011",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "中药太苦了",
+      "expected": [
+        { "segment": "中药", "word": "中药", "pictogramId": "tcm_herbs", "role": "content" },
+        { "segment": "太", "word": "太", "pictogramId": null, "role": "function" },
+        { "segment": "苦", "word": "苦", "pictogramId": "p_bitter", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-012",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我腰不舒服，想贴膏药",
+      "note": "不舒服→p_unwell（既有 label）；难受→p_uncomfortable 同族图，altIds 可接受；贴膏药 由 膏药(tcm_plaster) 同义词整词覆盖",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "腰", "word": "腰", "pictogramId": "p_waist", "role": "content" },
+        { "segment": "不舒服", "word": "不舒服", "pictogramId": "p_unwell", "role": "content", "altIds": ["p_uncomfortable"] },
+        { "segment": "想", "word": "想", "pictogramId": "p_want", "role": "content" },
+        { "segment": "贴膏药", "word": "贴膏药", "pictogramId": "tcm_plaster", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-013",
+      "scenario": "中医调理",
+      "sentenceType": "疑问",
+      "sentence": "复诊了吗",
+      "expected": [
+        { "segment": "复诊", "word": "复诊", "pictogramId": "m_follow_up", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-014",
+      "scenario": "中医调理",
+      "sentenceType": "正反问",
+      "sentence": "膝盖疼不疼",
+      "note": "疼不疼 折叠同 rec-042 腿麻不麻 模式；禁出 不(p_no)",
+      "forbiddenIds": ["p_no"],
+      "expected": [
+        { "segment": "膝盖", "word": "膝盖", "pictogramId": "p_knee", "role": "content" },
+        { "segment": "疼", "word": "疼", "pictogramId": "p_pain", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-016",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我心慌，胸口难受",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "心慌", "word": "心慌", "pictogramId": "m_palpitation", "role": "content" },
+        { "segment": "胸口", "word": "胸口", "pictogramId": "p_chest", "role": "content" },
+        { "segment": "难受", "word": "难受", "pictogramId": "p_uncomfortable", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-017",
+      "scenario": "中医调理",
+      "sentenceType": "疑问",
+      "sentence": "你耳鸣吗",
+      "expected": [
+        { "segment": "你", "word": "你", "pictogramId": "p_you", "role": "content" },
+        { "segment": "耳鸣", "word": "耳鸣", "pictogramId": "m_tinnitus", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-018",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "我痰多，咳嗽",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "痰", "word": "痰", "pictogramId": "m_phlegm", "role": "content" },
+        { "segment": "多", "word": "多", "pictogramId": "d_many", "role": "content" },
+        { "segment": "咳嗽", "word": "咳嗽", "pictogramId": "p_cough", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-019",
+      "scenario": "中医调理",
+      "sentenceType": "陈述",
+      "sentence": "背上痒，帮我挠一挠",
+      "note": "挠 无图不期望——真实残差观察点（手绘待办相关）",
+      "expected": [
+        { "segment": "背", "word": "背", "pictogramId": "p_back_body", "role": "content" },
+        { "segment": "痒", "word": "痒", "pictogramId": "m_itch", "role": "content" },
+        { "segment": "帮", "word": "帮", "pictogramId": "p_help", "role": "content" },
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-020",
+      "scenario": "问候礼貌",
+      "sentenceType": "问候",
+      "sentence": "晚上好",
+      "note": "与 dev rec-021 早上好 平行的晚间问候，词形不同",
+      "expected": [
+        { "segment": "晚上", "word": "晚上", "pictogramId": "p_night", "role": "content" },
+        { "segment": "好", "word": "好", "pictogramId": "p_good", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-021",
+      "scenario": "饮食",
+      "sentenceType": "陈述",
+      "sentence": "早饭想吃粥",
+      "expected": [
+        { "segment": "早饭", "word": "早饭", "pictogramId": "p_breakfast", "role": "content" },
+        { "segment": "想", "word": "想", "pictogramId": "p_want", "role": "content" },
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" },
+        { "segment": "粥", "word": "粥", "pictogramId": "p_congee", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-022",
+      "scenario": "饮食",
+      "sentenceType": "疑问",
+      "sentence": "晚饭后喝茶吗",
+      "expected": [
+        { "segment": "晚饭", "word": "晚饭", "pictogramId": "p_dinner", "role": "content" },
+        { "segment": "后", "word": "后", "pictogramId": "d_behind", "role": "content" },
+        { "segment": "喝", "word": "喝", "pictogramId": "p_drink", "role": "content" },
+        { "segment": "茶", "word": "茶", "pictogramId": "p_tea", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-023",
+      "scenario": "排泄卫生",
+      "sentenceType": "陈述",
+      "sentence": "想洗个澡，水要热的",
+      "expected": [
+        { "segment": "想", "word": "想", "pictogramId": "p_want", "role": "content" },
+        { "segment": "洗澡", "word": "洗澡", "pictogramId": "p_shower", "role": "content" },
+        { "segment": "水", "word": "水", "pictogramId": "p_water", "role": "content" },
+        { "segment": "要", "word": "要", "pictogramId": null, "role": "function" },
+        { "segment": "热", "word": "热", "pictogramId": "p_hot", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-024",
+      "scenario": "症状医疗",
+      "sentenceType": "疑问",
+      "sentence": "要量血压吗",
+      "note": "量血压 由 量(m_measure) 同义词整词覆盖（同 rec-002 喝水 整体图口径）；dev rec-041 为祈使 量一下血压，本句测疑问式泛化",
+      "expected": [
+        { "segment": "要", "word": "要", "pictogramId": null, "role": "function" },
+        { "segment": "量血压", "word": "量血压", "pictogramId": "m_measure", "role": "content" },
+        { "segment": "吗", "word": "吗", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-025",
+      "scenario": "指令照护",
+      "sentenceType": "祈使",
+      "sentence": "张开嘴，检查一下",
+      "note": "张开嘴 为 张嘴(p_open_mouth) 同义词；组合 dev 中分离出现的两条指令",
+      "expected": [
+        { "segment": "张开嘴", "word": "张嘴", "pictogramId": "p_open_mouth", "role": "content" },
+        { "segment": "检查", "word": "检查", "pictogramId": "m_check", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-026",
+      "scenario": "应急安全",
+      "sentenceType": "陈述",
+      "sentence": "救护车来了",
+      "note": "dev rec-079 为祈使 叫救护车，本句测陈述式泛化",
+      "expected": [
+        { "segment": "救护车", "word": "救护车", "pictogramId": "pl_ambulance", "role": "content" },
+        { "segment": "来", "word": "来", "pictogramId": "p_come", "role": "content" },
+        { "segment": "了", "word": "了", "pictogramId": null, "role": "function" }
+      ]
+    },
+    {
+      "id": "tst-027",
+      "scenario": "时间",
+      "sentenceType": "疑问",
+      "sentence": "药几点吃",
+      "note": "倒装疑问句（宾语前置），dev rec-053 现在几点 的结构泛化",
+      "expected": [
+        { "segment": "药", "word": "药", "pictogramId": "p_medicine", "role": "content" },
+        { "segment": "几点", "word": "几点", "pictogramId": "p_clock", "role": "content" },
+        { "segment": "吃", "word": "吃", "pictogramId": "p_eat", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-028",
+      "scenario": "情绪",
+      "sentenceType": "陈述",
+      "sentence": "我有点难过",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "有点", "word": "有点", "pictogramId": null, "role": "function" },
+        { "segment": "难过", "word": "难过", "pictogramId": "p_upset", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-029",
+      "scenario": "地点出行",
+      "sentenceType": "陈述",
+      "sentence": "想回家",
+      "note": "dev rec-019 我们要去医院 的短句泛化（意愿+地点动词）",
+      "expected": [
+        { "segment": "想", "word": "想", "pictogramId": "p_want", "role": "content" },
+        { "segment": "回家", "word": "回家", "pictogramId": "a_go_home", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-030",
+      "scenario": "天气环境",
+      "sentenceType": "陈述",
+      "sentence": "明天下雨",
+      "note": "dev rec-084 今天下雨 的时间词替换泛化",
+      "expected": [
+        { "segment": "明天", "word": "明天", "pictogramId": "p_tomorrow", "role": "content" },
+        { "segment": "下雨", "word": "下雨", "pictogramId": "w_rain", "role": "content" }
+      ]
+    },
+    {
+      "id": "tst-031",
+      "scenario": "动作活动",
+      "sentenceType": "祈使",
+      "sentence": "我要去厕所，扶我一下",
+      "note": "复合指令（dev rec-003 去厕所 + rec-071 扶我一下 的新组合），测多子句处理",
+      "expected": [
+        { "segment": "我", "word": "我", "pictogramId": "p_i", "role": "content" },
+        { "segment": "要", "word": "要", "pictogramId": null, "role": "function" },
+        { "segment": "去", "word": "去", "pictogramId": "p_go", "role": "content" },
+        { "segment": "厕所", "word": "厕所", "pictogramId": "p_toilet", "role": "content" },
+        { "segment": "扶", "word": "扶", "pictogramId": "a_support", "role": "content" }
+      ]
+    }
+  ]
+}

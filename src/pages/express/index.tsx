@@ -1,3 +1,4 @@
+// ===== 表达模式页（TabBar「说」）：点选图符组句 → AI 候选句 → 朗读/收藏，按程度档展示内容 =====
 import { useEffect, useState } from 'react';
 import { View, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';

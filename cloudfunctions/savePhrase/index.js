@@ -1,3 +1,14 @@
+// ===== 常用语云函数：保存收藏短语（saved_phrases 集合 增 / 改）=====
+/**
+ * 输入 event：{ phrase: SavedPhrase }，字段：
+ *   id?: string              // 前端生成的短语 id；有则按 _id 覆盖（改），无则新增（增）
+ *   sentence: string         // 短语文本（必填，为空报错）
+ *   pictogramIds?: string[]  // 组成短语的图符 id 列表
+ *   usageCount?: number      // 使用次数，默认 0
+ *   createdAt?: number       // 创建时间戳（缺省用服务端时间）
+ *   lastUsedAt?: number      // 最近使用时间戳（缺省用服务端时间）
+ * 输出 data：{ id: string }  // 云端文档 _id（即 phrase.id 或新生成的 _id）
+ */
 const cloud = require('wx-server-sdk')
 cloud.init({ env: cloud.DYNAMIC_CURRENT_ENV })
 const db = cloud.database()

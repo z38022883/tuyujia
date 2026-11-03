@@ -1,3 +1,4 @@
+// ===== 中医辅助训练主页：穴位按揉/音乐调息/嘴巴练习入口 + 打卡记录、连续天数、勋章墙 =====
 import { useEffect, useMemo, useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';

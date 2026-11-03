@@ -1,3 +1,4 @@
+// ===== 康复训练记录页：历史训练会话列表（时间、等级、时长、完成度）=====
 import { useEffect } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import dayjs from 'dayjs';

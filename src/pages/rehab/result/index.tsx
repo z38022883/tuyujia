@@ -1,3 +1,4 @@
+// ===== 康复训练结果页：汇总本次会话正确率/维度表现，支持再来一组或返回 =====
 import { useEffect, useMemo } from 'react';
 import { View, Text, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';

@@ -1,3 +1,4 @@
+// ===== 我的页（TabBar）：TTS 设置（语速/音色/自动朗读，试听）与患者程度档案展示 =====
 import { useEffect, useState } from 'react';
 import { View, Text, Button, Slider, Switch, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';

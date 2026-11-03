@@ -16,7 +16,7 @@ from matplotlib import font_manager
 font_manager.fontManager.addfont(r"C:\Windows\Fonts\msyh.ttc")
 plt.rcParams["font.family"] = "Microsoft YaHei"
 
-OUT = sys.argv[1] if len(sys.argv) > 1 else r"D:\projects\tuyujia\docs\图5-1_接收匹配算法机制图.png"
+OUT = sys.argv[1] if len(sys.argv) > 1 else r"D:\projects\tuyujia\docs\算法优化\图5-1_接收匹配算法机制图.png"
 
 W = 22.0
 DPI = 160

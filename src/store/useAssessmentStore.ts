@@ -42,6 +42,10 @@ interface AssessmentState {
 export const useAssessmentStore = create<AssessmentState>((set, get) => ({
   assessments: [],
 
+  /**
+   * 查：从本地存储恢复评估记录列表。
+   * 输入：无；输出：无（写入 state：assessments = AssessmentResult[]）
+   */
   load: () => {
     const assessments = storage.get<AssessmentResult[]>(
       STORAGE_KEYS.assessments,
@@ -50,6 +54,19 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     set({ assessments })
   },
 
+  /**
+   * 增：新增一条评估记录，并同步写入患者程度档案（source='assess'）。
+   * 输入 input: AddAssessmentInput {
+   *   aqScore?: number            // WAB 失语商 AQ 分（无量表分时缺省）
+   *   severity: 'severe' | 'moderate' | 'mild'  // 评估档位（必填）
+   *   dimensions?: AssessmentDimensions  // 四维得分
+   *   assessedAt: number          // 评估时间戳（必填）
+   *   note?: string               // 备注（评估场景、量表名称等）
+   *   source?: AssessmentSource   // 来源，默认 'manual-entry'
+   * }
+   * 输出：AssessmentResult – 完整记录 { assessmentId, ..., version: 1 }。
+   * 副作用：assessments 头插（保留最近 20 条）+ 本地持久化 + useProfileStore.applyAssessment 联动
+   */
   addAssessment: (input) => {
     const record: AssessmentResult = {
       assessmentId: newAssessmentId(),
@@ -75,6 +92,11 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     return record
   },
 
+  /**
+   * 删：按 id 删除一条评估记录（不影响已写入档案的档位）。
+   * 输入：assessmentId – AssessmentResult.assessmentId；输出：无。
+   * 副作用：更新 assessments + 本地持久化
+   */
   removeAssessment: (assessmentId) => {
     const assessments = get().assessments.filter(
       (a) => a.assessmentId !== assessmentId

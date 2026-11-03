@@ -1,19 +1,22 @@
 /**
  * 接收分词 golden 离线评估 runner（P0）。
  *
- * 读取 scripts/golden/golden-set.json，用真实的 src/utils/text-to-image-matcher
- * 对每条句子跑匹配，计算"内容词召回"并输出报告。作为 P1/P2 优化的回归基准。
+ * 读取指定的评估集（默认开发集 golden-set.json；第二版留出集传 test-set.json），
+ * 用真实的 src/utils/text-to-image-matcher 对每条句子跑匹配，计算"内容词召回"并输出报告。
+ * 开发集用于回归基准；留出集只评测、不驱动改动（留出纪律见 test-set.json notes）。
  *
  * 用法：
  *   node -r ts-node/register/transpile-only -r ./scripts/golden/register-alias.cjs \
- *        ./scripts/golden/run-golden.ts
+ *        ./scripts/golden/run-golden.ts [数据集文件名]
+ *   # 默认 golden-set.json → golden-report.md；test-set.json → test-report.md
  */
 import * as fs from 'fs'
 import * as path from 'path'
 import { matchTextToImages } from '../../src/utils/text-to-image-matcher'
 
-const GOLDEN = path.join(__dirname, 'golden-set.json')
-const OUT = path.join(__dirname, 'golden-report.md')
+const SET_FILE = process.argv[2] || 'golden-set.json'
+const GOLDEN = path.join(__dirname, SET_FILE)
+const OUT = path.join(__dirname, SET_FILE.replace(/\.json$/, '') + '-report.md')
 
 type ExpectedRole = 'content' | 'function'
 interface ExpectedItem {

@@ -22,6 +22,14 @@ export function useSubmit(onDone: TaskBodyProps['onDone']) {
   const [locked, setLocked] = useState(false)
   const settings = useAppStore((s) => s.settings)
 
+  /**
+   * 提交单题作答（增：向会话追加一条 RehabTaskRecord）。
+   * 输入：partial – RehabTaskRecord 部分字段 { taskId, taskType, dimension,
+   *        correct?, rating?, answer?, durationSec }（由各题型组件按判分口径填充）
+   *        opts – { delay?: number  // 反馈展示时长 ms，默认 1300
+   *                 quiet?: boolean // 静默提交，不弹对/错反馈、不播鼓励语音 }
+   * 输出：无。副作用：展示对/错反馈 → 播鼓励语音 → delay 后回调 onDone(partial)
+   */
   const submit = (partial: Partial<RehabTaskRecord>, opts: SubmitOptions = {}) => {
     if (locked) return
     setLocked(true)

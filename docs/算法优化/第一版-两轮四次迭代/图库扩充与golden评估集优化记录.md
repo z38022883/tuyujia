@@ -2,7 +2,7 @@
 
 > 记录时间：2026-09-09
 > 涉及模块：接收（文本→图符）、seed 图库、golden 离线评估
-> 关联文档：`docs/接收分词优化.txt`（P0/P1 路线）、`scripts/golden/`（评估 harness）
+> 关联文档：`docs/接收分词优化.txt`（P0/P1 路线，文件已佚）、`scripts/golden/`（评估 harness）
 
 ---
 
@@ -148,7 +148,7 @@ https://static.arasaac.org/pictograms/{id}/{id}_300.png
 
 ## 六、剩余问题（下一步：算法优化靶子）
 
-词库侧已清干净，**剩余问题全部属于匹配算法**，正是 `docs/接收分词优化.txt` 规划的 P1/P2：
+词库侧已清干净，**剩余问题全部属于匹配算法**，正是 `docs/接收分词优化.txt`（文件已佚）规划的 P1/P2：
 
 1. **复合词被 `Intl.Segmenter` 拆散**（占比最大）：
    - 沟通修复场景召回仅 33.3%（再说一次/写下来/我不明白/慢慢说）；
@@ -197,7 +197,7 @@ node scripts/golden/check-golden-keys.mjs
 
 - `src/data/seed/categories.json`：quickchat 补入 你好/再见/对不起/辛苦，actions 补入 扶/抬手（此前这两块是显式 tiles 策展，新图符完全不可见）；home 板顶部置入 你好/再见/对不起/辛苦（是/不 之后）。
 - `src/data/boards.ts`：中度词板 16→20（+你好/再见/对不起/辛苦）；重度表达板用派生 `SEVERE_EXPRESS_WORDS`（刚需 6 + 你好/对不起），`SEVERE_WORDS` 本体保持 6 词——它是接收侧核心词优先级来源（`severity-display.ts`），并入社交词会让"你好，医生来看你了"优先出 你好 而非 医生。
-- 规格同步：`docs/患者程度自选与功能适配方案.md` v0.3。
+- 规格同步：`docs/产品方案/患者程度自选与功能适配方案.md` v0.3。
 
 ### P1 — 激活 manualOrder 板内排序
 
@@ -218,7 +218,7 @@ node scripts/golden/check-golden-keys.mjs
 
 ## 十、第二轮：接收分词算法优化（2026-09-10）
 
-> 方案存档：`docs/接收分词算法优化方案.md`。目标：召回 ≥97%、反转违反 0、精度 ≥90%、零回归。
+> 方案存档：`./接收分词算法优化方案.md`。目标：召回 ≥97%、反转违反 0、精度 ≥90%、零回归。
 
 ### 10.1 根因
 

@@ -14,7 +14,7 @@ import type {
 import generatedTasksJson from './tasks.generated.json'
 import manualTasksJson from './tasks.manual.json'
 
-// ===== 等级元信息（源自 docs/2.txt 分级方案）=====
+// ===== 等级元信息（源自 docs/产品方案/康复分级文献笔记.md 分级方案）=====
 
 export const REHAB_LEVELS: RehabLevelMeta[] = [
   {
@@ -70,7 +70,7 @@ export const REHAB_TASK_TYPE_LABELS: Record<RehabTaskType, string> = {
   'script-dialogue': '生活脚本对话'
 }
 
-/** 家庭沟通支持指引（源自 docs/2.txt 每级「家庭沟通支持」） */
+/** 家庭沟通支持指引（源自 docs/产品方案/康复分级文献笔记.md 每级「家庭沟通支持」） */
 export const REHAB_FAMILY_GUIDES: Record<RehabLevel, { title: string; points: string[] }> = {
   severe: {
     title: '重度 · 家庭沟通支持',
@@ -102,7 +102,7 @@ export const REHAB_FAMILY_GUIDES: Record<RehabLevel, { title: string; points: st
 
 const TASK_LIBRARY: RehabTask[] = [
   // 生成题（scripts/gen-rehab-tasks.mjs，结构化题型）+ 手写题（叙事题型），
-  // 校验与覆盖矩阵见 scripts/check-rehab-tasks.mjs → docs/康复题库覆盖矩阵.md
+  // 校验与覆盖矩阵见 scripts/check-rehab-tasks.mjs → docs/产品方案/康复题库覆盖矩阵.md
   ...(generatedTasksJson as unknown as RehabTask[]),
   ...(manualTasksJson as unknown as RehabTask[])
 ]

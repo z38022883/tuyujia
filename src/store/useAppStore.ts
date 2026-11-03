@@ -1,3 +1,4 @@
+// ===== 表达/接收主流程状态管理：图符选择、候选句、朗读播报、收藏短语、表达历史的增删查改 =====
 import { create } from 'zustand'
 import type {
   PictogramEntry,
@@ -66,11 +67,16 @@ interface AppState {
   setShowSettings: (v: boolean) => void
   setShowHistory: (v: boolean) => void
 
-  // === Actions: 收藏 / 历史 ===
+  // === Actions: 收藏 / 历史（增删查改，本地持久化 + 云端同步） ===
+  /** 增：把当前选中图符保存为常用语 */
   saveCurrentAsPhrase: () => SavedPhrase | null
+  /** 删：按 id 删除常用语 */
   deletePhrase: (id: string) => void
+  /** 删：按 id 删除表达历史 */
   deleteExpression: (id: string) => void
+  /** 查/播：回填常用语对应的图符并朗读 */
   playPhrase: (phrase: SavedPhrase) => Promise<void>
+  /** 增：记录一次接收模式表达历史 */
   recordReceiveExpression: (inputText: string, pictograms: PictogramEntry[]) => void
 
   // === Actions: 设置 ===
@@ -200,7 +206,7 @@ export const useAppStore = create<AppState>((set, get) => ({
 
   speakSentence: async (sentence, pictogramIds = []) => {
     set({ showPlayback: true, playbackSentence: sentence })
-    // 记录表达历史
+    // 增：记录一次表达历史（本地 + 云端 saveExpression）
     const { selectedPictograms, expressions } = get()
     const expr: Expression = {
       id: newExpressionId(),
@@ -243,6 +249,13 @@ export const useAppStore = create<AppState>((set, get) => ({
   setShowSettings: (v) => set({ showSettings: v }),
   setShowHistory: (v) => set({ showHistory: v }),
 
+  /**
+   * 增：把当前选中图符保存为常用语。
+   * 输入：无（取当前 selectedPictograms）
+   * 输出：SavedPhrase | null – 新增的常用语记录 { id, sentence, pictogramIds,
+   *        usageCount=0, createdAt, lastUsedAt }；未选中图符时返回 null。
+   * 副作用：更新 savedPhrases + 本地持久化 + 云端 savePhrase 同步
+   */
   saveCurrentAsPhrase: () => {
     const { selectedPictograms, savedPhrases } = get()
     if (!selectedPictograms.length) return null
@@ -264,6 +277,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     return phrase
   },
 
+  /**
+   * 删：按 id 删除常用语。
+   * 输入：id – SavedPhrase.id；输出：无。
+   * 副作用：更新 savedPhrases + 本地持久化 + 云端 deletePhrase 同步
+   */
   deletePhrase: (id) => {
     const next = get().savedPhrases.filter((p) => p.id !== id)
     set({ savedPhrases: next })
@@ -273,6 +291,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     )
   },
 
+  /**
+   * 删：按 id 删除表达历史。
+   * 输入：id – Expression.id；输出：无。
+   * 副作用：更新 expressions + 本地持久化 + 云端 deleteExpression 同步
+   */
   deleteExpression: (id) => {
     const next = get().expressions.filter((e) => e.id !== id)
     set({ expressions: next })
@@ -282,6 +305,11 @@ export const useAppStore = create<AppState>((set, get) => ({
     )
   },
 
+  /**
+   * 增：记录一次接收模式的表达历史。
+   * 输入：inputText – 用户输入的原文；pictograms – 匹配到的图符列表（取其 id 和中文标签）
+   * 输出：无。副作用：更新 expressions（保留最近 200 条）+ 本地持久化 + 云端 saveExpression 同步
+   */
   recordReceiveExpression: (inputText, pictograms) => {
     const expr: Expression = {
       id: newExpressionId(),
@@ -303,18 +331,32 @@ export const useAppStore = create<AppState>((set, get) => ({
     )
   },
 
+  /**
+   * 查/播：按常用语记录回填图符选择并朗读。
+   * 输入：phrase – SavedPhrase { id, sentence, pictogramIds, usageCount, lastUsedAt }
+   * 输出：Promise<void>；副作用：重置 selectedPictograms + 走 speakSentence 记一条历史
+   */
   playPhrase: async (phrase) => {
     const pictos = getPictogramsByIds(phrase.pictogramIds)
     set({ selectedPictograms: pictos })
     await get().speakSentence(phrase.sentence, phrase.pictogramIds)
   },
 
+  /**
+   * 改：更新 TTS 设置。
+   * 输入：partial – TtsSettings 部分字段 { rate?, voiceName?, autoSpeak? }；输出：无。
+   * 副作用：合并写入 settings + 本地持久化
+   */
   updateSettings: (partial) => {
     const settings = { ...get().settings, ...partial }
     set({ settings })
     storage.set(STORAGE_KEYS.settings, settings)
   },
 
+  /**
+   * 查：应用启动时从本地存储恢复设置 / 表达历史 / 常用语。
+   * 输入：无；输出：无（写入 state：settings、expressions、savedPhrases）
+   */
   loadLocalData: () => {
     const settings = storage.get<TtsSettings>(STORAGE_KEYS.settings, defaultSettings)
     const expressions = storage.get<Expression[]>(STORAGE_KEYS.expressions, [])
@@ -322,6 +364,8 @@ export const useAppStore = create<AppState>((set, get) => ({
     set({ settings, expressions, savedPhrases })
   },
 
+  /** 改：整体回填表达历史列表（输入 list: Expression[]，如云端拉取结果；输出无） */
   setExpressions: (list) => set({ expressions: list }),
+  /** 改：整体回填常用语列表（输入 list: SavedPhrase[]，如云端拉取结果；输出无） */
   setSavedPhrases: (list) => set({ savedPhrases: list })
 }))

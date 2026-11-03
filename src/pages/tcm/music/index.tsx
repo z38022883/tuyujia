@@ -1,3 +1,4 @@
+// ===== 音乐调息页：五行音乐套餐 + 呼吸节奏引导计时，完成后打卡（可获勋章）=====
 import { useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';

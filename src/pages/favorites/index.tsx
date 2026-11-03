@@ -1,3 +1,4 @@
+// ===== 收藏页：常用语管理 —— 拉取云端/本地列表（查）、点读（播）、删除（删）=====
 import { useEffect, useState } from 'react';
 import { View, ScrollView, Text, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';

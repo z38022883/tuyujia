@@ -1588,7 +1588,9 @@
     "categoryId": "emotions",
     "synonyms": [
       "寒冷",
-      "好冷"
+      "好冷",
+      "怕冷",
+      "畏寒"
     ],
     "disambiguationHints": {},
     "usageCount": 0,
@@ -1673,7 +1675,9 @@
     },
     "categoryId": "emotions",
     "synonyms": [
-      "口渴"
+      "口渴",
+      "口干",
+      "嘴干"
     ],
     "disambiguationHints": {},
     "usageCount": 0,
@@ -2525,7 +2529,10 @@
     },
     "categoryId": "medical",
     "synonyms": [
-      "大夫"
+      "大夫",
+      "中医",
+      "中医大夫",
+      "老中医"
     ],
     "disambiguationHints": {
       "semanticDomain": "medical"
@@ -3202,7 +3209,9 @@
       ]
     },
     "categoryId": "medical",
-    "synonyms": [],
+    "synonyms": [
+      "不舒坦"
+    ],
     "disambiguationHints": {
       "semanticDomain": "medical"
     },
@@ -4494,7 +4503,9 @@
     "synonyms": [
       "疲劳",
       "疲倦",
-      "没力气"
+      "没力气",
+      "乏力",
+      "体虚"
     ],
     "disambiguationHints": {
       "semanticDomain": "emotions"
@@ -6305,6 +6316,373 @@
       "semanticDomain": "daily"
     },
     "manualOrder": 14,
+    "usageCount": 0
+  },
+  {
+    "id": "m_insomnia",
+    "imageUrl": "https://static.arasaac.org/pictograms/31276/31276_300.png",
+    "labels": {
+      "zh": [
+        "失眠"
+      ],
+      "en": [
+        "insomnia"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "睡不着",
+      "睡不好",
+      "入睡困难"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_constipation",
+    "imageUrl": "https://static.arasaac.org/pictograms/37829/37829_300.png",
+    "labels": {
+      "zh": [
+        "便秘"
+      ],
+      "en": [
+        "constipation"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "大便干",
+      "拉不出来"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_diarrhea",
+    "imageUrl": "https://static.arasaac.org/pictograms/38314/38314_300.png",
+    "labels": {
+      "zh": [
+        "腹泻"
+      ],
+      "en": [
+        "diarrhea"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "拉肚子",
+      "拉稀",
+      "闹肚子"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_sweat",
+    "imageUrl": "https://static.arasaac.org/pictograms/35721/35721_300.png",
+    "labels": {
+      "zh": [
+        "出汗"
+      ],
+      "en": [
+        "sweat"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "流汗",
+      "出虚汗",
+      "盗汗"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_tinnitus",
+    "imageUrl": "https://static.arasaac.org/pictograms/39508/39508_300.png",
+    "labels": {
+      "zh": [
+        "耳鸣"
+      ],
+      "en": [
+        "tinnitus"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "耳朵响",
+      "嗡嗡响"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_itch",
+    "imageUrl": "https://static.arasaac.org/pictograms/11356/11356_300.png",
+    "labels": {
+      "zh": [
+        "痒"
+      ],
+      "en": [
+        "itch"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "瘙痒",
+      "发痒"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_phlegm",
+    "imageUrl": "https://static.arasaac.org/pictograms/25249/25249_300.png",
+    "labels": {
+      "zh": [
+        "痰"
+      ],
+      "en": [
+        "phlegm"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "有痰",
+      "咳痰"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_palpitation",
+    "imageUrl": "https://static.arasaac.org/pictograms/5490/5490_300.png",
+    "labels": {
+      "zh": [
+        "心慌"
+      ],
+      "en": [
+        "palpitation"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "心悸",
+      "胸口闷",
+      "心跳快"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "p_bitter",
+    "imageUrl": "https://static.arasaac.org/pictograms/37832/37832_300.png",
+    "labels": {
+      "zh": [
+        "苦"
+      ],
+      "en": [
+        "bitter"
+      ]
+    },
+    "categoryId": "food",
+    "synonyms": [
+      "味苦",
+      "太苦"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "food"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "p_spicy",
+    "imageUrl": "https://static.arasaac.org/pictograms/37834/37834_300.png",
+    "labels": {
+      "zh": [
+        "辣"
+      ],
+      "en": [
+        "spicy"
+      ]
+    },
+    "categoryId": "food",
+    "synonyms": [
+      "辣椒",
+      "太辣"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "food"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "tcm_acupuncture",
+    "imageUrl": "https://static.arasaac.org/pictograms/38119/38119_300.png",
+    "labels": {
+      "zh": [
+        "针灸"
+      ],
+      "en": [
+        "acupuncture"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "扎针",
+      "银针",
+      "针刺"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "tcm_tuina",
+    "imageUrl": "https://static.arasaac.org/pictograms/9010/9010_300.png",
+    "labels": {
+      "zh": [
+        "推拿"
+      ],
+      "en": [
+        "massage"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "按摩",
+      "做推拿",
+      "揉一揉"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "tcm_herbs",
+    "imageUrl": "https://static.arasaac.org/pictograms/26126/26126_300.png",
+    "labels": {
+      "zh": [
+        "中药",
+        "草药"
+      ],
+      "en": [
+        "Chinese herbal medicine"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "汤药",
+      "中药汤",
+      "熬药",
+      "抓药"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "tcm_plaster",
+    "imageUrl": "https://static.arasaac.org/pictograms/29024/29024_300.png",
+    "labels": {
+      "zh": [
+        "膏药"
+      ],
+      "en": [
+        "medicinal plaster"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "贴膏药",
+      "膏药贴",
+      "药膏"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "m_follow_up",
+    "imageUrl": "https://static.arasaac.org/pictograms/24609/24609_300.png",
+    "labels": {
+      "zh": [
+        "复诊"
+      ],
+      "en": [
+        "follow-up visit"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "复查",
+      "预约",
+      "再来医院"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "p_waist",
+    "imageUrl": "https://static.arasaac.org/pictograms/10372/10372_300.png",
+    "labels": {
+      "zh": [
+        "腰"
+      ],
+      "en": [
+        "waist"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "腰部",
+      "后腰"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
+    "usageCount": 0
+  },
+  {
+    "id": "p_knee",
+    "imageUrl": "https://static.arasaac.org/pictograms/14540/14540_300.png",
+    "labels": {
+      "zh": [
+        "膝盖"
+      ],
+      "en": [
+        "knee"
+      ]
+    },
+    "categoryId": "medical",
+    "synonyms": [
+      "膝关节"
+    ],
+    "disambiguationHints": {
+      "semanticDomain": "medical"
+    },
     "usageCount": 0
   }
 ]

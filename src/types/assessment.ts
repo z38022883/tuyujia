@@ -1,7 +1,7 @@
 // ===== 分级评估结果（闭环数据层）=====
 // 评估闭环：录入/评估模块产出 AssessmentResult → 写入档案（source='assess'）→
 // 康复训练消费（等级 + 维度短板加权出题）。
-// 对应 docs/康复训练模块方案.md §分级评估；AQ 分级标准源自 docs/2.txt（WAB 失语商）。
+// 对应 docs/产品方案/康复训练模块方案.md §分级评估；AQ 分级标准源自 docs/产品方案/康复分级文献笔记.md（WAB 失语商）。
 
 import type { PatientSeverity } from './profile'
 
@@ -37,7 +37,7 @@ export interface AssessmentResult {
   version: 1
 }
 
-/** AQ 换算档位：≤50 重度 / 51~75 中度 / 76~93.8 轻度（docs/2.txt 分级标准） */
+/** AQ 换算档位：≤50 重度 / 51~75 中度 / 76~93.8 轻度（docs/产品方案/康复分级文献笔记.md 分级标准） */
 export const AQ_MAX = 93.8
 
 export function severityFromAq(aq: number): PatientSeverity {

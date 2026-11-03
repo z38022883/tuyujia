@@ -1,3 +1,4 @@
+// ===== 语音合成服务：文本 → 语音播放（h5 走浏览器 SpeechSynthesis，微信端走云函数）=====
 import Taro from '@tarojs/taro'
 import { callFunction } from './cloud'
 import type { TtsSettings } from '@/types'
@@ -44,6 +45,14 @@ function clearActivePlayback(): void {
   }
 }
 
+/**
+ * 朗读文本（增：向播放通道提交一段新的合成播放任务，同时只允许一路声音）。
+ * 输入：text – 待朗读文本（空串直接返回）；settings – TtsSettings
+ *       { rate: number  // 语速 0.5~2
+ *         voiceName: string  // 音色（'female' | 'male'，微信端传给云函数）
+ *         autoSpeak: boolean }  // 是否自动朗读（本函数不消费）
+ * 输出：Promise<void> – 播放结束（或失败降级 toast）后 resolve
+ */
 export function speak(text: string, settings: TtsSettings): Promise<void> {
   if (!text) return Promise.resolve()
   if (isH5) return speakWithBrowser(text, settings)
@@ -182,7 +191,7 @@ function removeTempFile(filePath: string): void {
   }
 }
 
-/** 停止朗读（h5 与 weapp 均生效） */
+/** 停止朗读（删：终止当前播放并清理临时音频文件；输入无，输出无；h5 与 weapp 均生效） */
 export function stopPlayback(): void {
   clearActivePlayback()
   if (isH5) {

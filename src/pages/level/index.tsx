@@ -1,3 +1,4 @@
+// ===== 程度选择页：照护者选择患者程度（轻/中/重）→ 写入患者程度档案，作为说/听/康复的内容档位 =====
 import { useState } from 'react'
 import { View, Text, ScrollView } from '@tarojs/components'
 import Taro from '@tarojs/taro'

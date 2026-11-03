@@ -1,5 +1,5 @@
 // ===== 接收（听）"展示给患者"按程度的裁剪规则 =====
-// 对应 docs/患者程度自选与功能适配方案.md §4
+// 对应 docs/产品方案/患者程度自选与功能适配方案.md §4
 
 import type { PictogramEntry } from '@/types'
 import { SEVERE_WORDS } from '@/data/boards'

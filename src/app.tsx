@@ -1,3 +1,4 @@
+// ===== 应用入口：初始化云开发；启动时从本地存储恢复程度档案、表达/收藏、康复训练数据 =====
 import { useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { useAppStore } from '@/store/useAppStore';

@@ -1,3 +1,4 @@
+// ===== 评估录入页：照护者录入评估结果（AQ 分/档位/四维分/备注）→ 新增评估记录并写入程度档案 =====
 import { useEffect, useMemo, useState } from 'react';
 import { View, Text, ScrollView, Input, Textarea, Picker, Slider } from '@tarojs/components';
 import Taro from '@tarojs/taro';

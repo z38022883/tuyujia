@@ -1,0 +1,350 @@
+{
+  "probedAt": "2026-11-03T05:54:41.888Z",
+  "results": [
+    {
+      "word": "失眠",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 31276,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/31276/31276_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "便秘",
+      "covered": null,
+      "zhHits": 4,
+      "hit": {
+        "arasaacId": 37829,
+        "via": "zh",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/37829/37829_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "腹泻",
+      "covered": null,
+      "zhHits": 4,
+      "hit": {
+        "arasaacId": 38314,
+        "via": "zh",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/38314/38314_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "出汗",
+      "covered": null,
+      "zhHits": 3,
+      "hit": {
+        "arasaacId": 35721,
+        "via": "zh",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/35721/35721_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "口干",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 8560,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/8560/8560_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "没胃口",
+      "covered": null,
+      "searches": {
+        "zh:没胃口": 0,
+        "zh:食欲": 0,
+        "en:appetite": 0,
+        "en:hunger": 2
+      },
+      "hit": {
+        "arasaacId": 7272,
+        "via": "en:hunger",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/7272/7272_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "心慌",
+      "covered": null,
+      "searches": {
+        "zh:心慌": 0,
+        "zh:心跳": 0,
+        "en:palpitation": 0,
+        "en:heartbeat": 0,
+        "en:arrhythmia": 0
+      }
+    },
+    {
+      "word": "耳鸣",
+      "covered": null,
+      "zhHits": 1,
+      "hit": {
+        "arasaacId": 39508,
+        "via": "zh",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/39508/39508_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "痒",
+      "covered": null,
+      "zhHits": 1,
+      "hit": {
+        "arasaacId": 11356,
+        "via": "zh",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/11356/11356_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "痰",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 25249,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/25249/25249_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "苦",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 37832,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/37832/37832_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "针灸",
+      "covered": null,
+      "zhHits": 1,
+      "hit": {
+        "arasaacId": 38119,
+        "via": "zh",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/38119/38119_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "推拿",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 37769,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/37769/37769_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "拔罐",
+      "covered": null,
+      "searches": {
+        "zh:拔罐": 0,
+        "zh:拔火罐": 0,
+        "zh:罐": 1
+      },
+      "hit": {
+        "arasaacId": 3322,
+        "via": "zh:罐",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/3322/3322_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "艾灸",
+      "covered": null,
+      "searches": {
+        "zh:艾灸": 0,
+        "zh:灸": 0,
+        "en:moxibustion": 0,
+        "en:cauterization": 0
+      }
+    },
+    {
+      "word": "把脉",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 24805,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/24805/24805_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "中药",
+      "covered": null,
+      "searches": {
+        "zh:中药": 0,
+        "zh:草药": 1
+      },
+      "hit": {
+        "arasaacId": 26126,
+        "via": "zh:草药",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/26126/26126_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "膏药",
+      "covered": null,
+      "zhHits": 1,
+      "hit": {
+        "arasaacId": 38585,
+        "via": "zh",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/38585/38585_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "热敷",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 6932,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/6932/6932_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "泡脚",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 25845,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/25845/25845_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "复诊",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 24609,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/24609/24609_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "忌口",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 11239,
+        "via": "en",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/11239/11239_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "舒服",
+      "covered": null,
+      "zhHits": 5,
+      "hit": {
+        "arasaacId": 37182,
+        "via": "zh",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/37182/37182_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "腰",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 10372,
+        "via": "en",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/10372/10372_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "膝盖",
+      "covered": null,
+      "zhHits": 1,
+      "hit": {
+        "arasaacId": 2810,
+        "via": "zh",
+        "schematic": false,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/2810/2810_300.png",
+        "urlOk": true
+      }
+    },
+    {
+      "word": "辣",
+      "covered": null,
+      "zhHits": 0,
+      "hit": {
+        "arasaacId": 37834,
+        "via": "en",
+        "schematic": true,
+        "aac": false,
+        "url": "https://static.arasaac.org/pictograms/37834/37834_300.png",
+        "urlOk": true
+      }
+    }
+  ]
+}

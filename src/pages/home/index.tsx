@@ -1,3 +1,5 @@
+// ===== 首页（TabBar）：应用功能入口 —— 表达/接收/康复训练/中医辅助/收藏/历史六个卡片，
+// 首次使用（无程度档案）自动跳转程度选择页 =====
 import { View, Image, Text } from '@tarojs/components';
 import Taro, { useDidShow } from '@tarojs/taro';
 import expressIcon from '@/assets/tabbar/express-selected.png';

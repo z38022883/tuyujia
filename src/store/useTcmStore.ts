@@ -17,7 +17,8 @@ function toDayKey(ts: number): string {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
 }
 
-/** 根据打卡记录计算连续天数（含今天） */
+/** 查：根据打卡记录计算连续打卡天数（含今天；今天未打卡则从昨天起算）。
+ *  输入 checkIns: TcmCheckIn[] { id, type, at(时间戳), durationSec }；输出：连续天数 number */
 export function calcStreakDays(checkIns: TcmCheckIn[]): number {
   if (!checkIns.length) return 0
   const days = new Set(checkIns.map((c) => toDayKey(c.at)))
@@ -53,6 +54,13 @@ export const useTcmStore = create<TcmState>((set, get) => ({
   badges: [],
   latestBadge: null,
 
+  /**
+   * 增：新增一条打卡记录，并按「首次打卡 / 连续 3 天 / 连续 7 天」规则发勋章。
+   * 输入：type – 'acupoint'(穴位按揉) | 'relax'(音乐调息) | 'mouth'(嘴巴练习)
+   *        durationSec – 本次训练时长（秒）
+   * 输出：TcmBadge | null – 本次新获得的勋章 { key, name, emoji, desc }；无新勋章返回 null。
+   * 副作用：checkIns 头插（保留最近 200 条）+ badges 更新 + 两者本地持久化
+   */
   addCheckIn: (type, durationSec) => {
     const record: TcmCheckIn = {
       id: newTcmId(),
@@ -87,8 +95,13 @@ export const useTcmStore = create<TcmState>((set, get) => ({
     return latestBadge ? TCM_BADGES.find((b) => b.key === latestBadge) ?? null : null
   },
 
+  /** 删：清除「本次新获得勋章」提示（弹窗展示后调用；输入无，输出无） */
   clearLatestBadge: () => set({ latestBadge: null }),
 
+  /**
+   * 查：从本地存储恢复打卡记录与勋章列表。
+   * 输入：无；输出：无（写入 state：checkIns、badges）
+   */
   loadLocalData: () => {
     const checkIns = storage.get<TcmCheckIn[]>(STORAGE_KEYS.tcmCheckIns, [])
     const badges = storage.get<string[]>(STORAGE_KEYS.tcmBadges, [])

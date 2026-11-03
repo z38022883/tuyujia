@@ -1,3 +1,4 @@
+// ===== 家庭支持页：照护者康复指导 —— 按患者程度等级展示家庭训练建议 =====
 import { useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import classnames from 'classnames';
@@ -41,7 +42,7 @@ function FamilyPage() {
           ))}
         </View>
         <Text className={styles.disclaimer}>
-          以上内容整理自 docs/2.txt 分级康复方案，供家庭参考，不构成医疗建议。
+          以上内容整理自失语症分级康复方案（WAB AQ 分级），供家庭参考，不构成医疗建议。
         </Text>
       </ScrollView>
     </View>

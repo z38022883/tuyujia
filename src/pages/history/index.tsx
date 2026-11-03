@@ -1,3 +1,4 @@
+// ===== 历史页：表达记录按日期分组展示 —— 查看（查）、点读（播）、收藏/删除（改/删）=====
 import { useEffect, useState, useMemo } from 'react';
 import { View, ScrollView, Text, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';

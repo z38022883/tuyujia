@@ -1,5 +1,5 @@
 // ===== 患者程度档案（轻/中/重自选 + 评估覆盖）=====
-// 对应 docs/患者程度自选与功能适配方案.md
+// 对应 docs/产品方案/患者程度自选与功能适配方案.md
 // 枚举值与康复模块 RehabLevel（types/rehab.ts）共用同一组字符串值，可直接互转。
 
 import type { AssessmentDimensions } from './assessment'

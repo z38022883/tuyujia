@@ -1,3 +1,4 @@
+// ===== 接收模式页（TabBar「听」）：照护者输入文字 → 匹配图符辅助患者理解，并记录表达历史 =====
 import { useRef, useState } from 'react';
 import { View, Text, Textarea, Button, ScrollView, Image } from '@tarojs/components';
 import Taro from '@tarojs/taro';

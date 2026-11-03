@@ -1,3 +1,4 @@
+// ===== 康复训练进行中页：按会话题目快照逐题作答（TaskRunner），完成或放弃后流转 =====
 import { useEffect } from 'react';
 import { View, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';

@@ -28,6 +28,10 @@ interface ProfileState {
 export const useProfileStore = create<ProfileState>((set) => ({
   profile: null,
 
+  /**
+   * 查：从本地存储恢复患者程度档案。
+   * 输入：无；输出：无（写入 state：profile = PatientProfile | null）
+   */
   load: () => {
     const profile = storage.get<PatientProfile | null>(
       STORAGE_KEYS.patientProfile,
@@ -36,6 +40,11 @@ export const useProfileStore = create<ProfileState>((set) => ({
     set({ profile })
   },
 
+  /**
+   * 增/改：照护者手动设置程度档位（覆盖旧档案）。
+   * 输入：severity – 'severe' | 'moderate' | 'mild'；输出：无。
+   * 副作用：写入 profile { severity, updatedAt, source='self' } + 本地持久化
+   */
   setSeverity: (severity) => {
     const profile: PatientProfile = {
       severity,
@@ -46,6 +55,14 @@ export const useProfileStore = create<ProfileState>((set) => ({
     storage.set(STORAGE_KEYS.patientProfile, profile)
   },
 
+  /**
+   * 增/改：评估结果写入档案（source 恒为 'assess'，覆盖手动档位）。
+   * 输入：{ severity: PatientSeverity        // 评估档位
+   *        aqScore?: number                  // WAB 失语商 AQ 分
+   *        dimensions?: AssessmentDimensions // 四维得分（听/说/读/写 0-100）
+   *        assessedAt: number }              // 评估时间戳
+   * 输出：无。副作用：写入 profile + 本地持久化（康复页据此调级横幅 + 短板加权出题）
+   */
   applyAssessment: ({ severity, aqScore, dimensions, assessedAt }) => {
     const profile: PatientProfile = {
       severity,

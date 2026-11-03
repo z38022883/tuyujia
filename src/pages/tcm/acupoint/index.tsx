@@ -1,3 +1,4 @@
+// ===== 穴位按揉页：体表安全穴位逐个计时按揉，完成后打卡（可获勋章）=====
 import { useEffect, useRef, useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';
