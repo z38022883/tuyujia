@@ -5,6 +5,7 @@
 
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
+import { saveUserData } from '@/services/userDataSync'
 import type { AssessmentDimensions } from '@/types/assessment'
 import type { PatientProfile, PatientSeverity } from '@/types/profile'
 
@@ -23,9 +24,11 @@ interface ProfileState {
     dimensions?: AssessmentDimensions
     assessedAt: number
   }) => void
+  /** 云端回填：bootstrapSync 启动时把 user_data 云集合里的档案合并进本地（换设备恢复） */
+  mergeCloudProfile: (cloudProfile: PatientProfile) => void
 }
 
-export const useProfileStore = create<ProfileState>((set) => ({
+export const useProfileStore = create<ProfileState>((set, get) => ({
   profile: null,
 
   /**
@@ -44,6 +47,7 @@ export const useProfileStore = create<ProfileState>((set) => ({
    * 增/改：照护者手动设置程度档位（覆盖旧档案）。
    * 输入：severity – 'severe' | 'moderate' | 'mild'；输出：无。
    * 副作用：写入 profile { severity, updatedAt, source='self' } + 本地持久化
+   *         + 档案镜像云端（user_data 集合，kind='profile'，换设备可恢复）
    */
   setSeverity: (severity) => {
     const profile: PatientProfile = {
@@ -53,6 +57,7 @@ export const useProfileStore = create<ProfileState>((set) => ({
     }
     set({ profile })
     storage.set(STORAGE_KEYS.patientProfile, profile)
+    saveUserData('profile', undefined, profile)
   },
 
   /**
@@ -62,6 +67,7 @@ export const useProfileStore = create<ProfileState>((set) => ({
    *        dimensions?: AssessmentDimensions // 四维得分（听/说/读/写 0-100）
    *        assessedAt: number }              // 评估时间戳
    * 输出：无。副作用：写入 profile + 本地持久化（康复页据此调级横幅 + 短板加权出题）
+   *         + 档案镜像云端（user_data 集合，kind='profile'，换设备可恢复）
    */
   applyAssessment: ({ severity, aqScore, dimensions, assessedAt }) => {
     const profile: PatientProfile = {
@@ -74,5 +80,18 @@ export const useProfileStore = create<ProfileState>((set) => ({
     }
     set({ profile })
     storage.set(STORAGE_KEYS.patientProfile, profile)
+    saveUserData('profile', undefined, profile)
+  },
+
+  /**
+   * 增/改：合并云端档案进本地（bootstrapSync 启动时换设备恢复调用）。
+   * 输入：cloudProfile – 云端 PatientProfile；输出：无。
+   * 副作用：updatedAt 新者胜（本地无档案直接采用云端），写 state + 本地持久化
+   */
+  mergeCloudProfile: (cloudProfile) => {
+    const local = get().profile
+    if (local && (local.updatedAt || 0) >= (cloudProfile.updatedAt || 0)) return
+    set({ profile: cloudProfile })
+    storage.set(STORAGE_KEYS.patientProfile, cloudProfile)
   }
 }))

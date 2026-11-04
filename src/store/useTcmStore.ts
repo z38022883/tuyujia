@@ -3,6 +3,7 @@
 
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
+import { saveUserData } from '@/services/userDataSync'
 import type { TcmBadge, TcmCheckIn, TcmPracticeType } from '@/types/tcm'
 import { TCM_BADGES } from '@/data/tcm'
 
@@ -46,6 +47,8 @@ interface TcmState {
 
   addCheckIn: (type: TcmPracticeType, durationSec: number) => TcmBadge | null
   clearLatestBadge: () => void
+  /** 云端回填：bootstrapSync 启动时把 user_data 云集合里的打卡+勋章合并进本地（换设备恢复） */
+  mergeCloudTcm: (cloud: { checkIns: TcmCheckIn[]; badges: string[] }) => void
   loadLocalData: () => void
 }
 
@@ -60,6 +63,7 @@ export const useTcmStore = create<TcmState>((set, get) => ({
    *        durationSec – 本次训练时长（秒）
    * 输出：TcmBadge | null – 本次新获得的勋章 { key, name, emoji, desc }；无新勋章返回 null。
    * 副作用：checkIns 头插（保留最近 200 条）+ badges 更新 + 两者本地持久化
+   *         + 打卡/勋章整块镜像云端（user_data 集合，kind='tcm'，换设备可恢复）
    */
   addCheckIn: (type, durationSec) => {
     const record: TcmCheckIn = {
@@ -92,11 +96,29 @@ export const useTcmStore = create<TcmState>((set, get) => ({
     set({ checkIns, badges: nextBadges, latestBadge })
     storage.set(STORAGE_KEYS.tcmCheckIns, checkIns)
     storage.set(STORAGE_KEYS.tcmBadges, nextBadges)
+    saveUserData('tcm', undefined, { checkIns, badges: nextBadges })
     return latestBadge ? TCM_BADGES.find((b) => b.key === latestBadge) ?? null : null
   },
 
   /** 删：清除「本次新获得勋章」提示（弹窗展示后调用；输入无，输出无） */
   clearLatestBadge: () => set({ latestBadge: null }),
+
+  /**
+   * 增：合并云端打卡/勋章进本地（bootstrapSync 启动时换设备恢复调用）。
+   * 输入：cloud – { checkIns: TcmCheckIn[], badges: string[] }；输出：无。
+   * 副作用：checkIns 按 id 去重取并集 → at 倒序 → 截断 200 条；badges 取并集；
+   *         两者写 state + 本地持久化
+   */
+  mergeCloudTcm: ({ checkIns: cloudCheckIns, badges: cloudBadges }) => {
+    if (!cloudCheckIns.length && !cloudBadges.length) return
+    const byId = new Map(get().checkIns.map((c) => [c.id, c]))
+    for (const c of cloudCheckIns) if (!byId.has(c.id)) byId.set(c.id, c)
+    const checkIns = [...byId.values()].sort((a, b) => b.at - a.at).slice(0, 200)
+    const badges = [...new Set([...get().badges, ...cloudBadges])]
+    set({ checkIns, badges })
+    storage.set(STORAGE_KEYS.tcmCheckIns, checkIns)
+    storage.set(STORAGE_KEYS.tcmBadges, badges)
+  },
 
   /**
    * 查：从本地存储恢复打卡记录与勋章列表。

@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo } from 'react'
 import { View, Text, ScrollView } from '@tarojs/components'
 import { useAppStore } from '@/store/useAppStore'
 import { useProfileStore } from '@/store/useProfileStore'
@@ -42,6 +42,9 @@ const CATEGORY_COLORS: Record<string, string> = {
 /** root 板上图符使用的强调色（对应原版 isRoot 时的 #d97706） */
 const ROOT_COLOR = '#d97706'
 
+/** 非 adapt 模式下的稳定空数组（避免 useMemo 依赖新引用失效） */
+const EMPTY_WORDS: PictogramEntry[] = []
+
 interface Props {
   /**
    * true = 完整图库模式（中度/重度的「更多词」入口进入）：
@@ -75,11 +78,11 @@ function PictogramGrid({ full = false }: Props) {
   const isRecent = activeCategoryId === 'recent'
   // 程度适配仅作用于 首页板(root) 且非完整图库模式
   const adaptive = !full && isRoot && severity !== null && severity !== 'mild'
-  const adaptiveWords = adaptive
-    ? severity === 'severe'
-      ? resolveSevereWords()
-      : resolveModerateWords()
-    : []
+  // 程度词板解析有全量图符扫描，memo 避免每次 render 重算（空态用稳定引用）
+  const adaptiveWords = useMemo(
+    () => (adaptive ? (severity === 'severe' ? resolveSevereWords() : resolveModerateWords()) : EMPTY_WORDS),
+    [adaptive, severity]
+  )
 
   const targetId = isRoot ? 'home' : activeCategoryId
   const activeCategory = getCategory(targetId)
@@ -129,17 +132,21 @@ function PictogramGrid({ full = false }: Props) {
       ? `${styles.cell} ${styles.cellXl}`
       : styles.cell
 
-  function handleSelect(p: PictogramEntry) {
-    // 重度简易词板：点一下 = 朗读预设整句（不进入句条）
-    if (adaptive && severity === 'severe') {
-      const phrase = getSeverePhrase(p.id)
-      if (phrase) {
-        speakSentence(phrase, [p.id])
-        return
+  // useCallback 保持引用稳定，配合 PictogramCard 的 memo 生效
+  const handleSelect = useCallback(
+    (p: PictogramEntry) => {
+      // 重度简易词板：点一下 = 朗读预设整句（不进入句条）
+      if (adaptive && severity === 'severe') {
+        const phrase = getSeverePhrase(p.id)
+        if (phrase) {
+          speakSentence(phrase, [p.id])
+          return
+        }
       }
-    }
-    addPictogram(p)
-  }
+      addPictogram(p)
+    },
+    [adaptive, severity, addPictogram, speakSentence]
+  )
 
   return (
     <View className={styles.grid}>

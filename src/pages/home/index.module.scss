@@ -135,9 +135,81 @@
   transform: scale(0.98);
 }
 
-/* 角色弱化：整体降透明度，仍可点入（弱化 ≠ 隐藏，刻意设计） */
-.cardWeakened {
-  opacity: 0.55;
+/* 角色主功能大卡：整行置顶（患者→表达 / 家属→接收），其余卡片正常排，不弱化不隐藏。
+   白底 + 角色色描边（与头部角色徽标同一套配色）；
+   左右 margin 与 .grid 的 $page-padding 留白对齐 */
+.cardPrimary {
+  display: flex;
+  align-items: center;
+  gap: $spacing-lg;
+  padding: $spacing-lg;
+  margin: 0 $page-padding $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  box-sizing: border-box;
+  border: 2rpx solid transparent;
+}
+
+.cardPrimaryPatient {
+  border-color: rgba(91, 141, 239, 0.25);
+}
+
+.cardPrimaryFamily {
+  border-color: rgba(74, 156, 110, 0.25);
+}
+
+.cardPrimaryBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardPrimaryHead {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.cardPrimaryTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  flex-shrink: 0;
+}
+
+.primaryTag {
+  display: flex;
+  align-items: center;
+  height: 34rpx;
+  padding: 0 12rpx;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+}
+
+.primaryTagPatient {
+  background: rgba(91, 141, 239, 0.14);
+  color: #3b6fd4;
+}
+
+.primaryTagFamily {
+  background: rgba(74, 156, 110, 0.14);
+  color: $color-primary-dark;
+}
+
+.cardPrimaryDesc {
+  margin-top: 8rpx;
+  font-size: $font-size-sm;
+  line-height: $line-height-tight;
+  color: $color-text-tertiary;
+  @include text-ellipsis-multi(2);
+}
+
+.cardPrimaryArrow {
+  font-size: 44rpx;
+  line-height: 1;
+  color: $color-text-disabled;
+  flex-shrink: 0;
 }
 
 .icon {
@@ -146,6 +218,23 @@
   height: 96rpx;
   border-radius: $radius-round;
   margin-bottom: $spacing-md;
+}
+
+/* 主卡大图符：横排布局，去掉小卡的下边距（须置于 .icon 后才能覆盖） */
+.iconPrimary {
+  width: 140rpx;
+  height: 140rpx;
+  margin-bottom: 0;
+  flex-shrink: 0;
+
+  .iconImg {
+    width: 80rpx;
+    height: 80rpx;
+  }
+
+  .cardEmoji {
+    font-size: 72rpx;
+  }
 }
 
 .iconImg {

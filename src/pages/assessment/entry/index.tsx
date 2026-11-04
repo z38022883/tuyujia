@@ -5,7 +5,7 @@ import Taro from '@tarojs/taro';
 import classnames from 'classnames';
 import { useAssessmentStore } from '@/store/useAssessmentStore';
 import { AQ_MAX, severityFromAq } from '@/types/assessment';
-import { REHAB_LEVELS } from '@/data/rehab';
+import { REHAB_LEVELS } from '@/data/rehab-meta';
 import type { PatientSeverity } from '@/types/profile';
 import styles from './index.module.scss';
 

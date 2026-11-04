@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { View, Text, Image } from '@tarojs/components';
 import type { Category } from '@/types';
 import styles from './index.module.scss';
@@ -7,7 +8,8 @@ interface Props {
   onClick?: (c: Category) => void;
 }
 
-export default function FolderTile({ category, onClick }: Props) {
+// 纯展示图块，memo 避免父级词板因无关状态（如句条选择变化）整格重渲
+function FolderTile({ category, onClick }: Props) {
   return (
     <View className={styles.folder} onClick={() => onClick?.(category)}>
       <Image
@@ -21,3 +23,5 @@ export default function FolderTile({ category, onClick }: Props) {
     </View>
   );
 }
+
+export default memo(FolderTile);

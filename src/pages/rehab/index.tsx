@@ -1,5 +1,5 @@
 // ===== 康复训练主页：按程度档案等级开始训练；评估调级横幅、短板加权出题开关、训练/记录/家庭支持入口 =====
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { View, Text, ScrollView } from '@tarojs/components';
 import Taro, { useDidShow } from '@tarojs/taro';
 import classnames from 'classnames';
@@ -16,7 +16,8 @@ function RehabPage() {
   const { level, sessions, loadLocalData, setLevel, startSession } = useRehabStore();
   const profile = useProfileStore((s) => s.profile);
   const meta = getRehabLevelMeta(level);
-  const taskCount = buildRehabTasks(level).length;
+  // 题库出题在本分包页面完成（store 不再依赖题库模块，题库 JSON 随分包加载）
+  const taskCount = useMemo(() => buildRehabTasks(level).length, [level]);
 
   // 短板加权出题：有评估四维分时默认开启，可手动关闭
   const [weightOn, setWeightOn] = useState(() =>
@@ -81,7 +82,10 @@ function RehabPage() {
 
   const handleStart = () => {
     startSession(
-      weightActive ? { dimensionWeights: dimWeightsFromScores(profile?.dimensions) } : undefined
+      buildRehabTasks(
+        level,
+        weightActive ? { dimensionWeights: dimWeightsFromScores(profile?.dimensions) } : undefined
+      )
     );
     Taro.navigateTo({ url: '/pages/rehab/training/index' });
   };

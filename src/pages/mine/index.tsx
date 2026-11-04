@@ -1,16 +1,18 @@
 // ===== 我的页（TabBar）：账号角色设置、TTS 设置（语速/音色/自动朗读，试听）与患者程度档案展示 =====
 // user 状态统一走 useUserStore（本地缓存 + login 云函数刷新），本页不再各自管 user 缓存。
-import { useEffect, useState } from 'react';
+// 隐藏入口：「版本」行 2 秒内连点 5 次 → 开启开发者模式并进入开发者工具页（实地调试用）。
+import { useEffect, useRef, useState } from 'react';
 import { View, Text, Button, Slider, Switch, ScrollView } from '@tarojs/components';
-import Taro from '@tarojs/taro';
+import Taro, { useDidShow } from '@tarojs/taro';
 import classnames from 'classnames';
 import { useAppStore } from '@/store/useAppStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useUserStore } from '@/store/useUserStore';
 import { callFunction } from '@/services/cloud';
+import { storage, STORAGE_KEYS } from '@/services/storage';
 import { speak } from '@/services/tts';
 import { normalizeRole, roleLabel } from '@/utils/role-display';
-import { REHAB_LEVEL_MAP } from '@/data/rehab';
+import { REHAB_LEVEL_MAP } from '@/data/rehab-meta';
 import type { User } from '@/types';
 import styles from './index.module.scss';
 
@@ -28,10 +30,19 @@ function MinePage() {
   const setUser = useUserStore((s) => s.setUser);
   const role = normalizeRole(user?.role);
   const [rate, setRate] = useState(settings.rate);
+  const [devMode, setDevMode] = useState(false);
+  // 「版本」行连点计数（2 秒窗口，5 次开启开发者模式）
+  const tapCount = useRef(0);
+  const lastTapAt = useRef(0);
 
   useEffect(() => {
     setRate(settings.rate);
   }, [settings.rate]);
+
+  // 开发者模式标记在 dev 页可被关闭，每次回本页重读
+  useDidShow(() => {
+    setDevMode(storage.get<boolean>(STORAGE_KEYS.devMode, false));
+  });
 
   useEffect(() => {
     callFunction<{ openid: string; user: User }>('login')
@@ -46,6 +57,24 @@ function MinePage() {
     speak('你好，这是图语家的语音测试', settings).catch((err) =>
       console.error('[Mine] test speak:', err)
     );
+  };
+
+  const handleVersionTap = () => {
+    const now = Date.now();
+    if (now - lastTapAt.current > 2000) tapCount.current = 0;
+    lastTapAt.current = now;
+    tapCount.current += 1;
+    if (tapCount.current >= 5) {
+      tapCount.current = 0;
+      storage.set(STORAGE_KEYS.devMode, true);
+      setDevMode(true);
+      Taro.showToast({ title: '已开启开发者模式', icon: 'none' });
+      Taro.navigateTo({ url: '/pages/dev/index' });
+    }
+  };
+
+  const goDev = () => {
+    Taro.navigateTo({ url: '/pages/dev/index' });
   };
 
   const goRole = () => {
@@ -202,7 +231,16 @@ function MinePage() {
         <View className={styles.section}>
           <View className={styles.sectionTitle}>关于</View>
           <View className={styles.card}>
-            <View className={styles.row}>
+            {devMode && (
+              <>
+                <View className={styles.row} onClick={goDev}>
+                  <Text className={styles.label}>开发者工具</Text>
+                  <Text className={styles.arrow}>›</Text>
+                </View>
+                <View className={styles.divider} />
+              </>
+            )}
+            <View className={styles.row} onClick={handleVersionTap}>
               <Text className={styles.label}>版本</Text>
               <Text className={styles.value}>0.0.1</Text>
             </View>

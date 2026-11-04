@@ -35,9 +35,13 @@ export default defineConfig<'webpack5'>(async (merge, { command, mode }) => {
       },
     },
     cache: {
-      enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+      enable: true, // Webpack 持久化缓存，加快重复构建（运行时无影响）
     },
     mini: {
+      // 分包优化：仅被分包页面引用的模块（tcm 数据/store、康复题库组件等）自动移入对应分包，缩小主包
+      optimizeMainPackage: {
+        enable: true,
+      },
       postcss: {
         pxtransform: {
           enable: true,

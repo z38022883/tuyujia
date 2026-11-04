@@ -50,9 +50,13 @@ export const STORAGE_KEYS = {
   patientProfile: 'tuyujia_patient_profile',
   /** 角色首检引导「暂不选择」标记（true 后不再强弹角色页） */
   rolePromptDismissed: 'tuyujia_role_prompt_dismissed',
+  /** 开发者模式开关（我的页「版本」行连点 5 次开启，便于真机实地调试） */
+  devMode: 'tuyujia_dev_mode',
   assessments: 'tuyujia_assessments',
   /** 康复页最近一次已提示「评估调级」的档案 updatedAt（去重横幅） */
   rehabAppliedProfileAt: 'tuyujia_rehab_applied_profile_at',
   /** 康复页「按短板加权出题」开关（缺省开） */
-  rehabDimWeight: 'tuyujia_rehab_dim_weight'
+  rehabDimWeight: 'tuyujia_rehab_dim_weight',
+  /** TTS 合成音频本地缓存索引（LRU，见 services/tts.ts） */
+  ttsCacheIndex: 'tuyujia_tts_cache_index'
 } as const;

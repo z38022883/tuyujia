@@ -1,0 +1,117 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.body {
+  height: 100%;
+  padding: $spacing-md $page-padding calc(#{$spacing-xl} + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+.sectionTitle {
+  padding: $spacing-md 0 $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  font-weight: $font-weight-medium;
+}
+
+.card {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: 0 $spacing-lg;
+  box-shadow: $shadow-card;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+}
+
+.rowBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.label {
+  font-size: $font-size-md;
+  color: $color-text-primary;
+}
+
+.value {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  text-align: right;
+  word-break: break-all;
+}
+
+.action {
+  font-size: $font-size-sm;
+  color: $color-primary-dark;
+  font-weight: $font-weight-semibold;
+  flex-shrink: 0;
+}
+
+.labelDanger {
+  font-size: $font-size-md;
+  color: #d4553b;
+}
+
+.actionDanger {
+  font-size: $font-size-sm;
+  color: #d4553b;
+  font-weight: $font-weight-semibold;
+  flex-shrink: 0;
+}
+
+.divider {
+  height: 1rpx;
+  background: $color-divider;
+}
+
+.linkGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  padding: $spacing-md 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 64rpx;
+  padding: 0 $spacing-lg;
+  background: $color-bg-hover;
+  border-radius: $radius-button;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  &:active {
+    opacity: 0.85;
+  }
+}
+
+.btnClose {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-lg;
+  color: $color-text-tertiary;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.7;
+  }
+}

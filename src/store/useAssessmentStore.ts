@@ -6,6 +6,7 @@
 
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
+import { saveUserData } from '@/services/userDataSync'
 import { useProfileStore } from '@/store/useProfileStore'
 import type {
   AssessmentDimensions,
@@ -37,6 +38,8 @@ interface AssessmentState {
   /** 新增评估并应用到档案；返回完整记录 */
   addAssessment: (input: AddAssessmentInput) => AssessmentResult
   removeAssessment: (assessmentId: string) => void
+  /** 云端回填：bootstrapSync 启动时把 user_data 云集合里的评估记录合并进本地（换设备恢复） */
+  mergeCloudAssessments: (cloudList: AssessmentResult[]) => void
 }
 
 export const useAssessmentStore = create<AssessmentState>((set, get) => ({
@@ -66,6 +69,7 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
    * }
    * 输出：AssessmentResult – 完整记录 { assessmentId, ..., version: 1 }。
    * 副作用：assessments 头插（保留最近 20 条）+ 本地持久化 + useProfileStore.applyAssessment 联动
+   *         + 整块列表镜像云端（user_data 集合，kind='assessment_list'，换设备可恢复）
    */
   addAssessment: (input) => {
     const record: AssessmentResult = {
@@ -81,6 +85,7 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     const assessments = [record, ...get().assessments].slice(0, MAX_ASSESSMENTS)
     set({ assessments })
     storage.set(STORAGE_KEYS.assessments, assessments)
+    saveUserData('assessment_list', undefined, assessments)
 
     // 写入即生效：档案切到评估档（康复页横幅/加权出题据此联动）
     useProfileStore.getState().applyAssessment({
@@ -95,7 +100,7 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
   /**
    * 删：按 id 删除一条评估记录（不影响已写入档案的档位）。
    * 输入：assessmentId – AssessmentResult.assessmentId；输出：无。
-   * 副作用：更新 assessments + 本地持久化
+   * 副作用：更新 assessments + 本地持久化 + 整块列表镜像云端（覆盖旧列表实现删档）
    */
   removeAssessment: (assessmentId) => {
     const assessments = get().assessments.filter(
@@ -103,5 +108,22 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     )
     set({ assessments })
     storage.set(STORAGE_KEYS.assessments, assessments)
+    saveUserData('assessment_list', undefined, assessments)
+  },
+
+  /**
+   * 增：合并云端评估记录进本地（bootstrapSync 启动时换设备恢复调用）。
+   * 输入：cloudList – 云端 AssessmentResult[]；输出：无。
+   * 副作用：按 assessmentId 去重取并集 → assessedAt 倒序 → 截断 20 条 → 写 state + 本地持久化
+   */
+  mergeCloudAssessments: (cloudList) => {
+    if (!cloudList.length) return
+    const byId = new Map(get().assessments.map((a) => [a.assessmentId, a]))
+    for (const a of cloudList) if (!byId.has(a.assessmentId)) byId.set(a.assessmentId, a)
+    const merged = [...byId.values()]
+      .sort((x, y) => y.assessedAt - x.assessedAt)
+      .slice(0, MAX_ASSESSMENTS)
+    set({ assessments: merged })
+    storage.set(STORAGE_KEYS.assessments, merged)
   }
 }))

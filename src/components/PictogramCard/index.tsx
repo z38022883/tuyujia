@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { View, Text, Image } from '@tarojs/components';
 import classnames from 'classnames';
 import type { PictogramEntry } from '@/types';
@@ -13,7 +14,8 @@ interface Props {
   size?: PictogramCardSize;
 }
 
-export default function PictogramCard({ pictogram, color, onClick, size = 'default' }: Props) {
+// 纯展示卡片，memo 避免父级词板因无关状态（如句条选择变化）整格重渲
+function PictogramCard({ pictogram, color, onClick, size = 'default' }: Props) {
   return (
     <View
       className={classnames(styles.card, {
@@ -43,3 +45,5 @@ export default function PictogramCard({ pictogram, color, onClick, size = 'defau
     </View>
   );
 }
+
+export default memo(PictogramCard);

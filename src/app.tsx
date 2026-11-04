@@ -5,6 +5,9 @@ import { useAppStore } from '@/store/useAppStore';
 import { useRehabStore } from '@/store/useRehabStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useUserStore } from '@/store/useUserStore';
+import { prewarmTts } from '@/services/tts';
+import { bootstrapCloudSync } from '@/services/bootstrapSync';
+import { SEVERE_EXPRESS_WORDS } from '@/data/boards';
 import './app.scss';
 
 function App(props) {
@@ -24,6 +27,21 @@ function App(props) {
     useUserStore.getState().load();
     useAppStore.getState().loadLocalData();
     useRehabStore.getState().loadLocalData();
+
+    // 后台拉取云端账号数据（康复/评估/打卡/档案，换设备恢复），不阻塞首屏
+    if (process.env.TARO_ENV === 'weapp') {
+      void bootstrapCloudSync();
+    }
+
+    // 启动 4 秒后后台预热语音：预合成重度词板预设整句 + 预热云函数冷启动（不阻塞首屏）
+    if (process.env.TARO_ENV === 'weapp') {
+      setTimeout(() => {
+        prewarmTts(
+          SEVERE_EXPRESS_WORDS.map((w) => w.phrase).filter((p): p is string => Boolean(p)),
+          useAppStore.getState().settings
+        );
+      }, 4000);
+    }
   }, []);
 
   return props.children;

@@ -4,24 +4,19 @@
 
 import { create } from 'zustand'
 import { storage, STORAGE_KEYS } from '@/services/storage'
+import { saveUserData } from '@/services/userDataSync'
 import { useProfileStore } from '@/store/useProfileStore'
 import type {
-  RehabDimension,
   RehabLevel,
   RehabSession,
+  RehabTask,
   RehabTaskRecord
 } from '@/types/rehab'
-import { buildRehabTasks } from '@/data/rehab'
 
 let rehabIdCounter = 0
 function newRehabId(prefix: string): string {
   rehabIdCounter += 1
   return `${prefix}_${Date.now()}_${rehabIdCounter}`
-}
-
-export interface StartSessionOptions {
-  /** 维度权重（短板维度更高）；缺省均匀出题 */
-  dimensionWeights?: Partial<Record<RehabDimension, number>>
 }
 
 interface RehabState {
@@ -32,10 +27,13 @@ interface RehabState {
   activeSession: RehabSession | null
 
   setLevel: (level: RehabLevel) => void
-  startSession: (opts?: StartSessionOptions) => RehabSession
+  /** 入参为出题结果（分包页面调 buildRehabTasks 生成）；题库模块因此不在主包加载 */
+  startSession: (tasks: RehabTask[]) => RehabSession
   recordTaskResult: (record: RehabTaskRecord) => void
   finishSession: () => void
   abandonSession: () => void
+  /** 云端回填：bootstrapSync 启动时把 user_data 云集合里的训练记录合并进本地（换设备恢复） */
+  mergeCloudSessions: (cloudSessions: RehabSession[]) => void
   loadLocalData: () => void
 }
 
@@ -56,21 +54,16 @@ export const useRehabStore = create<RehabState>((set, get) => ({
   },
 
   /**
-   * 增：开始一次训练会话（按等级 + 可选维度权重从题库出题）。
-   * 输入 opts?: { dimensionWeights?: Partial<Record<RehabDimension, number>> }
-   *        – 四维权重（短板维度更高），缺省均匀出题
+   * 增：开始一次训练会话（出题由分包页面完成：buildRehabTasks 按等级 + 可选维度权重生成）。
+   * 输入：tasks – RehabTask[]（题目快照）
    * 输出：RehabSession – 新会话 { id, level, startedAt, durationSec=0, totalTasks,
-   *        completedTasks=0, tasks（题目快照）, taskRecords=[] }。
+   *        completedTasks=0, tasks, taskRecords=[] }。
    * 副作用：写入 activeSession + 本地持久化
    */
-  startSession: (opts) => {
-    const level = get().level
-    const tasks = buildRehabTasks(level, {
-      dimensionWeights: opts?.dimensionWeights
-    })
+  startSession: (tasks) => {
     const session: RehabSession = {
       id: newRehabId('rehab'),
-      level,
+      level: get().level,
       startedAt: Date.now(),
       durationSec: 0,
       totalTasks: tasks.length,
@@ -105,6 +98,7 @@ export const useRehabStore = create<RehabState>((set, get) => ({
    * 改：结束当前会话（补 finishedAt、累计 durationSec）并归档进历史。
    * 输入：无；输出：无。
    * 副作用：activeSession 落为已完成状态；sessions 头插（保留最近 50 条）+ 本地持久化
+   *         + 单条会话镜像云端（user_data 集合，kind='rehab_session'，换设备可恢复）
    */
   finishSession: () => {
     const active = get().activeSession
@@ -118,6 +112,7 @@ export const useRehabStore = create<RehabState>((set, get) => ({
     set({ activeSession: finished, sessions: nextSessions })
     storage.set(STORAGE_KEYS.rehabActiveSession, finished)
     storage.set(STORAGE_KEYS.rehabSessions, nextSessions)
+    saveUserData('rehab_session', finished.id, finished)
   },
 
   /**
@@ -127,6 +122,22 @@ export const useRehabStore = create<RehabState>((set, get) => ({
   abandonSession: () => {
     set({ activeSession: null })
     storage.remove(STORAGE_KEYS.rehabActiveSession)
+  },
+
+  /**
+   * 增：合并云端训练记录进本地（bootstrapSync 启动时换设备恢复调用）。
+   * 输入：cloudSessions – 云端 RehabSession[]（每条一文档）；输出：无。
+   * 副作用：按 id 去重取并集 → finishedAt 倒序 → 截断 50 条 → 写 state + 本地持久化
+   */
+  mergeCloudSessions: (cloudSessions) => {
+    if (!cloudSessions.length) return
+    const byId = new Map(get().sessions.map((s) => [s.id, s]))
+    for (const s of cloudSessions) if (!byId.has(s.id)) byId.set(s.id, s)
+    const merged = [...byId.values()]
+      .sort((a, b) => (b.finishedAt ?? b.startedAt) - (a.finishedAt ?? a.startedAt))
+      .slice(0, 50)
+    set({ sessions: merged })
+    storage.set(STORAGE_KEYS.rehabSessions, merged)
   },
 
   /**

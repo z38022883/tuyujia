@@ -4,12 +4,12 @@ import { View, Text, Button } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import EmptyState from '@/components/EmptyState';
 import { useRehabStore } from '@/store/useRehabStore';
-import { REHAB_DIMENSION_LABELS, getRehabLevelMeta } from '@/data/rehab';
+import { REHAB_DIMENSION_LABELS, buildRehabTasks, getRehabLevelMeta } from '@/data/rehab';
 import type { RehabDimension } from '@/types/rehab';
 import styles from './index.module.scss';
 
 function ResultPage() {
-  const { activeSession, loadLocalData, startSession } = useRehabStore();
+  const { activeSession, loadLocalData, startSession, level } = useRehabStore();
 
   useEffect(() => {
     loadLocalData();
@@ -59,7 +59,7 @@ function ResultPage() {
   const minutes = Math.max(1, Math.round(session.durationSec / 60));
 
   const again = () => {
-    startSession();
+    startSession(buildRehabTasks(level));
     Taro.redirectTo({ url: '/pages/rehab/training/index' });
   };
 
