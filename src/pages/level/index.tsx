@@ -5,6 +5,7 @@ import Taro from '@tarojs/taro'
 import classnames from 'classnames'
 import { useProfileStore } from '@/store/useProfileStore'
 import { useRehabStore } from '@/store/useRehabStore'
+import { shouldPromptRole } from '@/utils/role-gate'
 import type { PatientSeverity } from '@/types/profile'
 import styles from './index.module.scss'
 
@@ -48,7 +49,12 @@ function LevelPage() {
     useRehabStore.getState().setLevel(selected)
     Taro.showToast({ title: '已保存', icon: 'success' })
     setTimeout(() => {
-      Taro.reLaunch({ url: '/pages/home/index' })
+      // 首检还需角色 → 直达角色页，避免「闪一下空白首页再跳」的两连跳
+      Taro.reLaunch({
+        url: shouldPromptRole()
+          ? '/pages/role/index?from=gate'
+          : '/pages/home/index'
+      })
     }, 400)
   }
 

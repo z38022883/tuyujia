@@ -6,9 +6,10 @@
  *   user: {                               // users 集合文档（查到）或注册后的新用户（增）
  *     _id: string                         // 文档 id
  *     _openid: string                     // 用户 openid
- *     nickname: string                    // 昵称（新用户默认「用户+openid 后 6 位」）
- *     avatar: string                      // 头像 URL（默认空串）
- *     createdAt?: serverDate              // 注册时间（仅查到的文档带）
+     *     nickname: string                    // 昵称（新用户默认「用户+openid 后 6 位」）
+     *     avatar: string                      // 头像 URL（默认空串）
+     *     role: UserRole                      // 账号角色（新用户默认 '' 未标注；存量文档可能缺省）
+     *     createdAt?: serverDate              // 注册时间（仅查到的文档带）
  *   }
  * }
  */
@@ -33,6 +34,7 @@ exports.main = async (event, context) => {
           _openid: openid,
           nickname: '用户' + openid.slice(-6),
           avatar: '',
+          role: '',
           createdAt: db.serverDate()
         }
       })
@@ -40,7 +42,8 @@ exports.main = async (event, context) => {
         _id: created._id,
         _openid: openid,
         nickname: '用户' + openid.slice(-6),
-        avatar: ''
+        avatar: '',
+        role: ''
       }
     }
     return { code: 0, message: 'success', data: { openid, user } }

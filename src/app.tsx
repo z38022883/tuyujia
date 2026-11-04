@@ -1,9 +1,10 @@
-// ===== 应用入口：初始化云开发；启动时从本地存储恢复程度档案、表达/收藏、康复训练数据 =====
+// ===== 应用入口：初始化云开发；启动时从本地存储恢复程度档案、用户账号、表达/收藏、康复训练数据 =====
 import { useEffect } from 'react';
 import Taro from '@tarojs/taro';
 import { useAppStore } from '@/store/useAppStore';
 import { useRehabStore } from '@/store/useRehabStore';
 import { useProfileStore } from '@/store/useProfileStore';
+import { useUserStore } from '@/store/useUserStore';
 import './app.scss';
 
 function App(props) {
@@ -18,8 +19,9 @@ function App(props) {
         console.error('[App] cloud init failed:', err);
       }
     }
-    // 从本地存储恢复数据（患者程度档案 / 设置 / 表达 / 收藏 / 康复训练）
+    // 从本地存储恢复数据（患者程度档案 / 用户账号 / 设置 / 表达 / 收藏 / 康复训练）
     useProfileStore.getState().load();
+    useUserStore.getState().load();
     useAppStore.getState().loadLocalData();
     useRehabStore.getState().loadLocalData();
   }, []);

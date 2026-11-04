@@ -30,6 +30,56 @@
   color: $color-text-tertiary;
 }
 
+.headerBadges {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-shrink: 0;
+  margin-top: 4rpx;
+}
+
+.roleBadge {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+  height: 52rpx;
+  padding: 0 $spacing-md;
+  border-radius: $radius-button;
+  flex-shrink: 0;
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.roleBadgePatient {
+  background: rgba(91, 141, 239, 0.12);
+
+  .roleBadgeText,
+  .roleBadgeArrow {
+    color: #3b6fd4;
+  }
+}
+
+.roleBadgeFamily {
+  background: rgba(74, 156, 110, 0.12);
+
+  .roleBadgeText,
+  .roleBadgeArrow {
+    color: $color-primary-dark;
+  }
+}
+
+.roleBadgeText {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+}
+
+.roleBadgeArrow {
+  font-size: 28rpx;
+  line-height: 1;
+}
+
 .levelBadge {
   display: flex;
   align-items: center;
@@ -83,6 +133,11 @@
 .cardActive {
   opacity: 0.9;
   transform: scale(0.98);
+}
+
+/* 角色弱化：整体降透明度，仍可点入（弱化 ≠ 隐藏，刻意设计） */
+.cardWeakened {
+  opacity: 0.55;
 }
 
 .icon {

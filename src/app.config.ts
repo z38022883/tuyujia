@@ -8,6 +8,7 @@ export default defineAppConfig({
     'pages/mine/index',
     'pages/onboarding/index',
     'pages/level/index',
+    'pages/role/index',
     'pages/rehab/index',
     'pages/rehab/training/index',
     'pages/rehab/result/index',

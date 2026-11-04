@@ -1,0 +1,170 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.body {
+  flex: 1;
+  min-height: 0;
+  padding: $spacing-lg $page-padding 0;
+}
+
+.header {
+  margin-bottom: $spacing-lg;
+}
+
+.title {
+  font-size: $font-size-xxl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  margin-top: 6rpx;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-md;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  border: 3rpx solid transparent;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+  }
+}
+
+.optionActivePatient {
+  border-color: #5b8def;
+  background: rgba(91, 141, 239, 0.06);
+}
+
+.optionActiveFamily {
+  border-color: $color-primary;
+  background: rgba(74, 156, 110, 0.06);
+}
+
+.icon {
+  @include flex-center;
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-round;
+  flex-shrink: 0;
+}
+
+.iconPatient {
+  background: rgba(91, 141, 239, 0.14);
+}
+
+.iconFamily {
+  background: rgba(74, 156, 110, 0.14);
+}
+
+.iconEmoji {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.optionBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.optionTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.optionSummary {
+  margin-top: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.optionScope {
+  margin-top: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  background: $color-bg-hover;
+  border-radius: $radius-sm;
+  padding: 8rpx 12rpx;
+  display: inline-block;
+}
+
+.check {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+  margin-top: 4rpx;
+}
+
+.optionActivePatient .check {
+  color: #5b8def;
+}
+
+.optionActiveFamily .check {
+  color: $color-primary;
+}
+
+.note {
+  display: block;
+  margin: $spacing-xs 0 $spacing-lg;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  text-align: center;
+  line-height: $line-height-normal;
+}
+
+.footer {
+  padding: $spacing-md $page-padding
+    calc(#{$spacing-lg} + env(safe-area-inset-bottom));
+  background: $color-bg-card;
+  box-shadow: $shadow-float;
+}
+
+.btnSave {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-lg;
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  color: $color-text-white;
+  border-radius: $radius-button;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.99);
+  }
+}
+
+.btnDisabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.btnDismiss {
+  @include button-reset;
+  width: 100%;
+  height: $button-height-md;
+  margin-top: $spacing-sm;
+  color: $color-text-tertiary;
+  font-size: $font-size-md;
+
+  &:active {
+    opacity: 0.7;
+  }
+}

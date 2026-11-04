@@ -48,6 +48,8 @@ export const STORAGE_KEYS = {
   tcmCheckIns: 'tuyujia_tcm_check_ins',
   tcmBadges: 'tuyujia_tcm_badges',
   patientProfile: 'tuyujia_patient_profile',
+  /** 角色首检引导「暂不选择」标记（true 后不再强弹角色页） */
+  rolePromptDismissed: 'tuyujia_role_prompt_dismissed',
   assessments: 'tuyujia_assessments',
   /** 康复页最近一次已提示「评估调级」的档案 updatedAt（去重横幅） */
   rehabAppliedProfileAt: 'tuyujia_rehab_applied_profile_at',

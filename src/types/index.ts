@@ -111,10 +111,15 @@ export interface TtsSettings {
 
 export type AuthStatus = 'loading' | 'anonymous' | 'authenticated'
 
+/** 账号角色：'' 未标注（缺省，向后兼容态）/ patient 患者 / family 家属（照护者） */
+export type UserRole = '' | 'patient' | 'family'
+
 export interface User {
   openid: string
   nickname: string
   avatar: string
+  /** 账号角色（存量文档可能缺省，读取侧用 normalizeRole 兜底为 ''） */
+  role: UserRole
 }
 
 export interface AuthenticatedUserSummary {

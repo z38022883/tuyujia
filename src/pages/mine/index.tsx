@@ -1,13 +1,15 @@
-// ===== 我的页（TabBar）：TTS 设置（语速/音色/自动朗读，试听）与患者程度档案展示 =====
+// ===== 我的页（TabBar）：账号角色设置、TTS 设置（语速/音色/自动朗读，试听）与患者程度档案展示 =====
+// user 状态统一走 useUserStore（本地缓存 + login 云函数刷新），本页不再各自管 user 缓存。
 import { useEffect, useState } from 'react';
 import { View, Text, Button, Slider, Switch, ScrollView } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import classnames from 'classnames';
 import { useAppStore } from '@/store/useAppStore';
 import { useProfileStore } from '@/store/useProfileStore';
+import { useUserStore } from '@/store/useUserStore';
 import { callFunction } from '@/services/cloud';
-import { storage, STORAGE_KEYS } from '@/services/storage';
 import { speak } from '@/services/tts';
+import { normalizeRole, roleLabel } from '@/utils/role-display';
 import { REHAB_LEVEL_MAP } from '@/data/rehab';
 import type { User } from '@/types';
 import styles from './index.module.scss';
@@ -22,7 +24,9 @@ function MinePage() {
   const severity = useProfileStore((s) => s.profile?.severity ?? null);
   const profileSource = useProfileStore((s) => s.profile?.source ?? null);
   const aqScore = useProfileStore((s) => s.profile?.aqScore ?? null);
-  const [user, setUser] = useState<User | null>(null);
+  const user = useUserStore((s) => s.user);
+  const setUser = useUserStore((s) => s.setUser);
+  const role = normalizeRole(user?.role);
   const [rate, setRate] = useState(settings.rate);
 
   useEffect(() => {
@@ -30,13 +34,10 @@ function MinePage() {
   }, [settings.rate]);
 
   useEffect(() => {
-    const cached = storage.get<User | null>(STORAGE_KEYS.user, null);
-    if (cached) setUser(cached);
     callFunction<{ openid: string; user: User }>('login')
       .then((res) => {
-        if (!res) return; // H5 预览模式跳过
-        setUser(res.user);
-        storage.set(STORAGE_KEYS.user, res.user);
+        if (!res) return; // H5 预览模式跳过（读本地缓存）
+        setUser(res.user); // store 统一写缓存 + state
       })
       .catch((err) => console.error('[Mine] login:', err));
   }, []);
@@ -45,6 +46,10 @@ function MinePage() {
     speak('你好，这是图语家的语音测试', settings).catch((err) =>
       console.error('[Mine] test speak:', err)
     );
+  };
+
+  const goRole = () => {
+    Taro.navigateTo({ url: '/pages/role/index' });
   };
 
   const goLevel = () => {
@@ -61,8 +66,39 @@ function MinePage() {
           <View className={styles.avatar}>{user?.avatar ? null : '👤'}</View>
           <View className={styles.userInfo}>
             <View className={styles.nickname}>{user?.nickname || '点击登录'}</View>
-            <View className={styles.uid}>
-              {user?.openid ? `ID: ${user.openid.slice(0, 10)}` : '未登录'}
+            <View className={styles.userMetaRow}>
+              {role && (
+                <View className={styles.userRoleTag}>
+                  <Text>{roleLabel(role)}</Text>
+                </View>
+              )}
+              <View className={styles.uid}>
+                {user?.openid ? `ID: ${user.openid.slice(0, 10)}` : '未登录'}
+              </View>
+            </View>
+          </View>
+        </View>
+
+        <View className={styles.section}>
+          <View className={styles.sectionTitle}>账号角色</View>
+          <View className={styles.card}>
+            <View className={styles.row} onClick={goRole}>
+              <Text className={styles.label}>当前角色</Text>
+              <View className={styles.valueWrap}>
+                {role ? (
+                  <View
+                    className={classnames(
+                      styles.roleTag,
+                      role === 'patient' ? styles.roleTagPatient : styles.roleTagFamily
+                    )}
+                  >
+                    <Text>{roleLabel(role)}</Text>
+                  </View>
+                ) : (
+                  <Text className={styles.value}>未设置</Text>
+                )}
+                <Text className={styles.arrow}>›</Text>
+              </View>
             </View>
           </View>
         </View>

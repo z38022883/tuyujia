@@ -58,8 +58,27 @@
   color: $color-text-white;
 }
 
+.userMetaRow {
+  margin-top: 8rpx;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  min-width: 0;
+}
+
+.userRoleTag {
+  display: flex;
+  align-items: center;
+  height: 36rpx;
+  padding: 0 12rpx;
+  border-radius: $radius-sm;
+  background: rgba(255, 255, 255, 0.25);
+  font-size: $font-size-xs;
+  color: $color-text-white;
+  flex-shrink: 0;
+}
+
 .uid {
-  margin-top: 4rpx;
   font-size: $font-size-xs;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -119,6 +138,27 @@
   font-size: $font-size-xs;
   color: $color-primary-dark;
   font-weight: $font-weight-semibold;
+}
+
+/* 账号角色标签（患者蓝 / 家属绿，与首页角色徽标同款配色） */
+.roleTag {
+  display: flex;
+  align-items: center;
+  height: 44rpx;
+  padding: 0 $spacing-md;
+  border-radius: $radius-button;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+}
+
+.roleTagPatient {
+  background: rgba(91, 141, 239, 0.12);
+  color: #3b6fd4;
+}
+
+.roleTagFamily {
+  background: rgba(74, 156, 110, 0.12);
+  color: $color-primary-dark;
 }
 
 .arrow {
